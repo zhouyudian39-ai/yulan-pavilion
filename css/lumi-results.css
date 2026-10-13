@@ -1,0 +1,709 @@
+/* =====================================================
+   LUMI 搜索结果页
+   搜索引擎风格
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+    color: #202124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* ===============================
+   顶部搜索栏
+================================ */
+
+.search-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 30px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8ed;
+    flex-wrap: wrap;
+}
+
+
+.search-header-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #202124;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+.search-header-box {
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border: 1px solid #dfe1e5;
+    border-radius: 22px;
+    transition: 0.2s;
+}
+
+
+.search-header-box:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.15);
+}
+
+
+.search-header-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    color: #202124;
+    background: transparent;
+}
+
+
+.header-search-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+
+.search-header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+
+.header-my-link {
+    font-size: 13px;
+    color: #202124;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.header-my-link:hover {
+    color: #b85a4a;
+}
+
+
+.header-avatar-link {
+    text-decoration: none;
+}
+
+
+.header-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f0dcd5;
+    color: #b85a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ===============================
+   结果主体
+================================ */
+
+.results-main {
+    flex: 1;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 25px 50px;
+}
+
+
+.results-count {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+
+/* ===============================
+   结果列表
+================================ */
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+.search-result-item {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+
+.result-url {
+    font-size: 11px;
+    color: #4a9a5a;
+    margin-bottom: 3px;
+    font-family: "Courier Prime", monospace;
+}
+
+
+.result-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a73e8;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+    transition: 0.15s;
+}
+
+
+.result-title:hover {
+    text-decoration: underline;
+}
+
+
+.result-title.no-link {
+    color: #333;
+    cursor: default;
+}
+
+
+.result-title.no-link:hover {
+    text-decoration: none;
+}
+
+
+.result-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ===============================
+   无结果
+================================ */
+
+.no-results {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.no-results p {
+    font-size: 14px;
+    color: #999;
+}
+
+
+/* ===============================
+   相关搜索
+================================ */
+
+.related-searches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 13px;
+}
+
+
+.related-searches span {
+    color: #999;
+    flex-shrink: 0;
+}
+
+
+.related-searches a {
+    color: #1a73e8;
+    text-decoration: none;
+    padding: 4px 12px;
+    background: #f8f9fa;
+    border-radius: 14px;
+    font-size: 12px;
+    transition: 0.15s;
+}
+
+
+.related-searches a:hover {
+    background: #eef3fc;
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.search-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    background: #f2f2f2;
+    font-size: 13px;
+    color: #5f6368;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.search-footer-links {
+    display: flex;
+    gap: 18px;
+}
+
+
+.search-footer-links a {
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
+.search-footer-links a:hover {
+    color: #202124;
+    text-decoration: underline;
+}
+
+
+.search-footer p {
+    font-size: 12px;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .search-header {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .search-header-logo {
+        font-size: 20px;
+    }
+
+    .search-header-box {
+        min-width: 150px;
+        padding: 7px 12px;
+    }
+
+    .search-header-box input {
+        font-size: 13px;
+    }
+
+    .results-main {
+        padding: 15px 18px 40px;
+    }
+
+    .result-title {
+        font-size: 15px;
+    }
+
+    .result-desc {
+        font-size: 12px;
+    }
+
+    .search-footer {
+        padding: 12px 18px;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+}
+
+/* ===============================
+   特殊结果
+================================ */
+
+.no-results-sub {
+    font-size: 11px !important;
+    color: #ccc !important;
+    font-style: italic;
+}
+
+
+.locked-result {
+    background: #fdf8f5;
+    border: 1px dashed #e0c8b8;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+
+.result-locked-note {
+    margin-top: 8px !important;
+    font-size: 12px !important;
+    color: #b85a4a !important;
+    font-weight: 600;
+}
+
+
+/* 受限结果改为可点击后，链接本身保持标题样式 */
+
+.locked-result .locked-title {
+    color: #b85a4a;
+    text-decoration: none;
+}
+
+.locked-result .locked-title:hover,
+.locked-result .locked-title:focus-visible {
+    text-decoration: underline;
+}
+
+
+/* 已通过权限验证的结果 */
+
+.result-unlocked-note {
+    color: #4a9a5a !important;
+}
+
+
+/* 键盘焦点 */
+
+.result-title:focus-visible,
+.related-searches a:focus-visible {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
+
+
+/* ===============================
+   返回调查入口
+================================ */
+
+.results-back-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 18px;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 12px 20px;
+
+    font-size: 12px;
+}
+
+.results-back-nav a {
+    color: #777;
+    text-decoration: none;
+}
+
+.results-back-nav a:hover,
+.results-back-nav a:focus-visible {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 650px) {
+
+    .results-back-nav {
+        padding: 10px 16px;
+    }
+
+}
+
+
+
+/* ===============================
+   页面故障闪烁
+================================ */
+
+.glitch-body {
+    animation: bodyGlitch 0.3s ease;
+}
+
+
+@keyframes bodyGlitch {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); opacity: 0.7; }
+    50% { transform: translateX(5px); opacity: 0.9; }
+    75% { transform: translateX(-3px); opacity: 0.5; }
+}
+
+/* Y2K-LUMI-RESULTS */
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造 · 第二轮）
+   LUMI 搜索结果页
+   -----------------------------------------------------
+   身份：一个真实搜索引擎的结果页 —— 结果条目保持原有
+         蓝/绿链接色（这最像真工具），
+         页边、计数、页脚与「受限结果」改成本站语言。
+   克制：不改结果排序、不改链接指向、不遮挡标题与摘要。
+===================================================== */
+
+:root {
+
+    --lm-ink: #17171a;
+    --lm-ink-soft: #5f6368;
+    --lm-faint: #8a8794;
+
+    --lm-red: #8a1f1f;
+
+    --lm-mono: "Courier Prime", "Courier New", monospace;
+
+    --lm-line: 1px solid rgba(23, 23, 26, 0.75);
+    --lm-line-soft: 1px solid rgba(23, 23, 26, 0.18);
+}
+
+
+body {
+    color: var(--lm-ink);
+}
+
+
+/* ---------- 顶栏 ---------- */
+
+.search-header {
+
+    border-bottom: var(--lm-line);
+
+    background: #ffffff;
+}
+
+
+.search-header-logo {
+    letter-spacing: 4px;
+}
+
+
+.search-header-box {
+
+    border: var(--lm-line);
+    border-radius: 22px;
+
+    background: #ffffff;
+}
+
+
+.search-header-box:hover {
+
+    border-color: var(--lm-ink);
+
+    box-shadow: 3px 3px 0 rgba(23, 23, 26, 0.1);
+}
+
+
+.search-header-box:focus-within {
+
+    border-color: var(--lm-ink);
+
+    box-shadow: 3px 3px 0 rgba(182, 47, 108, 0.16);
+}
+
+
+.header-my-link {
+    color: var(--lm-ink);
+}
+
+
+.header-my-link:hover {
+    color: #b62f6c;
+}
+
+
+.header-avatar {
+
+    border: 1px solid rgba(23, 23, 26, 0.75);
+    border-radius: 3px;
+
+    background: #fdeef5;
+    color: #b62f6c;
+
+    box-shadow: 2px 2px 0 rgba(23, 23, 26, 0.12);
+}
+
+
+/* ---------- 结果计数与条目 ---------- */
+
+.results-count {
+
+    font-family: var(--lm-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+
+    color: var(--lm-faint);
+}
+
+
+.search-result-item {
+    border-bottom: var(--lm-line-soft);
+}
+
+
+.result-url {
+
+    font-family: var(--lm-mono);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+
+    /* 真引擎的网址行是暗绿，这里压低饱和度以免抢标题 */
+    color: #3f7a52;
+}
+
+
+.result-desc {
+    color: #4a4a4e;
+    line-height: 1.8;
+}
+
+
+/* ---------- 受限结果：可点击，但先用虚线框住 ---------- */
+
+.locked-result {
+
+    background: #fdfaf7;
+    border: 1px dashed rgba(23, 23, 26, 0.5);
+    border-radius: 2px;
+}
+
+
+.result-locked-note {
+
+    color: var(--lm-red) !important;
+
+    letter-spacing: 0.5px;
+}
+
+
+.result-unlocked-note {
+    color: #3f7a52 !important;
+}
+
+
+/* ---------- 相关搜索：2px 方角标签 ---------- */
+
+.related-searches {
+    border-top: var(--lm-line-soft);
+}
+
+
+.related-searches a {
+
+    color: var(--lm-ink);
+
+    background: #ffffff;
+    border: 1px solid rgba(23, 23, 26, 0.28);
+    border-radius: 2px;
+}
+
+
+.related-searches a:hover {
+
+    background: #fff5fa;
+    border-color: rgba(23, 23, 26, 0.6);
+
+    text-decoration: none;
+}
+
+
+/* ---------- 空结果 ---------- */
+
+.no-results p {
+
+    font-family: var(--lm-mono);
+    letter-spacing: 1px;
+
+    color: var(--lm-faint);
+}
+
+
+/* ---------- 页脚与返回入口 ---------- */
+
+.search-footer {
+
+    border-top: var(--lm-line-soft);
+
+    background: #ffffff;
+}
+
+
+.search-footer p {
+
+    font-family: var(--lm-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--lm-faint);
+}
+
+
+.results-back-nav {
+
+    border-bottom: var(--lm-line-soft);
+
+    font-family: var(--lm-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+}
+
+
+.results-back-nav a {
+    color: var(--lm-ink-soft);
+}
+
+
+.results-back-nav a:hover {
+    color: #b62f6c;
+}
+
+
+/* ---------- 键盘焦点 ---------- */
+
+.search-header-box input:focus-visible,
+.header-search-btn:focus-visible,
+.result-title:focus-visible,
+.related-searches a:focus-visible,
+.results-back-nav a:focus-visible {
+
+    outline: 2px solid #b62f6c;
+    outline-offset: 2px;
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

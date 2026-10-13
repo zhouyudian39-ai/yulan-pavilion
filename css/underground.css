@@ -1,0 +1,1439 @@
+/* =====================================================
+   B3 内部研究区域
+   最终揭示页
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1210;
+    font-family: "Courier Prime", "Noto Sans SC", "Songti SC", monospace;
+    color: #c0c0c0;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.ug-page {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #0f0f0f;
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   顶部系统栏
+================================ */
+
+.ug-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: #1a1a1a;
+    border-bottom: 2px solid #2a2a2a;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.ug-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.ug-symbol {
+    font-size: 22px;
+    color: #555;
+}
+
+
+.ug-brand strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #ddd;
+}
+
+
+.ug-brand small {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #666;
+}
+
+
+.ug-status {
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #888;
+    line-height: 1.6;
+}
+
+
+.ug-status small {
+    font-size: 9px;
+    color: #555;
+}
+
+
+.ug-red {
+    color: #cc3333 !important;
+    font-weight: 700;
+}
+
+
+/* ===============================
+   区域标识
+================================ */
+
+.ug-banner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    background: #1a1a1a;
+    border-bottom: 3px double #2a2a2a;
+    flex-wrap: wrap;
+}
+
+
+.ug-banner-code {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ccc;
+    letter-spacing: 3px;
+    flex-shrink: 0;
+}
+
+
+.ug-banner-info {
+    flex: 1;
+    min-width: 150px;
+}
+
+
+.ug-banner-info h1 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #ddd;
+    margin-bottom: 3px;
+}
+
+
+.ug-banner-info p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #666;
+}
+
+
+.ug-banner-stamp {
+    padding: 4px 12px;
+    border: 2px solid #cc3333;
+    color: #cc3333;
+    font-size: 10px;
+    letter-spacing: 3px;
+    transform: rotate(-5deg);
+    flex-shrink: 0;
+}
+
+
+/* ===============================
+   主内容
+================================ */
+
+.ug-main {
+    padding: 20px;
+}
+
+
+/* ===============================
+   文件卡片
+================================ */
+
+.ug-file {
+    margin-bottom: 20px;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+
+.ug-file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+.ug-file-header span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #666;
+}
+
+
+.ug-file-header strong {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #ccc;
+}
+
+
+.ug-file-header small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #555;
+}
+
+
+.ug-file-body {
+    padding: 15px;
+}
+
+
+.ug-file-desc {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+
+/* ===============================
+   表格
+================================ */
+
+.ug-table {
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+.ug-table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+
+.ug-table-row:last-child {
+    border-bottom: none;
+}
+
+
+.ug-table-row span {
+    background: #141414;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: #aaa;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+
+.ug-table-header span {
+    background: #1e1e1e;
+    color: #888;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+.ug-table-total {
+    background: #1f1f1f;
+}
+
+
+.ug-table-total span {
+    background: #1f1f1f;
+    color: #cc3333;
+    font-weight: 700;
+}
+
+
+.ug-table-abnormal span {
+    background: #1f1414;
+    color: #cc3333;
+}
+
+
+.ug-table-current {
+    background: #1f1a14;
+}
+
+
+.ug-table-current span {
+    background: #1f1a14;
+    color: #d4af37;
+}
+
+
+.ug-current {
+    color: #d4af37 !important;
+    font-weight: 700;
+}
+
+
+/* 安全报告表格4列 */
+.ug-table-security .ug-table-row {
+    grid-template-columns: 1.5fr 1fr 1fr;
+}
+
+
+/* 血液数据表格3列 */
+.ug-blood-table .ug-table-row {
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+}
+
+
+/* ===============================
+   文件注释
+================================ */
+
+.ug-file-note {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #666;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+
+.ug-red-note {
+    color: #cc3333 !important;
+}
+
+
+/* ===============================
+   转移通知
+================================ */
+
+.ug-transfer-card {
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+.ug-transfer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #222;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.ug-transfer-row:last-child {
+    border-bottom: none;
+}
+
+
+.ug-transfer-row span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+
+.ug-transfer-row strong {
+    font-size: 11px;
+    color: #ccc;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+
+/* ===============================
+   最终部分
+================================ */
+
+.ug-final {
+    margin-top: 30px;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+
+.ug-final-line {
+    width: 50px;
+    height: 1px;
+    background: #2a2a2a;
+    margin: 0 auto 18px;
+}
+
+
+.ug-final-text {
+    font-size: 12px;
+    line-height: 2;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+
+.ug-final-message {
+    margin: 15px auto;
+    padding: 14px 18px;
+    background: #1a1a1a;
+    border: 2px solid #cc3333;
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #cc3333;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+
+.ug-final-last {
+    font-size: 14px;
+    color: #ccc;
+    letter-spacing: 3px;
+    margin-top: 12px;
+}
+
+
+.ug-final-return {
+    margin-top: 20px;
+}
+
+
+.ug-final-return a {
+    display: inline-block;
+    padding: 8px 22px;
+    color: #666;
+    text-decoration: none;
+    border: 1px solid #333;
+    border-radius: 16px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.ug-final-return a:hover {
+    color: #ccc;
+    border-color: #666;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.ug-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #222;
+    background: #141414;
+}
+
+
+.ug-footer p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #555;
+    margin: 3px 0;
+}
+
+
+.ug-footer small {
+    display: block;
+    margin-top: 5px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 550px) {
+
+    .ug-main {
+        padding: 12px;
+    }
+
+    .ug-banner {
+        padding: 12px 15px;
+    }
+
+    .ug-banner-code {
+        font-size: 30px;
+    }
+
+    .ug-table-row span {
+        font-size: 9px;
+        padding: 6px 5px;
+    }
+
+    .ug-transfer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+
+    .ug-transfer-row strong {
+        text-align: left;
+    }
+
+    .ug-final-message {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+}
+
+/* ===============================
+   林玉兰手记
+================================ */
+
+.ug-file-handnote {
+    border-color: #d4af37;
+}
+
+
+.ug-handnote {
+    padding: 5px 0;
+}
+
+
+.ug-handnote p {
+    font-size: 13px;
+    line-height: 2.2;
+    color: #aaa;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+
+.ug-handnote-sign {
+    text-align: right;
+    font-size: 11px !important;
+    color: #d4af37 !important;
+    font-style: italic;
+}
+
+
+/* ===============================
+   年度统计表5列
+================================ */
+
+.ug-table-subject .ug-table-row {
+    grid-template-columns: 0.8fr 1fr 1.2fr 1.2fr 0.8fr;
+}
+
+
+/* ===============================
+   统计汇总
+================================ */
+
+.ug-table-summary {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+
+.ug-summary-item {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+
+.ug-summary-item span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+
+.ug-summary-item strong {
+    font-family: "Courier Prime", monospace;
+    font-size: 22px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+
+.ug-summary-item .ug-red {
+    color: #cc3333;
+}
+
+
+/* ===============================
+   受试者档案墙
+================================ */
+
+.ug-subject-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+.ug-subject-card {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+
+.ug-subject-img {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 6px;
+    background: #1a1a1a;
+}
+
+
+.ug-subject-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.8) brightness(0.7);
+}
+
+
+.ug-subject-card span {
+    display: block;
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 3px;
+}
+
+
+.ug-subject-card strong {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+.ug-subject-disposed strong {
+    color: #cc3333;
+}
+
+
+.ug-subject-completed strong {
+    color: #d4af37;
+}
+
+
+.ug-subject-active strong {
+    color: #4a8a5a;
+}
+
+
+.ug-subject-active {
+    border-color: #4a8a5a;
+}
+
+
+.ug-subject-active .ug-subject-img img {
+    filter: grayscale(0.2) brightness(0.9);
+}
+
+
+/* ===============================
+   受试者记录表
+   （原为 9 张匿名入会照片的卡片墙：
+     单张照片没有独立信息价值，且 9 名不同受试者
+     必须是 9 个不同的人，制作成本与「共用一张脸」的风险都很高。
+     这里改成与其它档案一致的文字记录表，只保留编号与状态。）
+================================ */
+
+.ug-subject-table {
+    border: 1px solid #2a2a2a;
+}
+
+
+.ug-subject-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1px;
+
+    background: #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+
+.ug-subject-row:last-child {
+    border-bottom: none;
+}
+
+
+.ug-subject-row span,
+.ug-subject-row strong {
+    background: #141414;
+    padding: 9px 12px;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+
+.ug-subject-row span {
+    color: #999;
+}
+
+
+.ug-subject-row strong {
+    font-weight: 600;
+}
+
+
+.ug-subject-row.ug-subject-header span {
+    background: #1e1e1e;
+    color: #888;
+    font-size: 10px;
+}
+
+
+/* ===============================
+   访问门禁
+   （未通过权限验证时不渲染档案本体）
+================================ */
+
+.ug-locked .ug-page {
+    display: none;
+}
+
+
+.ug-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: #0d0d0d;
+    overflow-y: auto;
+}
+
+
+.ug-gate-card {
+    width: 100%;
+    max-width: 440px;
+
+    padding: 30px 26px;
+
+    background: #141414;
+    border: 1px solid #2e2e2e;
+
+    text-align: center;
+}
+
+
+.ug-gate-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+
+.ug-gate-card h1 {
+    font-size: 19px;
+    letter-spacing: 4px;
+    color: #f0ece6;
+    margin-bottom: 8px;
+}
+
+
+.ug-gate-level {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #cc3333;
+    margin-bottom: 18px;
+}
+
+
+.ug-gate-desc {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #8e8983;
+    margin-bottom: 20px;
+}
+
+
+.ug-gate-hint {
+    padding: 14px 16px;
+    margin-bottom: 22px;
+
+    background: #0f0f0f;
+    border-left: 2px solid #cc3333;
+
+    text-align: left;
+}
+
+
+.ug-gate-hint-title {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+
+.ug-gate-hint ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.ug-gate-hint li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 8px;
+
+    font-size: 11.5px;
+    line-height: 1.8;
+    color: #8e8983;
+}
+
+
+.ug-gate-hint li:last-child {
+    margin-bottom: 0;
+}
+
+
+.ug-gate-hint li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: #555;
+}
+
+
+.ug-gate-form {
+    text-align: left;
+}
+
+
+.ug-gate-form label {
+    display: block;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+
+    margin-bottom: 6px;
+}
+
+
+.ug-gate-form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+    margin-bottom: 14px;
+
+    background: #0d0d0d;
+    border: 1px solid #333;
+
+    color: #f0ece6;
+    font-family: "Courier Prime", monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+.ug-gate-form input:focus {
+    outline: none;
+    border-color: #cc3333;
+}
+
+
+.ug-gate-form button {
+    width: 100%;
+    padding: 12px;
+
+    background: #1c1c1c;
+    border: 1px solid #cc3333;
+
+    color: #e8e2da;
+    font-family: "Noto Serif SC", serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+}
+
+
+.ug-gate-form button:hover {
+    background: #cc3333;
+    color: #fff;
+}
+
+
+.ug-gate-error {
+    min-height: 18px;
+    margin-bottom: 8px;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    color: #cc3333;
+}
+
+
+.ug-gate-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #242424;
+}
+
+
+.ug-gate-links a {
+    font-size: 11px;
+    color: #8e8983;
+    text-decoration: none;
+}
+
+
+.ug-gate-links a:hover,
+.ug-gate-links a:focus-visible {
+    color: #e8e2da;
+    text-decoration: underline;
+}
+
+
+.ug-gate-form input:focus-visible,
+.ug-gate-form button:focus-visible,
+.ug-final-return a:focus-visible {
+    outline: 2px solid #cc3333;
+    outline-offset: 2px;
+}
+
+
+@media (max-width: 550px) {
+
+    .ug-subject-row span,
+    .ug-subject-row strong {
+        font-size: 9.5px;
+        padding: 7px 6px;
+    }
+
+    .ug-gate {
+        padding: 14px;
+        align-items: flex-start;
+    }
+
+    .ug-gate-card {
+        padding: 22px 16px;
+    }
+
+}
+
+
+/* ===============================
+   响应式补充
+================================ */
+
+@media (max-width: 550px) {
+
+    .ug-table-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ug-subject-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ug-table-subject .ug-table-row {
+        grid-template-columns: 0.6fr 0.8fr 1fr 1fr 0.6fr;
+    }
+
+    .ug-table-subject .ug-table-row span {
+        font-size: 8px;
+    }
+
+    .ug-handnote p {
+        font-size: 12px;
+    }
+
+}
+
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造）
+   -----------------------------------------------------
+   身份：B3 内部研究区域 —— 冷硬归档终端
+   手法：近黑底 + 冷白字、等宽编号、细线框、扫描线，
+         红色只用于受限标记；与宣传页／粉丝站形成最大反差
+===================================================== */
+
+
+:root {
+
+    --ug-fg: #d9d5cd;
+    --ug-fg-soft: #9a948b;
+    --ug-fg-faint: #6d6862;
+
+    --ug-bg: #0d0c0b;
+    --ug-panel: #161513;
+    --ug-panel-2: #1c1b18;
+
+    --ug-red: #b3402f;
+
+    --ug-line: 1px solid rgba(217, 213, 205, 0.22);
+    --ug-line-strong: 1px solid rgba(217, 213, 205, 0.4);
+
+    --ug-mono: "Courier Prime", "Courier New", monospace;
+    --ug-serif: "Noto Serif SC", "Songti SC", serif;
+}
+
+
+/* ---------- 底：近黑 + 扫描线 ---------- */
+
+body {
+
+    background-color: var(--ug-bg);
+
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(217, 213, 205, 0.035) 0 1px,
+        transparent 1px 3px
+    );
+
+    color: var(--ug-fg);
+    font-family: var(--ug-mono);
+}
+
+
+.ug-page {
+
+    background: #100f0e;
+
+    border-left: var(--ug-line);
+    border-right: var(--ug-line);
+}
+
+
+/* ---------- 顶栏 ---------- */
+
+.ug-header {
+
+    background: #131211;
+    border-bottom: var(--ug-line-strong);
+}
+
+
+.ug-symbol {
+
+    color: var(--ug-red);
+}
+
+
+.ug-status {
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--ug-fg-soft);
+}
+
+
+.ug-red {
+
+    color: var(--ug-red);
+    letter-spacing: 1px;
+}
+
+
+/* ---------- 横幅：区号 + 状态印章 ---------- */
+
+.ug-banner {
+
+    background: #141312;
+    border-bottom: var(--ug-line);
+}
+
+
+.ug-banner-code {
+
+    border: 1px solid var(--ug-red);
+    border-radius: 0;
+
+    color: var(--ug-red);
+
+    font-family: var(--ug-mono);
+    letter-spacing: 6px;
+}
+
+
+.ug-banner-info h1 {
+
+    font-family: var(--ug-mono);
+    font-size: 21px;
+    letter-spacing: 5px;
+
+    color: var(--ug-fg);
+}
+
+
+.ug-banner-info p {
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--ug-fg-faint);
+}
+
+
+.ug-banner-stamp {
+
+    border: 1px solid var(--ug-red);
+    border-radius: 0;
+
+    color: var(--ug-red);
+
+    font-family: var(--ug-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    transform: rotate(-3deg);
+}
+
+
+/* ---------- 档案卡片 ---------- */
+
+.ug-file {
+
+    background: var(--ug-panel);
+
+    border: var(--ug-line);
+    border-radius: 0;
+}
+
+
+.ug-file-header {
+
+    background: var(--ug-panel-2);
+    border-bottom: 1px dashed rgba(217, 213, 205, 0.28);
+
+    font-family: var(--ug-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+.ug-file-header span {
+
+    color: var(--ug-fg-faint);
+}
+
+
+.ug-file-header strong {
+
+    color: var(--ug-fg);
+
+    letter-spacing: 2px;
+}
+
+
+.ug-file-body {
+
+    color: #c7c2ba;
+}
+
+
+.ug-file-body p {
+
+    font-family: var(--ug-serif);
+    font-size: 13.5px;
+    line-height: 2.1;
+}
+
+
+/* 手写便条：仍是这份档案里最像「人」的东西 */
+
+.ug-handnote {
+
+    background: #1b1a17;
+
+    border-left: 3px solid var(--ug-red);
+
+    color: #d3cec6;
+}
+
+
+.ug-handnote-sign {
+
+    font-family: var(--ug-mono);
+    font-size: 10.5px;
+    letter-spacing: 2px;
+
+    color: var(--ug-fg-faint);
+}
+
+
+/* ---------- 收容者记录表 ---------- */
+
+.ug-subject-table {
+
+    border-top: var(--ug-line-strong);
+}
+
+
+.ug-subject-row {
+
+    border-bottom: 1px dashed rgba(217, 213, 205, 0.22);
+
+    font-family: var(--ug-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+.ug-subject-header {
+
+    background: var(--ug-panel-2);
+
+    color: var(--ug-fg-faint);
+    letter-spacing: 2px;
+}
+
+
+/* ---------- 页脚 ---------- */
+
+.ug-footer,
+.ug-page footer {
+
+    border-top: var(--ug-line);
+
+    font-family: var(--ug-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--ug-fg-faint);
+}
+
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 700px) {
+
+    .ug-banner-code {
+
+        font-size: 34px;
+        letter-spacing: 4px;
+    }
+
+    .ug-banner-info h1 {
+
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
+
+    .ug-file-body p {
+
+        font-size: 13px;
+        line-height: 2;
+    }
+}
+
+/* ===============================
+   档案检索 · INDEX LOOKUP
+   （按受试者编号定位档案墙上的记录）
+=============================== */
+
+.ug-search {
+
+    margin: 0 0 20px;
+    padding: 13px 15px;
+
+    background: var(--ug-panel, #161513);
+    border: var(--ug-line, 1px solid rgba(217, 213, 205, 0.22));
+}
+
+.ug-search-label {
+
+    margin-bottom: 8px;
+
+    font-family: var(--ug-mono, "Courier Prime", "Courier New", monospace);
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: var(--ug-fg-faint, #6d6862);
+}
+
+.ug-search-row {
+
+    display: flex;
+    gap: 8px;
+}
+
+.ug-search-input {
+
+    flex: 1;
+    min-width: 0;
+
+    padding: 9px 11px;
+
+    background: #0f0e0c;
+    border: 1px solid #332e28;
+    border-radius: 3px;
+
+    color: #ded8cf;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.ug-search-input::placeholder {
+
+    color: #4f4842;
+}
+
+.ug-search-input:focus {
+
+    outline: none;
+    border-color: #8a1f1f;
+}
+
+.ug-search-btn {
+
+    padding: 9px 16px;
+
+    background: #8a1f1f;
+    border: 1px solid #a83232;
+    border-radius: 3px;
+
+    color: #f2e9e4;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.ug-search-btn:hover,
+.ug-search-btn:focus-visible {
+
+    background: #a83232;
+}
+
+.ug-search-status {
+
+    margin-top: 8px;
+    min-height: 19px;
+
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+
+    color: #8b8177;
+}
+
+
+/* ---------- 命中的档案行 ---------- */
+
+.ug-search-hit {
+
+    background: rgba(138, 31, 31, 0.2) !important;
+    box-shadow: inset 3px 0 0 #c0392b;
+
+    animation: ugHitFlash 0.9s ease-out 1;
+}
+
+@keyframes ugHitFlash {
+
+    from {
+
+        background: rgba(192, 57, 43, 0.5);
+    }
+
+    to {
+
+        background: rgba(138, 31, 31, 0.2);
+    }
+}
+
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 520px) {
+
+    .ug-search {
+
+        margin: 0 12px 14px;
+    }
+
+    .ug-search-row {
+
+        flex-wrap: wrap;
+    }
+
+    .ug-search-btn {
+
+        width: 100%;
+    }
+}
+
+
+/* ---------- 减弱动态效果 ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ug-search-hit {
+
+        animation: none;
+    }
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

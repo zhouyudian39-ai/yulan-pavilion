@@ -1,0 +1,391 @@
+/* =====================================================
+   Y2K 材质与拼贴基础件 · 跨站共用
+   Y2K MATERIALS & COLLAGE PRIMITIVES
+   -----------------------------------------------------
+   只提供「材质」，不提供「版式」：
+     白色贴纸描边 / 拍立得边框 / 半透明与棋盘格胶带 /
+     棋盘格 / 扫描线 / 细网格 / 铬银条 / 挖字标题 /
+     空心描边字 / 星形印章 / 条形码 / 星星与爱心
+   站点身份由各自令牌决定（覆盖 --y2k-accent 等即可），
+   避免全站套同一个粉色模板。
+   类名一律以 y2k- 前缀命名，不与站点样式冲突。
+===================================================== */
+
+
+/* ===============================
+   令牌（站点可覆盖）
+=============================== */
+
+:root {
+
+    --y2k-ink: #17171a;
+
+    --y2k-paper: #fffdf8;
+
+    --y2k-accent: #f0709f;
+    --y2k-accent-deep: #b62f6c;
+    --y2k-accent-2: #8fd8f0;
+    --y2k-accent-3: #ffd74d;
+
+    --y2k-metal-1: #ffffff;
+    --y2k-metal-2: #e6e7ee;
+    --y2k-metal-3: #b9bbc7;
+
+    --y2k-shadow-1: 3px 3px 0 rgba(23, 23, 26, 0.16);
+    --y2k-shadow-2: 6px 7px 0 rgba(23, 23, 26, 0.18);
+
+    --y2k-display: "Archivo Black", "Arial Black", "Noto Sans SC",
+        "Microsoft YaHei", sans-serif;
+
+    --y2k-mono: "Courier Prime", "Courier New", monospace;
+}
+
+
+/* ===============================
+   白色贴纸描边
+=============================== */
+
+.y2k-sticker {
+
+    box-shadow:
+        0 0 0 3px var(--y2k-paper),
+        0 0 0 4px var(--y2k-ink),
+        var(--y2k-shadow-2);
+}
+
+
+/* 薄一点的贴纸（面积小的时候用） */
+
+.y2k-sticker-lite {
+
+    box-shadow:
+        0 0 0 2px var(--y2k-paper),
+        0 0 0 3px rgba(23, 23, 26, 0.7),
+        var(--y2k-shadow-1);
+}
+
+
+/* ===============================
+   拍立得边框
+=============================== */
+
+.y2k-frame {
+
+    padding: 7px 7px 0;
+
+    background: var(--y2k-paper);
+
+    border: 1px solid rgba(23, 23, 26, 0.88);
+
+    box-shadow: var(--y2k-shadow-1);
+}
+
+
+.y2k-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    object-fit: cover;
+
+    background: var(--y2k-metal-2);
+}
+
+
+/* ===============================
+   胶带（半透明 / 粉调）
+=============================== */
+
+.y2k-tape {
+
+    position: absolute;
+
+    pointer-events: none;
+    user-select: none;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    border-left: 1px solid rgba(23, 23, 26, 0.14);
+    border-right: 1px solid rgba(23, 23, 26, 0.14);
+
+    box-shadow: 0 1px 0 rgba(23, 23, 26, 0.08);
+}
+
+
+.y2k-tape-accent {
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.58) 0%,
+        rgba(240, 112, 159, 0.58) 100%
+    );
+}
+
+
+/* 棋盘格胶带：斜向细条 */
+
+.y2k-tape-check {
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(23, 23, 26, 0.9) 0 2px,
+        transparent 2px 7px
+    );
+}
+
+
+/* ===============================
+   棋盘格（板边 / 底条）
+=============================== */
+
+.y2k-checker {
+
+    background-image: conic-gradient(
+        var(--y2k-ink) 0 25%,
+        transparent 0 50%,
+        var(--y2k-ink) 0 75%,
+        transparent 0
+    );
+
+    background-size: 10px 10px;
+}
+
+
+.y2k-checker-light {
+
+    background-image: conic-gradient(
+        rgba(23, 23, 26, 0.55) 0 25%,
+        transparent 0 50%,
+        rgba(23, 23, 26, 0.55) 0 75%,
+        transparent 0
+    );
+
+    background-size: 8px 8px;
+}
+
+
+/* ===============================
+   扫描线 / 细网格
+=============================== */
+
+.y2k-scan {
+
+    background-image: repeating-linear-gradient(
+        180deg,
+        rgba(23, 23, 26, 0.085) 0 1px,
+        transparent 1px 4px
+    );
+}
+
+
+.y2k-grid-fine {
+
+    background-image:
+        linear-gradient(to right, rgba(23, 23, 26, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(23, 23, 26, 0.06) 1px, transparent 1px);
+
+    background-size: 26px 26px;
+}
+
+
+/* ===============================
+   铬银条
+=============================== */
+
+.y2k-chrome {
+
+    background: linear-gradient(
+        to bottom,
+        var(--y2k-metal-1) 0%,
+        var(--y2k-metal-2) 52%,
+        var(--y2k-metal-3) 100%
+    );
+}
+
+
+/* ===============================
+   挖字标题（白描边 + 渐变填充）
+   用法：<span class="y2k-cutout" data-text="梦琪">梦琪</span>
+=============================== */
+
+.y2k-cutout {
+
+    position: relative;
+    display: inline-block;
+
+    font-family: var(--y2k-display);
+    line-height: 0.86;
+
+    background-image: linear-gradient(
+        178deg,
+        #ffe6f2 0%,
+        var(--y2k-accent) 44%,
+        var(--y2k-accent-deep) 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 4px 0 rgba(23, 23, 26, 0.18),
+        0 5px 0 rgba(23, 23, 26, 0.12);
+}
+
+
+/* 白描边层：给「剪纸字」补一圈白边 */
+
+.y2k-cutout::before {
+
+    content: attr(data-text);
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    color: var(--y2k-paper);
+
+    -webkit-text-stroke: 0.17em var(--y2k-paper);
+    paint-order: stroke fill;
+
+    text-shadow: none;
+}
+
+
+/* ===============================
+   空心描边字（副标题常用）
+=============================== */
+
+.y2k-outline {
+
+    color: transparent;
+
+    -webkit-text-stroke: 1.4px var(--y2k-ink);
+}
+
+
+/* ===============================
+   星星 / 爱心（纯字符 + 白边）
+=============================== */
+
+.y2k-star,
+.y2k-heart {
+
+    display: inline-block;
+
+    line-height: 1;
+
+    pointer-events: none;
+    user-select: none;
+
+    text-shadow:
+        0 0 5px var(--y2k-paper),
+        0 0 5px var(--y2k-paper),
+        1px 2px 0 rgba(23, 23, 26, 0.25);
+}
+
+
+.y2k-star {
+
+    color: var(--y2k-accent-3);
+}
+
+
+.y2k-heart {
+
+    color: var(--y2k-accent);
+}
+
+
+/* ===============================
+   星形印章（齿边圆章）
+=============================== */
+
+.y2k-seal {
+
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 76px;
+    height: 76px;
+
+    padding: 0 12px;
+
+    background: var(--y2k-accent-3);
+    color: var(--y2k-ink);
+
+    font-family: var(--y2k-mono);
+    font-size: 8px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-align: center;
+
+    clip-path: polygon(
+        50% 0%, 60% 12%, 75% 6%, 79% 21%, 94% 22%, 90% 36%,
+        100% 46%, 92% 58%, 99% 70%, 84% 75%, 82% 90%, 67% 85%,
+        56% 98%, 46% 86%, 31% 93%, 25% 79%, 10% 79%, 13% 64%,
+        0% 55%, 9% 42%, 3% 29%, 18% 25%, 21% 10%, 36% 15%
+    );
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* ===============================
+   条形码
+=============================== */
+
+.y2k-barcode {
+
+    display: block;
+
+    height: 26px;
+
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--y2k-ink) 0 2px,
+        transparent 2px 4px,
+        var(--y2k-ink) 4px 5px,
+        transparent 5px 9px,
+        var(--y2k-ink) 9px 12px,
+        transparent 12px 14px
+    );
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   减少动态效果
+=============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .y2k-seal,
+    .y2k-tape,
+    .y2k-cutout,
+    .y2k-star,
+    .y2k-heart,
+    .y2k-barcode,
+    .y2k-scan {
+
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

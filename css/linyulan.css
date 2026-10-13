@@ -1,0 +1,1264 @@
+/* =====================================================
+   林玉兰 · 创始人履历
+   玉兰阁 · 档案风格
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fafaf8;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.lyl-page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ===============================
+   顶部导航
+================================ */
+
+.yp-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 30px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.yp-brand { flex-shrink: 0; }
+
+.yp-logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+.yp-nav {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.yp-nav a {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.15s;
+    letter-spacing: 1px;
+}
+
+.yp-nav a:hover {
+    background: #f8f5f2;
+    color: #8a1f1f;
+}
+
+.yp-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.yp-search-trigger {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.yp-login-trigger {
+    padding: 7px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+.yp-login-trigger:hover {
+    border-color: #8a1f1f;
+    color: #8a1f1f;
+}
+
+
+/* ===============================
+   面包屑
+================================ */
+
+.lyl-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 30px;
+    font-size: 11px;
+    color: #999;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.lyl-breadcrumb a {
+    color: #666;
+    text-decoration: none;
+}
+
+
+.lyl-breadcrumb a:hover {
+    color: #8a1f1f;
+}
+
+
+.lyl-breadcrumb .current {
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   个人资料头部
+================================ */
+
+.lyl-hero {
+    display: flex;
+    gap: 30px;
+    padding: 35px 30px;
+    background: linear-gradient(135deg, #fdf8f5 0%, #fff 50%, #fdf8f5 100%);
+    border-bottom: 3px double #e0d0c0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.lyl-portrait {
+    width: 220px;
+    flex-shrink: 0;
+}
+
+
+.lyl-portrait img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border: 5px double #d4af37;
+    box-shadow: 6px 6px 0 rgba(90,31,26,0.15);
+}
+
+
+.lyl-portrait-caption {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
+    font-family: "Courier Prime", monospace;
+}
+
+
+.lyl-info {
+    flex: 1;
+    min-width: 260px;
+}
+
+
+.lyl-label {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #8a1f1f;
+    margin-bottom: 8px;
+}
+
+
+.lyl-info h1 {
+    font-size: 38px;
+    letter-spacing: 5px;
+    color: #5a1f1a;
+    margin-bottom: 3px;
+}
+
+
+.lyl-en-name {
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+
+.lyl-bio {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+.lyl-quote {
+    padding: 12px 18px;
+    background: #fdf8f5;
+    border-left: 4px solid #d4af37;
+    font-size: 15px;
+    font-style: italic;
+    color: #5a1f1a;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+
+.lyl-basics {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.lyl-basic-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.lyl-basic-item span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+
+.lyl-basic-item strong {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+
+.lyl-basic-item .lyl-active {
+    color: #4a8a5a;
+}
+
+
+/* ===============================
+   通用区块标题
+================================ */
+
+.lyl-section-title {
+    text-align: center;
+    padding: 35px 0 20px;
+}
+
+
+.lyl-section-title h2 {
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+
+.lyl-section-title p {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+
+/* ===============================
+   职业履历时间线
+================================ */
+
+.lyl-timeline-section {
+    padding: 0 30px;
+}
+
+
+.lyl-timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 2px solid #e0d0c0;
+    padding-left: 30px;
+}
+
+
+.lyl-timeline-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    align-items: flex-start;
+}
+
+
+.lyl-year {
+    width: 50px;
+    flex-shrink: 0;
+    font-family: "Courier Prime", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #8a1f1f;
+    padding-top: 2px;
+}
+
+
+.lyl-dot {
+    position: absolute;
+    left: -37px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 3px solid #8a1f1f;
+    border-radius: 50%;
+}
+
+
+.lyl-timeline-info h3 {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+
+.lyl-timeline-info p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.7;
+}
+
+
+/* ===============================
+   历年影像
+================================ */
+
+.lyl-photos-section {
+    padding: 0 30px 30px;
+    background: #fdfaf7;
+}
+
+
+.lyl-photos-note {
+    text-align: center;
+    font-size: 11px;
+    color: #bbb;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+
+.lyl-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+.lyl-photo-card {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.2s;
+}
+
+
+.lyl-photo-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+
+.lyl-photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: sepia(0.2);
+    transition: 0.3s;
+}
+
+
+.lyl-photo-card:hover img {
+    filter: sepia(0);
+}
+
+
+.lyl-photo-info {
+    padding: 8px;
+}
+
+
+.lyl-photo-year {
+    display: block;
+    font-family: "Courier Prime", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #8a1f1f;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+
+.lyl-photo-info p {
+    font-size: 10px;
+    color: #999;
+}
+
+
+/* ===============================
+   公开言论
+================================ */
+
+.lyl-quotes-section {
+    padding: 0 30px 30px;
+}
+
+
+.lyl-quote-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.lyl-quote-item {
+    padding: 15px 18px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-left: 3px solid #d4af37;
+    border-radius: 6px;
+}
+
+
+.lyl-quote-item p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 6px;
+}
+
+
+.lyl-quote-item span {
+    font-size: 10px;
+    color: #999;
+    font-family: "Courier Prime", "Noto Serif SC", monospace;
+    letter-spacing: 1px;
+}
+
+
+.lyl-quote-item.lyl-quote-odd {
+    border-left-color: #8a1f1f;
+    background: #fdf8f5;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.yp-footer {
+    text-align: center;
+    padding: 25px 30px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.yp-footer-brand { margin-bottom: 8px; }
+
+.yp-footer-logo { height: 32px; width: auto; }
+
+.yp-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.yp-footer-links a {
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+}
+
+.yp-footer-links a:hover { color: #8a1f1f; }
+
+.yp-footer p {
+    font-size: 10px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.yp-footer-version {
+    display: block;
+    margin-top: 8px;
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ddd;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .yp-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .lyl-breadcrumb {
+        padding: 8px 20px;
+    }
+
+    .lyl-hero {
+        padding: 25px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lyl-portrait {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .lyl-portrait img {
+        height: 250px;
+    }
+
+    .lyl-info h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .lyl-timeline-section,
+    .lyl-photos-section,
+    .lyl-quotes-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .lyl-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .lyl-photo-card img {
+        height: 140px;
+    }
+
+}
+
+/* ===============================
+   近期项目
+================================ */
+
+.lyl-projects-section {
+    padding: 0 30px 30px;
+}
+
+
+.lyl-project-list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.lyl-project-card {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: 0.2s;
+}
+
+
+.lyl-project-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+}
+
+
+.lyl-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+.lyl-project-status {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+.status-ongoing {
+    background: #f0f8f0;
+    color: #4a8a5a;
+}
+
+
+.lyl-project-date {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    color: #999;
+}
+
+
+.lyl-project-card h3 {
+    font-size: 15px;
+    color: #1e2933;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+
+.lyl-project-card > p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+
+.lyl-project-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dotted #f0f0f0;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+
+.lyl-project-detail span {
+    color: #999;
+}
+
+
+.lyl-project-detail strong {
+    color: #333;
+    font-weight: 600;
+}
+
+
+.lyl-project-status-active {
+    color: #4a8a5a !important;
+}
+
+
+.lyl-project-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #8a1f1f;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.lyl-project-link:hover {
+    color: #5a1f1a;
+}
+
+
+.lyl-projects-note {
+    text-align: center;
+    font-size: 10px;
+    color: #ccc;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   响应式补充
+================================ */
+
+@media (max-width: 750px) {
+
+    .lyl-projects-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .lyl-project-card {
+        padding: 15px;
+    }
+
+}
+
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造）
+   -----------------------------------------------------
+   身份：林玉兰履历 —— 玉兰阁档案 / 早期美容品牌印刷感
+   与 yulan-index 同一套手法：米白、墨线、暗红、衬线大标题、
+   等宽小字；照片位由容器定尺寸
+===================================================== */
+
+
+:root {
+
+    --lyl-ink: #1d1a18;
+    --lyl-ink-soft: #5c5852;
+    --lyl-ink-faint: #9a938c;
+
+    --lyl-cream: #fafaf8;
+    --lyl-paper: #ffffff;
+    --lyl-sand: #f7f2ec;
+    --lyl-red: #8a1f1f;
+
+    --lyl-line: 1px solid rgba(29, 26, 24, 0.25);
+    --lyl-mono: "Courier Prime", "Courier New", monospace;
+    --lyl-serif: "Noto Serif SC", "Songti SC", serif;
+    --lyl-display: "Playfair Display", "Noto Serif SC", serif;
+}
+
+
+body {
+
+    background-color: var(--lyl-cream);
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        );
+
+    color: var(--lyl-ink);
+    font-family: var(--lyl-serif);
+}
+
+
+/* ---------- 待补照片：斜纹底 ---------- */
+
+.lyl-page img {
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    color: transparent;
+}
+
+
+/* ---------- 顶栏（与官网同款） ---------- */
+
+.yp-header {
+
+    background: var(--lyl-paper);
+    border-bottom: 2px solid var(--lyl-ink);
+
+    box-shadow: 0 3px 0 rgba(138, 31, 31, 0.16);
+}
+
+
+.yp-nav a {
+
+    border-radius: 2px;
+
+    color: #55524e;
+    letter-spacing: 2px;
+}
+
+
+.yp-nav a:hover {
+
+    background: transparent;
+    color: var(--lyl-red);
+
+    text-decoration: underline;
+}
+
+
+.yp-login-trigger {
+
+    background: var(--lyl-paper);
+    border: 1px solid var(--lyl-ink);
+    border-radius: 2px;
+
+    color: var(--lyl-ink);
+    letter-spacing: 2px;
+}
+
+
+.yp-login-trigger:hover {
+
+    background: var(--lyl-red);
+    border-color: var(--lyl-red);
+
+    color: #ffffff;
+}
+
+
+/* ---------- 面包屑 ---------- */
+
+.lyl-breadcrumb {
+
+    background: var(--lyl-paper);
+    border-bottom: var(--lyl-line);
+
+    font-family: var(--lyl-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+
+    color: var(--lyl-ink-faint);
+}
+
+
+.lyl-breadcrumb a {
+
+    color: var(--lyl-red);
+}
+
+
+/* ---------- 个人资料头部：照片位由容器定尺寸 ---------- */
+
+.lyl-hero {
+
+    padding: 40px 30px 10px;
+}
+
+
+.lyl-portrait {
+
+    position: relative;
+
+    padding-top: 300px;
+
+    border: 1px solid var(--lyl-ink);
+    border-radius: 2px;
+
+    overflow: hidden;
+
+    box-shadow: 8px 9px 0 rgba(29, 26, 24, 0.1);
+}
+
+
+.lyl-portrait img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border: none;
+}
+
+
+.lyl-portrait-caption {
+
+    padding: 8px 10px;
+
+    background: var(--lyl-paper);
+
+    font-family: var(--lyl-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--lyl-ink-faint);
+}
+
+
+.lyl-label {
+
+    display: inline-block;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid rgba(138, 31, 31, 0.5);
+
+    letter-spacing: 4px;
+}
+
+
+.lyl-info h1 {
+
+    font-family: var(--lyl-display);
+    font-size: 42px;
+    letter-spacing: 3px;
+}
+
+
+.lyl-en-name {
+
+    font-family: var(--lyl-mono);
+    letter-spacing: 5px;
+
+    color: var(--lyl-ink-faint);
+}
+
+
+.lyl-bio {
+
+    font-size: 13.5px;
+    line-height: 2.1;
+
+    color: var(--lyl-ink-soft);
+}
+
+
+.lyl-quote {
+
+    background: var(--lyl-sand);
+
+    border-left: 3px solid var(--lyl-red);
+
+    font-size: 14px;
+    line-height: 2;
+
+    color: var(--lyl-ink);
+}
+
+
+/* ---------- 基础信息：细线卡 ---------- */
+
+.lyl-basic-item {
+
+    background: var(--lyl-paper);
+    border: 1px solid var(--lyl-ink);
+    border-radius: 2px;
+}
+
+
+.lyl-basic-item span {
+
+    font-family: var(--lyl-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--lyl-ink-faint);
+}
+
+
+.lyl-basic-item strong {
+
+    letter-spacing: 1px;
+}
+
+
+/* ---------- 区块标题 ---------- */
+
+.lyl-section-title {
+
+    position: relative;
+
+    padding: 46px 0 24px;
+}
+
+
+.lyl-section-title::before {
+
+    content: "";
+
+    position: absolute;
+    top: 26px;
+    left: 50%;
+
+    width: 40px;
+    height: 1px;
+
+    background: var(--lyl-red);
+
+    transform: translateX(-50%);
+}
+
+
+.lyl-section-title h2 {
+
+    font-family: var(--lyl-display);
+    font-size: 26px;
+    letter-spacing: 6px;
+}
+
+
+.lyl-section-title p {
+
+    font-family: var(--lyl-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: var(--lyl-ink-faint);
+}
+
+
+/* ---------- 履历时间轴 ---------- */
+
+.lyl-year {
+
+    font-family: var(--lyl-mono);
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    color: var(--lyl-red);
+}
+
+
+.lyl-dot {
+
+    background: var(--lyl-red);
+
+    border: none;
+    border-radius: 0;
+}
+
+
+.lyl-timeline-info h3 {
+
+    letter-spacing: 1px;
+}
+
+
+.lyl-timeline-info p {
+
+    font-size: 12.5px;
+    line-height: 1.95;
+
+    color: var(--lyl-ink-soft);
+}
+
+
+/* ---------- 照片卡：容器定尺寸 ---------- */
+
+.lyl-photo-card {
+
+    position: relative;
+
+    padding-top: 220px;
+
+    background: var(--lyl-paper);
+
+    border: 1px solid var(--lyl-ink);
+    border-radius: 2px;
+
+    overflow: hidden;
+}
+
+
+.lyl-photo-card img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border: none;
+}
+
+
+.lyl-photo-info {
+
+    padding: 10px 12px;
+
+    border-top: 1px dashed rgba(29, 26, 24, 0.25);
+
+    font-family: var(--lyl-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+
+    color: var(--lyl-ink-soft);
+}
+
+
+/* ---------- 项目卡 ---------- */
+
+.lyl-project-card {
+
+    background: var(--lyl-paper);
+
+    border: 1px solid var(--lyl-ink);
+    border-radius: 2px;
+
+    box-shadow: 4px 4px 0 rgba(29, 26, 24, 0.08);
+}
+
+
+.lyl-project-header {
+
+    border-bottom: 1px dashed rgba(29, 26, 24, 0.25);
+}
+
+
+.lyl-project-status {
+
+    border: 1px solid rgba(29, 26, 24, 0.5);
+    border-radius: 2px;
+
+    font-family: var(--lyl-mono);
+    font-size: 9.5px;
+    letter-spacing: 2px;
+}
+
+
+.lyl-project-date {
+
+    font-family: var(--lyl-mono);
+    letter-spacing: 1px;
+}
+
+
+.lyl-project-detail {
+
+    font-family: var(--lyl-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+}
+
+
+.lyl-projects-note {
+
+    font-family: var(--lyl-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--lyl-ink-faint);
+}
+
+
+/* ---------- 公开言论 ---------- */
+
+.lyl-quote-item {
+
+    background: var(--lyl-paper);
+
+    border: 1px solid var(--lyl-ink);
+    border-left: 3px solid var(--lyl-red);
+    border-radius: 2px;
+}
+
+
+.lyl-quote-item p {
+
+    font-size: 13.5px;
+    line-height: 2.05;
+
+    color: var(--lyl-ink);
+}
+
+
+/* ---------- 窄屏：重述本层改过的值 ---------- */
+
+@media (max-width: 760px) {
+
+    .lyl-hero {
+
+        padding: 24px 18px 6px;
+    }
+
+    .lyl-portrait {
+
+        padding-top: 220px;
+    }
+
+    .lyl-portrait img {
+
+        height: 220px;
+    }
+
+    .lyl-info h1 {
+
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .lyl-section-title {
+
+        padding: 34px 0 18px;
+    }
+
+    .lyl-section-title::before {
+
+        top: 18px;
+    }
+
+    .lyl-section-title h2 {
+
+        font-size: 21px;
+        letter-spacing: 4px;
+    }
+
+    .lyl-photo-card {
+
+        padding-top: 180px;
+    }
+
+    .lyl-photo-card img {
+
+        height: 180px;
+    }
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

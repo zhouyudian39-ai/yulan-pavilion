@@ -1,0 +1,287 @@
+/* =====================================================
+   香港都市传说论坛 · URBAN LEGEND HK
+   urbanlegend.hk
+   民俗 / 灵异 / 未解事件讨论区
+
+   与「新生女孩论坛」(css/forum.css) 共用结构，
+   本文件只做冷色调覆盖，不重复定义布局。
+   选择器都带 body.urban-body 前缀，确保覆盖生效。
+===================================================== */
+
+
+/* ===============================
+   页面基础
+================================ */
+
+body.urban-body {
+    background: #101219;
+    color: #aab4c4;
+}
+
+
+body.urban-body .forum-page {
+    background: #171a22;
+    border: 1px solid #2b3242;
+    box-shadow: 0 0 0 1px rgba(120, 150, 190, 0.06),
+                0 18px 40px rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
+}
+
+
+/* ===============================
+   顶部
+================================ */
+
+body.urban-body .forum-header {
+    background: linear-gradient(180deg, #1d2230 0%, #151922 100%);
+    border-bottom: 1px solid #2b3242;
+}
+
+
+body.urban-body .brand-flower {
+    animation: none;
+    filter: grayscale(0.4);
+}
+
+
+body.urban-body .forum-brand strong {
+    color: #93b0d4;
+    letter-spacing: 4px;
+}
+
+
+body.urban-body .forum-brand small {
+    color: #5f6b7d;
+}
+
+
+body.urban-body .forum-nav span {
+    color: #7d8798;
+}
+
+
+body.urban-body .forum-nav span:hover {
+    color: #c3d2e6;
+}
+
+
+/* ===============================
+   横幅
+================================ */
+
+body.urban-body .forum-banner {
+    background: linear-gradient(160deg, #1b2130 0%, #14171f 100%);
+    border-bottom: 1px solid #262c3a;
+}
+
+
+body.urban-body .forum-banner h1 {
+    color: #b9c8de;
+    text-shadow: 0 0 18px rgba(110, 150, 200, 0.18);
+}
+
+
+body.urban-body .forum-banner p {
+    color: #6f7a8c;
+}
+
+
+body.urban-body .forum-banner::after {
+    opacity: 0.25;
+}
+
+
+/* ===============================
+   访客提示条
+================================ */
+
+body.urban-body .visitor-alert {
+    background: #1a1f2b;
+    border: 1px solid #2f3849;
+    color: #8d99ab;
+}
+
+
+body.urban-body .visitor-alert span {
+    color: #c9a26a;
+}
+
+
+body.urban-body .visitor-alert small {
+    color: #5c6675;
+}
+
+
+/* ===============================
+   帖子
+================================ */
+
+body.urban-body .post-card {
+    background: #1b1f29;
+    border: 1px solid #262d3b;
+    border-radius: 4px;
+}
+
+
+body.urban-body .post-card:hover {
+    border-color: #3a4457;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+}
+
+
+body.urban-body .post-side {
+    background: #161a22;
+    border-right: 1px solid #242a37;
+}
+
+
+body.urban-body .post-avatar,
+body.urban-body .post-side .text-avatar {
+    background: #212838;
+    border: 1px solid #333d52;
+    color: #93b0d4;
+}
+
+
+body.urban-body .post-user {
+    color: #8fa3bd;
+}
+
+
+body.urban-body .post-level {
+    color: #5f6a7b;
+}
+
+
+body.urban-body .post-stats {
+    color: #5a6371;
+}
+
+
+body.urban-body .post-title {
+    color: #c6d3e6;
+}
+
+
+body.urban-body .post-card:hover .post-title {
+    color: #dbe6f5;
+}
+
+
+body.urban-body .post-time {
+    color: #5c6675;
+}
+
+
+body.urban-body .post-content p {
+    color: #98a3b4;
+}
+
+
+body.urban-body .post-content a {
+    color: #8fb2d8;
+}
+
+
+/* ===============================
+   回复
+================================ */
+
+body.urban-body .reply {
+    background: #171b24;
+    border-left: 2px solid #303a4c;
+}
+
+
+body.urban-body .reply:hover {
+    background: #1c212c;
+}
+
+
+body.urban-body .reply-user {
+    color: #7ea88f;
+}
+
+
+body.urban-body .reply-time {
+    color: #59626f;
+}
+
+
+body.urban-body .reply-text {
+    color: #94a0b1;
+}
+
+
+body.urban-body .reply-text strong {
+    color: #c6d3e6;
+}
+
+
+/* ===============================
+   版规提示（本页新增，仅文字）
+================================ */
+
+.urban-notice {
+    margin: 0 25px 22px;
+    padding: 14px 16px;
+    background: #1a1f2a;
+    border: 1px dashed #333d50;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #7f8a9c;
+}
+
+
+.urban-notice strong {
+    display: block;
+    color: #9db2cd;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+
+/* ===============================
+   底部
+================================ */
+
+body.urban-body .forum-footer {
+    background: #14171f;
+    border-top: 1px solid #262d3b;
+}
+
+
+body.urban-body .footer-sponsor strong {
+    color: #8fa3bd;
+}
+
+
+body.urban-body .footer-sponsor p,
+body.urban-body .footer-note {
+    color: #5f6a7b;
+}
+
+
+body.urban-body .visitor-trace {
+    color: #6d7a8d;
+}
+
+
+/* ===============================
+   窄屏
+================================ */
+
+@media (max-width: 640px) {
+
+    .urban-notice {
+        margin: 0 14px 18px;
+    }
+
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

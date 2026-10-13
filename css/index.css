@@ -1,0 +1,985 @@
+/* =====================================================
+   LUMI · 搜索引擎首页
+   纯白 · 真实搜索引擎质感
+===================================================== */
+
+
+/* ===============================
+   基础
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+    color: #202124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* ===============================
+   顶部导航
+================================ */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    font-size: 13px;
+}
+
+
+.topbar-left {
+    display: flex;
+    gap: 18px;
+}
+
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.top-link {
+    color: #5f6368;
+    text-decoration: none;
+    transition: 0.15s;
+}
+
+
+.top-link:hover {
+    color: #202124;
+    text-decoration: underline;
+}
+
+
+.my-link {
+    color: #202124;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.my-link:hover {
+    color: #b85a4a;
+    text-decoration: underline;
+}
+
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f0e0dc;
+    color: #b85a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+
+.avatar:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+
+/* ===============================
+   中央搜索区
+================================ */
+
+.search-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8vh;
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #202124;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    user-select: none;
+}
+
+
+.logo span {
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #9aa0a6;
+}
+
+
+/* 搜索框 */
+
+.search-wrap {
+    position: relative;
+    width: 580px;
+    max-width: 90%;
+}
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    transition: 0.2s;
+}
+
+
+.search-box:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.15);
+    border-color: rgba(223,225,229,0);
+}
+
+
+.search-box:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.18);
+    border-color: rgba(223,225,229,0);
+}
+
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #9aa0a6;
+    flex-shrink: 0;
+}
+
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: "Noto Serif SC", serif;
+    font-size: 16px;
+    color: #202124;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+.clear-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #9aa0a6;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    display: block;
+    transition: 0.15s;
+}
+
+
+.clear-btn:hover {
+    color: #202124;
+}
+
+
+/* 下拉搜索记录 */
+
+.suggest {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(32,33,36,0.18);
+    padding: 8px 0;
+    z-index: 100;
+}
+
+
+.suggest-label {
+    padding: 8px 20px;
+    font-size: 12px;
+    color: #9aa0a6;
+    letter-spacing: 1px;
+}
+
+
+.suggest-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #202124;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+
+.suggest-item:hover {
+    background: #f8f9fa;
+}
+
+
+.suggest-item.warning-item {
+    color: #b85a4a;
+}
+
+
+.suggest-time {
+    font-size: 14px;
+    color: #9aa0a6;
+    flex-shrink: 0;
+}
+
+
+/* 搜索按钮 */
+
+.search-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 22px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.15s;
+    letter-spacing: 1px;
+}
+
+
+.btn-primary {
+    background: #202124;
+    color: #fff;
+    border: 1px solid #202124;
+}
+
+
+.btn-primary:hover {
+    background: #3c4043;
+    border-color: #3c4043;
+}
+
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #3c4043;
+    border: 1px solid #f8f9fa;
+}
+
+
+.btn-secondary:hover {
+    box-shadow: 0 1px 4px rgba(32,33,36,0.15);
+    border-color: #dadce0;
+}
+
+
+/* 提示文字 */
+
+.hint-text {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #5f6368;
+}
+
+
+.hint-text a {
+    color: #1a73e8;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+
+.hint-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #f2f2f2;
+    font-size: 13px;
+    color: #5f6368;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 18px;
+}
+
+
+.footer-links a {
+    color: #5f6368;
+    text-decoration: none;
+}
+
+
+.footer-links a:hover {
+    color: #202124;
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 650px) {
+
+    .logo {
+        font-size: 52px;
+        letter-spacing: 5px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .search-wrap {
+        width: 92%;
+    }
+
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .search-main {
+        padding-top: 6vh;
+    }
+
+    .search-buttons {
+        gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 9px 16px;
+        font-size: 13px;
+    }
+
+}
+
+/* ===============================
+   头像链接
+================================ */
+
+.avatar-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ===============================
+   搜索结果视图
+================================ */
+
+.search-results {
+    flex: 1;
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px 30px 60px;
+    box-sizing: border-box;
+}
+
+
+.results-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+
+.results-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #202124;
+    flex-shrink: 0;
+}
+
+
+.results-search-box {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid #dfe1e5;
+    border-radius: 20px;
+}
+
+
+.results-search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    color: #202124;
+    background: transparent;
+}
+
+
+.results-clear {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.results-search-btn {
+    padding: 8px 20px;
+    background: #202124;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+
+/* 结果统计 */
+.results-count {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+
+/* 结果条目 */
+.result-item {
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.result-item.primary-result {
+    background: #fdf8f5;
+    border: 1px solid #f0e0d8;
+    border-radius: 8px;
+    padding: 15px 18px;
+    border-bottom: 1px solid #f0e0d8;
+}
+
+
+.result-url {
+    font-size: 11px;
+    color: #4a9a5a;
+    margin-bottom: 3px;
+}
+
+
+.result-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a73e8;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+.result-title:hover {
+    text-decoration: underline;
+}
+
+
+.result-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+.result-links {
+    margin-top: 8px;
+    display: flex;
+    gap: 14px;
+}
+
+
+.result-links span {
+    font-size: 12px;
+    color: #1a73e8;
+    cursor: pointer;
+}
+
+
+.result-links span:hover {
+    text-decoration: underline;
+}
+
+
+/* 相关搜索 */
+.related-searches {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+}
+
+
+.related-searches span {
+    color: #999;
+}
+
+
+.related-searches a {
+    color: #1a73e8;
+    text-decoration: none;
+    padding: 4px 10px;
+    background: #f8f9fa;
+    border-radius: 14px;
+    font-size: 12px;
+}
+
+
+.related-searches a:hover {
+    background: #eef3fc;
+}
+
+
+/* =====================================================
+   开篇入口（Y2K 桌面开篇）
+   位于 Logo 与搜索框之间：做成一张贴纸，
+   体量克制，不抢搜索框
+===================================================== */
+
+.intro-entry {
+    position: relative;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+
+    max-width: 90%;
+    margin: 14px 0 26px;
+    padding: 7px 15px 7px 11px;
+
+    background: linear-gradient(180deg, #ffffff 0%, #ffe3f0 100%);
+    border: 1px solid #17171a;
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 0 2px #fffdf8,
+        3px 4px 0 rgba(23, 23, 26, 0.14);
+
+    font-size: 12.5px;
+    line-height: 1.6;
+
+    transform: rotate(-0.6deg);
+}
+
+
+.intro-entry-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 17px;
+    height: 17px;
+
+    background: linear-gradient(180deg, #ffaed3 0%, #b62f6c 100%);
+    border: 1px solid #17171a;
+    border-radius: 50%;
+
+    color: #fffdf8;
+    font-size: 7px;
+}
+
+
+.intro-entry a {
+    color: #17171a;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(240, 112, 159, 0.85);
+}
+
+
+.intro-entry a:hover,
+.intro-entry a:focus-visible {
+    color: #b62f6c;
+    border-bottom-color: #17171a;
+}
+
+
+.intro-entry-note {
+    padding-left: 9px;
+
+    border-left: 1px dashed rgba(23, 23, 26, 0.32);
+
+    color: #8a8794;
+    font-family: "Courier Prime", monospace;
+    font-size: 10.5px;
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 650px) {
+
+    .intro-entry {
+        margin: 12px 0 20px;
+        border-radius: 14px;
+    }
+
+    .intro-entry-note {
+        padding-left: 0;
+        border-left: none;
+    }
+
+}
+
+/* Y2K-LUMI-CHROME */
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造 · 第二轮）
+   LUMI 外壳（index.html 开篇入口 与 browser-home.html 共用）
+   -----------------------------------------------------
+   身份：一个真实搜索引擎的外壳 —— 纸白、墨线、等宽小字。
+   克制：本站不做拼贴；开篇入口那枚贴纸已经在原层里，
+         这里只把外壳的边缘、分隔与状态做硬。
+===================================================== */
+
+:root {
+
+    --lm-ink: #17171a;
+    --lm-ink-soft: #5f6368;
+    --lm-faint: #8a8794;
+
+    --lm-accent: #b62f6c;
+    --lm-accent-2: #f0709f;
+
+    --lm-mono: "Courier Prime", "Courier New", monospace;
+
+    --lm-line: 1px solid rgba(23, 23, 26, 0.75);
+    --lm-line-soft: 1px solid rgba(23, 23, 26, 0.18);
+
+    --lm-shadow: 4px 5px 0 rgba(23, 23, 26, 0.1);
+}
+
+
+/* ---------- 顶栏：一条墨线收住 ---------- */
+
+.topbar {
+
+    border-bottom: var(--lm-line-soft);
+
+    background: #ffffff;
+}
+
+
+.top-link {
+    letter-spacing: 1px;
+}
+
+
+.my-link {
+    color: var(--lm-ink);
+}
+
+
+.my-link:hover {
+    color: var(--lm-accent);
+}
+
+
+.sync-note {
+
+    font-family: var(--lm-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--lm-faint);
+}
+
+
+/* 账号头像：方形相片，不是圆形社交头像 */
+.avatar {
+
+    border: 1px solid rgba(23, 23, 26, 0.75);
+    border-radius: 3px;
+
+    background: #fdeef5;
+    color: var(--lm-accent);
+
+    box-shadow: 2px 2px 0 rgba(23, 23, 26, 0.12);
+}
+
+
+.avatar:hover {
+    box-shadow: 2px 2px 0 rgba(23, 23, 26, 0.2);
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+    letter-spacing: 10px;
+    color: var(--lm-ink);
+}
+
+
+.logo span {
+    color: var(--lm-faint);
+}
+
+
+/* ---------- 搜索框：真工具的圆角，但边与影是硬的 ---------- */
+
+.search-box {
+
+    border: var(--lm-line);
+
+    background: #ffffff;
+}
+
+
+.search-box:hover {
+
+    border-color: var(--lm-ink);
+
+    box-shadow: 3px 3px 0 rgba(23, 23, 26, 0.12);
+}
+
+
+.search-box:focus-within {
+
+    border-color: var(--lm-ink);
+
+    box-shadow: 3px 3px 0 rgba(182, 47, 108, 0.18);
+}
+
+
+.search-icon {
+    color: var(--lm-faint);
+}
+
+
+.clear-btn:hover {
+    color: var(--lm-accent);
+}
+
+
+/* ---------- 下拉：最近搜索 / 热搜 ---------- */
+
+.suggest {
+
+    background: #ffffff;
+    border: var(--lm-line);
+    border-radius: 2px;
+
+    box-shadow: 5px 6px 0 rgba(23, 23, 26, 0.12);
+}
+
+
+.suggest-label {
+
+    font-family: var(--lm-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--lm-faint);
+
+    border-bottom: var(--lm-line-soft);
+}
+
+
+.suggest-item:hover {
+
+    background: #fff5fa;
+}
+
+
+.suggest-item span {
+    color: var(--lm-ink);
+}
+
+
+.suggest-time {
+    filter: grayscale(1);
+
+    color: var(--lm-faint);
+}
+
+
+.hot-rank {
+
+    font-family: var(--lm-mono);
+    font-size: 10px;
+
+    color: var(--lm-accent);
+}
+
+
+.hot-item span:last-child {
+    color: var(--lm-ink);
+}
+
+
+/* ---------- 按钮 ---------- */
+
+.btn-primary {
+
+    background: var(--lm-ink);
+    color: #fffdf9;
+
+    border: 1px solid var(--lm-ink);
+    border-radius: 2px;
+
+    letter-spacing: 3px;
+
+    box-shadow: 3px 3px 0 rgba(23, 23, 26, 0.16);
+}
+
+
+.btn-primary:hover {
+    background: #35303a;
+}
+
+
+.btn-secondary {
+
+    background: #ffffff;
+    color: var(--lm-ink);
+
+    border: 1px solid rgba(23, 23, 26, 0.55);
+    border-radius: 2px;
+
+    letter-spacing: 2px;
+}
+
+
+.btn-secondary:hover {
+
+    border-color: var(--lm-ink);
+
+    box-shadow: 3px 3px 0 rgba(23, 23, 26, 0.1);
+}
+
+
+/* ---------- 底部提示与页脚 ---------- */
+
+.hint-text {
+
+    font-family: var(--lm-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+
+    color: var(--lm-faint);
+}
+
+
+.hint-text a {
+    color: var(--lm-accent);
+}
+
+
+.footer {
+
+    border-top: var(--lm-line-soft);
+
+    background: #ffffff;
+}
+
+
+.footer-links a {
+    color: var(--lm-ink-soft);
+}
+
+
+.footer-links a:hover {
+    color: var(--lm-ink);
+    text-decoration: underline;
+}
+
+
+.footer p {
+
+    font-family: var(--lm-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--lm-faint);
+}
+
+
+/* ---------- 键盘焦点 ---------- */
+
+.top-link:focus-visible,
+.my-link:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.suggest-item:focus-visible,
+.hint-text a:focus-visible {
+
+    outline: 2px solid var(--lm-accent);
+    outline-offset: 2px;
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

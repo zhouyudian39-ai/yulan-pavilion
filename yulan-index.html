@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>玉兰阁 Yulan Pavilion · 东方美学与生命科学</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/y2k.css">
+
+<link rel="stylesheet" href="css/yulan.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="yulan-page">
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="yp-header">
+
+    <div class="yp-brand">
+        <svg class="yp-logo-img" viewBox="0 0 212 42" role="img" aria-label="玉兰阁 YULAN PAVILION" focusable="false">
+    <rect x="0.75" y="5.25" width="31.5" height="31.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.85"/>
+    <text x="16.5" y="27.5" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="19" fill="currentColor">兰</text>
+    <text x="41" y="20" font-family="'Noto Serif SC', serif" font-size="15.5" letter-spacing="3" fill="currentColor">玉兰阁</text>
+    <text x="41" y="33" font-family="'Courier Prime', monospace" font-size="8" letter-spacing="1.7" fill="currentColor" opacity="0.68">YULAN PAVILION</text>
+</svg>
+    </div>
+
+    <nav class="yp-nav">
+        <a href="yulan-index.html" class="active">首页</a>
+        <a href="yulan-about.html">关于我们</a>
+        <a href="yulan-newstar.html">新生计划</a>
+        <a href="yulan-artists.html">艺人档案</a>
+        <a href="yulan-schedule.html">演出公告</a>
+        <a href="yulan-contact.html">联系我们</a>
+    </nav>
+
+    <div class="yp-header-right">
+        <button class="yp-search-trigger" onclick="openSearchOverlay()">🔍</button>
+        <button class="yp-login-trigger" id="loginTrigger" onclick="handleLoginButton()">会员登录</button>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     维护通知条
+===================================================== -->
+
+<div class="yp-maintenance-bar">
+
+    <span class="maintenance-icon">⚠</span>
+
+    <p>
+        玉兰阁内部设施升级中，暂停对外开放参观。
+        <br>
+        会员服务照常，请通过会员通道预约。
+    </p>
+
+    <small>NOTICE: INTERNAL RENOVATION</small>
+
+</div>
+
+
+<!-- =====================================================
+     Hero 主视觉
+===================================================== -->
+
+<section class="yp-hero">
+
+    <div class="yp-hero-image">
+        <img src="images/yulan/hero-flower.jpg" alt="玉兰花">
+    </div>
+
+    <div class="yp-hero-content">
+
+        <p class="yp-hero-label">YULAN PAVILION · SINCE 2006</p>
+
+        <h1>东方美学，<br>生命艺术。</h1>
+
+        <p class="yp-hero-desc">
+            我们相信，每一位女性都值得拥有属于自己的美。
+            <br>
+            从形象设计到生命科学，玉兰阁陪伴你完成每一次蜕变。
+        </p>
+
+        <div class="yp-hero-buttons">
+            <a href="yulan-newstar.html" class="yp-btn-primary">了解新生计划</a>
+            <a href="yulan-schedule.html" class="yp-btn-secondary">查看演出公告</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     当前项目
+===================================================== -->
+
+<section class="yp-programs">
+
+    <div class="yp-section-title">
+        <h2>当前项目</h2>
+        <p>ONGOING PROJECTS</p>
+    </div>
+
+    <div class="yp-program-grid">
+
+        <a href="yulan-newstar.html" class="yp-program-card">
+            <img src="images/yulan/program-star.jpg" alt="新生计划" loading="lazy" decoding="async">
+            <div class="yp-program-info">
+                <h3>新生计划</h3>
+                <p>NEW STAR PROJECT</p>
+                <span>为有梦想的女孩提供形象设计、舞台训练与个人品牌打造。2026年度招募进行中。</span>
+                <small class="program-status status-recruiting">RECRUITING</small>
+            </div>
+        </a>
+
+        <a href="phoenix.html" class="yp-program-card">
+            <img src="images/yulan/program-phoenix.jpg" alt="凤凰指数" loading="lazy" decoding="async">
+            <div class="yp-program-info">
+                <h3>凤凰指数评估</h3>
+                <p>PHOENIX INDEX</p>
+                <span>基于东方命理与现代美学的综合评估系统。仅对会员开放。</span>
+                <small class="program-status status-members-only">MEMBERS ONLY</small>
+            </div>
+        </a>
+
+        <a href="yulan-contact.html" class="yp-program-card">
+            <img src="images/yulan/program-beauty.jpg" alt="形象设计" loading="lazy" decoding="async">
+            <div class="yp-program-info">
+                <h3>形象设计</h3>
+                <p>IMAGE DESIGN</p>
+                <span>专业形象顾问一对一服务。从妆容、发型到穿搭，量身定制。</span>
+                <small class="program-status status-open">OPEN</small>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     艺人档案
+===================================================== -->
+
+<section class="yp-artists">
+
+    <div class="yp-section-title">
+        <h2>艺人档案</h2>
+        <p>OUR ARTISTS</p>
+    </div>
+
+    <div class="yp-artists-grid">
+
+
+        <a href="yulan-member-mengqi.html" class="yp-artist-card featured-artist">
+
+            <div class="artist-photo">
+                <img src="images/yulan/mengqi.jpg" alt="陈梦琪" loading="lazy" decoding="async">
+                <div class="artist-status">PAUSED</div>
+            </div>
+
+            <div class="artist-info">
+                <h3>陈梦琪</h3>
+                <p>MENGQI CHAN</p>
+                <span>新生计划 · 2025</span>
+            </div>
+
+        </a>
+
+
+        <div class="yp-artist-card blurred-artist">
+
+            <div class="artist-photo">
+                <img src="images/yulan/member2.jpg" alt="资料维护中" loading="lazy" decoding="async">
+                <div class="artist-blur-overlay">资料维护中</div>
+            </div>
+
+            <div class="artist-info">
+                <h3>林██</h3>
+                <p>—</p>
+                <span>新生计划 · 2024</span>
+            </div>
+
+        </div>
+
+
+        <div class="yp-artist-card blurred-artist">
+
+            <div class="artist-photo">
+                <img src="images/yulan/member3.jpg" alt="资料维护中" loading="lazy" decoding="async">
+                <div class="artist-blur-overlay">资料维护中</div>
+            </div>
+
+            <div class="artist-info">
+                <h3>苏██</h3>
+                <p>—</p>
+                <span>形象设计 · 2024</span>
+            </div>
+
+        </div>
+
+
+        <div class="yp-artist-card blurred-artist">
+
+            <div class="artist-photo">
+                <img src="images/yulan/member4.jpg" alt="资料维护中" loading="lazy" decoding="async">
+                <div class="artist-blur-overlay">资料维护中</div>
+            </div>
+
+            <div class="artist-info">
+                <h3>周██</h3>
+                <p>—</p>
+                <span>凤凰指数 · 2025</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="artists-note">※ 部分艺人资料因系统升级暂时无法显示。</p>
+
+</section>
+
+
+<!-- =====================================================
+     演出公告
+===================================================== -->
+
+<section class="yp-schedule">
+
+    <div class="yp-section-title">
+        <h2>演出公告</h2>
+        <p>SCHEDULE & ANNOUNCEMENTS</p>
+    </div>
+
+    <div class="yp-schedule-list">
+
+        <div class="schedule-item">
+            <div class="schedule-date">2026.02.16</div>
+            <div class="schedule-info">
+                <h3>新生计划公演「First Bloom」</h3>
+                <p>陈梦琪 · 公开舞台 · 已结束</p>
+            </div>
+            <div class="schedule-status status-done">已结束</div>
+        </div>
+
+        <div class="schedule-item schedule-cancelled">
+            <div class="schedule-date">2026.02.17</div>
+            <div class="schedule-info">
+                <h3>新生计划公演「First Bloom」第二场</h3>
+                <p>
+                    陈梦琪因身体原因，不再继续出演。
+                    <br>
+                    后续演出时间另行通知。
+                </p>
+            </div>
+            <div class="schedule-status status-cancelled">已取消</div>
+        </div>
+
+        <div class="schedule-empty">
+            <p>· 暂无更多公开行程 ·</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     会员专属
+===================================================== -->
+
+<section class="yp-members-area">
+
+    <div class="yp-section-title">
+        <h2>会员专属</h2>
+        <p>MEMBERS ONLY</p>
+    </div>
+
+    <div class="members-locked-area" id="membersLockedArea">
+
+        <div class="locked-icon">🔒</div>
+
+        <h3>会员专属内容</h3>
+
+        <p>
+            登录会员账号，进入会员中心。
+            <br>
+            查看内部演出记录、训练影像、个人报告及系统通知。
+        </p>
+
+        <button class="yp-btn-primary" onclick="handleMemberAreaButton()" id="memberAreaButton">
+            会员登录
+        </button>
+
+    </div>
+
+    <div class="members-unlocked-area" id="membersUnlockedArea" style="display:none;">
+
+        <div class="unlocked-header">
+            <span>🌸</span>
+            <p>
+                欢迎回来，<strong class="js-member-name">梦琪</strong>。
+                <br>
+                以下为您的专属内容。
+            </p>
+        </div>
+
+        <div class="unlocked-grid">
+
+            <a href="yulan-member-center.html" class="unlocked-card">
+                <span class="unlocked-icon">✉</span>
+                <strong>会员中心</strong>
+                <small>私信、报告、通知</small>
+            </a>
+
+            <a href="yulan-artists.html" class="unlocked-card">
+                <span class="unlocked-icon">📋</span>
+                <strong>完整艺人档案</strong>
+                <small>全部成员已解锁</small>
+            </a>
+
+            <a href="yulan-newstar.html" class="unlocked-card">
+                <span class="unlocked-icon">📊</span>
+                <strong>历届成员档案</strong>
+                <small>含往期成员</small>
+            </a>
+
+            <a href="underground.html" class="unlocked-card founder-only-card" id="founderArchiveCard" style="display:none;">
+                <span class="unlocked-icon">▚</span>
+                <strong>内部档案 B3</strong>
+                <small>FOUNDER 权限</small>
+            </a>
+
+            <a href="yulan-index.html" class="unlocked-card" onclick="yulanLogout()">
+                <span class="unlocked-icon">↩</span>
+                <strong>退出登录</strong>
+                <small>清除登录状态</small>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     新闻动态
+===================================================== -->
+
+<section class="yp-news">
+
+    <div class="yp-section-title">
+        <h2>新闻动态</h2>
+        <p>NEWS</p>
+    </div>
+
+    <div class="yp-news-list">
+
+        <a class="yp-news-item">
+            <span>2026.03.15</span>
+            <strong>玉兰阁与多家美容机构达成战略合作</strong>
+        </a>
+
+        <a href="yulan-newstar.html" class="yp-news-item">
+            <span>2026.03.01</span>
+            <strong>新生计划2026年度招募正式启动</strong>
+        </a>
+
+        <a href="yulan-member-mengqi.html" class="yp-news-item">
+            <span>2026.02.17</span>
+            <strong>关于成员陈梦琪暂停公开活动的说明</strong>
+        </a>
+
+        <a href="yulan-member-mengqi.html" class="yp-news-item">
+            <span>2026.02.16</span>
+            <strong>新人陈梦琪公开舞台圆满结束</strong>
+        </a>
+
+        <a href="yulan-artists.html" class="yp-news-item">
+            <span>2025.12.17</span>
+            <strong>新生计划成员初舞台首秀成功</strong>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     合作机构
+===================================================== -->
+
+<section class="yp-partners">
+
+    <div class="yp-section-title">
+        <h2>合作机构</h2>
+        <p>PARTNERS</p>
+    </div>
+
+    <div class="yp-partners-row">
+
+        <div class="yp-partner">
+            <span class="yp-partner-name">紫霞美容</span>
+            <small>ZIXIA BEAUTY</small>
+        </div>
+
+        <div class="yp-partner">
+            <span class="yp-partner-name">金凤堂</span>
+            <small>PHOENIX HALL</small>
+        </div>
+
+        <div class="yp-partner">
+            <span class="yp-partner-name">生命美学研究院</span>
+            <small>LIFE AESTHETICS LAB</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="yp-footer">
+
+    <div class="yp-footer-brand">
+        <svg class="yp-footer-logo" viewBox="0 0 212 42" role="img" aria-label="玉兰阁 YULAN PAVILION" focusable="false">
+    <rect x="0.75" y="5.25" width="31.5" height="31.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.85"/>
+    <text x="16.5" y="27.5" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="19" fill="currentColor">兰</text>
+    <text x="41" y="20" font-family="'Noto Serif SC', serif" font-size="15.5" letter-spacing="3" fill="currentColor">玉兰阁</text>
+    <text x="41" y="33" font-family="'Courier Prime', monospace" font-size="8" letter-spacing="1.7" fill="currentColor" opacity="0.68">YULAN PAVILION</text>
+</svg>
+    </div>
+
+    <div class="yp-footer-links">
+        <a>隐私政策</a>
+        <a>会员协议</a>
+        <a href="yulan-contact.html">联系我们</a>
+    </div>
+
+    <p>
+        © 2026 Yulan Pavilion
+        <br>
+        东方美学与生命科学
+    </p>
+
+    <small class="yp-footer-version">档案系统版本：LYL-2.0.17</small>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     搜索遮罩层
+===================================================== -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-overlay-bg" onclick="closeSearchOverlay()"></div>
+
+    <div class="search-overlay-card">
+
+        <button class="search-close" onclick="closeSearchOverlay()">×</button>
+
+        <h2>档案搜索</h2>
+        <p class="search-sub">输入关键词，查询会员 / 新闻 / 档案资料</p>
+
+        <div class="search-overlay-input-row">
+            <input type="text" id="archiveSearchInput" placeholder="姓名 / 编号 / 关键词" autocomplete="off">
+            <button onclick="doArchiveSearch()">搜索</button>
+        </div>
+
+        <div class="search-result-box" id="searchResultBox"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     会员登录弹窗
+===================================================== -->
+
+<div class="login-modal" id="loginModal">
+
+    <div class="login-modal-bg" onclick="closeLoginModal()"></div>
+
+    <div class="login-modal-card">
+
+        <button class="modal-close" onclick="closeLoginModal()">×</button>
+
+        <h2>会员登录</h2>
+        <p class="modal-sub">使用玉兰阁会员账号继续</p>
+
+        <div class="modal-input-group">
+            <label>账号</label>
+            <input type="text" id="yulanAccount" placeholder="会员编号 / 用户名">
+        </div>
+
+        <div class="modal-input-group">
+            <label>密码</label>
+            <input type="password" id="yulanPassword" placeholder="密码">
+        </div>
+
+        <p class="modal-error" id="yulanLoginError"></p>
+
+        <button class="modal-login-btn" onclick="yulanLoginSubmit()">登录</button>
+
+        <p class="modal-hint">登录后进入会员中心。</p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     在线客服
+===================================================== -->
+
+<div class="service-window" id="serviceWindow">
+
+    <div class="service-header">
+        <span>🌸 玉兰阁在线客服</span>
+        <button class="service-close" onclick="closeService()">×</button>
+    </div>
+
+    <div class="service-body">
+
+        <div class="service-messages" id="serviceMessages">
+            <div class="msg msg-system">
+                您好，欢迎来到玉兰阁在线客服。
+                <br>
+                您可以询问关于新生计划、会员服务或门店信息。
+            </div>
+        </div>
+
+        <div class="service-input-row">
+            <input type="text" id="serviceInput" placeholder="请输入您的问题..." autocomplete="off">
+            <button onclick="sendServiceMessage()">发送</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<button class="service-fab" id="serviceFab" onclick="openService()">💬</button>
+
+
+<script src="js/auth.js"></script>
+
+<script src="js/game-progress.js"></script>
+
+<script>
+
+/* ========== 页面加载时初始化 ========== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    initAuthUI();
+
+    if (isLoggedIn()) {
+
+        /* 如果已登录，隐藏锁定区域，显示解锁区域 */
+        document.getElementById("membersLockedArea").style.display = "none";
+        document.getElementById("membersUnlockedArea").style.display = "block";
+
+    }
+
+});
+
+
+/* ========== 登录按钮处理 ========== */
+
+function handleLoginButton() {
+
+    if (isLoggedIn()) {
+        window.location.href = "yulan-member-center.html";
+    } else {
+        openLoginModal();
+    }
+
+}
+
+
+/* ========== 会员区域按钮处理 ========== */
+
+function handleMemberAreaButton() {
+
+    if (isLoggedIn()) {
+        window.location.href = "yulan-member-center.html";
+    } else {
+        openLoginModal();
+    }
+
+}
+
+
+/* ========== 打开/关闭登录弹窗 ========== */
+
+function openLoginModal() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLoginModal() {
+    document.getElementById("loginModal").style.display = "none";
+    document.getElementById("yulanLoginError").textContent = "";
+}
+
+
+/* ========== 登录提交 ========== */
+
+function yulanLoginSubmit() {
+
+    const account = document.getElementById("yulanAccount").value.trim();
+    const password = document.getElementById("yulanPassword").value.trim();
+    const error = document.getElementById("yulanLoginError");
+
+    if (account === "" || password === "") {
+        error.textContent = "请输入账号和密码。";
+        return;
+    }
+
+    /* 梦琪会员账号 */
+    if (account === "mengqi_2006" && password === "07011217") {
+
+        closeLoginModal();
+
+        /* 写入登录状态（js/auth.js）。
+           没有这一步，isLoggedIn() 永远是 false：
+           艺人页的医学检查记录、新生计划往届成员档案
+           都只认 isLoggedIn()，玩家登录成功也永远看不到。 */
+        yulanLogin(account, password);
+
+        setTimeout(function () {
+            window.location.href = "yulan-member-center.html";
+        }, 600);
+
+        return;
+
+    }
+
+    /* 林玉兰创始人账号 */
+    if (account === "LYL-1969" && password === "0217") {
+
+        closeLoginModal();
+
+        /* 显示已登录状态 */
+        document.getElementById("membersLockedArea").style.display = "none";
+        document.getElementById("membersUnlockedArea").style.display = "block";
+
+        const loginBtn = document.getElementById("loginTrigger");
+        if (loginBtn) {
+            loginBtn.textContent = "已登录（林玉兰）";
+        }
+
+        /* 解锁更多内容 */
+        if (typeof unlockFounderContent === "function") {
+            unlockFounderContent();
+        }
+
+        return;
+
+    }
+
+    error.textContent = "账号或密码不正确。";
+
+}
+
+
+/* =====================================================
+   搜索系统（完整关键词表）
+===================================================== */
+
+function openSearchOverlay() {
+    document.getElementById("searchOverlay").style.display = "flex";
+    setTimeout(function () { document.getElementById("archiveSearchInput").focus(); }, 100);
+}
+
+function closeSearchOverlay() {
+    document.getElementById("searchOverlay").style.display = "none";
+    document.getElementById("searchResultBox").innerHTML = "";
+    document.getElementById("archiveSearchInput").value = "";
+}
+
+function doArchiveSearch() {
+
+    const input = document.getElementById("archiveSearchInput");
+    const keyword = input.value.trim();
+    const resultBox = document.getElementById("searchResultBox");
+
+    if (keyword === "") {
+        resultBox.innerHTML = `<p class="no-result">请输入搜索关键词。</p>`;
+        return;
+    }
+
+
+    /* ========== A级 · 跳转 ========== */
+
+    if (keyword === "017" || keyword.includes("梦琪") || keyword.includes("陈梦琪")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">MEMBER ARCHIVE</div>
+                <h3>NO.017 陈梦琪</h3>
+                <p>新生计划成员 · 档案状态：已归档</p>
+                <a href="yulan-member-mengqi.html">查看成员档案 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("新生") || keyword.toLowerCase().includes("new star") || keyword.includes("培训") || keyword.includes("培养")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PROJECT ARCHIVE</div>
+                <h3>NEW STAR PROJECT 新生计划</h3>
+                <p>玉兰阁新人培养及形象改造计划。2026年度招募中。</p>
+                <a href="yulan-newstar.html">查看项目档案 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("林玉兰") || keyword.includes("董事长") || keyword.includes("创始人")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PERSONNEL ARCHIVE</div>
+                <h3>林玉兰</h3>
+                <p>玉兰阁创始人及负责人档案。</p>
+                <a href="linyulan.html">查看人物档案 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("凤凰") || keyword.toLowerCase().includes("phoenix")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">INTERNAL SYSTEM</div>
+                <h3>凤█</h3>
+                <p>正在访问…</p>
+            </div>`;
+        setTimeout(function () { window.location.href = "phoenix.html"; }, 1500);
+        return;
+    }
+
+    if (keyword.includes("地下") || keyword.toLowerCase().includes("underground")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">ARCHIVE SEARCH RESULT</div>
+                <h3>地下空间传闻</h3>
+                <p>一则来自都市传说论坛的旧帖。</p>
+                <a href="urban-forum.html">查看相关讨论 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("演出") || keyword.includes("公演") || keyword.includes("舞台") || keyword.includes("演唱会")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">SCHEDULE ARCHIVE</div>
+                <h3>演出公告</h3>
+                <p>查看新生计划成员的公开行程与演出安排。</p>
+                <a href="yulan-schedule.html">查看演出公告 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("血液") || keyword.includes("研究") || keyword.includes("生命科学")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">SEARCH FILTERED</div>
+                <h3>部分结果已被屏蔽</h3>
+                <p>该关键词下的公开资料非常有限。</p>
+                <a href="city-weekly.html">查看外部来源 →</a>
+            </div>`;
+        return;
+    }
+
+
+    /* ========== B级 · 结果卡 ========== */
+
+    if (keyword.includes("周岚") || keyword.includes("周顾问") || keyword.includes("顾问姐姐")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PERSONNEL ARCHIVE</div>
+                <h3>周██</h3>
+                <p>前任新生计划顾问。</p>
+                <p class="result-deleted">档案已删除。无可用记录。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("陈维") || keyword.includes("陈博士")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PERSONNEL ARCHIVE</div>
+                <h3>陈██</h3>
+                <p>生命科学研究顾问。</p>
+                <p>研究方向：血液成分 / 组织修复</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("沈曼") || keyword.includes("沈顾问")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PERSONNEL ARCHIVE</div>
+                <h3>沈██</h3>
+                <p>现任新生计划负责人。</p>
+                <p>负责会员招募及培养管理。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("顾问")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">STAFF DIRECTORY</div>
+                <h3>新生计划顾问团队</h3>
+                <p>周██ · 前任顾问 · 已离职</p>
+                <p>沈██ · 现任顾问 · 在职</p>
+                <p>陈██ · 生命科学顾问 · 在职</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("第二周期") || keyword.includes("二周期")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">INTERNAL PROJECT</div>
+                <h3>第二周期</h3>
+                <p>第二周期为会员高级阶段。详情请咨询专属顾问。</p>
+                <p class="result-permission">权限：STAFF</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("撞脸") || keyword.includes("一样的人") || keyword.includes("长得像")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">NEWS ARCHIVE</div>
+                <h3>相关新闻</h3>
+                <p>· 街头多名少女面容相似</p>
+                <p>· 整容模板化引争议</p>
+                <p>· 医生：像同一模板</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("管理计划") || keyword.includes("年龄管理") || keyword.includes("抗衰") || keyword.includes("年轻")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item management-result">
+                <div class="result-label">PROJECT ARCHIVE</div>
+                <h3>管理计划</h3>
+                <p>玉兰阁核心项目之一。帮助会员管理身体状态与形象。</p>
+                <p>详情请到店咨询，或留下联系方式，我们的顾问将与您联系。</p>
+                <button class="management-cta" onclick="showManagementForm()">预约咨询 →</button>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("凤凰指数") || keyword.includes("指数测试")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">INTERNAL SYSTEM</div>
+                <h3>凤凰指数评估</h3>
+                <p>仅对会员开放。加入新生计划后即可预约免费评估。</p>
+                <a href="yulan-newstar.html">了解新生计划 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("金凤堂")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PARTNER INSTITUTION</div>
+                <h3>金凤堂</h3>
+                <p>战略合作伙伴。负责凤凰指数评估系统的运行。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("紫霞")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PARTNER INSTITUTION</div>
+                <h3>紫霞美容</h3>
+                <p>合作机构。提供基础护理与会员推荐服务。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("会员协议") || keyword.includes("协议") || keyword.includes("合同")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">MEMBER AGREEMENT</div>
+                <h3>会员协议摘要</h3>
+                <p>第7条：会员在培训期间须配合全部训练安排。</p>
+                <p>第17条：会员不得公开训练内容及内部资料。</p>
+                <p>第21条：违反协议的会员将被取消资格。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("失踪") || keyword.includes("消失")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">SEARCH FILTERED</div>
+                <h3>搜索结果已被过滤</h3>
+                <p>该关键词下的结果已被过滤。</p>
+                <p class="result-deleted">部分内容违反社区准则。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("最后舞台") || keyword.includes("最后公演")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">MEMBER ACTIVITY LOG</div>
+                <h3>陈梦琪 · 最后公开舞台</h3>
+                <p>2026.02.16</p>
+                <p>新生计划公演「First Bloom」</p>
+                <p>状态：已结束</p>
+                <p class="result-permission">视频：需要会员权限</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("训练中心") || keyword.includes("训练")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">FACILITY INFO</div>
+                <h3>训练中心</h3>
+                <p>地址：九龙玉兰道1号 3F</p>
+                <p>开放状态：内部升级中</p>
+                <p>会员预约通道照常开放。</p>
+            </div>`;
+        return;
+    }
+
+
+    /* ========== C级 · 特效 ========== */
+
+    if (keyword.includes("0217") || keyword === "02:17") {
+        document.getElementById("searchOverlay").classList.add("glitch-flash");
+        setTimeout(function () {
+            document.getElementById("searchOverlay").classList.remove("glitch-flash");
+        }, 400);
+        resultBox.innerHTML = `<p class="no-result">未找到与「${keyword}」相关的公开资料。</p>`;
+        return;
+    }
+
+    if (keyword.includes("天使数字") || keyword.includes("天使")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PSYCHOLOGY TEST</div>
+                <h3>天使数字</h3>
+                <p>数字「17」意味着新的开始。</p>
+                <p>你最近是否在凌晨 02:17 醒来？</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("密码")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">SYSTEM MESSAGE</div>
+                <h3>提示</h3>
+                <p>重要的事，不要忘记那天。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("多少岁") || keyword.includes("年龄")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">SYSTEM MESSAGE</div>
+                <h3>提示</h3>
+                <p>关于这个问题，请参与我们首页的趣味测试。</p>
+                <a href="yulan-about.html">前往关于我们 →</a>
+            </div>`;
+        return;
+    }
+
+
+    /* ========== 商业词 ========== */
+
+    if (keyword.includes("门店") || keyword.includes("地址") || keyword.includes("在哪") || keyword.includes("位置")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">STORE LOCATION</div>
+                <h3>玉兰阁门店</h3>
+                <p>香港九龙区玉兰道1号</p>
+                <p>营业时间：每日 09:00 - 18:00</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("电话") || keyword.includes("联系") || keyword.includes("客服")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">CONTACT</div>
+                <h3>联系我们</h3>
+                <p>客服热线：暂未开放</p>
+                <p>在线时间：每日 09:00 - 18:00</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("价格") || keyword.includes("费用") || keyword.includes("多少钱") || keyword.includes("收费")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PRICING</div>
+                <h3>项目价格</h3>
+                <p>每位会员的情况不同，具体方案请到店咨询顾问。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("优惠") || keyword.includes("折扣") || keyword.includes("活动")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">PROMOTION</div>
+                <h3>当前优惠</h3>
+                <p>新生计划报名成员可获赠免费面部分析一次。</p>
+                <p>优惠码：YL-AGE-57</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("预约")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">BOOKING</div>
+                <h3>预约流程</h3>
+                <p>1. 提交预约申请</p>
+                <p>2. 等待客服电话确认</p>
+                <p>3. 按约定时间到店</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("招聘") || keyword.includes("工作") || keyword.includes("兼职")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">CAREERS</div>
+                <h3>加入我们</h3>
+                <p>玉兰阁长期招募形象顾问与培训助理。</p>
+                <p>请将简历发送至会员中心。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("明星") || keyword.includes("代言") || keyword.includes("艺人")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">ARTIST ARCHIVE</div>
+                <h3>艺人档案</h3>
+                <p>查看新生计划培养的公开艺人名单。</p>
+                <a href="yulan-artists.html">查看艺人档案 →</a>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("保养") || keyword.includes("护肤") || keyword.includes("皮肤")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">SKINCARE</div>
+                <h3>皮肤管理</h3>
+                <p>玉兰阁提供专业的皮肤护理与保养方案。</p>
+                <p>详情请到店咨询。</p>
+            </div>`;
+        return;
+    }
+
+    if (keyword.includes("美容") || keyword.includes("护理")) {
+        resultBox.innerHTML = `
+            <div class="search-result-item">
+                <div class="result-label">BEAUTY CARE</div>
+                <h3>美容护理</h3>
+                <p>基础护理、深层清洁、形象设计等多种服务。</p>
+                <p>详情请到店咨询。</p>
+            </div>`;
+        return;
+    }
+
+
+    /* ========== 无结果 ========== */
+
+    resultBox.innerHTML = `<p class="no-result">未找到与「${keyword}」相关的公开资料。</p>`;
+
+}
+
+
+document.getElementById("archiveSearchInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") { doArchiveSearch(); }
+});
+
+
+/* ========== 管理计划表单 ========== */
+
+function showManagementForm() {
+    const resultBox = document.getElementById("searchResultBox");
+    resultBox.innerHTML = `
+        <div class="management-form">
+            <div class="management-form-header">预约管理计划咨询</div>
+            <div class="management-form-body">
+                <div class="form-group">
+                    <label>您的称呼</label>
+                    <input type="text" placeholder="例如：王小姐">
+                </div>
+                <div class="form-group">
+                    <label>联系电话</label>
+                    <input type="text" placeholder="请输入电话号码">
+                </div>
+                <button class="management-submit" onclick="submitManagementForm()">提交预约</button>
+            </div>
+        </div>`;
+}
+
+function submitManagementForm() {
+    const resultBox = document.getElementById("searchResultBox");
+    resultBox.innerHTML = `
+        <div class="management-success">
+            <span class="success-icon">✓</span>
+            <h3>预约已提交</h3>
+            <p>我们的顾问将在 1-2 个工作日内与您联系。</p>
+            <p class="management-note">请保持电话畅通。</p>
+        </div>`;
+}
+
+
+/* ========== 客服 ========== */
+
+function openService() {
+    document.getElementById("serviceWindow").style.display = "flex";
+    document.getElementById("serviceFab").style.display = "none";
+}
+
+function closeService() {
+    document.getElementById("serviceWindow").style.display = "none";
+    document.getElementById("serviceFab").style.display = "flex";
+}
+
+function sendServiceMessage() {
+
+    const input = document.getElementById("serviceInput");
+    const text = input.value.trim();
+    if (text === "") return;
+
+    const messages = document.getElementById("serviceMessages");
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "msg msg-user";
+    userMsg.textContent = text;
+    messages.appendChild(userMsg);
+
+    input.value = "";
+
+    const reply = document.createElement("div");
+    reply.className = "msg msg-system";
+
+    if (text.includes("梦琪") || text.includes("017") || text.includes("陈梦琪")) {
+        reply.innerHTML = "该会员信息暂不对外公开。如有正式查询需求，请携带会员卡到门店咨询。";
+    } else if (text.includes("新生计划") || text.includes("报名") || text.includes("招募")) {
+        reply.innerHTML = "新生计划2026年度招募正在进行中。报名与咨询请看「新生计划」页面。";
+    } else if (text.includes("凤凰") || text.includes("命格")) {
+        reply.innerHTML = "凤凰指数评估仅对会员开放。加入新生计划后即可预约免费评估。";
+    } else if (text.includes("整容") || text.includes("手术")) {
+        reply.innerHTML = "玉兰阁提供专业的形象设计服务。具体方案请到店咨询顾问。";
+    } else if (text.includes("装修") || text.includes("维护") || text.includes("开放")) {
+        reply.innerHTML = "玉兰阁内部设施升级中，暂停对外开放参观。会员请通过会员通道预约。";
+    } else if (text.includes("地址") || text.includes("门店") || text.includes("在哪")) {
+        reply.innerHTML = "玉兰阁门店地址：香港九龙区玉兰道1号。营业时间：每日 09:00 - 18:00。";
+    } else if (text.includes("林玉兰") || text.includes("创始人")) {
+        reply.innerHTML = "林女士是玉兰阁的创始人。她的公开资料可在「关于我们」页面查看。";
+    } else if (text.includes("周岚") || text.includes("周")) {
+        reply.innerHTML = "抱歉，我们没有查询到与该姓名相关的在职或离职记录。";
+    } else if (text.includes("血液")) {
+        reply.innerHTML = "玉兰阁不提供任何血液相关服务。该问题不在我们的服务范围内。";
+    } else if (text.includes("地下")) {
+        reply.innerHTML = "该话题不在我们的服务范围内。请问还有其他问题吗？";
+    } else if (text.includes("你真的是客服吗")) {
+        reply.innerHTML = "我是玉兰阁智能客服助手。请问有什么可以帮您？";
+    } else if (text.includes("你好") || text.includes("您好") || text.toLowerCase().includes("hi")) {
+        reply.innerHTML = "您好！很高兴为您服务。请问有什么可以帮您？";
+    } else {
+        reply.innerHTML = "已收到您的问题。请留下您的会员编号，我们会有专人与您联系。";
+    }
+
+    setTimeout(function () {
+        messages.appendChild(reply);
+        messages.scrollTop = messages.scrollHeight;
+    }, 600);
+
+    messages.scrollTop = messages.scrollHeight;
+
+}
+
+document.getElementById("serviceInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") { sendServiceMessage(); }
+});
+
+/* =====================================================
+   林玉兰账号解锁的额外内容
+   （原实现重复定义了两次，且函数体只有一行 console.log，
+     刷新后解锁状态完全丢失。现在改为写入统一进度存档。）
+===================================================== */
+
+function unlockFounderContent() {
+
+    unlockProgress(GAME_FLAGS.founderAccess);
+
+    applyFounderProgress();
+
+}
+
+
+/* 把已保存的 FOUNDER 状态反映到页面上 */
+
+function applyFounderProgress() {
+
+    if (!isProgressUnlocked(GAME_FLAGS.founderAccess)) {
+        return;
+    }
+
+    const lockedArea = document.getElementById("membersLockedArea");
+    const unlockedArea = document.getElementById("membersUnlockedArea");
+    const archiveCard = document.getElementById("founderArchiveCard");
+
+    if (lockedArea) {
+        lockedArea.style.display = "none";
+    }
+
+    if (unlockedArea) {
+        unlockedArea.style.display = "block";
+    }
+
+    if (archiveCard) {
+        archiveCard.style.display = "flex";
+    }
+
+}
+
+
+/* 页面加载：登录状态与调查进度分开管理 */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    applyFounderProgress();
+
+});
+</script>
+
+
+<script src="js/img-fallback.js"></script>
+
+</body>
+
+</html>

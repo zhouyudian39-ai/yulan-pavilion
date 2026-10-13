@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>B3 · 内部研究区域</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/underground.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="ug-page">
+
+
+<!-- =====================================================
+     顶部系统栏
+===================================================== -->
+
+<header class="ug-header">
+
+    <div class="ug-brand">
+        <span class="ug-symbol">▚</span>
+        <div>
+            <strong>YULAN PAVILION</strong>
+            <small>INTERNAL RESEARCH ARCHIVE</small>
+        </div>
+    </div>
+
+    <div class="ug-status">
+        ACCESS LEVEL: <strong class="ug-red">FOUNDER</strong>
+        <br>
+        LOCATION: B3 / UNDERGROUND
+        <br>
+        <small>SESSION: LYL-1969</small>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     区域标识
+===================================================== -->
+
+<section class="ug-banner">
+
+    <div class="ug-banner-code">B3</div>
+
+    <div class="ug-banner-info">
+        <h1>内部研究区域</h1>
+        <p>RESTRICTED · FOUNDER ACCESS ONLY</p>
+    </div>
+
+    <div class="ug-banner-stamp">
+        仅限授权人员
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     主内容
+===================================================== -->
+
+<main class="ug-main">
+
+
+    <!-- =====================================================
+         检索：按受试者编号定位记录
+    ====================================================== -->
+
+    <section class="ug-search">
+
+        <div class="ug-search-label">INDEX LOOKUP / 档案检索</div>
+
+        <div class="ug-search-row">
+
+            <input type="text" id="ugSearchInput" class="ug-search-input"
+                placeholder="YL-2025-017" autocomplete="off" spellcheck="false"
+                aria-label="输入受试者编号">
+
+            <button type="button" class="ug-search-btn" onclick="runUndergroundSearch()">
+                检索
+            </button>
+
+        </div>
+
+        <p class="ug-search-status" id="ugSearchStatus" role="status" aria-live="polite">
+            可检索范围：这份档案里出现过的受试者编号与年份。
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         文件0：林玉兰手记
+    ====================================================== -->
+
+    <section class="ug-file ug-file-handnote">
+
+        <div class="ug-file-header">
+            <span>DOCUMENT 00</span>
+            <strong>PERSONAL NOTE</strong>
+            <small>AUTHOR: L.Y.L</small>
+        </div>
+
+        <div class="ug-file-body">
+
+            <div class="ug-handnote">
+
+                <p>
+                    她们都说我看起来年轻。
+                </p>
+
+                <p>
+                    其实我只是找到了一个方法。
+                </p>
+
+                <p>
+                    十七岁是女人一生中最好的年纪。
+                    皮肤，血液，细胞，都在最完美的状态。
+                </p>
+
+                <p>
+                    我只是把这些东西保存下来，然后用在需要的地方。
+                </p>
+
+                <p>
+                    这些年，有人来，有人走。
+                    但系统一直在运行。
+                </p>
+
+                <p>
+                    她们会感谢我的。
+                    如果她们还能思考的话。
+                </p>
+
+                <p class="ug-handnote-sign" data-evidence="ug-handnote"
+                    data-evidence-title="地下档案 · DOCUMENT 00 手记"
+                    data-evidence-date="2026.02.17"
+                    data-evidence-flag="founder_access">
+                    —— L.Y.L · 2026.02.17
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         文件1：年度统计表
+    ====================================================== -->
+
+    <section class="ug-file">
+
+        <div class="ug-file-header">
+            <span>DOCUMENT 01</span>
+            <strong>ANNUAL SUBJECT REPORT</strong>
+            <small>2006 — 2026</small>
+        </div>
+
+        <div class="ug-file-body">
+
+            <p class="ug-file-desc">
+                受试者年度统计。由生命美学研究院提交，林玉兰批准。
+                所有记录均为女性，年龄范围：17–22岁。
+            </p>
+
+            <div class="ug-table ug-table-subject">
+
+                <div class="ug-table-row ug-table-header">
+                    <span>YEAR</span>
+                    <span>INTAKE</span>
+                    <span>COMPLETED</span>
+                    <span>DISPOSED</span>
+                    <span>AVG AGE</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2006</span>
+                    <span>7</span>
+                    <span>4</span>
+                    <span>3</span>
+                    <span>19</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2008</span>
+                    <span>12</span>
+                    <span>7</span>
+                    <span>5</span>
+                    <span>18</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2010</span>
+                    <span>15</span>
+                    <span>9</span>
+                    <span>6</span>
+                    <span>19</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2012</span>
+                    <span>18</span>
+                    <span>11</span>
+                    <span>7</span>
+                    <span>18</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2014</span>
+                    <span>21</span>
+                    <span>13</span>
+                    <span>8</span>
+                    <span>19</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2016</span>
+                    <span>24</span>
+                    <span>15</span>
+                    <span>9</span>
+                    <span>18</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2018</span>
+                    <span>28</span>
+                    <span>17</span>
+                    <span>11</span>
+                    <span>19</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2020</span>
+                    <span>31</span>
+                    <span>20</span>
+                    <span>11</span>
+                    <span>18</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2022</span>
+                    <span>35</span>
+                    <span>23</span>
+                    <span>12</span>
+                    <span>18</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>2024</span>
+                    <span>41</span>
+                    <span>27</span>
+                    <span>14</span>
+                    <span>19</span>
+                </div>
+
+                <div class="ug-table-row ug-table-total">
+                    <span>2026</span>
+                    <span>47</span>
+                    <span>30</span>
+                    <span>15</span>
+                    <span>18</span>
+                </div>
+
+            </div>
+
+            <div class="ug-table-summary">
+
+                <div class="ug-summary-item">
+                    <span>TOTAL INTAKE</span>
+                    <strong>279</strong>
+                </div>
+
+                <div class="ug-summary-item">
+                    <span>TOTAL COMPLETED</span>
+                    <strong class="ug-red">176</strong>
+                </div>
+
+                <div class="ug-summary-item">
+                    <span>TOTAL DISPOSED</span>
+                    <strong class="ug-red">101</strong>
+                </div>
+
+                <div class="ug-summary-item">
+                    <span>ACTIVE</span>
+                    <strong>2</strong>
+                </div>
+
+            </div>
+
+            <p class="ug-file-note">
+                COMPLETED：受试者已完成所有采集周期，生物样本已完整归档。
+                <br>
+                DISPOSED：受试者生物样本已完成用途，剩余部分已按流程处理。
+                <br>
+                ACTIVE：受试者仍在观察周期内。
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         文件2：受试者档案墙
+    ====================================================== -->
+
+    <section class="ug-file">
+
+        <div class="ug-file-header">
+            <span>DOCUMENT 02</span>
+            <strong>SUBJECT WALL</strong>
+            <small>RECENT SUBJECTS</small>
+        </div>
+
+        <div class="ug-file-body">
+
+            <p class="ug-file-desc">
+                最近24个月内进入系统的受试者。
+            </p>
+
+            <div class="ug-subject-table">
+
+                <div class="ug-subject-row ug-subject-header">
+                    <span>SUBJECT ID</span>
+                    <span>STATUS</span>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-disposed">
+                    <span>YL-2024-03</span>
+                    <strong>DISPOSED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-disposed">
+                    <span>YL-2024-07</span>
+                    <strong>DISPOSED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-completed">
+                    <span>YL-2024-11</span>
+                    <strong>COMPLETED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-disposed">
+                    <span>YL-2025-02</span>
+                    <strong>DISPOSED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-completed">
+                    <span>YL-2025-05</span>
+                    <strong>COMPLETED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-completed">
+                    <span>YL-2025-08</span>
+                    <strong>COMPLETED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-disposed">
+                    <span>YL-2025-10</span>
+                    <strong>DISPOSED</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-active">
+                    <span>YL-2025-017</span>
+                    <strong>ACTIVE</strong>
+                </div>
+
+
+                
+                <div class="ug-subject-row ug-subject-active">
+                    <span>YL-2026-01</span>
+                    <strong>ACTIVE</strong>
+                </div>
+
+
+            </div>
+
+            <p class="ug-file-note ug-red-note">
+                ACTIVE 状态将在下一采集周期结束后更新。
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         文件3：内部安全报告
+    ====================================================== -->
+
+    <section class="ug-file">
+
+        <div class="ug-file-header">
+            <span>DOCUMENT 03</span>
+            <strong>INTERNAL SECURITY REPORT</strong>
+            <small>SUBJECT: NO.017 CONTACTS</small>
+        </div>
+
+        <div class="ug-file-body">
+
+            <p class="ug-file-desc">
+                与 NO.017 相关的外部联系人及调查人员。
+                本报告由内部监控单元整理。
+            </p>
+
+            <div class="ug-table ug-table-security">
+
+                <div class="ug-table-row ug-table-header">
+                    <span>身份</span>
+                    <span>活动</span>
+                    <span>状态</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>周岚 · 调查记者</span>
+                    <span>持续调查</span>
+                    <span class="ug-red">已处理</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>陈警员 · 失踪案负责</span>
+                    <span>案件调查</span>
+                    <span>已调离</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>梦琪母亲</span>
+                    <span>多次到店询问</span>
+                    <span>已安抚</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>梦琪父亲</span>
+                    <span>电话查询</span>
+                    <span>已安抚</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>小美 · 梦琪同学</span>
+                    <span>论坛发帖</span>
+                    <span class="ug-red">已处理</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>匿名论坛用户</span>
+                    <span>发布警告帖</span>
+                    <span class="ug-red">已处理</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>陈某某 · 梦琪同学</span>
+                    <span>向媒体提供信息</span>
+                    <span class="ug-red">已处理</span>
+                </div>
+
+                <div class="ug-table-row ug-table-current">
+                    <span>十七 · 粉丝</span>
+                    <span>持续搜索、发帖</span>
+                    <span class="ug-current">监控中</span>
+                </div>
+
+            </div>
+
+            <p class="ug-file-note ug-red-note">
+                建议：持续监控，如活动升级则采取进一步措施。
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         文件4：转移通知
+    ====================================================== -->
+
+    <section class="ug-file">
+
+        <div class="ug-file-header">
+            <span>DOCUMENT 04</span>
+            <strong>INTERNAL TRANSFER ORDER</strong>
+            <small>SUBJECT: YL-2025-017</small>
+        </div>
+
+        <div class="ug-file-body">
+
+            <div class="ug-transfer-card" data-evidence="ug-transfer"
+                data-evidence-title="地下档案 · DOCUMENT 04 转移通知"
+                data-evidence-date="2026.02.17"
+                data-evidence-flag="founder_access">
+
+                <div class="ug-transfer-row">
+                    <span>受试者编号</span>
+                    <strong>YL-2025-017</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>姓名</span>
+                    <strong>陈梦琪</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>入会日期</span>
+                    <strong>2025.07.02</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>转移日期</span>
+                    <strong>2026.02.17</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>转移地点</span>
+                    <strong>B3 / R-03</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>第三周期内容</span>
+                    <strong>最终采集</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>预计完成时间</span>
+                    <strong class="ug-red">02:17</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>经手人</span>
+                    <strong>DR. CHEN WEI</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>批准人</span>
+                    <strong>L.Y.L</strong>
+                </div>
+
+                <div class="ug-transfer-row">
+                    <span>状态</span>
+                    <strong class="ug-red">COMPLETED</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         文件5：血液数据
+    ====================================================== -->
+
+    <section class="ug-file">
+
+        <div class="ug-file-header">
+            <span>DOCUMENT 05</span>
+            <strong>BLOOD ANALYSIS</strong>
+            <small>SUBJECT: YL-2025-017</small>
+        </div>
+
+        <div class="ug-file-body">
+
+            <div class="ug-blood-table">
+
+                <div class="ug-table-row ug-table-header">
+                    <span>项目</span>
+                    <span>数值</span>
+                    <span>状态</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>WBC（白细胞）</span>
+                    <span>7.2 ×10⁹/L</span>
+                    <span>正常</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>RBC（红细胞）</span>
+                    <span>4.5 ×10¹²/L</span>
+                    <span>正常</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>HGB（血红蛋白）</span>
+                    <span>128 g/L</span>
+                    <span>正常</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>PLT（血小板）</span>
+                    <span>310 ×10⁹/L</span>
+                    <span>正常</span>
+                </div>
+
+                <div class="ug-table-row ug-table-abnormal">
+                    <span>YL-017-β</span>
+                    <span>0.03 ng/mL</span>
+                    <span class="ug-red">异常</span>
+                </div>
+
+                <div class="ug-table-row ug-table-abnormal">
+                    <span>YL-017-γ</span>
+                    <span>0.47 ng/mL</span>
+                    <span class="ug-red">异常</span>
+                </div>
+
+                <div class="ug-table-row">
+                    <span>YL-017-δ</span>
+                    <span>██████</span>
+                    <span>已加密</span>
+                </div>
+
+            </div>
+
+            <p class="ug-file-note">
+                特殊标记物说明：YL-017-β 及 YL-017-γ 为本机构研发的
+                生物标记物，仅在实验性研究中出现。
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         最后
+    ====================================================== -->
+
+    <section class="ug-final">
+
+        <div class="ug-final-line"></div>
+
+        <p class="ug-final-text">
+            你翻到了最后一页。
+        </p>
+
+        <p class="ug-final-text">
+            梦琪的耳钉，她的照片，她给粉丝的晚安。
+        </p>
+
+        <p class="ug-final-text">
+            还有一份系统通知：
+        </p>
+
+        <div class="ug-final-message">
+            SUBJECT 017 HAS BEEN PROCESSED.
+            <br>
+            NO FURTHER ACTION REQUIRED.
+        </div>
+
+        <p class="ug-final-text">
+            279个女孩进入过这里。
+            176个“完成”了。
+            101个“处置”了。
+            只有2个还活着。
+        </p>
+
+        <p class="ug-final-text ug-final-last">
+            你来得太晚了。
+        </p>
+
+        <div class="ug-final-return">
+            <a href="browser-home.html">回到 LUMI</a>
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="ug-footer">
+
+    <p>YULAN PAVILION · INTERNAL ARCHIVE</p>
+    <p>UNAUTHORIZED ACCESS WILL BE TRACKED</p>
+    <small>ARCHIVE ID: UG-B3-2026</small>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     访问门禁（未通过权限验证时显示）
+     这是游戏内的互动门禁，用于营造氛围，
+     不构成任何真实的访问控制或权限安全。
+===================================================== -->
+
+<div class="ug-gate" id="ugGate" style="display:none;">
+
+    <div class="ug-gate-card">
+
+        <div class="ug-gate-icon">🔒</div>
+
+        <h1>内部研究区域 · B3</h1>
+
+        <p class="ug-gate-level">REQUIRED ACCESS LEVEL: FOUNDER</p>
+
+        <p class="ug-gate-desc">
+            该区域仅限内部人员进入。<br>
+            本次访问会被记入档案。
+        </p>
+
+        <div class="ug-gate-hint">
+
+            <div class="ug-gate-hint-title">验证须知</div>
+
+            <ul>
+                <li>账号由创始人本人持有，不随权限发放。</li>
+                <li>本区域与 B3 平面图共用同一套凭据。</li>
+                <li>口令为四位数字，与生日无关。</li>
+            </ul>
+
+        </div>
+
+        <div class="ug-gate-form">
+
+            <label for="ugAccount">账号 / ACCOUNT</label>
+
+            <input
+                type="text"
+                id="ugAccount"
+                placeholder="内部系统账号"
+                autocomplete="off"
+                spellcheck="false">
+
+            <label for="ugPassword">口令 / PASSCODE</label>
+
+            <input
+                type="password"
+                id="ugPassword"
+                placeholder="四位数字"
+                autocomplete="off">
+
+            <p class="ug-gate-error" id="ugGateError"></p>
+
+            <button type="button" onclick="submitUndergroundGate()">
+                验证身份
+            </button>
+
+        </div>
+
+        <div class="ug-gate-links">
+
+            <a href="zhou-lan-profile.html">周岚的笔记</a>
+            <a href="yulan-tender.html">招标公示</a>
+            <a href="secret-collection.html">私密相册</a>
+            <a href="browser-home.html">返回搜索</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/game-progress.js"></script>
+
+<script>
+
+/* =====================================================
+   B3 内部档案访问门禁
+   使用统一的持久化解锁状态（js/game-progress.js）
+===================================================== */
+
+function showUndergroundArchive() {
+
+    document.body.classList.remove("ug-locked");
+
+    const gate = document.getElementById("ugGate");
+
+    if (gate) {
+        gate.style.display = "none";
+    }
+
+}
+
+
+function showUndergroundGate() {
+
+    document.body.classList.add("ug-locked");
+
+    const gate = document.getElementById("ugGate");
+
+    if (gate) {
+        gate.style.display = "flex";
+    }
+
+}
+
+
+function checkUndergroundAccess() {
+
+    /* 任意一处 FOUNDER 级解锁都会在这里生效 */
+    if (isProgressUnlocked(GAME_FLAGS.founderAccess)) {
+        showUndergroundArchive();
+        return;
+    }
+
+    showUndergroundGate();
+
+}
+
+
+function submitUndergroundGate() {
+
+    const account =
+        (document.getElementById("ugAccount").value || "").trim().toUpperCase();
+
+    const passcode =
+        (document.getElementById("ugPassword").value || "").trim();
+
+    const errorEl = document.getElementById("ugGateError");
+
+    if (account === "" || passcode === "") {
+        errorEl.textContent = "请输入账号与口令。";
+        return;
+    }
+
+    /* FOUNDER 口令 0217：站内三处来源
+       （忘记密码结果 / 报料电话尾号 / 周岚最后登录时间）。 */
+    const accountOk = (account === "LYL-1969");
+    const passcodeOk = (passcode === "0217");
+
+    if (accountOk && passcodeOk) {
+
+        errorEl.textContent = "";
+
+        unlockProgress(GAME_FLAGS.founderAccess);
+
+        showUndergroundArchive();
+
+        window.scrollTo(0, 0);
+
+    } else {
+
+        errorEl.textContent = "权限不足。本次访问已被记录。";
+
+    }
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    checkUndergroundAccess();
+
+    const passwordEl = document.getElementById("ugPassword");
+
+    if (passwordEl) {
+
+        passwordEl.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                submitUndergroundGate();
+            }
+        });
+
+    }
+
+});
+
+</script>
+
+
+<script>
+
+/* =====================================================
+   档案检索：按受试者编号定位已有记录
+   -----------------------------------------------------
+   只做两件事：把输入编号在“当前可见”的档案行里找出来并高亮，
+   以及把同一年的年度统计行一并标出来。
+   不新增记录、不绕过门槛、不改动任何档案内容。
+===================================================== */
+
+const UG_SEARCH_ROW_SELECTOR = ".ug-subject-row, .ug-table-row, .ug-transfer-row";
+
+/* 编号统一成大写并去掉空白，好和输入做包含匹配 */
+function normalizeUgQuery(value) {
+
+    return String(value || "").trim().toUpperCase().replace(/\s+/g, "");
+
+}
+
+function undergroundArchiveLocked() {
+
+    if (document.body.classList.contains("ug-locked")) {
+        return true;
+    }
+
+    const gate = document.getElementById("ugGate");
+
+    if (!gate) {
+        return false;
+    }
+
+    return window.getComputedStyle(gate).display !== "none";
+
+}
+
+function clearUndergroundHits() {
+
+    document.querySelectorAll(".ug-search-hit").forEach(function (el) {
+
+        el.classList.remove("ug-search-hit");
+
+    });
+
+}
+
+/* 表头行、以及当前不可见的行都不参与检索 */
+function ugRowIsSearchable(row) {
+
+    if (row.classList.contains("ug-table-header") ||
+        row.classList.contains("ug-subject-header")) {
+        return false;
+    }
+
+    return window.getComputedStyle(row).display !== "none";
+
+}
+
+function ugVisibleRows(selector) {
+
+    const list = [];
+
+    document.querySelectorAll(selector).forEach(function (row) {
+
+        if (ugRowIsSearchable(row)) {
+            list.push(row);
+        }
+
+    });
+
+    return list;
+
+}
+
+/* 命中行里出现的年份，例如 YL-2025-017 → 2025 */
+function ugYearsFromRows(rows) {
+
+    const years = [];
+
+    rows.forEach(function (row) {
+
+        const match = normalizeUgQuery(row.textContent).match(/YL-(\d{4})-/);
+
+        if (match && years.indexOf(match[1]) === -1) {
+            years.push(match[1]);
+        }
+
+    });
+
+    return years;
+
+}
+
+/* 年度统计表里与这些年份对口的第一列 */
+function ugYearRows(years) {
+
+    const list = [];
+
+    if (years.length === 0) {
+        return list;
+    }
+
+    ugVisibleRows(".ug-table-row").forEach(function (row) {
+
+        const head = normalizeUgQuery(row.textContent).slice(0, 4);
+
+        if (years.indexOf(head) !== -1) {
+            list.push(row);
+        }
+
+    });
+
+    return list;
+
+}
+
+function runUndergroundSearch() {
+
+    const input = document.getElementById("ugSearchInput");
+    const status = document.getElementById("ugSearchStatus");
+
+    if (!status) {
+        return;
+    }
+
+    const typed = input ? String(input.value || "").trim() : "";
+    const query = normalizeUgQuery(typed);
+
+    clearUndergroundHits();
+
+    if (undergroundArchiveLocked()) {
+
+        status.textContent = "档案未解锁，无法检索。";
+        return;
+
+    }
+
+    if (query === "") {
+
+        status.textContent = "请输入受试者编号，例如 YL-2025-017。";
+        return;
+
+    }
+
+    const hits = ugVisibleRows(UG_SEARCH_ROW_SELECTOR).filter(function (row) {
+
+        return normalizeUgQuery(row.textContent).indexOf(query) !== -1;
+
+    });
+
+    /* 直接输入年份时，年度统计行本身就算命中 */
+    const years = ugYearsFromRows(hits);
+
+    if (years.length === 0 && /^\d{4}$/.test(query)) {
+        years.push(query);
+    }
+
+    const yearRows = ugYearRows(years).filter(function (row) {
+
+        return hits.indexOf(row) === -1;
+
+    });
+
+    if (hits.length === 0 && yearRows.length === 0) {
+
+        status.textContent = "这份档案里没有「" + typed + "」。";
+        return;
+
+    }
+
+    hits.concat(yearRows).forEach(function (row) {
+
+        row.classList.add("ug-search-hit");
+
+    });
+
+    const parts = [];
+
+    parts.push("命中 " + hits.length + " 行");
+
+    if (years.length > 0) {
+        parts.push("年份 " + years.join(" / "));
+    }
+
+    if (yearRows.length > 0) {
+        parts.push("年度统计已一并高亮");
+    }
+
+    status.textContent = parts.join(" · ") + "。";
+
+    const first = hits.length > 0 ? hits[0] : yearRows[0];
+
+    if (first && first.scrollIntoView) {
+        first.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("ugSearchInput");
+
+    if (!input) {
+        return;
+    }
+
+    input.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+
+            event.preventDefault();
+            runUndergroundSearch();
+
+        }
+
+    });
+
+    /* 档案没解锁时，别让光标停进检索框 */
+    input.addEventListener("focus", function () {
+
+        if (undergroundArchiveLocked()) {
+            input.blur();
+        }
+
+    });
+
+});
+
+</script>
+
+
+<script src="js/evidence.js"></script>
+
+</body>
+
+</html>

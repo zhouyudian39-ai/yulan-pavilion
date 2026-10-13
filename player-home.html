@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>十七的主页 · LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@900&family=Archivo+Black&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/y2k.css">
+
+<link rel="stylesheet" href="css/player.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="lumi-topbar">
+
+    <div class="topbar-left">
+        <a href="index.html" class="back-link">←</a>
+        <span class="topbar-title">十七的主页</span>
+    </div>
+
+    <div class="topbar-right">
+        <span class="topbar-icon">🔍</span>
+        <span class="topbar-icon">⚙</span>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     个人资料区
+===================================================== -->
+
+<section class="profile-card">
+
+    <div class="profile-cover">
+        <img src="images/player/cover.jpg" alt="背景图">
+        <span class="profile-cover-mark" aria-hidden="true">SHIQI</span>
+    </div>
+
+    <div class="profile-top">
+
+        <div class="profile-avatar-wrap">
+            <img src="images/player/avatar.jpg" alt="头像" loading="lazy" decoding="async">
+        </div>
+
+        <div class="profile-actions">
+            <button class="btn-follow">+ 关注</button>
+            <button class="btn-edit">编辑资料</button>
+        </div>
+
+    </div>
+
+    <div class="profile-info">
+
+        <h1 class="profile-name">
+            十七
+            <span class="verified">✓</span>
+        </h1>
+
+        <p class="profile-bio">
+            陈梦琪超话小主持人 · 饭拍产出
+        </p>
+
+        <p class="profile-desc">
+            她还在的。只是我们还没找到她。
+            <br>
+            梦琪，第48天。我还在。
+        </p>
+
+        <p class="profile-location">
+            📍 香港
+        </p>
+
+    </div>
+
+    <div class="profile-stats">
+
+        <a class="stat">
+            <strong>17</strong>
+            <span>关注</span>
+        </a>
+
+        <a class="stat">
+            <strong>204</strong>
+            <span>粉丝</span>
+        </a>
+
+        <a class="stat">
+            <strong>98</strong>
+            <span>帖子</span>
+        </a>
+
+        <a class="stat">
+            <strong>3.2万</strong>
+            <span>获赞</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     内容标签栏
+===================================================== -->
+
+<nav class="content-tabs">
+
+    <a class="tab active">帖子</a>
+    <a class="tab">相册</a>
+    <a class="tab">追星足迹</a>
+    <a class="tab">应援记录</a>
+
+</nav>
+
+
+<!-- =====================================================
+     主内容区
+===================================================== -->
+
+<main class="content-main">
+
+
+    <!-- ====================== 左侧 ====================== -->
+
+    <aside class="sidebar-left">
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>相册</h3>
+                <a>查看全部 →</a>
+            </div>
+
+            <div class="album-preview">
+
+                <div class="album-thumb">
+                    <img src="images/player/photo1.jpg" alt="梦琪舞台" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/player/photo2.jpg" alt="演唱会现场" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/player/photo3.jpg" alt="梦琪饭拍" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/player/photo4.jpg" alt="梦琪路透" loading="lazy" decoding="async">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>关注</h3>
+                <a>更多 →</a>
+            </div>
+
+            <div class="follow-list">
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-2" role="img" aria-label="梦琪应援会">&#9650;</div>
+                    <span>梦琪应援会</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-1" role="img" aria-label="舞台收集站">&#9671;</div>
+                    <span>舞台收集站</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-4" role="img" aria-label="失踪报道追踪">&#9632;</div>
+                    <span>失踪报道追踪</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="旧港娱乐存档">&#9679;</div>
+                    <span>旧港娱乐存档</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>最近访客</h3>
+            </div>
+
+            <div class="visitor-list">
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-4" role="img" aria-label="梦琪今天回来了吗">&#9632;</div>
+                    <span>梦琪今天回来了吗</span>
+                </div>
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-6" role="img" aria-label="等待一颗星">&#10035;</div>
+                    <span>等待一颗星</span>
+                </div>
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-2" role="img" aria-label="十七和梦琪">&#9650;</div>
+                    <span>十七和梦琪</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 🔒 私密相册入口 -->
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>相册</h3>
+            </div>
+
+            <a href="secret-collection.html" class="private-album-entry">
+
+                <span class="private-album-icon">🔒</span>
+
+                <span class="private-album-info">
+                    <strong>私密相册</strong>
+                    <small>47张照片 · 仅自己可见</small>
+                </span>
+
+                <span class="private-album-arrow">→</span>
+
+            </a>
+
+        </div>
+
+        <!-- 切换账号 -->
+<div class="side-section">
+
+    <div class="side-header">
+        <h3>账号</h3>
+    </div>
+
+    <a href="browser-login.html" class="switch-account-link">
+        <span class="switch-icon">🔄</span>
+        <span class="switch-text">
+            <strong>切换账号</strong>
+            <small>登录其他 LUMI 账号</small>
+        </span>
+        <span class="switch-arrow">→</span>
+    </a>
+
+</div>
+
+        <!-- ================== 调查进度 ================== -->
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>调查</h3>
+            </div>
+
+            <div class="investigation-card">
+
+                <div class="investigation-card-title">我存下来的</div>
+
+                <a href="secret-collection.html" class="investigation-step">
+                    采访里她自己说过怎么设密码，截图在我这儿。
+                </a>
+
+                <a href="forum.html" class="investigation-step">
+                    论坛里被删掉的那几条，登录会员账号才看得到。
+                </a>
+
+                <a href="yulan-tender.html" class="investigation-step">
+                    玉兰阁的招标公示，有一段锁着，要权限。
+                </a>
+
+                <div class="ev-board" data-evidence-board>
+
+                    <div class="ev-board-toolbar">
+
+                        <span class="ev-board-count" data-evidence-count>0 条</span>
+
+                        <span class="ev-board-actions">
+
+                            <button type="button" data-evidence-sort>
+                                排序：收集顺序
+                            </button>
+
+                            <button type="button" data-evidence-clear>
+                                清空清单
+                            </button>
+
+                        </span>
+
+                    </div>
+
+                    <p class="ev-board-empty" data-evidence-empty>
+                        还没有存证。对报道、论坛、相册里的句子点「存证」，
+                        它会连着出处一起抄到这里。
+                    </p>
+
+                    <div class="ev-board-list" data-evidence-list></div>
+
+                    <p class="ev-board-note">
+                        只存在这台机器上：原文、来源页，和页面上的日期。
+                    </p>
+
+                </div>
+
+                <div class="investigation-card-links">
+
+                    <a href="index.html">返回搜索</a>
+                    <a href="secret-collection.html">私密相册</a>
+
+                    <button type="button" onclick="confirmResetGameProgress()">
+                        重新开始调查
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ====================== 右侧动态流 ====================== -->
+
+    <section class="feed">
+
+
+        <!-- =====================================================
+             置顶 · 初见面（含评论区）
+        ====================================================== -->
+
+        <div class="feed-item pinned">
+
+            <div class="feed-label">📌 置顶</div>
+
+            <div class="feed-content">
+
+                <p>
+                    我们的初见面。
+                </p>
+
+                <p>
+                    你第一次登台。
+                </p>
+
+                <p>
+                    那天是
+                    <span class="highlight-date">2025.12.17</span>。
+                </p>
+
+                <p>
+                    你说：
+                    <strong>“这是我人生中最重要的一天。”</strong>
+                </p>
+
+                <p>
+                    我也是。
+                    因为那天我遇到了你。
+                </p>
+
+                <div class="feed-images single-image">
+                    <img src="images/player/stage-first.jpg" alt="初见面舞台" loading="lazy" decoding="async">
+                </div>
+
+            </div>
+
+            <div class="feed-meta">
+                置顶 · 2026.02.17 23:58 编辑
+            </div>
+
+            <!-- 微博式操作栏 -->
+            <div class="post-actions">
+
+                <button class="action-btn" onclick="toggleComments2()">
+                    <span class="action-icon">💬</span>
+                    评论 <span class="action-count">3</span>
+                </button>
+
+                <button class="action-btn">
+                    <span class="action-icon">👍</span>
+                    赞 <span class="action-count">98</span>
+                </button>
+
+                <button class="action-btn">
+                    <span class="action-icon">↗</span>
+                    分享
+                </button>
+
+            </div>
+
+            <!-- 置顶评论区（默认折叠） -->
+            <div class="comment-area weibo-comments" id="commentArea2">
+                <div class="comment-list">
+
+                    <div class="comment-item self-comment">
+                        <img src="images/player/avatar.jpg" alt="十七头像" class="comment-avatar">
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七
+                                <span class="comment-time">2025.12.18 01:02</span>
+                            </div>
+                            <p>
+                                梦琪说这是她人生中最重要的一天。
+                                我也是。因为今天我遇到了梦琪。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-6" role="img" aria-label="等待一颗星">&#10035;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                等待一颗星
+                                <span class="comment-time">2025.12.18 08:30</span>
+                            </div>
+                            <p>
+                                那天我也在！虽然站得很后面。
+                                她唱到第二首歌的时候声音有点抖。
+                                但真的好可爱。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-4" role="img" aria-label="梦琪今天回来了吗">&#9632;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                梦琪今天回来了吗
+                                <span class="comment-time">2025.12.18 10:15</span>
+                            </div>
+                            <p>
+                                我也永远记住了这一天~
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             最新 · 忍不了了（评论区折叠）
+        ====================================================== -->
+
+        <div class="feed-item" id="angry-post">
+
+            <div class="feed-content">
+
+                <p>
+                    家人们我真的忍不了了。
+                </p>
+
+                <p>
+                    官方到现在什么都不说。
+                    警方没有结论。
+                    公司说是“健康原因”。
+                    健康原因会48天不发任何消息吗？
+                </p>
+
+                <p>
+                    我受够了。
+                    我受够了每天看着她的照片哭。
+                    我受够了所有人都在等，但没有一个人去找。
+                </p>
+
+                <p>
+                    我要自己找她。
+                    我必须把她找出来。
+                    不管她在哪。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.04.05 14:07 · 来自 LUMI · 评论 6
+            </div>
+
+            <!-- 微博式操作栏 -->
+            <div class="post-actions">
+
+                <button class="action-btn" onclick="toggleComments()">
+                    <span class="action-icon">💬</span>
+                    评论 <span class="action-count">6</span>
+                </button>
+
+                <button class="action-btn">
+                    <span class="action-icon">👍</span>
+                    赞 <span class="action-count">12</span>
+                </button>
+
+                <button class="action-btn">
+                    <span class="action-icon">↗</span>
+                    分享
+                </button>
+
+            </div>
+
+            <!-- 评论区（默认折叠） -->
+
+            <div class="comment-hint-row">
+                <button
+                    type="button"
+                    class="comment-toggle-hint"
+                    id="commentToggleHint"
+                    aria-expanded="false"
+                    aria-controls="commentArea"
+                    onclick="toggleComments()">
+                    查看评论 ▾
+                </button>
+            </div>
+
+            <div class="comment-area weibo-comments" id="commentArea">
+                <div class="comment-list">
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-4" role="img" aria-label="梦琪今天回来了吗">&#9632;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                梦琪今天回来了吗
+                                <span class="comment-time">2026.04.05 14:22</span>
+                            </div>
+                            <p>
+                                别冲动啊十七……警方会查的。
+                                你这样自己去找，很危险。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-6" role="img" aria-label="等待一颗星">&#10035;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                等待一颗星
+                                <span class="comment-time">2026.04.05 14:35</span>
+                            </div>
+                            <p>
+                                你在香港吗？我约你出来好不好？
+                                你这样一个人扛着真的不行。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-3" role="img" aria-label="不知道取什么名字">&#9679;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                不知道取什么名字
+                                <span class="comment-time">2026.04.05 15:02</span>
+                            </div>
+                            <p>
+                                姐妹我懂你。
+                                我也找了好久。
+                                之前还找到过玉兰阁合作的美容院，但被赶出来了。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-1" role="img" aria-label="十七今天找到梦琪了吗">&#9671;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七今天找到梦琪了吗
+                                <span class="comment-time">2026.04.05 15:18</span>
+                            </div>
+                            <p>
+                                说不定她只是累了想休息呢？
+                                别自己吓自己。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item self-comment">
+                        <img src="images/player/avatar.jpg" alt="十七头像" class="comment-avatar">
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七
+                                <span class="comment-time">2026.04.05 15:30</span>
+                            </div>
+                            <p>
+                                我想到办法了。
+                                登录梦琪的 LUMI 账号。
+                                她的浏览记录和搜索历史，也许还在。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-5" role="img" aria-label="别留我一个人">&#9670;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                别留我一个人
+                                <span class="comment-time">2026.04.05 15:42</span>
+                            </div>
+                            <p>
+                                你怎么登录？没有密码吧。
+                                而且……这样不好吧？
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item self-comment">
+                        <img src="images/player/avatar.jpg" alt="十七头像" class="comment-avatar">
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七
+                                <span class="comment-time">2026.04.05 15:46</span>
+                            </div>
+                            <p>
+                                我知道密码。
+                                她以前在采访里说过。
+                                <span class="highlight-password">只有我记得。</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-7" role="img" aria-label="月亮不营业">&#9661;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                月亮不营业
+                                <span class="comment-time">2026.04.05 15:55</span>
+                            </div>
+                            <p>
+                                先不管那个。
+                                你上次说的“地铁上看到像她的人”，
+                                在哪里看到的？我也想去看。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             投票
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    第48天。我还在投票。
+                </p>
+
+                <p>
+                    虽然知道没有用。
+                </p>
+
+                <p>
+                    但我不知道还能做什么。
+                </p>
+
+                <div class="stat-card">
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">寻艺签到</span>
+                        <span class="stat-card-state">已签到</span>
+                    </div>
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">超话签到</span>
+                        <span class="stat-card-state">已签到</span>
+                    </div>
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">应援投票</span>
+                        <span class="stat-card-state stat-card-keep">今天也投了</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.04.05 09:30 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             握手会
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    整理旧照片。这是握手会那天。
+                </p>
+
+                <p>
+                    你记得我。
+                    你说：“你是十七对不对？”
+                </p>
+
+                <p>
+                    我手上都是汗，但是你笑得好开心。
+                </p>
+
+                <p>
+                    下一次见面，我们要一起拍正面的合照。
+                </p>
+
+                <div class="feed-images single-image">
+                    <img src="images/player/handshake.jpg" alt="握手会照片" loading="lazy" decoding="async">
+                </div>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.04.03 20:41 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             数据维护
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    日常数据维护。
+                </p>
+
+                <p>
+                    超话签到、寻艺签到、贴吧打卡、话题度报告。
+                </p>
+
+                <div class="stat-card">
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">超话签到</span>
+                        <span class="stat-card-state">已签到</span>
+                    </div>
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">寻艺签到</span>
+                        <span class="stat-card-state">已签到</span>
+                    </div>
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">贴吧打卡</span>
+                        <span class="stat-card-state">已打卡</span>
+                    </div>
+
+                    <div class="stat-card-row">
+                        <span class="stat-card-name">话题度报告</span>
+                        <span class="stat-card-state stat-card-off">待更新</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.03.30 22:14 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             地铁偶遇
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    今天在地铁上看到一个女生。
+                    耳钉和你一样，是一颗小星星。
+                </p>
+
+                <p>
+                    我差点叫出你的名字。
+                    但我知道，那不是你。
+                </p>
+
+                <p>
+                    现在回想起来，最近怎么老看到和你很像的人。
+                    也许是我太想你了。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.03.28 02:17 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             底部
+        ====================================================== -->
+
+        <div class="feed-end">
+            已经到底啦 · 没有更多帖子了
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="player-footer">
+
+    <p>LUMI 个人主页 · 十七</p>
+    <p>还没有放弃的人，不止你一个。</p>
+
+</footer>
+
+
+<script src="js/game-progress.js"></script>
+
+<script>
+
+/* 主评论区切换 */
+function toggleComments() {
+
+    const commentArea =
+        document.getElementById("commentArea");
+
+    const hint =
+        document.getElementById("commentToggleHint");
+
+    const isHidden =
+        commentArea.style.display === "none" || commentArea.style.display === "";
+
+    commentArea.style.display = isHidden ? "block" : "none";
+
+    if (hint) {
+
+        hint.setAttribute("aria-expanded", isHidden ? "true" : "false");
+
+        hint.textContent = isHidden
+            ? "查看评论 ▴"
+            : "查看评论 ▾";
+
+    }
+
+}
+
+
+/* 置顶评论区切换 */
+function toggleComments2() {
+
+    const commentArea2 =
+        document.getElementById("commentArea2");
+
+    if (
+        commentArea2.style.display === "none" ||
+        commentArea2.style.display === ""
+    ) {
+
+        commentArea2.style.display = "block";
+
+    } else {
+
+        commentArea2.style.display = "none";
+
+    }
+
+}
+
+
+/* 初始状态：两个评论区都折叠 */
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const commentArea =
+            document.getElementById("commentArea");
+
+        if (commentArea) {
+            commentArea.style.display = "none";
+        }
+
+        const commentArea2 =
+            document.getElementById("commentArea2");
+
+        if (commentArea2) {
+            commentArea2.style.display = "none";
+        }
+
+    }
+);
+
+</script>
+
+<script src="js/evidence.js"></script>
+
+<script src="js/img-fallback.js"></script>
+
+</body>
+
+</html>

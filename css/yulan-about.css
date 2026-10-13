@@ -1,0 +1,1457 @@
+/* =====================================================
+   关于我们 · 玉兰阁
+   ABOUT YULAN PAVILION
+===================================================== */
+
+
+/* ===============================
+   基础
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fafaf8;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+
+.about-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ===============================
+   顶部导航（复用玉兰阁样式）
+================================ */
+
+.yp-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 30px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.yp-brand {
+    flex-shrink: 0;
+}
+
+
+.yp-logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+
+.yp-nav {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.yp-nav a {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.15s;
+    letter-spacing: 1px;
+}
+
+
+.yp-nav a:hover {
+    background: #f8f5f2;
+    color: #8a1f1f;
+}
+
+
+.yp-nav a.active {
+    background: #fdf0ec;
+    color: #8a1f1f;
+    font-weight: 700;
+}
+
+
+.yp-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+
+.yp-search-trigger {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+.yp-login-trigger {
+    padding: 7px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.yp-login-trigger:hover {
+    border-color: #8a1f1f;
+    color: #8a1f1f;
+}
+
+
+/* ===============================
+   Hero
+================================ */
+
+.about-hero {
+    padding: 60px 30px;
+    text-align: center;
+    background: linear-gradient(180deg, #fdf8f5 0%, #fff 100%);
+    border-bottom: 1px solid #eee;
+}
+
+
+.about-hero-label {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #8a1f1f;
+    margin-bottom: 12px;
+}
+
+
+.about-hero h1 {
+    font-size: 36px;
+    letter-spacing: 5px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+
+.about-hero-desc {
+    font-size: 15px;
+    line-height: 2;
+    color: #666;
+}
+
+
+/* ===============================
+   通用区块标题
+================================ */
+
+.about-section-title {
+    text-align: center;
+    padding: 40px 0 25px;
+}
+
+
+.about-section-title h2 {
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+
+.about-section-title p {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+
+/* ===============================
+   品牌故事
+================================ */
+
+.about-story {
+    padding: 0 30px 30px;
+}
+
+
+.story-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.story-image {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+
+.story-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.story-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+
+.story-text p {
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+
+.story-text strong {
+    color: #8a1f1f;
+}
+
+
+/* ===============================
+   创始人
+================================ */
+
+.about-founder {
+    padding: 0 30px 30px;
+    background: #fdfaf7;
+}
+
+
+.founder-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+
+
+.founder-photo {
+    width: 220px;
+    flex-shrink: 0;
+}
+
+
+.founder-photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.founder-info {
+    flex: 1;
+    min-width: 260px;
+}
+
+
+.founder-label {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #8a1f1f;
+    margin-bottom: 8px;
+}
+
+
+.founder-info h3 {
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+
+.founder-en-name {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+
+.founder-bio {
+    font-size: 13px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+.founder-quote {
+    margin: 15px 0;
+    padding: 15px 20px;
+    background: #fdf8f5;
+    border-left: 4px solid #d4af37;
+    font-size: 15px;
+    font-style: italic;
+    color: #5a1f1a;
+    letter-spacing: 1px;
+}
+
+
+.founder-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #8a1f1f;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.founder-link:hover {
+    color: #5a1f1a;
+}
+
+
+/* ===============================
+   管理团队
+================================ */
+
+.about-team {
+    padding: 0 30px 30px;
+}
+
+
+.team-note {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+
+.team-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.team-card {
+    width: 200px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+    transition: 0.2s;
+}
+
+
+.team-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+
+.team-photo {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.removed-photo,
+.empty-photo {
+    background: #f5f2ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.removed-overlay,
+.empty-overlay {
+    font-size: 12px;
+    color: #ccc;
+    letter-spacing: 2px;
+}
+
+
+.team-info {
+    padding: 12px 10px 0;
+}
+
+
+.team-info h3 {
+    font-size: 15px;
+    color: #333;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+
+.team-info p {
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+
+.team-info span {
+    font-size: 11px;
+    color: #8a1f1f;
+    letter-spacing: 1px;
+}
+
+
+.removed-card {
+    opacity: 0.6;
+    filter: grayscale(0.5);
+    border-style: dashed;
+}
+
+
+.removed-text {
+    color: #ccc !important;
+}
+
+
+.empty-card {
+    border-style: dashed;
+    opacity: 0.5;
+}
+
+
+.empty-text {
+    color: #ccc !important;
+}
+
+
+/* ===============================
+   发展历程
+================================ */
+
+.about-history {
+    padding: 0 30px 30px;
+    background: #fdfaf7;
+}
+
+
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 2px solid #e0d0c0;
+    padding-left: 30px;
+}
+
+
+.timeline-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    align-items: flex-start;
+}
+
+
+.timeline-year {
+    width: 50px;
+    flex-shrink: 0;
+    font-family: "Courier Prime", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #8a1f1f;
+    padding-top: 3px;
+}
+
+
+.timeline-dot {
+    position: absolute;
+    left: -36px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 3px solid #8a1f1f;
+    border-radius: 50%;
+}
+
+
+.timeline-info h3 {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+
+.timeline-info p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.7;
+}
+
+
+/* ===============================
+   品牌理念
+================================ */
+
+.about-philosophy {
+    padding: 0 30px 40px;
+}
+
+
+.philosophy-quote {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 20px;
+    background: #fff;
+    border: 2px solid #f0e0d8;
+    border-radius: 12px;
+}
+
+
+.philosophy-quote p {
+    font-size: 17px;
+    line-height: 2.2;
+    color: #5a1f1a;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.yp-footer {
+    text-align: center;
+    padding: 25px 30px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+
+.yp-footer-brand {
+    margin-bottom: 8px;
+}
+
+
+.yp-footer-logo {
+    height: 32px;
+    width: auto;
+}
+
+
+.yp-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+
+.yp-footer-links a {
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+}
+
+
+.yp-footer-links a:hover {
+    color: #8a1f1f;
+}
+
+
+.yp-footer p {
+    font-size: 10px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+
+.yp-footer-version {
+    display: block;
+    margin-top: 8px;
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ddd;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .yp-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .about-hero {
+        padding: 40px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .about-story,
+    .about-founder,
+    .about-team,
+    .about-history,
+    .about-philosophy {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .story-content {
+        flex-direction: column;
+    }
+
+    .story-image {
+        width: 100%;
+    }
+
+    .founder-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .founder-photo {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .team-grid {
+        gap: 12px;
+    }
+
+    .team-card {
+        width: 150px;
+    }
+
+    .team-photo {
+        height: 150px;
+    }
+
+}
+
+/* ===============================
+   答对弹窗
+================================ */
+
+.age-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.age-modal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+
+.age-modal-card {
+    position: relative;
+    z-index: 2;
+    width: 380px;
+    max-width: 92%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    text-align: center;
+    animation: modalPop 0.4s ease;
+}
+
+
+@keyframes modalPop {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.age-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #bbb;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.age-modal-close:hover {
+    color: #555;
+}
+
+
+.age-modal-badge {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+
+.age-modal-card h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #5a1f1a;
+    margin-bottom: 8px;
+}
+
+
+.age-modal-sub {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 3px;
+}
+
+
+.age-modal-secret {
+    font-size: 18px;
+    font-weight: 700;
+    color: #d4af37;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+
+.age-modal-content {
+    padding: 15px 0;
+}
+
+
+.age-modal-content p {
+    font-size: 13px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+
+.age-modal-quote {
+    font-size: 15px !important;
+    font-style: italic;
+    color: #8a1f1f !important;
+    letter-spacing: 1px;
+    margin: 12px 0 !important;
+}
+
+
+.age-modal-content strong {
+    color: #8a1f1f;
+}
+
+
+/* 优惠券 */
+.age-coupon {
+    margin: 15px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #fdf8f5 0%, #fdf0ec 100%);
+    border: 2px dashed #d4af37;
+    border-radius: 10px;
+}
+
+
+.coupon-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+
+.coupon-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #8a1f1f;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+
+.coupon-code {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    font-family: "Courier Prime", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #8a1f1f;
+    margin-bottom: 8px;
+}
+
+
+.coupon-note {
+    display: block;
+    font-size: 10px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+
+.age-modal-btn {
+    width: 100%;
+    padding: 12px 0;
+    background: #8a1f1f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 2px;
+    transition: 0.15s;
+}
+
+
+.age-modal-btn:hover {
+    background: #5a1f1a;
+}
+
+
+/* ===============================
+   响应式补充
+================================ */
+
+@media (max-width: 750px) {
+
+    .age-modal-card {
+        padding: 25px 18px;
+    }
+
+    .coupon-value {
+        font-size: 22px;
+    }
+
+}
+
+/* ===============================
+   不同年份照片
+================================ */
+
+.founder-photos {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.founder-photo-item {
+    width: 180px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.photo-year {
+    padding: 6px;
+    background: #fdf8f5;
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #8a1f1f;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #eee;
+}
+
+
+.founder-photo-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.founder-photo-item span {
+    display: block;
+    padding: 6px;
+    font-size: 10px;
+    color: #999;
+}
+
+
+/* ===============================
+   趣味测验
+================================ */
+
+.age-guess-game {
+    margin-top: 25px;
+    padding: 25px;
+    background: #fdfaf7;
+    border: 2px dashed #e0c8b8;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+.game-header {
+    margin-bottom: 18px;
+}
+
+
+.game-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.game-header h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #5a1f1a;
+    margin-bottom: 3px;
+}
+
+
+.game-header p {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.game-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+
+.game-option {
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.game-option:hover {
+    border-color: #8a1f1f;
+    color: #8a1f1f;
+}
+
+
+.game-option.correct {
+    background: #8a1f1f;
+    border-color: #8a1f1f;
+    color: #fff;
+    font-weight: 700;
+}
+
+
+.game-option.wrong {
+    background: #f5f5f5;
+    border-color: #ccc;
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+
+.game-wrong-text {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* ===============================
+   测验奖励
+================================ */
+
+.game-reward {
+    margin-top: 15px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.reward-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: #8a1f1f;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+
+.game-reward p {
+    font-size: 13px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+
+.game-reward strong {
+    color: #8a1f1f;
+    font-size: 16px;
+}
+
+
+.reward-code {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 12px 25px;
+    background: #fdf0ec;
+    border: 2px dashed #d4af37;
+    border-radius: 6px;
+    font-family: "Courier Prime", monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #8a1f1f;
+}
+
+
+.reward-note {
+    font-size: 10px !important;
+    color: #ccc !important;
+}
+
+
+/* ===============================
+   响应式补充
+================================ */
+
+@media (max-width: 750px) {
+
+    .founder-photos {
+        gap: 8px;
+    }
+
+    .founder-photo-item {
+        width: 100px;
+    }
+
+    .founder-photo-item img {
+        height: 130px;
+    }
+
+    .game-options {
+        gap: 6px;
+    }
+
+    .game-option {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+}
+
+/* =====================================================
+   Y2K 品牌对齐层（第一阶段美术改造 · 玉兰阁子页共用）
+   -----------------------------------------------------
+   只对齐「品牌层」：纸张底色 / 字体 / 报头 / 按钮 / 缺图占位。
+   只使用各页共有的类名，不假设各页内部结构，
+   因此不会与各页自己的版式冲突。
+===================================================== */
+
+body {
+
+    background-color: #fafaf8;
+
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        );
+
+    color: #1d1a18;
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+
+
+/* 待补照片：斜纹底（真实图片会完全覆盖） */
+
+img {
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    color: transparent;
+}
+
+
+/* 报头 */
+
+.yp-header {
+
+    background: #ffffff;
+    border-bottom: 2px solid #1d1a18;
+
+    box-shadow: 0 3px 0 rgba(138, 31, 31, 0.16);
+}
+
+
+.yp-nav a {
+
+    border-radius: 2px;
+
+    color: #55524e;
+    letter-spacing: 2px;
+}
+
+
+.yp-nav a:hover {
+
+    background: transparent;
+    color: #8a1f1f;
+
+    text-decoration: underline;
+}
+
+
+.yp-nav a.active {
+
+    background: transparent;
+    color: #8a1f1f;
+
+    font-weight: 700;
+
+    box-shadow: inset 0 -2px 0 #8a1f1f;
+}
+
+
+/* 按钮：早期美容广告的方角印刷感 */
+
+.yp-search-trigger,
+.yp-login-trigger {
+
+    border-radius: 2px;
+}
+
+
+.yp-login-trigger {
+
+    background: #ffffff;
+    border: 1px solid #1d1a18;
+
+    color: #1d1a18;
+    letter-spacing: 2px;
+}
+
+
+.yp-login-trigger:hover {
+
+    background: #8a1f1f;
+    border-color: #8a1f1f;
+
+    color: #ffffff;
+}
+
+
+.yp-btn-primary {
+
+    background: #8a1f1f;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 rgba(29, 26, 24, 0.18);
+}
+
+
+.yp-btn-primary:hover {
+
+    background: #5a1f1a;
+}
+
+
+.yp-btn-secondary {
+
+    background: #ffffff;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    color: #8a1f1f;
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 rgba(29, 26, 24, 0.1);
+}
+
+
+.yp-btn-secondary:hover {
+
+    background: #f7f2ec;
+    border-color: #1d1a18;
+
+    color: #8a1f1f;
+}
+
+/* Y2K-PHOTO-SLOTS about */
+/* =====================================================
+   Y2K 照片位定尺寸层（第一阶段美术改造 · 第二轮收口）
+   关于我们 yulan-about.html
+   -----------------------------------------------------
+   本页照片的高度原本写在 <img> 上（height）。
+   缺图时浏览器会把 <img> 缩到 alt 文字那么大，
+   于是「品牌故事」与「创始人」照片位塌成一条。
+   做法：尺寸交给容器，图片绝对定位铺满。
+===================================================== */
+
+
+/* ---------- 共用照片位（有年份条 / 说明行的格子） ---------- */
+
+.yp-photo {
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+}
+
+
+.yp-photo img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border: none;
+    border-radius: 0;
+}
+
+
+/* ---------- 品牌故事图 ---------- */
+
+.story-image {
+
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+}
+
+
+.story-image img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+
+/* ---------- 创始人肖像 ---------- */
+
+.founder-photo {
+
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+}
+
+
+.founder-photo img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+
+/* ---------- 年份照片（1998 / 2006 / 2026） ---------- */
+
+.founder-photo-item .yp-photo {
+
+    height: 200px;
+
+    border: none;
+    border-bottom: 1px solid #1d1a18;
+    border-radius: 0;
+}
+
+
+/* ---------- 团队照片：容器本来就是定高的，图片铺满即可 ---------- */
+
+.team-photo img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 750px) {
+
+    .story-image {
+        height: 220px;
+    }
+
+    .founder-photo {
+        height: 240px;
+    }
+
+    .founder-photo-item .yp-photo {
+        height: 130px;
+    }
+
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

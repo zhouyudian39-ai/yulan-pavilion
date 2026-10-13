@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>新生女孩论坛 · 美丽新生活</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/forum.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="forum-page">
+
+
+<!-- =====================================================
+     顶部
+===================================================== -->
+
+<header class="forum-header">
+
+    <div class="forum-brand">
+        <span class="brand-flower">🌸</span>
+        <div>
+            <strong>新生女孩论坛</strong>
+            <small>NEW FACE GIRLS · 美丽新生活</small>
+        </div>
+    </div>
+
+    <div class="forum-nav">
+        <span>首页</span>
+        <span>变美日记</span>
+        <span>手术交流</span>
+        <span>求助专区</span>
+        <span>新人报道</span>
+    </div>
+
+    <button class="login-trigger" id="loginTrigger" onclick="openLoginModal()">
+        登录
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     返回入口（跨站统一，避免迷路）
+===================================================== -->
+
+<nav class="gp-back-nav forum-back-nav" aria-label="站点导航">
+
+    <a href="index.html">← 返回搜索</a>
+    <a href="player-home.html">十七的主页</a>
+    <a href="city-weekly.html">城市周刊</a>
+    <a href="browser-home.html">LUMI 首页</a>
+
+</nav>
+
+
+<!-- =====================================================
+     横幅
+===================================================== -->
+
+<section class="forum-banner">
+
+    <h1>每一张脸，都值得被爱。</h1>
+    <p>分享你的变美故事，找到属于你的方向。</p>
+
+</section>
+
+
+<!-- =====================================================
+     访客提示条
+===================================================== -->
+
+<div class="visitor-alert" id="visitorAlert">
+
+    <span>⚠</span>
+
+    <p>
+        检测到新访客。
+        <br>
+        您的浏览记录已被登记。
+    </p>
+
+    <small>
+        SESSION: #MQ-2026-017
+    </small>
+
+</div>
+
+
+<!-- =====================================================
+     登录状态条（登录后显示）
+===================================================== -->
+
+<div class="logged-in-bar" id="loggedInBar" style="display:none;">
+
+    <span>🌸</span>
+
+    <p>
+        欢迎回来，<strong>梦琪</strong>。
+        <br>
+        您的会员权限已恢复。
+    </p>
+
+    <small data-evidence="forum-last-login"
+        data-evidence-title="LUMI 论坛 · 登录提示"
+        data-evidence-date="2026.02.16 23:52">
+        上次登录：2026.02.16 23:52
+    </small>
+
+</div>
+
+
+<!-- =====================================================
+     帖子列表
+===================================================== -->
+
+<main class="forum-main">
+
+
+<!-- =====================================================
+     帖子01 · 极端焦虑
+===================================================== -->
+
+<article class="post-card">
+
+    <div class="post-side">
+        <div class="post-avatar">小</div>
+        <div class="post-user">想变漂亮的小鱼</div>
+        <div class="post-level">新会员</div>
+        <div class="post-stats">
+            发帖：3
+            <br>
+            注册：2026.03
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title">
+            【求助】我真的快疯了，有没有人试过全脸削骨
+        </div>
+
+        <div class="post-time">2026.04.02 23:14</div>
+
+        <div class="post-content">
+
+            <p>
+                第一次发帖，也不知道该怎么说。
+            </p>
+
+            <p>
+                就是觉得我这张脸已经没救了。
+                颧骨好高，下巴好宽，眼睛小得跟没有一样。
+                怎么说呢，就感觉自己像个男的，还是丑的那种。
+            </p>
+
+            <p>
+                我试过用美工刀在脸上划，想把轮廓刮出来一点。
+                划了几刀，流了好多血，后来留了疤。
+                疤比原来的脸还难看。
+            </p>
+
+            <p>
+                我同学说我是"背影杀手"。
+                就是那种从后面看还行，一转头就吓死人的。
+            </p>
+
+            <p>
+                我知道她们在笑我。她们不说，我也知道。
+            </p>
+
+            <p>
+                我好想把整张脸都换掉。
+                真的。不是开玩笑。
+                如果这辈子就要这样过，那我还不如去死。
+            </p>
+
+            <p>
+                有没有姐妹做过全脸削骨？痛不痛？恢复期要多久？
+                再痛也不会比每天照镜子痛吧。
+            </p>
+
+        </div>
+
+        <div class="post-replies">
+
+            <div class="reply consultant-reply">
+                <div class="reply-user">新生计划顾问·周</div>
+                <div class="reply-time">2026.04.03 09:15</div>
+                <div class="reply-text">
+                    小鱼，先不要急。
+                    <br>
+                    你说的这些问题，其实没有你想的那么严重。
+                    你的骨相基础不差，只是还没找到对的方向。
+                    <br>
+                    如果方便的话，可以来我们这里做一次免费的
+                    <strong>面相分析</strong>。
+                    不一定要动刀。很多时候，问题不是脸，是方法。
+                </div>
+            </div>
+
+            <div class="reply">
+                <div class="reply-user">想变漂亮的小鱼</div>
+                <div class="reply-time">2026.04.03 10:02</div>
+                <div class="reply-text">
+                    真的吗……谢谢你。
+                    <br>
+                    我约了明天。希望这次真的能行。
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子02 · 陈梦琪
+===================================================== -->
+
+<article class="post-card dream-post visitor-marked">
+
+    <div class="post-side">
+        <div class="post-avatar dream-avatar">梦</div>
+        <div class="post-user">梦琪</div>
+        <div class="post-level">新会员</div>
+        <div class="post-stats">
+            发帖：2
+            <br>
+            注册：2025.06
+            <br>
+            最后登录：
+            <br>
+            2026.02.16
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title">
+            【求助】我是不是不够好看
+        </div>
+
+        <div class="post-time">2025.06.28 21:07</div>
+
+        <div class="post-content">
+
+            <p>
+                大家好，我叫梦琪。
+            </p>
+
+            <p>
+                第一次来这个论坛，有点紧张。
+            </p>
+
+            <p>
+                我看了其他姐妹的帖子，大家好像都比我勇敢。
+                至少她们敢说自己想变漂亮。
+                我连这个都不敢说。
+            </p>
+
+            <p>
+                朋友说我的脸太圆了，不上镜。
+                我试过少吃饭，但减肥很痛苦，我的脸还是超级大。
+                我试过把头发挡在脸旁边，可是拍出来更奇怪。
+            </p>
+
+            <p>
+                我想当模特，或者当一个爱豆，站在舞台上面。
+            </p>
+
+            <p>
+                但是现在的我真的太难看了，我连合照都不敢。
+            </p>
+
+            <p>
+                我是不是真的不够好看？
+                如果不够好看，是不是就没人会喜欢我了？
+            </p>
+
+        </div>
+
+        <div class="visitor-note">
+            ※ 此帖已被浏览过 3 次。
+            <br>
+            最近一次浏览：刚刚 · 你
+        </div>
+
+        <div class="post-replies">
+
+            <div class="reply consultant-reply">
+                <div class="reply-user">新生计划顾问·周</div>
+                <div class="reply-time">2025.07.01 14:22</div>
+                <div class="reply-text">
+                    梦琪你好。
+                    <br>
+                    你的脸型不是问题。我见过很多和你条件差不多的女孩，
+                    她们只是没找到适合自己的路线。
+                    <br>
+                    如果你有兴趣，可以来参加我们的
+                    <strong>新生计划</strong>。
+                    我们有专业的形象分析和培养方案。
+                </div>
+            </div>
+
+            <div class="reply dream-reply">
+                <div class="reply-user">梦琪</div>
+                <div class="reply-time">2025.07.02 10:03</div>
+                <div class="reply-text">
+                    谢谢顾问姐姐！
+                    <br>
+                    我已经报名了。好紧张，希望一切顺利。
+                    <br>
+                    如果我能变好看一点，就回来告诉大家。
+                </div>
+            </div>
+
+            <div class="reply system-reply">
+                <div class="reply-user">系统提示</div>
+                <div class="reply-time">2026.04.03 23:59</div>
+                <div class="reply-text">
+                    该用户已超过45天未登录。
+                    其帖子自动归档。
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子03 · 被选中的女孩
+===================================================== -->
+
+<article class="post-card">
+
+    <div class="post-side">
+        <div class="post-avatar">星</div>
+        <div class="post-user">等待发光的星</div>
+        <div class="post-level">新会员</div>
+        <div class="post-stats">
+            发帖：5
+            <br>
+            注册：2025.10
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title">
+            【分享】我终于被选中了，终于有人觉得我配了
+        </div>
+
+        <div class="post-time">2026.02.14 19:32</div>
+
+        <div class="post-content">
+
+            <p>
+                姐妹们我通过新生计划了！！
+            </p>
+
+            <p>
+                顾问说我的条件很好，可以参加一个特别的项目。
+                免费的，还配专业的形象设计师。
+            </p>
+
+            <p>
+                我一整晚没睡。
+                这辈子从来没有人跟我说过"你条件很好"。
+            </p>
+
+            <p>
+                我爸妈说我长得还行，但我爸妈肯定有滤镜，
+                他们不可能说我丑。
+            </p>
+
+            <p>
+                但是顾问又不是我的谁，没有理由骗我吧！
+            </p>
+
+            <p>
+                这周之后我就可以接受第一次手术，我再也不用恨我自己了。
+            </p>
+
+        </div>
+
+        <div class="post-replies">
+
+            <div class="reply consultant-reply">
+                <div class="reply-user">新生计划顾问·周</div>
+                <div class="reply-time">2026.02.14 21:08</div>
+                <div class="reply-text">
+                    恭喜你。
+                    <br>
+                    请按通知的时间到指定地点报到。
+                    <br>
+                    不用告诉太多人。这是为你好。
+                    <br>
+                    蜕变之后，她们会看到不一样的你。
+                </div>
+            </div>
+
+            <div class="reply system-reply">
+                <div class="reply-user">系统提示</div>
+                <div class="reply-time">2026.02.20 00:00</div>
+                <div class="reply-text">
+                    该用户已超过72小时未登录。
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子04 · 已删除（登录后可见）
+===================================================== -->
+
+<article class="post-card hidden-post" id="hiddenPost1">
+
+    <div class="post-side">
+        <div class="post-avatar deleted-avatar">—</div>
+        <div class="post-user">已删除用户</div>
+        <div class="post-level">账号已注销</div>
+        <div class="post-stats">
+            发帖：—
+            <br>
+            注册：—
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title deleted-title">
+            【讨论】姐姐们这不对吧……
+        </div>
+
+        <div class="post-time">2026.02.17 23:14</div>
+
+        <!-- 未登录状态 -->
+        <div class="locked-content" id="locked1">
+            <p>
+                🔒 此帖已被管理员删除。
+            </p>
+            <p>
+                您需要登录会员账号才能查看已删除内容。
+            </p>
+            <button class="login-required-btn" onclick="openLoginModal()">
+                登录查看
+            </button>
+        </div>
+
+        <!-- 登录后可见内容 -->
+        <div class="revealed-content" id="revealed1" style="display:none;">
+
+            <div class="post-content">
+
+                <p>
+                    我不确定是不是只有我这样觉得。
+                </p>
+
+                <p>
+                    上次去做护理的时候，顾问让我填了好多表。
+                    有一些问题很怪。问我家族病史，问我月经周期，问我有没有整过容。
+                </p>
+
+                <p>
+                    还有一张表，问"愿不愿意参与长期健康研究"。
+                </p>
+
+                <p>
+                    我说我不想填。
+                    顾问说没关系，不想填也可以。
+                </p>
+
+                <p>
+                    但她的手放在我肩膀上，说：
+                    <strong>"为了你的脸，你什么都会愿意的，对吗？"</strong>
+                </p>
+
+                <p>
+                    我后来跑了。
+                    我再也没有回去过。
+                    但总有人没有回来的吧。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子05 · 寻找梦琪
+===================================================== -->
+
+<article class="post-card">
+
+    <div class="post-side">
+        <div class="post-avatar">寻</div>
+        <div class="post-user">找一个人</div>
+        <div class="post-level">新会员</div>
+        <div class="post-stats">
+            发帖：1
+            <br>
+            注册：2026.04
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title">
+            【求助】有人认识一个叫梦琪的女生吗
+        </div>
+
+        <div class="post-time">2026.04.05 03:24</div>
+
+        <div class="post-content">
+
+            <p>
+                我真的不知道去哪里找了。
+            </p>
+
+            <p>
+                我朋友之前访问过这个帖子，还发过回复跟帖。
+            </p>
+
+            <p>
+                后来她说参加了一个什么计划，要去训练，不能上网了。
+            </p>
+
+            <p>
+                她跟我说的最后一句话是
+                "等我变漂亮了就回来找你。"
+            </p>
+
+            <p>
+                她叫梦琪，如果这里有人能给我她现在的消息请联系我。
+            </p>
+
+        </div>
+
+        <div class="post-replies">
+
+            <div class="reply deleted-reply">
+                <div class="reply-user">—</div>
+                <div class="reply-text">
+                    该回复已被删除。
+                </div>
+            </div>
+
+            <!-- 登录后可见的回复 -->
+            <div class="revealed-content" id="revealedReply1" style="display:none;">
+                <div class="reply">
+                    <div class="reply-user">已删除用户</div>
+                    <div class="reply-time">2026.04.05 03:30</div>
+                    <div class="reply-text">
+                        你说的那个名字，我好像知道。
+                        <br>
+                        去年见过她。她和照片上根本就不是一个人了，瘦到脱相。
+                        她说训练很累，但是通过的话就能变成真正的小偶像。
+                        <br>
+                        别找了。
+                        <br>
+                        我是说，别在这里找。
+                    </div>
+                </div>
+            </div>
+
+            <div class="reply system-reply">
+                <div class="reply-user">系统提示</div>
+                <div class="reply-text">
+                    该主题因涉及个人隐私，已关闭回复。
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子06 · 第二次手术
+===================================================== -->
+
+<article class="post-card">
+
+    <div class="post-side">
+        <div class="post-avatar">美</div>
+        <div class="post-user">小美</div>
+        <div class="post-level">普通会员</div>
+        <div class="post-stats">
+            发帖：17
+            <br>
+            注册：2024.11
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title">
+            【讨论】下周第二次手术，怕得要死，但更怕丑
+        </div>
+
+        <div class="post-time">2026.03.19 20:18</div>
+
+        <div class="post-content">
+
+            <p>
+                之前做了第一次，恢复得还行吧。
+            </p>
+
+            <p>
+                但是顾问说，还得做第二次，不然效果会退回去。
+            </p>
+
+            <p>
+                我问她能不能只做一次。
+                她说不行。说我的情况比较特殊，要"更彻底地改善"。
+            </p>
+
+            <p>
+                我不太懂。但我不想白痛一次。
+            </p>
+
+            <p>
+                我现在好害怕。麻醉醒过来会是什么样子？
+                会不会更丑？会不会醒不过来？
+            </p>
+
+            <p>
+                但是比起丑，我宁愿痛。
+                丑比死更难受。
+            </p>
+
+            <p>
+                有没有姐妹做过第二次的？能跟我说说吗？
+            </p>
+
+        </div>
+
+        <div class="post-replies">
+
+            <div class="reply consultant-reply doctor-reply">
+                <div class="reply-user">生命科学·陈</div>
+                <div class="reply-time">2026.03.19 22:41</div>
+                <div class="reply-text">
+                    第二次手术是常规流程。
+                    <br>
+                    大部分受试者——抱歉，是大部分会员——
+                    都能很好地适应。
+                    <br>
+                    手术前我们会做详细检查，你不必担心。
+                    <br>
+                    你已经坚持到这里了。再往前走一步就好。
+                </div>
+            </div>
+
+            <div class="reply">
+                <div class="reply-user">小美</div>
+                <div class="reply-time">2026.03.19 23:07</div>
+                <div class="reply-text">
+                    谢谢陈博士。
+                    <br>
+                    你说得对。我已经坚持到这里了。
+                    <br>
+                    不能回头了。
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子07 · 已删除（登录后可见）
+===================================================== -->
+
+<article class="post-card hidden-post" id="hiddenPost2">
+
+    <div class="post-side">
+        <div class="post-avatar deleted-avatar">—</div>
+        <div class="post-user">已注销用户</div>
+        <div class="post-level">账号已注销</div>
+        <div class="post-stats">
+            发帖：—
+            <br>
+            注册：—
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title deleted-title" data-evidence="forum-deleted-post"
+            data-evidence-title="LUMI 论坛 · 帖子07 已删除"
+            data-evidence-date="2026.02.18 02:17"
+            data-evidence-flag="forum_deleted_posts">
+            【真心话】我醒来之后……
+        </div>
+
+        <div class="post-time">2026.02.18 02:17</div>
+
+        <!-- 未登录状态 -->
+        <div class="locked-content" id="locked2">
+            <p>
+                🔒 此帖已被管理员删除。
+            </p>
+            <p>
+                您需要登录会员账号才能查看已删除内容。
+            </p>
+            <button class="login-required-btn" onclick="openLoginModal()">
+                登录查看
+            </button>
+        </div>
+
+        <!-- 登录后可见内容 -->
+        <div class="revealed-content" id="revealed2" style="display:none;">
+
+            <div class="post-content">
+
+                <p>
+                    我发这个帖是认真的。
+                    我现在在医院的厕所里。
+                </p>
+
+                <p>
+                    昨天做了手术。他们说只是小调整。
+                    但我醒来的时候，手臂上有七八个针孔。
+                </p>
+
+                <p>
+                    我问护士，护士说"那是营养针"。
+                </p>
+
+                <p>
+                    但我不信。因为我之前在论坛上看到有人说，
+                    他们抽血。抽很多。
+                </p>
+
+                <p>
+                    我在垃圾桶里翻到了一张贴纸。
+                    上面写着
+                    <strong>"BLOOD SAMPLE · 017"</strong>
+                </p>
+
+                <p>
+                    017。我不懂。那是什么？是我吗？
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =====================================================
+     帖子08 · 已注销
+===================================================== -->
+
+<article class="post-card deleted-post">
+
+    <div class="post-side">
+        <div class="post-avatar deleted-avatar">—</div>
+        <div class="post-user">已注销用户</div>
+        <div class="post-level">账号已注销</div>
+        <div class="post-stats">
+            发帖：—
+            <br>
+            注册：—
+        </div>
+    </div>
+
+    <div class="post-body">
+
+        <div class="post-title">
+            [帖子已删除]
+        </div>
+
+        <div class="post-time">—</div>
+
+        <div class="post-content deleted-content">
+
+            <p>
+                该用户的所有内容已被移除。
+            </p>
+
+            <p>
+                系统将保留其最后一次登录记录：
+                <strong>2026.02.17 02:17</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+</main>
+
+
+<!-- =====================================================
+     底部
+===================================================== -->
+
+<footer class="forum-footer">
+
+    <div class="footer-sponsor">
+
+        <p>本论坛由</p>
+        <strong>玉兰阁美容健康中心</strong>
+        <p>赞助运营</p>
+
+    </div>
+
+    <div class="footer-note">
+        NEW FACE GIRLS · BEAUTY & WELLNESS COMMUNITY
+        <br>
+        © 2024–2026
+        <br><br>
+        <span class="visitor-trace">
+            YOUR SESSION IS BEING RECORDED.
+            <br>
+            你的访问记录将用于"凤凰指数"评估。
+        </span>
+    </div>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     登录弹窗
+===================================================== -->
+
+<div class="login-modal" id="loginModal">
+
+    <div class="login-modal-bg" onclick="closeLoginModal()"></div>
+
+    <div class="login-modal-card">
+
+        <button class="modal-close" onclick="closeLoginModal()">×</button>
+
+        <h2>登录新生女孩论坛</h2>
+
+        <p class="modal-sub">使用会员账号查看被删除的内容</p>
+
+        <div class="modal-input-group">
+            <label>账号</label>
+            <input type="text" id="forumAccount" placeholder="用户名">
+        </div>
+
+        <div class="modal-input-group">
+            <label>密码</label>
+            <input type="password" id="forumPassword" placeholder="密码">
+        </div>
+
+        <p class="modal-error" id="modalError"></p>
+
+        <button class="modal-login-btn" onclick="forumLogin()">
+            登录
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="js/game-progress.js"></script>
+
+<script>
+
+/* =====================================================
+   登录逻辑
+===================================================== */
+
+function openLoginModal() {
+    document.getElementById("loginModal").style.display = "flex";
+    const accountInput = document.getElementById("forumAccount");
+    if (accountInput) {
+        accountInput.focus();
+    }
+}
+
+
+/* =====================================================
+   显示已删除的帖子
+   （登录成功，或本机已有解锁进度时都会调用）
+===================================================== */
+
+function revealDeletedPosts() {
+
+    /* 显示登录状态栏 */
+    document.getElementById("loggedInBar").style.display = "flex";
+
+    /* 隐藏访客提示 */
+    document.getElementById("visitorAlert").style.display = "none";
+
+    /* 隐藏登录按钮 */
+    document.getElementById("loginTrigger").style.display = "none";
+
+    /* 显示被删除的内容 */
+    document.getElementById("locked1").style.display = "none";
+    document.getElementById("revealed1").style.display = "block";
+
+    document.getElementById("locked2").style.display = "none";
+    document.getElementById("revealed2").style.display = "block";
+
+    document.getElementById("revealedReply1").style.display = "block";
+
+    /* 高亮被删帖子 */
+    document.getElementById("hiddenPost1").classList.add("revealed-post");
+    document.getElementById("hiddenPost2").classList.add("revealed-post");
+
+}
+
+
+function closeLoginModal() {
+    document.getElementById("loginModal").style.display = "none";
+}
+
+
+function forumLogin() {
+
+    const account =
+        document.getElementById("forumAccount").value.trim();
+
+    const password =
+        document.getElementById("forumPassword").value.trim();
+
+    const error =
+        document.getElementById("modalError");
+
+
+    if (account === "" || password === "") {
+        error.textContent = "请输入账号和密码。";
+        return;
+    }
+
+
+    if (
+        account === "mengqi_2006" &&
+        password === "07011217"
+    ) {
+
+        closeLoginModal();
+
+        /* 记录进度：刷新或下次回到本页时免密恢复 */
+        unlockProgress(GAME_FLAGS.forumDeletedPosts);
+
+        revealDeletedPosts();
+
+    } else {
+
+        error.textContent = "账号或密码不正确。";
+
+    }
+
+}
+
+
+/* 回车登录 / Esc 关闭弹窗 */
+document.addEventListener("keydown", function (event) {
+
+    const modal = document.getElementById("loginModal");
+
+    if (event.key === "Enter") {
+
+        if (modal.style.display === "flex") {
+            forumLogin();
+        }
+
+        return;
+
+    }
+
+    if (event.key === "Escape" && modal.style.display === "flex") {
+        closeLoginModal();
+    }
+
+});
+
+
+/* =====================================================
+   页面加载：恢复本机已保存的解锁进度
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (isProgressUnlocked(GAME_FLAGS.forumDeletedPosts)) {
+        revealDeletedPosts();
+    }
+
+});
+
+</script>
+
+
+<script src="js/evidence.js"></script>
+
+</body>
+
+</html>

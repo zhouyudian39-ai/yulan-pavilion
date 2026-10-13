@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>演出公告 · 玉兰阁 Yulan Pavilion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/yulan-schedule.css">
+
+</head>
+
+
+<body>
+
+
+<div class="schedule-page">
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="yp-header">
+
+    <div class="yp-brand">
+        <svg class="yp-logo-img" viewBox="0 0 212 42" role="img" aria-label="玉兰阁 YULAN PAVILION" focusable="false">
+    <rect x="0.75" y="5.25" width="31.5" height="31.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.85"/>
+    <text x="16.5" y="27.5" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="19" fill="currentColor">兰</text>
+    <text x="41" y="20" font-family="'Noto Serif SC', serif" font-size="15.5" letter-spacing="3" fill="currentColor">玉兰阁</text>
+    <text x="41" y="33" font-family="'Courier Prime', monospace" font-size="8" letter-spacing="1.7" fill="currentColor" opacity="0.68">YULAN PAVILION</text>
+</svg>
+    </div>
+
+    <nav class="yp-nav">
+        <a href="yulan-index.html">首页</a>
+        <a href="yulan-about.html">关于我们</a>
+        <a href="yulan-newstar.html">新生计划</a>
+        <a href="yulan-artists.html">艺人档案</a>
+        <a href="yulan-schedule.html" class="active">演出公告</a>
+        <a href="yulan-contact.html">联系我们</a>
+    </nav>
+
+    <div class="yp-header-right">
+        <button class="yp-search-trigger" onclick="handleSearch()">🔍</button>
+        <button class="yp-login-trigger" id="loginTrigger" onclick="handleLoginButton()">会员登录</button>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     Hero
+===================================================== -->
+
+<section class="schedule-hero">
+
+    <div class="schedule-hero-content">
+
+        <p class="schedule-hero-label">SCHEDULE · SINCE 2006</p>
+
+        <h1>演出公告</h1>
+
+        <p class="schedule-hero-desc">
+            公开行程与内部通知。
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     公开演出
+===================================================== -->
+
+<section class="schedule-public">
+
+    <div class="schedule-section-title">
+        <h2>公开演出</h2>
+        <p>PUBLIC SCHEDULE</p>
+    </div>
+
+    <div class="schedule-list">
+
+
+        <div class="schedule-item">
+
+            <div class="schedule-date">2026.02.16</div>
+
+            <div class="schedule-info">
+                <h3>新生计划公演「First Bloom」</h3>
+                <p>陈梦琪 · 公开舞台 · 演出结束</p>
+            </div>
+
+            <div class="schedule-status status-done">已结束</div>
+
+        </div>
+
+
+        <div class="schedule-item schedule-cancelled">
+
+            <div class="schedule-date">2026.02.17</div>
+
+            <div class="schedule-info">
+                <h3>新生计划公演「First Bloom」第二场</h3>
+                <p>
+                    陈梦琪因身体原因，不再继续出演。
+                    <br>
+                    后续演出时间另行通知。
+                </p>
+            </div>
+
+            <div class="schedule-status status-cancelled">已取消</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     内部通知（含摩斯密码乱码）
+===================================================== -->
+
+<section class="schedule-internal">
+
+    <div class="schedule-section-title">
+        <h2>内部通知</h2>
+        <p>INTERNAL NOTICES</p>
+    </div>
+
+    <div class="schedule-list">
+
+
+        <div class="schedule-item">
+
+            <div class="schedule-date">2026.02.18</div>
+
+            <div class="schedule-info">
+                <h3>训练中心例行维护</h3>
+                <p>3F 至 B1 区域暂停使用。</p>
+            </div>
+
+            <div class="schedule-status status-archived">已归档</div>
+
+        </div>
+
+
+        <div class="schedule-item code-item">
+
+            <div class="schedule-date">2026.02.19</div>
+
+            <div class="schedule-info">
+                <h3 class="code-text">
+                    --. .. .-. .-.. ... / - --- / -... ...--
+                </h3>
+                <p class="code-meta">内部代码</p>
+            </div>
+
+        </div>
+
+
+        <div class="schedule-item code-item">
+
+            <div class="schedule-date">2026.02.20</div>
+
+            <div class="schedule-info">
+                <h3 class="code-text">
+                    ----- ..--- .---- --... / -.. .-. / -.-. .... .
+                </h3>
+                <p class="code-meta">内部代码</p>
+            </div>
+
+        </div>
+
+
+        <div class="schedule-item code-item">
+
+            <div class="schedule-date">2026.02.21</div>
+
+            <div class="schedule-info">
+                <h3 class="code-text">
+                    --. .. .-. .-.. ... / -... ...-- / ----- ..--- .---- --...
+                </h3>
+                <p class="code-meta">内部代码</p>
+            </div>
+
+        </div>
+
+
+        <div class="schedule-empty">
+            <p>· 暂无更多公告 ·</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="yp-footer">
+
+    <div class="yp-footer-brand">
+        <svg class="yp-footer-logo" viewBox="0 0 212 42" role="img" aria-label="玉兰阁 YULAN PAVILION" focusable="false">
+    <rect x="0.75" y="5.25" width="31.5" height="31.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.85"/>
+    <text x="16.5" y="27.5" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="19" fill="currentColor">兰</text>
+    <text x="41" y="20" font-family="'Noto Serif SC', serif" font-size="15.5" letter-spacing="3" fill="currentColor">玉兰阁</text>
+    <text x="41" y="33" font-family="'Courier Prime', monospace" font-size="8" letter-spacing="1.7" fill="currentColor" opacity="0.68">YULAN PAVILION</text>
+</svg>
+    </div>
+
+    <div class="yp-footer-links">
+        <a>隐私政策</a>
+        <a>会员协议</a>
+        <a href="yulan-contact.html">联系我们</a>
+    </div>
+
+    <p>
+        © 2026 Yulan Pavilion
+        <br>
+        东方美学与生命科学
+    </p>
+
+    <small class="yp-footer-version">档案系统版本：LYL-2.0.17</small>
+
+</footer>
+
+
+</div>
+
+
+<script src="js/auth.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    initAuthUI();
+});
+
+function handleSearch() {
+    window.location.href = "yulan-index.html";
+}
+
+function handleLoginButton() {
+
+    if (isLoggedIn()) {
+        window.location.href = "yulan-member-center.html";
+    } else {
+        window.location.href = "yulan-index.html";
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,948 @@
+/* =====================================================
+   玉兰阁会员中心
+   MEMBER CENTER · 2026
+===================================================== */
+
+
+/* ===============================
+   基础
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f3f0;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+
+.member-center-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   顶部导航
+================================ */
+
+.mc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.mc-logo-img {
+    height: 36px;
+    width: auto;
+}
+
+
+.mc-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.mc-back-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.15s;
+}
+
+
+.mc-back-link:hover {
+    color: #8a1f1f;
+}
+
+
+.mc-user-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.mc-user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f0dcd5;
+    color: #b85a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.mc-user-name {
+    font-size: 13px;
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   会员信息横幅
+================================ */
+
+.mc-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #fdf8f5 0%, #fdf0ec 100%);
+    border-bottom: 1px solid #f0e0d8;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+.mc-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.mc-avatar-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f0dcd5;
+    color: #b85a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.mc-banner-info h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+}
+
+
+.mc-member-id {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #8a1f1f;
+    margin-bottom: 2px;
+}
+
+
+.mc-member-since {
+    font-size: 11px;
+    color: #999;
+}
+
+
+.mc-banner-right {
+    text-align: right;
+}
+
+
+.mc-status-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 14px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+
+.mc-status-badge.paused {
+    background: #fdf0ec;
+    color: #b85a4a;
+    font-weight: 600;
+}
+
+
+.mc-last-login {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    color: #bbb;
+}
+
+
+/* ===============================
+   主布局
+================================ */
+
+.mc-main {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+}
+
+
+/* ===============================
+   侧边栏
+================================ */
+
+.mc-sidebar {
+    width: 170px;
+    flex-shrink: 0;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-right: 1px solid #eee;
+    min-height: 500px;
+}
+
+
+.mc-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.15s;
+}
+
+
+.mc-nav-item:hover {
+    background: #f8f5f2;
+    color: #8a1f1f;
+}
+
+
+.mc-nav-item.active {
+    background: #fdf0ec;
+    color: #8a1f1f;
+    font-weight: 700;
+}
+
+
+.nav-badge {
+    margin-left: auto;
+    padding: 1px 7px;
+    background: #e8e8e8;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #666;
+}
+
+
+.nav-badge.red-badge {
+    background: #b85a4a;
+    color: #fff;
+}
+
+
+/* ===============================
+   主内容区
+================================ */
+
+.mc-content {
+    flex: 1;
+    min-width: 0;
+    padding: 20px 25px;
+}
+
+
+.mc-section {
+    margin-bottom: 30px;
+}
+
+
+.mc-section-title {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0e0d8;
+}
+
+
+.mc-section-title h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+
+.mc-section-title p {
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #999;
+    margin-top: 2px;
+}
+
+
+/* ===============================
+   私信 · 会话列表
+================================ */
+
+.conversation-list {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+
+.conversation-item:hover {
+    border-color: #e0c8c0;
+}
+
+
+.conversation-item.active {
+    border-color: #b85a4a;
+    background: #fdf8f5;
+}
+
+
+.convo-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #f0dcd5;
+    color: #b85a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+
+.convo-avatar.system-avatar {
+    background: #e8e8e8;
+    color: #888;
+}
+
+
+.convo-info {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.convo-info strong {
+    font-size: 13px;
+    color: #333;
+}
+
+
+.convo-info p {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.convo-time {
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    color: #bbb;
+    flex-shrink: 0;
+}
+
+
+/* ===============================
+   聊天窗口
+================================ */
+
+.chat-window {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.chat-window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background: #fdf8f5;
+    border-bottom: 1px solid #f0e0d8;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.chat-window-header strong {
+    font-size: 13px;
+    color: #5a1f1a;
+}
+
+
+.chat-window-header span {
+    font-size: 10px;
+    color: #999;
+    font-family: "Courier Prime", monospace;
+}
+
+
+.chat-messages {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    background: #fafaf8;
+}
+
+
+.chat-date-sep {
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+
+.chat-bubble {
+    max-width: 75%;
+}
+
+
+.chat-bubble p {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 3px;
+}
+
+
+.chat-bubble.from-user {
+    align-self: flex-end;
+    text-align: right;
+}
+
+
+.chat-bubble.from-user p {
+    background: #8a1f1f;
+    color: #fff;
+    text-align: left;
+}
+
+
+.chat-bubble.from-other {
+    align-self: flex-start;
+}
+
+
+.chat-bubble.from-other p {
+    background: #f0f0f0;
+    color: #333;
+}
+
+
+.chat-interruption {
+    margin-top: 10px;
+    padding: 12px;
+    text-align: center;
+    background: #fdf0ec;
+    border: 1px dashed #e0c8b8;
+    border-radius: 8px;
+    font-size: 11px;
+    color: #b85a4a;
+    line-height: 1.9;
+    font-family: "Courier Prime", "Noto Serif SC", monospace;
+}
+
+
+/* ===============================
+   系统通知大卡
+================================ */
+
+.system-notice-big {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #f0e0d8;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+.system-notice-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+
+.system-notice-big h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+
+.system-notice-big p {
+    font-size: 13px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+
+.system-notice-big strong {
+    color: #b85a4a;
+}
+
+
+.system-notice-big small {
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    color: #ccc;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 10px;
+}
+
+
+.secondary-notice {
+    border-color: #eee;
+}
+
+
+/* ===============================
+   报告
+================================ */
+
+.report-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+
+.report-card {
+    flex: 1;
+    min-width: 150px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+}
+
+
+.report-label {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+
+.report-value {
+    font-family: "Courier Prime", "Noto Serif SC", monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #8a1f1f;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+
+.report-note {
+    font-size: 10px;
+    color: #ccc;
+}
+
+
+.report-note.red-note {
+    color: #b85a4a;
+}
+
+
+.locked-report {
+    opacity: 0.6;
+    border-style: dashed;
+}
+
+
+/* ===============================
+   通知列表
+================================ */
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.notification-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+
+.notification-item.unread {
+    border-color: #f0d0c8;
+    background: #fdfaf7;
+}
+
+
+.notification-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+
+.notification-body {
+    flex: 1;
+}
+
+
+.notification-body strong {
+    font-size: 13px;
+    color: #333;
+}
+
+
+.notification-body p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+
+.notification-body small {
+    font-size: 10px;
+    color: #bbb;
+    font-family: "Courier Prime", monospace;
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* ===============================
+   设置
+================================ */
+
+.settings-box {
+    padding: 20px;
+    background: #fdfaf7;
+    border: 1px dashed #e0c8b8;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.settings-disabled {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.9;
+    margin-bottom: 5px;
+}
+
+
+.settings-locked {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fdf0ec;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #b85a4a;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.mc-footer {
+    padding: 20px 30px;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+
+.mc-footer p {
+    font-size: 11px;
+    color: #999;
+}
+
+
+.mc-footer small {
+    display: block;
+    margin-top: 5px;
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ddd;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .mc-header {
+        padding: 12px 15px;
+    }
+
+    .mc-banner {
+        padding: 20px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mc-banner-right {
+        text-align: left;
+    }
+
+    .mc-main {
+        flex-direction: column;
+    }
+
+    .mc-sidebar {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 10px 15px;
+        gap: 4px;
+    }
+
+    .mc-nav-item {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .mc-content {
+        padding: 15px;
+    }
+
+    .chat-bubble {
+        max-width: 90%;
+    }
+
+    .report-grid {
+        flex-direction: column;
+    }
+
+}
+
+/* =====================================================
+   Y2K 品牌对齐层（第一阶段美术改造 · 玉兰阁子页共用）
+   -----------------------------------------------------
+   只对齐「品牌层」：纸张底色 / 字体 / 报头 / 按钮 / 缺图占位。
+   只使用各页共有的类名，不假设各页内部结构，
+   因此不会与各页自己的版式冲突。
+===================================================== */
+
+body {
+
+    background-color: #fafaf8;
+
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        );
+
+    color: #1d1a18;
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+
+
+/* 待补照片：斜纹底（真实图片会完全覆盖） */
+
+img {
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    color: transparent;
+}
+
+
+/* 报头 */
+
+.yp-header {
+
+    background: #ffffff;
+    border-bottom: 2px solid #1d1a18;
+
+    box-shadow: 0 3px 0 rgba(138, 31, 31, 0.16);
+}
+
+
+.yp-nav a {
+
+    border-radius: 2px;
+
+    color: #55524e;
+    letter-spacing: 2px;
+}
+
+
+.yp-nav a:hover {
+
+    background: transparent;
+    color: #8a1f1f;
+
+    text-decoration: underline;
+}
+
+
+.yp-nav a.active {
+
+    background: transparent;
+    color: #8a1f1f;
+
+    font-weight: 700;
+
+    box-shadow: inset 0 -2px 0 #8a1f1f;
+}
+
+
+/* 按钮：早期美容广告的方角印刷感 */
+
+.yp-search-trigger,
+.yp-login-trigger {
+
+    border-radius: 2px;
+}
+
+
+.yp-login-trigger {
+
+    background: #ffffff;
+    border: 1px solid #1d1a18;
+
+    color: #1d1a18;
+    letter-spacing: 2px;
+}
+
+
+.yp-login-trigger:hover {
+
+    background: #8a1f1f;
+    border-color: #8a1f1f;
+
+    color: #ffffff;
+}
+
+
+.yp-btn-primary {
+
+    background: #8a1f1f;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 rgba(29, 26, 24, 0.18);
+}
+
+
+.yp-btn-primary:hover {
+
+    background: #5a1f1a;
+}
+
+
+.yp-btn-secondary {
+
+    background: #ffffff;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    color: #8a1f1f;
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 rgba(29, 26, 24, 0.1);
+}
+
+
+.yp-btn-secondary:hover {
+
+    background: #f7f2ec;
+    border-color: #1d1a18;
+
+    color: #8a1f1f;
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

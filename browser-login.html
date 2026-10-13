@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>登录 LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/login.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="login-page">
+
+
+<!-- =====================================================
+     Logo
+===================================================== -->
+
+<div class="login-logo">
+    LUMI
+    <span>星迹</span>
+</div>
+
+
+<!-- =====================================================
+     登录卡片
+===================================================== -->
+
+<div class="login-card">
+
+    <h1>登录</h1>
+
+    <p class="login-sub">使用 LUMI 账号继续</p>
+
+
+    <!-- 账号输入 -->
+    <div class="input-group">
+
+        <label>账号</label>
+
+        <input
+            type="text"
+            id="accountInput"
+            placeholder="手机号 / 邮箱 / 用户名"
+            autocomplete="off">
+
+    </div>
+
+
+    <!-- 密码输入 -->
+    <div class="input-group">
+
+        <label>密码</label>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="请输入密码"
+            autocomplete="off">
+
+    </div>
+
+
+    <!-- 错误提示 -->
+    <p class="login-error" id="loginError"></p>
+
+
+    <!-- 登录按钮 -->
+    <button class="login-btn" onclick="tryLogin()">
+        登录
+    </button>
+
+
+    <!-- 辅助链接 -->
+    <div class="login-links">
+
+        <a href="#" onclick="showForgotPassword(event)">
+            忘记密码？
+        </a>
+        <span>·</span>
+        <a>注册新账号</a>
+
+    </div>
+
+
+    <!-- 忘记密码区域 -->
+    <div class="forgot-box" id="forgotBox" style="display:none;">
+
+        <p class="forgot-title">重置密码</p>
+
+        <p class="forgot-desc">
+            输入与账号绑定的手机号码，我们将发送验证码。
+        </p>
+
+        <div class="input-group">
+            <label>手机号码</label>
+            <input
+                type="text"
+                id="phoneInput"
+                placeholder="852-XXXX-XXXX"
+                autocomplete="off">
+        </div>
+
+        <p class="login-error" id="forgotError"></p>
+
+        <button class="login-btn" onclick="sendResetCode()">
+            发送验证码
+        </button>
+
+        <div class="reset-success" id="resetSuccess" style="display:none;">
+            <p>✅ 密码已重置。</p>
+            <p>您的账号为：<strong>zhou_lan</strong></p>
+            <p>临时密码为：<strong>0217</strong></p>
+            <p>请使用以上信息登录。</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     底部提示
+===================================================== -->
+
+<p class="login-footer-text">
+    LUMI 不会主动要求您提供密码。
+</p>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   显示忘记密码区域
+===================================================== */
+
+function showForgotPassword(event) {
+
+    event.preventDefault();
+
+    const forgotBox =
+        document.getElementById("forgotBox");
+
+    if (
+        forgotBox.style.display === "none" ||
+        forgotBox.style.display === ""
+    ) {
+        forgotBox.style.display = "block";
+    } else {
+        forgotBox.style.display = "none";
+    }
+
+}
+
+
+/* =====================================================
+   发送验证码
+===================================================== */
+
+function sendResetCode() {
+
+    const phone =
+        document.getElementById("phoneInput").value.trim();
+
+    const error =
+        document.getElementById("forgotError");
+
+    const success =
+        document.getElementById("resetSuccess");
+
+    if (phone === "") {
+        error.textContent = "请输入手机号码。";
+        return;
+    }
+
+    if (phone === "852-6123-0217" || phone === "85261230217") {
+
+        error.textContent = "";
+
+        success.style.display = "block";
+
+        /* 自动填入账号 */
+        document.getElementById("accountInput").value = "zhou_lan";
+        document.getElementById("passwordInput").value = "0217";
+
+    } else {
+
+        error.textContent = "该手机号码未绑定任何账号。";
+        success.style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   登录逻辑
+===================================================== */
+
+function tryLogin() {
+
+    const account =
+        document.getElementById("accountInput").value.trim();
+
+    const password =
+        document.getElementById("passwordInput").value.trim();
+
+    const error =
+        document.getElementById("loginError");
+
+
+    if (account === "" || password === "") {
+
+        error.style.color = "#d03a3a";
+        error.textContent = "请输入账号和密码。";
+        return;
+
+    }
+
+
+    /* 梦琪账号 */
+    if (account === "mengqi_2006" && password === "07011217") {
+
+        error.style.color = "#4a9a5a";
+        error.textContent = "登录成功。正在同步历史记录…";
+
+        setTimeout(function () {
+            window.location.href = "browser-home.html";
+        }, 1200);
+
+        return;
+
+    }
+
+
+    /* 周岚账号 */
+    if (account === "zhou_lan" && password === "0217") {
+
+        error.style.color = "#4a9a5a";
+        error.textContent = "登录成功。正在加载账号数据…";
+
+        setTimeout(function () {
+            window.location.href = "zhou-lan-profile.html";
+        }, 1200);
+
+        return;
+
+    }
+
+
+    /* 错误 */
+    error.style.color = "#d03a3a";
+    error.textContent = "账号或密码不正确。";
+
+}
+
+
+/* =====================================================
+   回车登录
+===================================================== */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+
+        const forgotBox =
+            document.getElementById("forgotBox");
+
+        if (
+            forgotBox.style.display === "block" &&
+            document.activeElement ===
+                document.getElementById("phoneInput")
+        ) {
+            sendResetCode();
+        } else {
+            tryLogin();
+        }
+
+    }
+
+});
+
+</script>
+
+
+
+
+<!-- =====================================================
+     返回入口（跨站统一，避免迷路）
+===================================================== -->
+
+<nav class="gp-back-nav cross-nav" aria-label="站点导航">
+
+    <a href="index.html">← 返回搜索</a>
+    <a href="player-home.html">十七的主页</a>
+    <a href="browser-home.html">LUMI 首页</a>
+    <a href="forum.html">新生女孩论坛</a>
+    <a href="city-weekly.html">城市周刊</a>
+
+</nav>
+</body>
+
+</html>

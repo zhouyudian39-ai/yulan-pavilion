@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>十七の桌面 · LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@900&family=Archivo+Black&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+<link rel="stylesheet" href="css/y2k.css">
+
+<link rel="stylesheet" href="css/desktop.css">
+
+</head>
+
+
+<body class="dk-body">
+
+
+<div class="dk-shell">
+
+
+    <!-- =====================================================
+         OS 顶栏
+    ===================================================== -->
+
+    <div class="dk-os">
+
+        <div class="dk-os-title">
+
+            <span class="dk-os-mark" aria-hidden="true"></span>
+
+            <span>十七の桌面</span>
+
+        </div>
+
+        <div class="dk-os-meta">
+
+            <span class="dk-os-clock" aria-hidden="true">21:14</span>
+
+            <span id="dkOsState">桌面已加载</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         桌面
+    ===================================================== -->
+
+    <main class="dk-desktop" id="dkDesktop">
+
+        <span class="dk-deco dk-deco-scan" aria-hidden="true"></span>
+
+        <div class="dk-grid">
+
+
+            <!-- ---------- 剪贴本封面 ---------- -->
+
+            <div class="dk-poster dk-span" role="img"
+                 aria-label="剪贴本封面：梦琪的照片、巨大标题、贴纸与胶带">
+
+                <div class="dk-poster-head">
+
+                    <p class="dk-poster-kicker">
+                        <span>FAN MADE</span>
+                    </p>
+
+                    <p class="dk-poster-title">
+                        <span class="dk-poster-title-cn y2k-cutout" data-text="梦琪">梦琪</span>
+                        <span class="dk-poster-title-en">MENG QI</span>
+                    </p>
+
+                    <p class="dk-poster-sub">
+                        把照片剪下来，贴在显示器边上。
+                    </p>
+
+                </div>
+
+                <figure class="dk-poster-shot">
+
+                    <span class="y2k-tape y2k-tape-check dk-poster-tape" aria-hidden="true"></span>
+
+                    <span class="y2k-tape y2k-tape-accent dk-poster-tape-2" aria-hidden="true"></span>
+
+                    <img src="images/mengqi/cover.png" alt="梦琪的封面照片"
+                         loading="lazy" decoding="async">
+
+                    <figcaption class="dk-poster-shot-cap">剪下来的那一张</figcaption>
+
+                </figure>
+
+                <span class="y2k-seal dk-poster-seal" aria-hidden="true">
+                    <b>★</b><em>SO PRETTY</em>
+                </span>
+
+            </div>
+
+
+            <!-- ---------- 桌上的便条 ---------- -->
+
+            <p class="dk-hint dk-span" id="dkHint">
+                桌面挺整齐的。照片是我自己贴上去的，别动。
+            </p>
+
+
+            <div class="dk-feedback dk-hidden dk-span" id="dkFeedback"
+                 role="status" aria-live="polite"></div>
+
+
+            <!-- ---------- 浏览器窗口 ---------- -->
+
+            <section class="dk-window" id="dkBrowser" aria-labelledby="dkBrowserTitle">
+
+                <div class="dk-titlebar">
+
+                    <span class="dk-titlebar-text" id="dkBrowserTitle">星迹搜索 · 十七</span>
+
+                    <span class="dk-titlebar-btns" aria-hidden="true">
+
+                        <span class="dk-wbtn">▁</span>
+                        <span class="dk-wbtn">▢</span>
+                        <span class="dk-wbtn">✕</span>
+
+                    </span>
+
+                </div>
+
+                <div class="dk-toolbar" aria-hidden="true">
+
+                    <span class="dk-tool">◀</span>
+                    <span class="dk-tool">▶</span>
+                    <span class="dk-tool">⟳</span>
+                    <span class="dk-tool">★</span>
+
+                    <span class="dk-toolbar-note">书签：梦琪 / 舞台直拍 / 站子</span>
+
+                </div>
+
+                <div class="dk-addrbar">
+
+                    <span aria-hidden="true">◧</span>
+
+                    <span class="dk-addr">lumi.com</span>
+
+                </div>
+
+                <div class="dk-wbody">
+
+                    <p class="dk-kw-label">最近搜索</p>
+
+                    <div class="dk-chips">
+
+                        <span class="dk-chip">梦琪</span>
+                        <span class="dk-chip">陈梦琪</span>
+                        <span class="dk-chip">梦琪 2026 路透</span>
+                        <span class="dk-chip">陈梦琪 舞台直拍</span>
+
+                    </div>
+
+                    <p class="dk-kw-label">热搜</p>
+
+                    <div class="dk-hot">
+
+                        <span class="dk-hot-rank">1</span>香港街头多名少女撞脸 医生：像同一模板
+
+                        <span class="dk-hot-tip">搜索记录里全是同一个名字。</span>
+
+                    </div>
+
+                    <div class="dk-btn-row">
+
+                        <a class="dk-btn dk-btn-strong" href="index.html">打开 LUMI 搜索 →</a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ---------- 聊天窗口 ---------- -->
+
+            <section class="dk-window" aria-labelledby="dkChatTitle">
+
+                <div class="dk-titlebar">
+
+                    <span class="dk-titlebar-text" id="dkChatTitle">星迹聊天</span>
+
+                    <span class="dk-titlebar-btns" aria-hidden="true">
+
+                        <span class="dk-wbtn">▁</span>
+                        <span class="dk-wbtn">▢</span>
+                        <span class="dk-wbtn">✕</span>
+
+                    </span>
+
+                </div>
+
+                <div class="dk-wbody">
+
+                    <div class="dk-chat-peer">
+
+                        <span class="dk-chat-avatar" aria-hidden="true">梦</span>
+
+                        <span class="dk-chat-name">
+                            梦琪
+                            <span class="dk-chat-state">离线 · 很久没上线</span>
+                        </span>
+
+                    </div>
+
+                    <div class="dk-chat-log" id="dkChatLog">
+
+                        <div class="dk-msg">
+
+                            <span class="dk-msg-who">十七 21:04</span>
+
+                            梦琪 在吗
+
+                        </div>
+
+                        <div class="dk-msg">
+
+                            <span class="dk-msg-who">十七 21:06</span>
+
+                            2·17 那场你说要上台的，我在热搜上看到你的名字了
+
+                        </div>
+
+                        <div class="dk-msg dk-msg-sys dk-msg-hidden" id="dkChatSys1">
+
+                            消息未送达。
+
+                        </div>
+
+                        <div class="dk-msg dk-msg-sys dk-msg-hidden" id="dkChatSys2">
+
+                            对方已长时间未上线。
+
+                        </div>
+
+                    </div>
+
+                    <div class="dk-btn-row">
+
+                        <button class="dk-btn" type="button" id="dkChatSend">再发一条</button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ---------- 便签区（照片堆盖在上面） ---------- -->
+
+            <div class="dk-note-zone dk-span" id="dkNoteZone">
+
+
+                <article class="dk-note" id="dkNote" aria-labelledby="dkNoteHead">
+
+                    <p class="dk-note-head" id="dkNoteHead">便签 · 十七的字</p>
+
+                    <div class="dk-note-body">
+
+                        <p>搜「梦琪」，检查2·17 那场的票根。</p>
+
+                        <span class="dk-note-sign">—— 十七</span>
+
+                    </div>
+
+                    <div class="dk-note-actions">
+
+                        <a class="dk-btn dk-btn-strong"
+                           href="search-results.html?q=%E6%A2%A6%E7%90%AA">去搜「梦琪」→</a>
+
+                    </div>
+
+                </article>
+
+
+                <section class="dk-album" id="dkAlbum" tabindex="0" role="region"
+                         aria-label="相册：一叠照片，可以拖动或按空格移开"
+                         aria-describedby="dkAlbumHelp">
+
+                    <span class="y2k-tape y2k-tape-check dk-album-tape-a" aria-hidden="true"></span>
+
+                    <span class="y2k-tape y2k-tape-accent dk-album-tape-b" aria-hidden="true"></span>
+
+                    <div class="dk-album-head">
+
+                        <span class="dk-album-title">
+
+                            <span class="dk-album-grip" aria-hidden="true"></span>
+
+                            一叠照片（3）
+
+                        </span>
+
+                        <button class="dk-btn dk-btn-mini" type="button" id="dkAlbumOpen"
+                                aria-haspopup="dialog">看照片</button>
+
+                    </div>
+
+                    <div class="dk-album-photos">
+
+                        <figure class="dk-polaroid">
+
+                            <span class="y2k-tape y2k-tape-check dk-polaroid-tape" aria-hidden="true"></span>
+
+                            <img src="images/mengqi/cover.png" alt="梦琪的封面照片"
+                                 loading="lazy" decoding="async">
+
+                            <figcaption class="dk-polaroid-cap">封面</figcaption>
+
+                        </figure>
+
+                        <figure class="dk-polaroid">
+
+                            <span class="y2k-tape dk-polaroid-tape" aria-hidden="true"></span>
+
+                            <img src="images/mengqi/avatar.png" alt="梦琪的头像"
+                                 loading="lazy" decoding="async">
+
+                            <figcaption class="dk-polaroid-cap">头像</figcaption>
+
+                        </figure>
+
+                        <figure class="dk-polaroid">
+
+                            <span class="y2k-tape y2k-tape-accent dk-polaroid-tape" aria-hidden="true"></span>
+
+                            <img src="images/secret/interview.png" alt="梦琪的采访截图"
+                                 loading="lazy" decoding="async">
+
+                            <figcaption class="dk-polaroid-cap">采访截图</figcaption>
+
+                        </figure>
+
+                    </div>
+
+                    <p class="dk-small-note" id="dkAlbumHelp">
+                        可以挪开：拖动 / 点击 / 空格
+                    </p>
+
+                    <div class="dk-album-foot">
+
+                        <button class="dk-btn dk-btn-mini" type="button" id="dkAlbumBack">归位</button>
+
+                        <span class="dk-album-tag">边角都是我自己剪的</span>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         任务条
+    ===================================================== -->
+
+    <div class="dk-taskbar">
+
+        <div class="dk-taskbar-left">
+
+            <span class="dk-start"><span aria-hidden="true">▚</span> 开始</span>
+
+            <a class="dk-btn dk-btn-strong" href="index.html">回星迹搜索 →</a>
+
+            <button class="dk-btn dk-btn-mini" type="button" id="dkTidy">把桌面恢复原样</button>
+
+        </div>
+
+        <div class="dk-taskbar-right">
+
+            <span class="dk-tray">
+
+                <span class="dk-tray-dot" aria-hidden="true"></span>
+
+                LUMI 星迹
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         页脚
+    ===================================================== -->
+
+    <div class="dk-foot">
+
+        <nav class="gp-back-nav cross-nav" aria-label="站点导航">
+
+            <a href="index.html">← 返回搜索</a>
+            <a href="player-home.html">十七的主页</a>
+            <a href="browser-home.html">LUMI 首页</a>
+
+        </nav>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     相簿弹层
+===================================================== -->
+
+<div class="dk-overlay dk-hidden" id="dkAlbumOverlay" role="dialog" aria-modal="true"
+     aria-labelledby="dkAlbumOverlayTitle">
+
+    <div class="dk-overlay-card">
+
+        <div class="dk-titlebar">
+
+            <span class="dk-titlebar-text" id="dkAlbumOverlayTitle">相簿 · 梦琪（3 张）</span>
+
+            <button class="dk-btn dk-btn-mini" type="button" id="dkAlbumClose">关闭</button>
+
+        </div>
+
+        <div class="dk-overlay-body">
+
+            <div class="dk-album-list">
+
+                <figure class="dk-album-card">
+
+                    <img src="images/mengqi/cover.png" alt="梦琪的封面照片"
+                         loading="lazy" decoding="async">
+
+                    <figcaption class="dk-album-card-cap">
+
+                        <span class="dk-album-card-tag">封面</span>
+
+                        她主页上用的就是这一张。
+
+                    </figcaption>
+
+                </figure>
+
+                <figure class="dk-album-card">
+
+                    <img src="images/mengqi/avatar.png" alt="梦琪的头像"
+                         loading="lazy" decoding="async">
+
+                    <figcaption class="dk-album-card-cap">
+
+                        <span class="dk-album-card-tag">头像</span>
+
+                        很久没换过了。
+
+                    </figcaption>
+
+                </figure>
+
+                <figure class="dk-album-card">
+
+                    <img src="images/secret/interview.png" alt="梦琪的采访截图"
+                         loading="lazy" decoding="async">
+
+                    <figcaption class="dk-album-card-cap">
+
+                        <span class="dk-album-card-tag">截图</span>
+
+                        采访那天留下的。
+
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+            <p class="dk-small-note">相册就这三张。</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/game-progress.js"></script>
+
+<script src="js/desktop.js"></script>
+
+
+<script src="js/img-fallback.js"></script>
+
+</body>
+
+</html>

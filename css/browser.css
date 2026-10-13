@@ -1,0 +1,514 @@
+/* =====================================================
+   梦琪的 LUMI 浏览器首页
+   BROWSER HOME · 她最后使用的状态
+===================================================== */
+
+
+/* ===============================
+   基础
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+    color: #202124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* ===============================
+   顶部导航
+================================ */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    font-size: 13px;
+}
+
+
+.topbar-left {
+    display: flex;
+    gap: 18px;
+}
+
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.top-link {
+    color: #5f6368;
+    text-decoration: none;
+    transition: 0.15s;
+}
+
+
+.top-link:hover {
+    color: #202124;
+    text-decoration: underline;
+}
+
+
+.sync-status {
+    font-size: 11px;
+    color: #4a9a5a;
+    letter-spacing: 0.5px;
+}
+
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f0dcd5;
+    color: #b85a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+
+.avatar:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+
+/* ===============================
+   中央搜索区
+================================ */
+
+.search-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 20px;
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #202124;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    user-select: none;
+}
+
+
+.logo span {
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #9aa0a6;
+}
+
+
+/* 搜索框 */
+
+.search-wrap {
+    position: relative;
+    width: 580px;
+    max-width: 90%;
+}
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    transition: 0.2s;
+}
+
+
+.search-box:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.15);
+    border-color: rgba(223,225,229,0);
+}
+
+
+.search-box:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.18);
+    border-color: rgba(223,225,229,0);
+}
+
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #9aa0a6;
+    flex-shrink: 0;
+}
+
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: "Noto Serif SC", serif;
+    font-size: 16px;
+    color: #202124;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+.clear-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #9aa0a6;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    display: block;
+    transition: 0.15s;
+}
+
+
+.clear-btn:hover {
+    color: #202124;
+}
+
+
+/* 下拉搜索记录 */
+
+.suggest {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(32,33,36,0.18);
+    padding: 8px 0;
+    z-index: 100;
+}
+
+
+.suggest-label {
+    padding: 8px 20px;
+    font-size: 12px;
+    color: #9aa0a6;
+    letter-spacing: 1px;
+}
+
+
+.suggest-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #202124;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+
+.suggest-item:hover {
+    background: #f8f9fa;
+}
+
+
+.suggest-item .suggest-time {
+    font-size: 14px;
+    color: #9aa0a6;
+    flex-shrink: 0;
+}
+
+
+.suggest-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 6px 0;
+}
+
+
+.hot-label {
+    color: #b85a4a;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.hot-rank {
+    width: 18px;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #9aa0a6;
+    text-align: center;
+    font-style: normal;
+}
+
+
+.rank-1 { color: #e04a3a; }
+.rank-2 { color: #f08c3a; }
+.rank-3 { color: #f0b83a; }
+
+
+/* 搜索按钮 */
+
+.search-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 22px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.15s;
+    letter-spacing: 1px;
+}
+
+
+.btn-primary {
+    background: #202124;
+    color: #fff;
+    border: 1px solid #202124;
+}
+
+
+.btn-primary:hover {
+    background: #3c4043;
+    border-color: #3c4043;
+}
+
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #3c4043;
+    border: 1px solid #f8f9fa;
+}
+
+
+.btn-secondary:hover {
+    box-shadow: 0 1px 4px rgba(32,33,36,0.15);
+    border-color: #dadce0;
+}
+
+
+/* 快捷入口 */
+
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+
+.quick-card {
+    width: 100px;
+    padding: 14px 8px;
+    background: #fff;
+    border: 1px solid #e5dfd8;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: 0.2s;
+}
+
+
+.quick-card:hover {
+    border-color: #c8b8b0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+}
+
+
+.quick-icon {
+    font-size: 22px;
+}
+
+
+.quick-card strong {
+    font-size: 12px;
+    color: #3d3530;
+    letter-spacing: 0.5px;
+}
+
+
+.quick-card small {
+    font-size: 10px;
+    color: #999;
+    line-height: 1.4;
+}
+
+
+/* 收藏栏 */
+
+.bookmark-bar {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 10px 16px;
+    background: #faf8f5;
+    border: 1px solid #e5dfd8;
+    border-radius: 10px;
+    max-width: 90%;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-items: center;
+}
+
+
+.bookmark-label {
+    font-size: 11px;
+    color: #999;
+    flex-shrink: 0;
+    letter-spacing: 1px;
+}
+
+
+.bookmark {
+    font-size: 12px;
+    color: #6b625c;
+    text-decoration: none;
+    transition: 0.15s;
+    flex-shrink: 0;
+}
+
+
+.bookmark:hover {
+    color: #b85a4a;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #f2f2f2;
+    font-size: 13px;
+    color: #5f6368;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 18px;
+}
+
+
+.footer-links a {
+    color: #5f6368;
+    text-decoration: none;
+}
+
+
+.footer-links a:hover {
+    color: #202124;
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 650px) {
+
+    .logo {
+        font-size: 52px;
+        letter-spacing: 5px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .search-wrap {
+        width: 92%;
+    }
+
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .search-main {
+        padding-top: 4vh;
+    }
+
+    .search-buttons {
+        gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 9px 16px;
+        font-size: 13px;
+    }
+
+    .quick-links {
+        gap: 8px;
+    }
+
+    .quick-card {
+        width: 75px;
+        padding: 10px 5px;
+    }
+
+    .quick-card small {
+        display: none;
+    }
+
+    .bookmark-bar {
+        gap: 8px;
+    }
+
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

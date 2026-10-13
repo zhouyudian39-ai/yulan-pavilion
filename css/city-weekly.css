@@ -1,0 +1,1232 @@
+/* =====================================================
+   城市周刊 CITY WEEKLY
+   新闻杂志风格 · 文章页
+===================================================== */
+
+
+/* ===============================
+   基础
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f4f2;
+    font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+    color: #222;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.cityweek-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.08);
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   顶部栏
+================================ */
+
+.cityweek-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 25px 40px;
+    background: #fff;
+    border-bottom: 4px solid #242a30;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.cityweek-logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #1e2933;
+    line-height: 1;
+}
+
+
+.cityweek-date {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+.cityweek-location {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.7;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   导航
+================================ */
+
+.cityweek-nav {
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid #242a30;
+    flex-wrap: wrap;
+}
+
+
+.cityweek-nav a {
+    padding: 12px 24px;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    border-right: 1px solid #ddd;
+    transition: 0.15s;
+    letter-spacing: 1px;
+}
+
+
+.cityweek-nav a:first-child {
+    background: #8a1f1f;
+    color: #fff;
+    font-weight: 700;
+}
+
+
+.cityweek-nav a:hover {
+    background: #242a30;
+    color: #fff;
+}
+
+
+/* ===============================
+   面包屑
+================================ */
+
+.cityweek-breadcrumb {
+    padding: 10px 40px;
+    font-size: 11px;
+    color: #777;
+    background: #fafaf8;
+    border-bottom: 1px solid #eee;
+    letter-spacing: 1px;
+}
+
+
+.cityweek-breadcrumb a {
+    color: #8a1f1f;
+    text-decoration: none;
+}
+
+
+.cityweek-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   文章容器
+================================ */
+
+.cityweek-article {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+
+/* ===============================
+   文章头部
+================================ */
+
+.article-header {
+    padding-bottom: 25px;
+    border-bottom: 3px double #bbb;
+    margin-bottom: 30px;
+}
+
+
+.article-category {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #8a1f1f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+
+.article-header h1 {
+    font-size: 32px;
+    line-height: 1.4;
+    color: #1e2933;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+
+.article-header h2 {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+
+.article-meta {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   主图
+================================ */
+
+.article-hero-image {
+    margin-bottom: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+
+.article-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(0.1) contrast(1.03);
+}
+
+
+.image-label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+.image-caption {
+    margin: 10px 0 0;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #777;
+}
+
+
+/* ===============================
+   导语
+================================ */
+
+.article-lead {
+    margin-bottom: 35px;
+}
+
+
+.article-lead p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 2.1;
+    color: #222;
+}
+
+
+/* ===============================
+   正文段落
+================================ */
+
+.article-section {
+    margin-bottom: 35px;
+}
+
+
+.section-number {
+    font-family: "Courier Prime", monospace;
+    font-size: 28px;
+    color: #bbb;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+
+.section-body h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #1e2933;
+    letter-spacing: 1px;
+}
+
+
+.section-body p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 2.1;
+    color: #333;
+}
+
+
+/* 列表 */
+.article-list {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+
+.article-list li {
+    font-size: 14px;
+    line-height: 2.2;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+/* ===============================
+   引用块
+================================ */
+
+.article-quote {
+    margin: 20px 0;
+    padding: 18px 22px;
+    background: #f5f5f3;
+    border-left: 4px solid #8a1f1f;
+    font-size: 14px;
+    line-height: 2;
+    color: #444;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+
+/* ===============================
+   图片区块
+================================ */
+
+.article-photo {
+    margin-bottom: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+
+.article-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(0.1);
+}
+
+
+/* ===============================
+   编辑部声明
+================================ */
+
+.editor-note {
+    margin: 40px 0;
+    padding: 25px;
+    background: #f5f5f3;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+.editor-note-title {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #555;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+
+.editor-note p {
+    margin: 8px 0;
+    font-size: 12px;
+    line-height: 2;
+    color: #666;
+}
+
+
+/* ===============================
+   返回链接
+================================ */
+
+.article-return {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.article-return a {
+    color: #555;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+
+.article-return a:hover {
+    color: #8a1f1f;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.cityweek-footer {
+    margin-top: 40px;
+    background: #1f252a;
+    color: #aaa;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+
+.cityweek-footer div:first-child {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+.cityweek-footer p {
+    margin: 10px 0 5px;
+    font-size: 11px;
+    color: #888;
+}
+
+
+.footer-code {
+    margin-top: 10px;
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #666;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .cityweek-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .cityweek-location {
+        text-align: left;
+    }
+
+    .cityweek-logo {
+        font-size: 32px;
+    }
+
+    .cityweek-nav a {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .cityweek-breadcrumb {
+        padding: 8px 20px;
+        font-size: 10px;
+    }
+
+    .cityweek-article {
+        padding: 20px 15px 40px;
+    }
+
+    .article-header h1 {
+        font-size: 24px;
+    }
+
+    .article-header h2 {
+        font-size: 14px;
+    }
+
+    .section-body h3 {
+        font-size: 17px;
+    }
+
+    .section-body p {
+        font-size: 13px;
+    }
+
+    .article-lead p {
+        font-size: 14px;
+    }
+
+    .article-quote {
+        font-size: 13px;
+        padding: 15px;
+    }
+
+    .editor-note {
+        padding: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   城市周刊 CITY WEEKLY
+   今日头条风格 · 卡片流
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f4f2;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #222;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.cityweek-page {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   顶部栏
+================================ */
+
+.cw-topbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.cw-topbar-brand {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #1e2933;
+    flex-shrink: 0;
+}
+
+
+.cw-topbar-nav {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+.cw-topbar-nav a {
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 14px;
+    transition: 0.15s;
+    flex-shrink: 0;
+}
+
+
+.cw-topbar-nav a.active {
+    background: #8a1f1f;
+    color: #fff;
+    font-weight: 700;
+}
+
+
+.cw-topbar-nav a:hover:not(.active) {
+    background: #f5f5f5;
+}
+
+
+.cw-topbar-date {
+    font-size: 10px;
+    color: #999;
+    flex-shrink: 0;
+    font-family: "Courier Prime", monospace;
+}
+
+
+/* ===============================
+   主内容
+================================ */
+
+.cw-main {
+    padding: 12px;
+}
+
+
+/* ===============================
+   头条大卡片
+================================ */
+
+.cw-headline-card {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+
+.cw-headline-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.cw-headline-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 16px 16px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 100%);
+}
+
+
+.cw-headline-title {
+    font-size: 19px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+
+.cw-headline-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #ddd;
+}
+
+
+/* ===============================
+   标签
+================================ */
+
+.cw-tag {
+    padding: 2px 8px;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+
+.cw-tag-red {
+    background: #d03a3a;
+    color: #fff;
+}
+
+
+/* ===============================
+   新闻卡片（横向）
+================================ */
+
+.cw-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+
+.cw-news-card {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 12px;
+    background: #fff;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+
+.cw-news-card:hover {
+    background: #fdfaf7;
+}
+
+
+.cw-news-card.cw-card-horizontal {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.cw-news-card.cw-card-horizontal:last-child {
+    border-bottom: none;
+}
+
+
+.cw-card-img {
+    width: 110px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    background: #f5f5f5;
+}
+
+
+.cw-card-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.cw-card-title {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1e2933;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+.cw-card-desc {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #888;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+.cw-card-meta {
+    font-size: 10px;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* ===============================
+   编辑部声明
+================================ */
+
+.cw-editor-note {
+    padding: 16px 14px;
+    background: #fafaf8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+
+.cw-editor-note p {
+    font-size: 11px;
+    line-height: 1.9;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+
+.cw-tip-line {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #fdf8f5;
+    border-left: 3px solid #8a1f1f;
+    font-size: 12px !important;
+    color: #555 !important;
+}
+
+
+.cw-tip-line strong {
+    color: #8a1f1f;
+    font-family: "Courier Prime", monospace;
+    letter-spacing: 1px;
+}
+
+
+.cw-warning-line {
+    color: #ccc !important;
+    font-size: 10px !important;
+    font-style: italic;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.cw-footer {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+
+.cw-footer div:first-child {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #1e2933;
+}
+
+
+.cw-footer p {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #bbb;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 500px) {
+
+    .cw-topbar {
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .cw-topbar-brand {
+        font-size: 15px;
+    }
+
+    .cw-topbar-nav a {
+        padding: 3px 8px;
+        font-size: 11px;
+    }
+
+    .cw-headline-img {
+        height: 180px;
+    }
+
+    .cw-headline-title {
+        font-size: 16px;
+    }
+
+    .cw-card-img {
+        width: 90px;
+        height: 68px;
+    }
+
+    .cw-card-title {
+        font-size: 13px;
+    }
+
+    .cw-card-desc {
+        font-size: 11px;
+    }
+
+}
+
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造）
+   -----------------------------------------------------
+   身份：城市周刊 —— 纸质报道 + 早期门户
+   手法：报头双线、无圆角卡片、等宽小字标签、网点纸底；
+         正文保持可读性优先，不上粉色、不堆贴纸
+   本层同时覆盖卡片流与文章页（文件末尾生效）
+===================================================== */
+
+
+:root {
+
+    --cw-ink: #1b1f24;
+    --cw-ink-soft: #4b5158;
+    --cw-ink-faint: #8a8280;
+
+    --cw-paper: #ffffff;
+    --cw-news: #f6f4f0;
+    --cw-red: #8a1f1f;
+    --cw-blue: #24507a;
+
+    --cw-line: 1px solid rgba(27, 31, 36, 0.35);
+    --cw-line-soft: 1px solid rgba(27, 31, 36, 0.18);
+
+    --cw-mono: "Courier Prime", "Courier New", monospace;
+    --cw-serif: "Noto Serif SC", "Songti SC", serif;
+}
+
+
+/* ---------- 底：报纸灰 + 网点 ---------- */
+
+body {
+
+    background-color: var(--cw-news);
+    background-image: radial-gradient(
+        rgba(27, 31, 36, 0.055) 1px,
+        transparent 1px
+    );
+
+    background-size: 4px 4px;
+
+    color: var(--cw-ink);
+    font-family: var(--cw-serif);
+}
+
+
+.cityweek-page {
+
+    background: var(--cw-paper);
+
+    border-left: var(--cw-line-soft);
+    border-right: var(--cw-line-soft);
+
+    box-shadow: 0 0 24px rgba(27, 31, 36, 0.1);
+}
+
+
+/* ---------- 照片占位 + 比例定尺寸 ---------- */
+
+.cityweek-page img {
+
+    background-color: #ebe7e1;
+
+    background-image:
+        radial-gradient(rgba(27, 31, 36, 0.13) 1px, transparent 1px),
+        radial-gradient(rgba(27, 31, 36, 0.07) 1px, transparent 1px);
+
+    background-size: 3px 3px, 3px 3px;
+    background-position: 0 0, 1.5px 1.5px;
+
+    color: transparent;
+}
+
+
+.cw-headline-img,
+.cw-card-img {
+
+    height: auto;
+    aspect-ratio: 16 / 10;
+}
+
+
+/* 照片位由容器定尺寸（缺失的图片不会按内容撑开） */
+
+.cw-headline-card {
+
+    position: relative;
+
+    /* 宽度必须由容器决定：只写 min-height + aspect-ratio 时，Chrome 会反过来
+       用比例算出宽度（390 的视口下算出 604px），整页因此横向溢出 227px。 */
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 340px;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+}
+
+
+.cw-headline-card .cw-headline-img {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    aspect-ratio: auto;
+}
+
+
+.cw-card-img {
+
+    flex: 0 0 150px;
+
+    width: 150px;
+    height: 112px;
+
+    object-fit: cover;
+
+    aspect-ratio: auto;
+}
+
+
+/* ---------- 顶部：报头 ---------- */
+
+.cw-topbar {
+
+    background: var(--cw-paper);
+    border-bottom: 2px solid var(--cw-ink);
+}
+
+
+.cw-topbar-brand {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+
+    color: var(--cw-ink);
+}
+
+
+.cw-topbar-nav a {
+
+    border-left: var(--cw-line-soft);
+    border-radius: 0;
+
+    font-family: var(--cw-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    color: var(--cw-ink-soft);
+}
+
+
+.cw-topbar-nav a.active {
+
+    background: var(--cw-red);
+    color: #ffffff;
+}
+
+
+.cw-topbar-nav a:hover:not(.active) {
+
+    background: var(--cw-news);
+    color: var(--cw-ink);
+}
+
+
+.cw-topbar-date {
+
+    font-family: var(--cw-mono);
+    letter-spacing: 1px;
+
+    color: var(--cw-ink-faint);
+}
+
+
+/* ---------- 面包屑 ---------- */
+
+.cw-breadcrumb {
+
+    background: var(--cw-news);
+    border-bottom: var(--cw-line-soft);
+
+    font-family: var(--cw-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+
+    color: var(--cw-ink-faint);
+}
+
+
+.cw-breadcrumb a {
+
+    color: var(--cw-red);
+}
+
+
+/* ---------- 头条卡（照片 + 标题压字） ---------- */
+
+.cw-headline-card {
+
+    border: 1px solid var(--cw-ink);
+
+    box-shadow: 5px 5px 0 rgba(27, 31, 36, 0.12);
+}
+
+
+.cw-headline-overlay {
+
+    background: linear-gradient(
+        180deg,
+        rgba(27, 31, 36, 0) 38%,
+        rgba(27, 31, 36, 0.86) 100%
+    );
+}
+
+
+.cw-headline-title {
+
+    font-family: var(--cw-serif);
+    font-size: 26px;
+    line-height: 1.45;
+    letter-spacing: 0.5px;
+}
+
+
+.cw-headline-meta {
+
+    font-family: var(--cw-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+}
+
+
+.cw-tag {
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 0;
+
+    background: var(--cw-red);
+
+    font-family: var(--cw-mono);
+    letter-spacing: 2px;
+}
+
+
+/* ---------- 新闻卡片 ---------- */
+
+.cw-news-card {
+
+    background: var(--cw-paper);
+
+    border: var(--cw-line);
+    border-radius: 0;
+}
+
+
+.cw-news-card:hover {
+
+    border-color: var(--cw-ink);
+
+    box-shadow: 4px 4px 0 rgba(27, 31, 36, 0.14);
+}
+
+
+.cw-card-body h3,
+.cw-card-title {
+
+    font-size: 15.5px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+
+.cw-card-body p {
+
+    font-size: 12.5px;
+    line-height: 1.95;
+
+    color: var(--cw-ink-soft);
+}
+
+
+.cw-card-meta,
+.cw-card-source {
+
+    font-family: var(--cw-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--cw-ink-faint);
+}
+
+
+/* ---------- 页脚 ---------- */
+
+.cityweek-footer,
+.cw-footer {
+
+    background: #1c2126;
+    border-top: 3px solid var(--cw-red);
+
+    font-family: var(--cw-mono);
+    letter-spacing: 1px;
+}
+
+
+/* ---------- 窄屏：重述本层改过的值 ---------- */
+
+@media (max-width: 750px) {
+
+    .cw-headline-title {
+
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .cw-topbar-brand {
+
+        font-size: 17px;
+    }
+
+    /* 窄屏不留 340px 的固定高度：头条改为随容器宽度的手机比例 */
+    .cw-headline-card {
+
+        min-height: 240px;
+    }
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

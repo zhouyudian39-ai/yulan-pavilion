@@ -1,0 +1,2196 @@
+/* =====================================================
+   十七の桌面 · Y2K 私人拼贴
+   DESKTOP INTRO — 美术改造后的视觉层
+   配合 js/desktop.js 与 js/game-progress.js 使用
+   材质基础件见 css/y2k.css（跨站共用）
+   身份：粉丝自己布置的电脑 —— 平面拼贴 / 巨大标题 /
+         白贴纸描边 / 棋盘格胶带 / 铬银窗口 / 扫描线
+===================================================== */
+
+
+/* ===============================
+   调色板
+=============================== */
+
+:root {
+
+    /* 荧光粉 */
+    --dk-pink-1: #fff3f8;
+    --dk-pink-2: #ffdcec;
+    --dk-pink-3: #ffaed3;
+    --dk-pink-4: #f0709f;
+    --dk-pink-5: #b62f6c;
+
+    /* 冷色点缀（参考图里的冰蓝与电光紫） */
+    --dk-ice-1: #eaf8ff;
+    --dk-ice-2: #8fd8f0;
+    --dk-violet: #b9a6ff;
+
+    /* 铬银 */
+    --dk-silver-1: #fbfbfd;
+    --dk-silver-2: #e6e7ee;
+    --dk-silver-3: #b9bbc7;
+
+    /* 墨 */
+    --dk-ink: #17171a;
+    --dk-ink-soft: #5f6070;
+    --dk-ink-faint: #9698a6;
+
+    /* 纸 */
+    --dk-paper: #fffdf8;
+    --dk-note: #fff4cf;
+    --dk-note-line: #e6d193;
+
+    --dk-line: 1px solid var(--dk-ink);
+    --dk-line-soft: 1px solid rgba(23, 23, 26, 0.18);
+
+    --dk-mono: "Courier Prime", "Courier New", monospace;
+    --dk-serif: "Noto Serif SC", "Songti SC", serif;
+    --dk-display: "Archivo Black", "Arial Black", "Noto Sans SC",
+        "Microsoft YaHei", sans-serif;
+}
+
+
+/* ===============================
+   基础
+=============================== */
+
+body.dk-body {
+
+    margin: 0;
+
+    background: var(--dk-pink-1);
+    color: var(--dk-ink);
+
+    font-family: var(--dk-serif);
+
+    -webkit-text-size-adjust: 100%;
+}
+
+
+.dk-sr-only {
+
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* 通用隐藏（供弹层 / 反馈条使用） */
+
+.dk-hidden {
+
+    display: none !important;
+}
+
+
+/* 键盘焦点环：墨线 + 白衬底 */
+
+.dk-desktop :focus-visible,
+.dk-os :focus-visible,
+.dk-taskbar :focus-visible,
+.dk-overlay :focus-visible,
+.dk-foot :focus-visible,
+.dk-poster :focus-visible {
+
+    outline: 2px solid var(--dk-ink);
+    outline-offset: 2px;
+}
+
+
+/* ===============================
+   外壳
+=============================== */
+
+.dk-shell {
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   桌面底：粉墙 + 细网格 + 冷色光斑
+=============================== */
+
+.dk-desktop {
+
+    position: relative;
+    flex: 1;
+
+    padding: 22px 14px 28px;
+
+    background-color: var(--dk-pink-1);
+    background-image:
+        radial-gradient(
+            120% 90% at 6% -12%,
+            rgba(255, 255, 255, 0.94) 0%,
+            rgba(255, 255, 255, 0) 58%
+        ),
+        radial-gradient(
+            80% 60% at 102% 4%,
+            rgba(143, 216, 240, 0.42) 0%,
+            rgba(143, 216, 240, 0) 62%
+        ),
+        linear-gradient(
+            to right,
+            rgba(23, 23, 26, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(23, 23, 26, 0.055) 1px,
+            transparent 1px
+        );
+
+    background-size: auto, auto, 28px 28px, 28px 28px;
+}
+
+
+/* 扫描线：压在底色之上、正文之下 */
+
+.dk-deco-scan {
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background-image: repeating-linear-gradient(
+        180deg,
+        rgba(23, 23, 26, 0.07) 0 1px,
+        transparent 1px 4px
+    );
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   OS 顶栏：铬银 + 棋盘格底边
+=============================== */
+
+.dk-os {
+
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px 14px;
+
+    padding: 9px 14px 10px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        var(--dk-silver-2) 54%,
+        var(--dk-silver-3) 100%
+    );
+
+    border-bottom: 2px solid var(--dk-ink);
+
+    font-family: var(--dk-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* 底边棋盘格胶带 */
+
+.dk-os::after {
+
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+
+    height: 5px;
+
+    background-image: conic-gradient(
+        var(--dk-ink) 0 25%,
+        transparent 0 50%,
+        var(--dk-ink) 0 75%,
+        transparent 0
+    );
+
+    background-size: 10px 10px;
+
+    opacity: 0.9;
+
+    pointer-events: none;
+}
+
+
+.dk-os-title {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.dk-os-mark {
+
+    display: inline-block;
+
+    width: 13px;
+    height: 13px;
+
+    background: linear-gradient(
+        160deg,
+        var(--dk-pink-2) 0%,
+        var(--dk-pink-4) 58%,
+        var(--dk-pink-5) 100%
+    );
+
+    border: 1px solid var(--dk-ink);
+
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+
+.dk-os-meta {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-os-clock {
+
+    padding: 1px 6px;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(23, 23, 26, 0.35);
+
+    font-size: 10px;
+
+    color: var(--dk-ink);
+}
+
+
+/* 注：顶栏原有两个英文角标（SIDE A / 跳过开篇）已按本轮文案收口移除。 */
+
+
+/* ===============================
+   拼贴封面（巨大标题 + 倾斜照片）
+=============================== */
+
+.dk-poster {
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(140px, 214px);
+    align-items: center;
+    gap: 12px 18px;
+
+    padding: 16px 18px 14px;
+
+    background:
+        radial-gradient(
+            90% 120% at 100% 0%,
+            rgba(185, 166, 255, 0.52) 0%,
+            rgba(185, 166, 255, 0) 62%
+        ),
+        linear-gradient(
+            158deg,
+            #ffffff 0%,
+            var(--dk-pink-2) 44%,
+            var(--dk-ice-2) 100%
+        );
+
+    border: 1px solid var(--dk-ink);
+
+    box-shadow:
+        0 0 0 3px var(--dk-paper),
+        0 0 0 4px var(--dk-ink),
+        7px 8px 0 rgba(23, 23, 26, 0.15);
+}
+
+
+.dk-poster-head {
+
+    position: relative;
+    z-index: 2;
+
+    min-width: 0;
+}
+
+
+.dk-poster-kicker {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+
+    margin-bottom: 8px;
+
+    font-family: var(--dk-mono);
+    font-size: 9.5px;
+    letter-spacing: 2px;
+
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-poster-kicker span {
+
+    padding: 2px 7px;
+
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(23, 23, 26, 0.45);
+}
+
+
+.dk-poster-title {
+
+    margin: 0;
+
+    font-weight: 400;
+}
+
+
+.dk-poster-title-cn {
+
+    display: block;
+
+    font-size: clamp(44px, 9.6vw, 92px);
+    letter-spacing: 2px;
+}
+
+
+.dk-poster-title-en {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: transparent;
+
+    font-family: var(--dk-display);
+    font-size: clamp(15px, 2.6vw, 28px);
+    letter-spacing: 9px;
+
+    -webkit-text-stroke: 1.4px var(--dk-ink);
+}
+
+
+.dk-poster-sub {
+
+    margin-top: 9px;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+
+    color: var(--dk-ink-soft);
+}
+
+
+/* ---------- 封面里的那张照片 ---------- */
+
+.dk-poster-shot {
+
+    position: relative;
+
+    margin: 0;
+    padding: 8px 8px 0;
+
+    background: var(--dk-paper);
+    border: 1px solid var(--dk-ink);
+
+    box-shadow: 4px 5px 0 rgba(23, 23, 26, 0.18);
+
+    transform: rotate(2.6deg);
+}
+
+
+.dk-poster-shot img {
+
+    display: block;
+
+    width: 100%;
+    height: 168px;
+
+    object-fit: cover;
+
+    background: var(--dk-silver-2);
+    border: 1px solid rgba(23, 23, 26, 0.2);
+}
+
+
+.dk-poster-shot-cap {
+
+    padding: 6px 2px 7px;
+
+    font-family: var(--dk-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    color: var(--dk-ink-faint);
+    text-align: center;
+}
+
+
+/* ---------- 封面上的胶带 ---------- */
+
+.dk-poster-tape {
+
+    position: absolute;
+
+    width: 74px;
+    height: 16px;
+
+    top: -8px;
+    left: -14px;
+
+    transform: rotate(-32deg);
+}
+
+
+.dk-poster-tape-2 {
+
+    position: absolute;
+
+    width: 58px;
+    height: 14px;
+
+    right: -12px;
+    bottom: 36px;
+
+    transform: rotate(24deg);
+}
+
+
+/* ---------- 印章：贴在照片右上角 ---------- */
+
+.dk-poster-seal {
+
+    position: absolute;
+    right: 8px;
+    top: 0;
+
+    z-index: 3;
+
+    transform: rotate(-8deg);
+}
+
+
+.dk-poster-seal b {
+
+    display: block;
+
+    font-size: 13px;
+    line-height: 1;
+}
+
+
+.dk-poster-seal em {
+
+    display: block;
+
+    font-style: normal;
+    font-size: 8px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+
+/* ===============================
+   桌面网格
+=============================== */
+
+.dk-grid {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 16px;
+
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+
+.dk-span {
+
+    grid-column: 1 / -1;
+}
+
+
+/* ===============================
+   手写便条（原「桌面提示」）
+   语气：桌面主人自己写给自己的话
+=============================== */
+
+.dk-hint {
+
+    position: relative;
+
+    max-width: 940px;
+    margin: 4px auto 0;
+
+    padding: 12px 16px;
+
+    background: linear-gradient(180deg, #ffffff 0%, #fff5e6 100%);
+    border: 1px solid var(--dk-ink);
+
+    box-shadow: 3px 4px 0 rgba(23, 23, 26, 0.14);
+
+    font-size: 12.5px;
+    line-height: 1.95;
+
+    color: var(--dk-ink-soft);
+
+    transform: rotate(-0.5deg);
+}
+
+
+.dk-hint::before {
+
+    content: "";
+
+    position: absolute;
+    top: -7px;
+    left: 26px;
+
+    width: 62px;
+    height: 14px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(240, 112, 159, 0.55) 100%
+    );
+
+    border-left: 1px solid rgba(23, 23, 26, 0.14);
+    border-right: 1px solid rgba(23, 23, 26, 0.14);
+
+    transform: rotate(-4deg);
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   反馈条（操作结果）
+=============================== */
+
+.dk-feedback {
+
+    max-width: 940px;
+    margin: 0 auto;
+
+    padding: 11px 15px;
+
+    background: linear-gradient(180deg, #ffffff 0%, var(--dk-pink-1) 100%);
+    border: 1px solid var(--dk-ink);
+    border-left: 6px solid var(--dk-pink-4);
+
+    box-shadow: 3px 4px 0 rgba(23, 23, 26, 0.14);
+
+    font-size: 12.5px;
+    line-height: 1.95;
+}
+
+
+.dk-feedback.dk-hidden {
+
+    display: none;
+}
+
+
+.dk-feedback strong {
+
+    font-weight: 700;
+}
+
+
+/* ===============================
+   复古窗口（共用）
+=============================== */
+
+.dk-window {
+
+    position: relative;
+    z-index: 10;
+
+    background: var(--dk-paper);
+
+    border: 1px solid var(--dk-ink);
+    border-radius: 4px;
+
+    box-shadow: 4px 5px 0 rgba(23, 23, 26, 0.16);
+}
+
+
+.dk-titlebar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 6px 8px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        var(--dk-pink-3) 54%,
+        var(--dk-pink-4) 100%
+    );
+
+    border-bottom: 1px solid var(--dk-ink);
+    border-radius: 3px 3px 0 0;
+
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    font-family: var(--dk-mono);
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+}
+
+
+.dk-titlebar-text {
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* 标题栏左侧的小圆点 */
+
+.dk-titlebar-text::before {
+
+    content: "";
+
+    flex: 0 0 auto;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--dk-ink);
+    border-radius: 50%;
+
+    opacity: 0.72;
+}
+
+
+.dk-titlebar-btns {
+
+    display: flex;
+    flex: 0 0 auto;
+    gap: 4px;
+}
+
+
+/* 装饰性窗口按钮：不承载功能，避免误点 */
+
+.dk-wbtn {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 14px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        var(--dk-silver-2) 62%,
+        var(--dk-silver-3) 100%
+    );
+
+    border: 1px solid var(--dk-ink);
+    border-radius: 2px;
+
+    font-family: var(--dk-mono);
+    font-size: 9px;
+    line-height: 1;
+
+    color: var(--dk-ink);
+}
+
+
+.dk-wbody {
+
+    padding: 13px;
+
+    font-size: 12.5px;
+    line-height: 1.9;
+}
+
+
+/* ===============================
+   浏览器窗口：工具条 + 地址栏 + 关键词
+=============================== */
+
+.dk-toolbar {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 8px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--dk-silver-1) 0%,
+        var(--dk-silver-2) 100%
+    );
+
+    border-bottom: 1px solid rgba(23, 23, 26, 0.4);
+}
+
+
+.dk-tool {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 18px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        var(--dk-silver-2) 100%
+    );
+
+    border: 1px solid rgba(23, 23, 26, 0.7);
+    border-radius: 3px;
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-toolbar-note {
+
+    margin-left: auto;
+
+    font-family: var(--dk-mono);
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    color: var(--dk-ink-faint);
+}
+
+
+.dk-addrbar {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 8px;
+
+    background: var(--dk-silver-2);
+    border-bottom: 1px solid rgba(23, 23, 26, 0.45);
+
+    font-family: var(--dk-mono);
+    font-size: 10.5px;
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-addr {
+
+    flex: 1 1 auto;
+    min-width: 0;
+
+    padding: 3px 9px;
+
+    background: #ffffff;
+    border: 1px solid var(--dk-ink);
+    border-radius: 999px;
+
+    color: var(--dk-ink);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.dk-kw-label {
+
+    margin-bottom: 7px;
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    color: var(--dk-ink-faint);
+}
+
+
+.dk-chips {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-bottom: 14px;
+}
+
+
+/* 静态样式：桌面上的「最近搜索」只是记录，不可点 */
+
+.dk-chip {
+
+    padding: 3px 10px;
+
+    background: linear-gradient(180deg, #ffffff 0%, var(--dk-pink-1) 100%);
+    border: 1px solid rgba(23, 23, 26, 0.35);
+    border-radius: 999px;
+
+    font-size: 11.5px;
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-hot {
+
+    padding: 8px 10px;
+    margin-bottom: 14px;
+
+    background: linear-gradient(180deg, #ffffff 0%, var(--dk-ice-1) 100%);
+    border: 1px solid rgba(23, 23, 26, 0.28);
+    border-left: 4px solid var(--dk-pink-4);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+.dk-hot-rank {
+
+    display: inline-block;
+
+    margin-right: 7px;
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+    font-weight: 700;
+
+    color: var(--dk-pink-5);
+}
+
+
+.dk-hot-tip {
+
+    display: block;
+    margin-top: 4px;
+
+    font-size: 10.5px;
+    color: var(--dk-ink-faint);
+}
+
+
+/* ===============================
+   聊天窗口
+=============================== */
+
+.dk-chat-peer {
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 10px;
+    margin-bottom: 12px;
+
+    background: linear-gradient(180deg, #ffffff 0%, var(--dk-pink-1) 100%);
+    border: 1px solid rgba(23, 23, 26, 0.3);
+    border-radius: 4px;
+}
+
+
+.dk-chat-avatar {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    width: 30px;
+    height: 30px;
+
+    background: linear-gradient(
+        160deg,
+        var(--dk-pink-3) 0%,
+        var(--dk-pink-5) 100%
+    );
+
+    border: 1px solid var(--dk-ink);
+    border-radius: 50%;
+
+    color: #ffffff;
+    font-size: 13px;
+
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+
+.dk-chat-name {
+
+    font-size: 12.5px;
+    letter-spacing: 1px;
+}
+
+
+.dk-chat-state {
+
+    display: block;
+    margin-top: 2px;
+
+    font-family: var(--dk-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    color: var(--dk-ink-faint);
+}
+
+
+.dk-chat-log {
+
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    margin-bottom: 12px;
+}
+
+
+.dk-msg {
+
+    max-width: 92%;
+
+    padding: 8px 11px;
+
+    background: #ffffff;
+    border: 1px solid rgba(23, 23, 26, 0.28);
+    border-radius: 10px 10px 10px 3px;
+
+    box-shadow: 2px 3px 0 rgba(23, 23, 26, 0.07);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+.dk-msg-who {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-family: var(--dk-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    color: var(--dk-ink-faint);
+}
+
+
+.dk-msg.dk-msg-sys {
+
+    padding: 6px 10px;
+
+    background: var(--dk-silver-2);
+    border-style: dashed;
+    border-radius: 4px;
+
+    color: var(--dk-ink-soft);
+
+    font-family: var(--dk-mono);
+    font-size: 10.5px;
+}
+
+
+/* 系统行可以隐藏，等玩家点「再发一条」再出现 */
+
+.dk-msg.dk-msg-hidden {
+
+    display: none;
+}
+
+
+/* ===============================
+   按钮
+=============================== */
+
+.dk-btn {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 15px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        var(--dk-silver-2) 54%,
+        var(--dk-silver-3) 100%
+    );
+
+    border: 1px solid var(--dk-ink);
+    border-radius: 999px;
+
+    color: var(--dk-ink);
+
+    font-family: var(--dk-serif);
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    box-shadow: 2px 2px 0 rgba(23, 23, 26, 0.2);
+
+    cursor: pointer;
+}
+
+
+.dk-btn:hover {
+
+    background: var(--dk-silver-2);
+}
+
+
+.dk-btn:active {
+
+    transform: translate(1px, 1px);
+
+    box-shadow: 1px 1px 0 rgba(23, 23, 26, 0.2);
+}
+
+
+.dk-btn-mini {
+
+    padding: 4px 10px;
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+.dk-btn-strong {
+
+    background: linear-gradient(
+        to bottom,
+        var(--dk-pink-3) 0%,
+        var(--dk-pink-4) 54%,
+        var(--dk-pink-5) 100%
+    );
+
+    border-color: var(--dk-ink);
+
+    color: #ffffff;
+
+    text-shadow: 0 1px 0 rgba(23, 23, 26, 0.35);
+}
+
+
+.dk-btn-strong:hover {
+
+    background: var(--dk-pink-4);
+}
+
+
+.dk-btn-row {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.dk-btn:disabled {
+
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+.dk-link {
+
+    color: var(--dk-ink);
+
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+
+.dk-link:hover {
+
+    color: var(--dk-pink-5);
+}
+
+
+.dk-small-note {
+
+    margin-top: 12px;
+
+    font-size: 11px;
+    line-height: 1.9;
+
+    color: var(--dk-ink-faint);
+}
+
+
+/* ===============================
+   便签区（相册盖在便签上面）
+=============================== */
+
+.dk-note-zone {
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    min-height: 300px;
+    padding: 14px;
+
+    background: var(--dk-paper);
+    border: 1px solid var(--dk-ink);
+    border-radius: 3px;
+
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.75);
+}
+
+
+/* ---------- 便签本体 ---------- */
+
+.dk-note {
+
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+
+    padding: 22px 22px 20px;
+
+    background: linear-gradient(180deg, var(--dk-note) 0%, #ffedb3 100%);
+    border: 1px solid var(--dk-ink);
+
+    box-shadow: 4px 5px 0 rgba(23, 23, 26, 0.16);
+
+    /* 未发现时：仍占位，但不可读、不可聚焦 */
+    visibility: hidden;
+}
+
+
+/* 便签上沿的胶带 */
+
+.dk-note::before {
+
+    content: "";
+
+    position: absolute;
+    top: -8px;
+    left: 50%;
+
+    width: 84px;
+    height: 16px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.68) 0%,
+        rgba(240, 112, 159, 0.52) 100%
+    );
+
+    border-left: 1px solid rgba(23, 23, 26, 0.14);
+    border-right: 1px solid rgba(23, 23, 26, 0.14);
+
+    transform: translateX(-50%) rotate(-2.4deg);
+
+    pointer-events: none;
+}
+
+
+/* 右下角折角 */
+
+.dk-note::after {
+
+    content: "";
+
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+
+    width: 22px;
+    height: 22px;
+
+    background: linear-gradient(135deg, #e4cf8c 0%, #fff6d2 100%);
+
+    border-left: 1px solid rgba(23, 23, 26, 0.5);
+    border-top: 1px solid rgba(23, 23, 26, 0.5);
+
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+
+    pointer-events: none;
+}
+
+
+.dk-note.dk-note-open {
+
+    visibility: visible;
+
+    animation: dk-note-in 0.42s ease-out both;
+}
+
+
+@keyframes dk-note-in {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.985) rotate(-0.6deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+
+.dk-note-head {
+
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+
+    border-bottom: 1px dashed var(--dk-note-line);
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #a8944a;
+}
+
+
+.dk-note-body {
+
+    font-size: 13px;
+    line-height: 2.1;
+
+    color: #3d3520;
+}
+
+
+.dk-note-body p {
+
+    margin: 0 0 8px;
+}
+
+
+.dk-note-body p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.dk-note-sign {
+
+    display: block;
+
+    margin-top: 14px;
+
+    text-align: right;
+
+    font-size: 11.5px;
+    color: #8a7a3c;
+}
+
+
+.dk-note-actions {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 16px;
+    padding-top: 13px;
+
+    border-top: 1px dashed var(--dk-note-line);
+}
+
+
+/* ===============================
+   照片堆（可拖动 / 可移开；默认盖住便签）
+=============================== */
+
+.dk-album {
+
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 13px;
+
+    background:
+        radial-gradient(
+            120% 80% at 8% 0%,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0) 56%
+        ),
+        linear-gradient(
+            150deg,
+            var(--dk-pink-2) 0%,
+            var(--dk-silver-1) 48%,
+            var(--dk-ice-1) 100%
+        );
+
+    border: 1px solid var(--dk-ink);
+    border-radius: 3px;
+
+    box-shadow:
+        0 0 0 3px var(--dk-paper),
+        0 0 0 4px var(--dk-ink),
+        6px 7px 0 rgba(23, 23, 26, 0.16);
+
+    cursor: grab;
+
+    /* 触屏拖动时不要触发页面滚动 */
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+
+/* 拖动中：跟手、置顶 */
+
+.dk-album.dk-dragging {
+
+    cursor: grabbing;
+
+    z-index: 20;
+
+    box-shadow:
+        0 0 0 3px var(--dk-paper),
+        0 0 0 4px var(--dk-ink),
+        9px 11px 0 rgba(23, 23, 26, 0.2);
+
+    transition: none;
+}
+
+
+/* 已移开：离开绝对定位，落到便签下方 */
+
+.dk-album.dk-moved {
+
+    position: static;
+
+    box-shadow:
+        0 0 0 3px var(--dk-paper),
+        0 0 0 4px var(--dk-ink),
+        3px 4px 0 rgba(23, 23, 26, 0.12);
+}
+
+
+.dk-album-head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px 10px;
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px dashed rgba(23, 23, 26, 0.3);
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-album-title {
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.dk-album-grip {
+
+    display: inline-block;
+
+    width: 11px;
+    height: 14px;
+
+    background-image: radial-gradient(
+        var(--dk-ink-faint) 1px,
+        transparent 1px
+    );
+
+    background-size: 4px 4px;
+}
+
+
+/* 卡纸上的胶带（不接收点击） */
+
+.dk-album-tape-a {
+
+    top: -9px;
+    left: 28px;
+
+    width: 96px;
+    height: 18px;
+
+    transform: rotate(-3.4deg);
+}
+
+
+.dk-album-tape-b {
+
+    right: 36px;
+    bottom: -8px;
+
+    width: 76px;
+    height: 16px;
+
+    transform: rotate(2.6deg);
+}
+
+
+.dk-album-photos {
+
+    display: flex;
+    flex: 1;
+
+    /* 三张照片始终排成一行：允许被压窄，所以永远不会撑破面板 */
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 8px 0;
+}
+
+
+/* ---------- 拍立得 ---------- */
+
+.dk-polaroid {
+
+    position: relative;
+
+    flex: 0 1 auto;
+    width: 132px;
+
+    /* figure 自带 UA 默认外边距（左右各 40px），不清掉会把照片挤出面板 */
+    margin: 0;
+
+    /* 允许被压窄，否则窄屏下会撑破相册面板 */
+    min-width: 0;
+
+    /* 万一被压到极窄，说明文字也不会溢出面框 */
+    overflow: hidden;
+
+    padding: 7px 7px 0;
+
+    background: var(--dk-paper);
+    border: 1px solid var(--dk-ink);
+
+    box-shadow: 3px 4px 0 rgba(23, 23, 26, 0.16);
+
+    pointer-events: none;
+}
+
+
+.dk-polaroid img {
+
+    display: block;
+
+    width: 100%;
+    height: 96px;
+
+    object-fit: cover;
+
+    background: var(--dk-silver-2);
+    border: 1px solid rgba(23, 23, 26, 0.22);
+}
+
+
+.dk-polaroid-cap {
+
+    padding: 6px 1px 7px;
+
+    font-family: var(--dk-serif);
+    font-size: 10px;
+    line-height: 1.5;
+
+    color: var(--dk-ink-soft);
+
+    text-align: center;
+}
+
+
+/* 手贴的痕迹：每张歪一点 */
+
+.dk-polaroid:nth-child(1) {
+
+    transform: rotate(-4deg) translateY(3px);
+}
+
+
+.dk-polaroid:nth-child(2) {
+
+    transform: rotate(2.6deg) translateY(-4px);
+}
+
+
+.dk-polaroid:nth-child(3) {
+
+    transform: rotate(-1.8deg) translateY(2px);
+}
+
+
+/* 照片上的胶带 */
+
+.dk-polaroid-tape {
+
+    width: 46px;
+    height: 13px;
+
+    top: -1px;
+    left: 6px;
+
+    transform: rotate(-6deg);
+}
+
+
+.dk-album-foot {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    padding-top: 9px;
+
+    border-top: 1px dashed rgba(23, 23, 26, 0.3);
+}
+
+
+.dk-album-tag {
+
+    margin-left: auto;
+
+    font-family: var(--dk-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    color: var(--dk-ink-faint);
+}
+
+
+/* ===============================
+   任务条
+=============================== */
+
+.dk-taskbar {
+
+    position: sticky;
+    bottom: 0;
+    z-index: 30;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 14px;
+
+    padding: 10px 14px 12px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        var(--dk-silver-2) 46%,
+        var(--dk-silver-3) 100%
+    );
+
+    border-top: 2px solid var(--dk-ink);
+}
+
+
+/* 任务条上沿的棋盘格 */
+
+.dk-taskbar::before {
+
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -6px;
+
+    height: 5px;
+
+    background-image: conic-gradient(
+        var(--dk-ink) 0 25%,
+        transparent 0 50%,
+        var(--dk-ink) 0 75%,
+        transparent 0
+    );
+
+    background-size: 10px 10px;
+
+    opacity: 0.9;
+
+    pointer-events: none;
+}
+
+
+.dk-taskbar-left {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.dk-start {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 11px;
+
+    background: linear-gradient(to bottom, #ffffff 0%, var(--dk-silver-2) 100%);
+    border: 1px solid var(--dk-ink);
+    border-radius: 3px;
+
+    font-family: var(--dk-mono);
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+.dk-taskbar-right {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--dk-mono);
+    font-size: 10px;
+
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-tray {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 4px 9px;
+
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(23, 23, 26, 0.35);
+    border-radius: 999px;
+}
+
+
+.dk-tray-dot {
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--dk-pink-4);
+    border: 1px solid var(--dk-ink);
+    border-radius: 50%;
+}
+
+
+/* ===============================
+   页脚返回
+=============================== */
+
+.dk-foot {
+
+    padding: 12px 14px 24px;
+
+    text-align: center;
+}
+
+
+.dk-foot .gp-back-nav {
+
+    justify-content: center;
+}
+
+
+.dk-foot .gp-back-nav a {
+
+    padding: 4px 11px;
+
+    background: var(--dk-paper);
+    border: 1px solid rgba(23, 23, 26, 0.45);
+    border-radius: 999px;
+
+    color: var(--dk-ink-soft);
+
+    text-decoration: none;
+}
+
+
+/* ===============================
+   相簿弹层（一整页剪贴本）
+=============================== */
+
+.dk-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    background:
+        radial-gradient(
+            80% 60% at 50% 0%,
+            rgba(240, 112, 159, 0.3) 0%,
+            rgba(23, 23, 26, 0) 62%
+        ),
+        rgba(23, 23, 26, 0.58);
+
+    overflow-y: auto;
+}
+
+
+.dk-overlay.dk-hidden {
+
+    display: none;
+}
+
+
+.dk-overlay-card {
+
+    width: 100%;
+    max-width: 640px;
+
+    background: linear-gradient(160deg, var(--dk-paper) 0%, #fff2f7 100%);
+    border: 1px solid var(--dk-ink);
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 0 3px var(--dk-paper),
+        0 0 0 4px var(--dk-ink),
+        8px 10px 0 rgba(23, 23, 26, 0.3);
+}
+
+
+.dk-overlay-body {
+
+    padding: 14px;
+}
+
+
+.dk-album-list {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+}
+
+
+/* 弹层里每一张都歪一点：像贴上去的 */
+
+.dk-album-card {
+
+    padding: 8px 8px 0;
+
+    background: var(--dk-paper);
+    border: 1px solid var(--dk-ink);
+
+    box-shadow: 3px 4px 0 rgba(23, 23, 26, 0.16);
+}
+
+
+.dk-album-card:nth-child(1) {
+
+    transform: rotate(-1.6deg);
+}
+
+
+.dk-album-card:nth-child(2) {
+
+    transform: rotate(1.2deg);
+}
+
+
+.dk-album-card:nth-child(3) {
+
+    transform: rotate(-0.8deg);
+}
+
+
+.dk-album-card img {
+
+    display: block;
+
+    width: 100%;
+    height: 128px;
+
+    object-fit: cover;
+
+    background: var(--dk-silver-2);
+    border: 1px solid rgba(23, 23, 26, 0.22);
+}
+
+
+.dk-album-card-cap {
+
+    padding: 8px 2px 9px;
+
+    font-size: 11.5px;
+    line-height: 1.8;
+
+    color: var(--dk-ink-soft);
+}
+
+
+.dk-album-card-tag {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-family: var(--dk-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    color: var(--dk-ink-faint);
+}
+
+
+/* ===============================
+   纯装饰（不接收点击、不遮挡内容）
+=============================== */
+
+.dk-deco {
+
+    position: absolute;
+
+    z-index: 1;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* 桌面墙上不加贴纸：材质只保留扫描线层（见 .dk-deco-scan） */
+
+
+/* 桌面正文永远压在纯装饰之上 */
+
+.dk-hint,
+.dk-feedback,
+.dk-grid {
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ===============================
+   窄屏
+=============================== */
+
+@media (max-width: 860px) {
+
+    .dk-poster {
+
+        grid-template-columns: minmax(0, 1fr) minmax(120px, 176px);
+        gap: 12px 15px;
+
+        padding: 15px 15px 13px;
+    }
+
+    .dk-poster-shot img {
+
+        height: 150px;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .dk-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .dk-poster {
+
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .dk-poster-shot {
+
+        max-width: 300px;
+
+        transform: rotate(1.6deg);
+    }
+
+    .dk-poster-shot img {
+
+        height: 156px;
+    }
+
+    .dk-poster-seal {
+
+        right: 10px;
+        top: -12px;
+    }
+
+    .dk-note-zone {
+
+        min-height: 340px;
+    }
+
+    .dk-album {
+
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+
+        padding: 10px;
+    }
+
+    .dk-album-photos {
+
+        gap: 8px;
+    }
+
+    .dk-album-tape-a {
+
+        left: 12px;
+
+        width: 70px;
+        height: 15px;
+    }
+
+    .dk-album-tape-b {
+
+        display: none;
+    }
+
+    .dk-polaroid {
+
+        width: 96px;
+    }
+
+    .dk-polaroid img {
+
+        height: 72px;
+    }
+
+    .dk-polaroid-cap {
+
+        font-size: 9px;
+    }
+
+    .dk-album-card img {
+
+        height: 104px;
+    }
+
+    .dk-taskbar {
+
+        padding: 9px 12px 11px;
+    }
+
+    .dk-taskbar .dk-btn-strong,
+    .dk-taskbar .dk-btn {
+
+        flex: 1 1 auto;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .dk-desktop {
+
+        padding: 18px 11px 24px;
+    }
+
+    .dk-note-zone {
+
+        min-height: 360px;
+    }
+
+    .dk-album-photos {
+
+        gap: 6px;
+    }
+
+    .dk-polaroid {
+
+        width: 74px;
+
+        padding: 4px 4px 0;
+    }
+
+    .dk-polaroid img {
+
+        height: 62px;
+    }
+
+    .dk-polaroid-cap {
+
+        font-size: 8.5px;
+    }
+
+    .dk-polaroid:nth-child(1) {
+
+        transform: rotate(-3deg) translateY(2px);
+    }
+
+    .dk-polaroid:nth-child(2) {
+
+        transform: rotate(2deg) translateY(-3px);
+    }
+
+    .dk-polaroid:nth-child(3) {
+
+        transform: rotate(-1.4deg) translateY(1px);
+    }
+
+    .dk-polaroid-tape {
+
+        width: 30px;
+        height: 10px;
+
+        left: 4px;
+    }
+
+    .dk-note {
+
+        padding: 16px 15px;
+    }
+
+    .dk-note-body {
+
+        font-size: 12.5px;
+        line-height: 2;
+    }
+
+    .dk-poster-title-cn {
+
+        font-size: 58px;
+    }
+
+    .dk-poster-kicker {
+
+        font-size: 9px;
+    }
+
+    .dk-hint {
+
+        font-size: 12px;
+    }
+}
+
+
+/* ===============================
+   减少动态效果
+=============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dk-album,
+    .dk-note,
+    .dk-note.dk-note-open,
+    .dk-btn,
+    .dk-btn-strong,
+    .dk-overlay,
+    .dk-window {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>城市周刊 CITY WEEKLY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/city-weekly.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="cityweek-page">
+
+
+<!-- =====================================================
+     顶部栏
+===================================================== -->
+
+<div class="cw-topbar">
+
+    <div class="cw-topbar-brand">CITY WEEKLY</div>
+
+    <div class="cw-topbar-nav">
+        <a class="active">推荐</a>
+        <a>社会</a>
+        <a>调查</a>
+        <a>医疗</a>
+        <a>文化</a>
+    </div>
+
+    <div class="cw-topbar-date">2026.04.06</div>
+
+</div>
+
+
+<!-- =====================================================
+     主内容
+===================================================== -->
+
+<main class="cw-main">
+
+
+    <!-- =====================================================
+         头条大卡片 → 小偶像失踪
+    ====================================================== -->
+
+    <a href="mengqi-missing.html" class="cw-headline-card">
+
+        <img src="images/cityweek/mengqi-headline.jpg" alt="陈梦琪" class="cw-headline-img">
+
+        <div class="cw-headline-overlay">
+
+            <h1 class="cw-headline-title">
+                陈梦琪失踪后：最后一条动态是"明天我们准时见面哦"
+            </h1>
+
+            <div class="cw-headline-meta">
+                <span class="cw-tag">调查</span>
+                <span>城市周刊 · 3.28 · 评论 127</span>
+            </div>
+
+        </div>
+
+    </a>
+
+    <div class="cw-evidence-row">
+        <span data-evidence="cw-headline" data-evidence-quote=".cw-headline-title"
+            data-evidence-title="城市周刊 · 头条：陈梦琪失踪后"
+            data-evidence-date="3.28"
+            data-evidence-url="mengqi-missing.html"></span>
+    </div>
+
+
+    <!-- =====================================================
+         次头条 → 周岚失联（暂不链接，保留#）
+    ====================================================== -->
+
+    <a class="cw-news-card cw-card-horizontal">
+
+        <img src="images/cityweek/zhou-lan.jpg" alt="周岚" class="cw-card-img" loading="lazy" decoding="async">
+
+        <div class="cw-card-body">
+
+            <h3 class="cw-card-title">
+                本刊调查记者周岚在追踪梦琪案期间失联
+            </h3>
+
+            <p class="cw-card-desc">
+                最后通讯记录：2026年2月17日 02:17
+            </p>
+
+            <div class="cw-card-meta">
+                <span class="cw-tag cw-tag-red">突发</span>
+                <span>城市周刊 · 3.05</span>
+            </div>
+
+        </div>
+
+    </a>
+
+    <div class="cw-evidence-row">
+        <span data-evidence="cw-zhoulan-call" data-evidence-quote=".cw-card-horizontal .cw-card-desc"
+            data-evidence-title="城市周刊 · 次头条：周岚失联"
+            data-evidence-date="3.05"></span>
+    </div>
+
+
+    <!-- =====================================================
+         新闻流
+    ====================================================== -->
+
+    <div class="cw-feed">
+
+
+        <!-- 血液研究被叫停 -->
+        <a href="blood-research-suspended.html" class="cw-news-card cw-card-horizontal">
+
+            <img src="images/cityweek/blood-news.jpg" alt="血液研究" class="cw-card-img" loading="lazy" decoding="async">
+
+            <div class="cw-card-body">
+
+                <h3 class="cw-card-title">
+                    血液研究因伦理问题被叫停，项目负责人去向不明
+                </h3>
+
+                <div class="cw-card-meta">
+                    <span>医疗 · 2.10 · 评论 45</span>
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 学校流感 -->
+        <a href="school-flu.html" class="cw-news-card cw-card-horizontal">
+
+            <img src="images/cityweek/flu-news.jpg" alt="学校流感" class="cw-card-img" loading="lazy" decoding="async">
+
+            <div class="cw-card-body">
+
+                <h3 class="cw-card-title">
+                    本地中学爆发不明流感，多名女生长期请假无法返校
+                </h3>
+
+                <p class="cw-card-desc">
+                    该校为失踪艺人陈梦琪的母校。
+                </p>
+
+                <div class="cw-card-meta">
+                    <span>社会 · 3.12 · 评论 89</span>
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 调查停滞 -->
+        <a href="investigation-stalled.html" class="cw-news-card cw-card-horizontal">
+
+            <img src="images/cityweek/police-news.jpg" alt="警员调离" class="cw-card-img" loading="lazy" decoding="async">
+
+            <div class="cw-card-body">
+
+                <h3 class="cw-card-title">
+                    梦琪失踪案调查停滞？负责警员因伤调离
+                </h3>
+
+                <div class="cw-card-meta">
+                    <span>案件 · 3.15 · 评论 56</span>
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 血液整容 -->
+        <a href="blood-plastic-surgery.html" class="cw-news-card cw-card-horizontal">
+
+            <img src="images/cityweek/blood-plastic.jpg" alt="血液整容" class="cw-card-img" loading="lazy" decoding="async">
+
+            <div class="cw-card-body">
+
+                <h3 class="cw-card-title">
+                    血液整容？危险的新趋势
+                </h3>
+
+                <p class="cw-card-desc">
+                    年轻女性为"变美"尝试血液疗法，专家警告风险极高。
+                </p>
+
+                <div class="cw-card-meta">
+                    <span>医疗 · 3.25 · 评论 34</span>
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 撞脸（暂不链接） -->
+        <a class="cw-news-card cw-card-horizontal">
+
+            <img src="images/cityweek/face-news.jpg" alt="撞脸" class="cw-card-img" loading="lazy" decoding="async">
+
+            <div class="cw-card-body">
+
+                <h3 class="cw-card-title">
+                    街头多名少女面容相似，医生称"像同一模板"
+                </h3>
+
+                <div class="cw-card-meta">
+                    <span>社会 · 3.28 · 评论 203</span>
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- 血液突破 -->
+        <a href="blood-breakthrough.html" class="cw-news-card cw-card-horizontal">
+
+            <img src="images/cityweek/blood-break.jpg" alt="血液突破" class="cw-card-img" loading="lazy" decoding="async">
+
+            <div class="cw-card-body">
+
+                <h3 class="cw-card-title">
+                    血液研究机构宣布"突破性进展"
+                </h3>
+
+                <p class="cw-card-desc">
+                    项目负责人陈某博士表示："我们正在接近一个重要的答案。"
+                </p>
+
+                <div class="cw-card-meta">
+                    <span>医疗 · 1.20 · 评论 12</span>
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         编辑部声明
+    ====================================================== -->
+
+    <section class="cw-editor-note">
+
+        <p>
+            本刊就以上报道中的事实部分负责。
+            部分信息来源于匿名提供者。
+        </p>
+
+        <p>
+            如有相关线索，请联系本刊调查组。
+        </p>
+
+        <p class="cw-tip-line">
+            调查记者周岚工作电话：
+            <strong>852-6123-0217</strong>
+        </p>
+
+        <p class="cw-warning-line">
+            如果您正遭遇威胁，请拨打 999。
+        </p>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="cw-footer">
+
+    <div>CITY WEEKLY</div>
+
+    <p>© 2026 CITY WEEKLY · 城市 · 社会 · 调查</p>
+
+</footer>
+
+
+</div>
+
+
+
+
+<!-- =====================================================
+     返回入口（跨站统一，避免迷路）
+===================================================== -->
+
+<nav class="gp-back-nav cross-nav" aria-label="站点导航">
+
+    <a href="index.html">← 返回搜索</a>
+    <a href="player-home.html">十七的主页</a>
+    <a href="browser-home.html">LUMI 首页</a>
+    <a href="forum.html">新生女孩论坛</a>
+    <a href="city-weekly.html">城市周刊</a>
+
+</nav>
+<script src="js/evidence.js"></script>
+
+<script src="js/img-fallback.js"></script>
+
+</body>
+
+</html>

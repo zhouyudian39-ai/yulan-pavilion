@@ -1,0 +1,625 @@
+/* =====================================================
+   玉兰阁调查 · 跨页共用组件
+   GAME PROGRESS UI
+   （进度提示条 / 门禁面板 / 下一步卡片）
+===================================================== */
+
+
+/* ===============================
+   进度提示条
+================================ */
+
+.game-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translate(-50%, 12px);
+    z-index: 9999;
+
+    padding: 10px 20px;
+
+    background: #1a1a1a;
+    color: #f7f4f0;
+
+    font-family: "Noto Serif SC", serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 2px;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+
+.game-toast-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+
+/* ===============================
+   门禁面板（地下档案等受限区域）
+================================ */
+
+.gp-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: #0d0d0d;
+    overflow-y: auto;
+}
+
+
+.gp-gate-card {
+    width: 100%;
+    max-width: 460px;
+
+    padding: 32px 28px;
+
+    background: #141414;
+    border: 1px solid #2e2e2e;
+
+    color: #d8d4cf;
+
+    font-family: "Noto Serif SC", serif;
+    text-align: center;
+}
+
+
+.gp-gate-icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+
+.gp-gate-card h1 {
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #f0ece6;
+    margin-bottom: 8px;
+}
+
+
+.gp-gate-level {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8a1f1f;
+    margin-bottom: 18px;
+}
+
+
+.gp-gate-desc {
+    font-size: 12px;
+    line-height: 2;
+    color: #9a9590;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- 线索方向 ---------- */
+
+.gp-gate-hint {
+    padding: 16px 18px;
+    margin-bottom: 22px;
+
+    background: #1a1a1a;
+    border-left: 2px solid #8a1f1f;
+
+    text-align: left;
+}
+
+
+.gp-gate-hint-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #b9b4ae;
+    margin-bottom: 10px;
+}
+
+
+.gp-gate-hint ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.gp-gate-hint li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 8px;
+
+    font-size: 11.5px;
+    line-height: 1.9;
+    color: #8e8983;
+}
+
+
+.gp-gate-hint li:last-child {
+    margin-bottom: 0;
+}
+
+
+.gp-gate-hint li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #5c5852;
+}
+
+
+/* ---------- 表单 ---------- */
+
+.gp-gate-form {
+    text-align: left;
+}
+
+
+.gp-gate-form label {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #7d7873;
+
+    margin-bottom: 6px;
+}
+
+
+.gp-gate-form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+    margin-bottom: 16px;
+
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 2px;
+
+    color: #f0ece6;
+    font-family: "Courier Prime", monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+.gp-gate-form input:focus {
+    outline: none;
+    border-color: #8a1f1f;
+}
+
+
+.gp-gate-form button {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #8a1f1f;
+    border: 1px solid #8a1f1f;
+    border-radius: 2px;
+
+    color: #fff;
+    font-family: "Noto Serif SC", serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+
+.gp-gate-form button:hover {
+    background: #6e1717;
+}
+
+
+.gp-gate-error {
+    min-height: 18px;
+    margin-bottom: 10px;
+
+    font-size: 11.5px;
+    color: #c0392b;
+}
+
+
+/* ---------- 门禁底部入口 ---------- */
+
+.gp-gate-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top: 1px solid #242424;
+}
+
+
+.gp-gate-links a {
+    font-size: 11px;
+    color: #8e8983;
+    text-decoration: none;
+}
+
+
+.gp-gate-links a:hover,
+.gp-gate-links a:focus-visible {
+    color: #d8d4cf;
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   返回入口（跨站统一）
+================================ */
+
+.gp-back-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 16px;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 20px;
+
+    font-size: 11.5px;
+}
+
+
+.gp-back-nav a {
+    color: #8e8983;
+    text-decoration: none;
+}
+
+
+.gp-back-nav a:hover,
+.gp-back-nav a:focus-visible {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+
+/* 浅色页面上的跨站导航 */
+
+.gp-back-nav.cross-nav {
+    max-width: 1000px;
+}
+
+
+.gp-back-nav.cross-nav a {
+    color: #6b6b6b;
+}
+
+
+.gp-back-nav.cross-nav a:focus-visible {
+    outline: 2px solid #b85a4a;
+    outline-offset: 2px;
+}
+
+
+/* ===============================
+   键盘焦点（核心控件）
+================================ */
+
+.gp-gate-form input:focus-visible,
+.gp-gate-form button:focus-visible,
+.game-toast:focus-visible {
+    outline: 2px solid #8a1f1f;
+    outline-offset: 2px;
+}
+
+
+/* ===============================
+   窄屏
+================================ */
+
+@media (max-width: 520px) {
+
+    .gp-gate {
+        padding: 14px;
+        align-items: flex-start;
+    }
+
+    .gp-gate-card {
+        padding: 24px 18px;
+    }
+
+    .game-toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        transform: translateY(12px);
+        text-align: center;
+    }
+
+    .game-toast-show {
+        transform: translateY(0);
+    }
+
+    /* 手指友好：跨站导航与存证按钮在窄屏给足可点高度（桌面仍是紧凑的一行） */
+    .gp-back-nav {
+        gap: 2px 18px;
+    }
+
+    .gp-back-nav a {
+        display: inline-block;
+        padding: 7px 1px;
+    }
+
+    .ev-btn,
+    .ev-board-actions button,
+    .ev-board-del {
+        min-height: 30px;
+    }
+
+}
+
+/* ===============================
+   存证 · EVIDENCE
+   （跨页「存证」按钮 + 我存下来的清单）
+=============================== */
+
+/* ---------- 各页面上的「存证」按钮 ---------- */
+
+.ev-btn {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin: 8px 0 2px 10px;
+    padding: 4px 10px;
+
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+
+    color: inherit;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+
+    opacity: 0.55;
+    cursor: pointer;
+
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.ev-btn::before {
+
+    content: "◈";
+    font-size: 9px;
+}
+
+.ev-btn:hover,
+.ev-btn:focus-visible {
+
+    opacity: 1;
+}
+
+.ev-btn:focus-visible {
+
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.ev-btn[aria-pressed="true"] {
+
+    opacity: 0.95;
+    border-style: dashed;
+    background: rgba(138, 31, 31, 0.12);
+}
+
+
+/* ---------- 浅色页面（城市周刊等）上的按钮 ---------- */
+
+.cw-evidence-row .ev-btn {
+
+    margin: 0 0 12px;
+    color: var(--cw-ink, #1b1f24);
+}
+
+
+/* ---------- 清单本体（只在 player-home 出现） ---------- */
+
+.ev-board {
+
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(27, 23, 32, 0.22);
+}
+
+.ev-board-toolbar {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+
+    margin-bottom: 8px;
+}
+
+.ev-board-count {
+
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: #9a8a80;
+}
+
+.ev-board-actions {
+
+    display: inline-flex;
+    gap: 6px;
+
+    margin-left: auto;
+}
+
+.ev-board-actions button {
+
+    padding: 3px 8px;
+
+    background: transparent;
+    border: 1px solid rgba(27, 23, 32, 0.3);
+    border-radius: 2px;
+
+    color: #8a7a70;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.ev-board-actions button:hover,
+.ev-board-actions button:focus-visible {
+
+    color: #8a1f1f;
+    border-color: rgba(138, 31, 31, 0.5);
+}
+
+.ev-board-empty {
+
+    font-size: 12px;
+    line-height: 1.9;
+
+    color: #9a8a80;
+}
+
+.ev-board-list {
+
+    display: grid;
+    gap: 8px;
+}
+
+.ev-board-item {
+
+    padding: 9px 11px;
+
+    background: #fffaf6;
+    border: 1px dashed rgba(27, 23, 32, 0.35);
+    border-radius: 3px;
+}
+
+.ev-board-quote {
+
+    font-size: 12px;
+    line-height: 1.85;
+
+    color: #1b1720;
+    word-break: break-word;
+}
+
+.ev-board-meta {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+
+    margin-top: 7px;
+    padding-top: 6px;
+
+    border-top: 1px dashed rgba(27, 23, 32, 0.16);
+
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.5px;
+
+    color: #8a7a70;
+}
+
+.ev-board-meta a {
+
+    color: #8a1f1f;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(138, 31, 31, 0.35);
+}
+
+.ev-board-meta a:hover,
+.ev-board-meta a:focus-visible {
+
+    border-bottom-style: solid;
+}
+
+.ev-board-del {
+
+    margin-left: auto;
+    padding: 2px 7px;
+
+    background: transparent;
+    border: 1px solid rgba(27, 23, 32, 0.25);
+    border-radius: 2px;
+
+    color: #8a7a70;
+    font-family: inherit;
+    font-size: 9.5px;
+
+    cursor: pointer;
+}
+
+.ev-board-del:hover,
+.ev-board-del:focus-visible {
+
+    color: #8a1f1f;
+    border-color: rgba(138, 31, 31, 0.5);
+}
+
+.ev-board-item-locked {
+
+    background: rgba(27, 23, 32, 0.05);
+    border-style: dotted;
+}
+
+.ev-board-item-locked .ev-board-quote {
+
+    color: #9a8a80;
+}
+
+.ev-board-note {
+
+    margin-top: 8px;
+
+    font-size: 10px;
+    line-height: 1.8;
+
+    color: #a49a92;
+}
+
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 520px) {
+
+    .ev-btn {
+
+        margin-left: 0;
+    }
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

@@ -1,0 +1,1462 @@
+/* =====================================================
+   玉兰阁空间扩建工程 · 招标公示
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fafaf8;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.tender-page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ===============================
+   顶部导航
+================================ */
+
+.yp-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 30px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.yp-brand { flex-shrink: 0; }
+
+.yp-logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+.yp-nav {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.yp-nav a {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.15s;
+    letter-spacing: 1px;
+}
+
+.yp-nav a:hover {
+    background: #f8f5f2;
+    color: #8a1f1f;
+}
+
+.yp-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.yp-search-trigger {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.yp-login-trigger {
+    padding: 7px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+.yp-login-trigger:hover {
+    border-color: #8a1f1f;
+    color: #8a1f1f;
+}
+
+
+/* ===============================
+   面包屑
+================================ */
+
+.tender-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 30px;
+    font-size: 11px;
+    color: #999;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.tender-breadcrumb a {
+    color: #666;
+    text-decoration: none;
+}
+
+
+.tender-breadcrumb a:hover {
+    color: #8a1f1f;
+}
+
+
+.tender-breadcrumb .current {
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   招标头部
+================================ */
+
+.tender-hero {
+    padding: 35px 30px;
+    text-align: center;
+    background: linear-gradient(180deg, #fdf8f5 0%, #fff 100%);
+    border-bottom: 3px double #e0d0c0;
+}
+
+
+.tender-header-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #8a1f1f;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+
+.tender-hero h1 {
+    font-size: 30px;
+    letter-spacing: 4px;
+    color: #1e2933;
+    margin-bottom: 8px;
+}
+
+
+.tender-header-sub {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+
+.tender-header-meta {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.tender-meta-item {
+    min-width: 120px;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.tender-meta-item span {
+    display: block;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+
+.tender-meta-item strong {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+
+.tender-status-open {
+    color: #4a8a5a !important;
+}
+
+
+/* ===============================
+   通用区块标题
+================================ */
+
+.tender-section-title {
+    text-align: center;
+    padding: 30px 0 18px;
+}
+
+
+.tender-section-title h2 {
+    font-size: 19px;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+
+.tender-section-title p {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+
+/* ===============================
+   工程概况
+================================ */
+
+.tender-section {
+    padding: 0 30px;
+}
+
+
+.tender-overview {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+.tender-overview > p {
+    font-size: 13px;
+    line-height: 2;
+    color: #555;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+
+.tender-overview-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.tender-overview-item {
+    min-width: 130px;
+    padding: 12px 18px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.tender-overview-item span {
+    display: block;
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+
+.tender-overview-item strong {
+    font-size: 14px;
+    color: #333;
+}
+
+
+/* ===============================
+   地下空间
+================================ */
+
+.tender-floors {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.tender-floor-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+
+.tender-floor-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+
+.tender-floor-card.restricted {
+    border-color: #d0b8a8;
+    background: #fdfaf7;
+}
+
+
+.tender-floor-label {
+    font-family: "Courier Prime", monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: #8a1f1f;
+    width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+
+.tender-floor-info {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.tender-floor-info h3 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+
+.tender-floor-info p {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+
+.tender-floor-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+
+.tender-floor-tags span {
+    padding: 2px 8px;
+    background: #f5f5f3;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #777;
+    border-radius: 3px;
+}
+
+
+.tender-floor-tags .tender-tag-restricted {
+    background: #fdf0ec;
+    color: #b85a4a;
+    font-weight: 700;
+}
+
+
+.tender-floor-area {
+    font-family: "Courier Prime", monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: #5a1f1a;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+
+.tender-total-area {
+    max-width: 650px;
+    margin: 15px auto 0;
+    padding: 14px 18px;
+    background: #1f3a2d;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.tender-total-area span {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #c4a882;
+}
+
+
+.tender-total-area strong {
+    font-family: "Courier Prime", monospace;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #d4af37;
+}
+
+
+/* ===============================
+   技术需求
+================================ */
+
+.tender-tech-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.tender-tech-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 14px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+
+.tender-tech-item span {
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+    color: #8a1f1f;
+    font-weight: 700;
+    width: 25px;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+
+.tender-tech-item p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+
+.tender-tech-warning {
+    max-width: 600px;
+    margin: 15px auto 0;
+    padding: 12px 18px;
+    background: #fdf8f5;
+    border: 1px dashed #d0b8a8;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 12px;
+    color: #b85a4a;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   内部代码
+================================ */
+
+.tender-internal {
+    padding: 0 30px;
+    background: #fdfaf7;
+    border-top: 2px solid #f0e0d8;
+    border-bottom: 2px solid #f0e0d8;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+
+.tender-code-list {
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.tender-code-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 6px;
+    flex-wrap: wrap;
+}
+
+
+.tender-code-date {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    color: #999;
+    width: 70px;
+    flex-shrink: 0;
+    padding-top: 3px;
+}
+
+
+.tender-code-body {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.tender-code-text {
+    font-family: "Courier Prime", monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #5a1f1a;
+    line-height: 1.8;
+    word-break: break-all;
+    margin-bottom: 3px;
+}
+
+
+.tender-code-meta {
+    font-size: 10px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   面积差异
+================================ */
+
+.tender-discrepancy {
+    padding: 25px 30px;
+    text-align: center;
+}
+
+
+.tender-discrepancy-label {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8a1f1f;
+    margin-bottom: 15px;
+}
+
+
+.tender-discrepancy-content {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+
+.tender-discrepancy-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+
+.tender-discrepancy-numbers div {
+    text-align: center;
+}
+
+
+.tender-discrepancy-numbers span {
+    display: block;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+
+.tender-discrepancy-numbers strong {
+    font-family: "Courier Prime", monospace;
+    font-size: 30px;
+    color: #5a1f1a;
+    letter-spacing: 2px;
+}
+
+
+.tender-discrepancy-arrow {
+    font-size: 26px;
+    color: #8a1f1f;
+    flex-shrink: 0;
+}
+
+
+.tender-discrepancy-content p {
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+}
+
+
+/* ===============================
+   项目联系
+================================ */
+
+.tender-contact {
+    padding: 0 30px 30px;
+}
+
+
+.tender-contact-grid {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.tender-contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+.tender-contact-item span {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.tender-contact-item strong {
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+
+/* ===============================
+   底部返回
+================================ */
+
+.tender-return {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+}
+
+
+.tender-return a {
+    padding: 10px 22px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    transition: 0.15s;
+    text-align: center;
+}
+
+
+.tender-return a:first-child {
+    background: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+
+.tender-return a:first-child:hover {
+    border-color: #8a1f1f;
+    color: #8a1f1f;
+}
+
+
+.tender-return a:last-child {
+    background: #8a1f1f;
+    color: #fff;
+}
+
+
+.tender-return a:last-child:hover {
+    background: #5a1f1a;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.yp-footer {
+    text-align: center;
+    padding: 25px 30px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.yp-footer-brand { margin-bottom: 8px; }
+
+.yp-footer-logo { height: 32px; width: auto; }
+
+.yp-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.yp-footer-links a {
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+}
+
+.yp-footer-links a:hover { color: #8a1f1f; }
+
+.yp-footer p {
+    font-size: 10px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.yp-footer-version {
+    display: block;
+    margin-top: 8px;
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ddd;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .yp-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .tender-breadcrumb {
+        padding: 8px 20px;
+    }
+
+    .tender-hero {
+        padding: 25px 20px;
+    }
+
+    .tender-hero h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .tender-section,
+    .tender-internal,
+    .tender-discrepancy,
+    .tender-contact,
+    .tender-return {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .tender-floor-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .tender-floor-label {
+        font-size: 22px;
+        width: auto;
+    }
+
+    .tender-floor-area {
+        text-align: left;
+    }
+
+    .tender-code-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .tender-code-date {
+        width: auto;
+    }
+
+    .tender-code-text {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .tender-discrepancy-numbers {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tender-discrepancy-arrow {
+        transform: rotate(90deg);
+    }
+
+}
+
+/* ===============================
+   锁定区域
+================================ */
+
+.tender-locked-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 18px 20px;
+    background: #fdfaf7;
+    border: 2px dashed #e0c8b8;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.tender-locked-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+
+.tender-locked-icon {
+    font-size: 22px;
+}
+
+
+.tender-locked-header h3 {
+    font-size: 15px;
+    color: #5a1f1a;
+    letter-spacing: 1px;
+}
+
+
+.tender-locked-header p {
+    font-size: 10px;
+    color: #b85a4a;
+    letter-spacing: 1px;
+}
+
+
+.tender-locked-body p {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+
+.tender-locked-btn {
+    padding: 7px 20px;
+    background: #8a1f1f;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 1px;
+    transition: 0.15s;
+}
+
+
+.tender-locked-btn:hover {
+    background: #5a1f1a;
+}
+
+
+/* ===============================
+   B3内部布局
+================================ */
+
+.tender-unlocked-section {
+    padding: 0 30px 25px;
+}
+
+
+.tender-b3-plan {
+    max-width: 550px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+.tender-b3-room {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 6px;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+
+.tender-b3-room span {
+    display: block;
+    font-family: "Courier Prime", monospace;
+    font-size: 13px;
+    color: #8a1f1f;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+
+.tender-b3-room strong {
+    display: block;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+
+.tender-b3-room small {
+    font-size: 9px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+
+.tender-b3-room.restricted-room {
+    background: #fdf0ec;
+    border-color: #d0b8a8;
+}
+
+
+.tender-b3-room.restricted-room span {
+    color: #b85a4a;
+}
+
+
+.tender-b3-room.restricted-room strong {
+    color: #b85a4a;
+}
+
+
+.tender-b3-note {
+    max-width: 550px;
+    margin: 12px auto 0;
+    text-align: center;
+    font-size: 10px;
+    color: #bbb;
+    font-style: italic;
+}
+
+
+/* ===============================
+   内部备忘录
+================================ */
+
+.tender-memo-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.tender-memo-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #fdf8f5;
+    border-bottom: 1px solid #f0e0d8;
+    font-family: "Courier Prime", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #999;
+    flex-wrap: wrap;
+}
+
+
+.tender-memo-body {
+    padding: 18px 20px;
+}
+
+
+.tender-memo-body p {
+    font-size: 13px;
+    line-height: 2;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+
+.tender-memo-body strong {
+    color: #8a1f1f;
+    font-weight: 700;
+}
+
+
+/* ===============================
+   响应式补充
+================================ */
+
+@media (max-width: 750px) {
+
+    .tender-unlocked-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .tender-b3-plan {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tender-memo-header {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+}
+
+/* =====================================================
+   Y2K 品牌对齐层（第一阶段美术改造 · 玉兰阁子页共用）
+   -----------------------------------------------------
+   只对齐「品牌层」：纸张底色 / 字体 / 报头 / 按钮 / 缺图占位。
+   只使用各页共有的类名，不假设各页内部结构，
+   因此不会与各页自己的版式冲突。
+===================================================== */
+
+body {
+
+    background-color: #fafaf8;
+
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(29, 26, 24, 0.022) 0 1px,
+            transparent 1px 6px
+        );
+
+    color: #1d1a18;
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+
+
+/* 待补照片：斜纹底（真实图片会完全覆盖） */
+
+img {
+
+    background-color: #f0ece7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(29, 26, 24, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+
+    color: transparent;
+}
+
+
+/* 报头 */
+
+.yp-header {
+
+    background: #ffffff;
+    border-bottom: 2px solid #1d1a18;
+
+    box-shadow: 0 3px 0 rgba(138, 31, 31, 0.16);
+}
+
+
+.yp-nav a {
+
+    border-radius: 2px;
+
+    color: #55524e;
+    letter-spacing: 2px;
+}
+
+
+.yp-nav a:hover {
+
+    background: transparent;
+    color: #8a1f1f;
+
+    text-decoration: underline;
+}
+
+
+.yp-nav a.active {
+
+    background: transparent;
+    color: #8a1f1f;
+
+    font-weight: 700;
+
+    box-shadow: inset 0 -2px 0 #8a1f1f;
+}
+
+
+/* 按钮：早期美容广告的方角印刷感 */
+
+.yp-search-trigger,
+.yp-login-trigger {
+
+    border-radius: 2px;
+}
+
+
+.yp-login-trigger {
+
+    background: #ffffff;
+    border: 1px solid #1d1a18;
+
+    color: #1d1a18;
+    letter-spacing: 2px;
+}
+
+
+.yp-login-trigger:hover {
+
+    background: #8a1f1f;
+    border-color: #8a1f1f;
+
+    color: #ffffff;
+}
+
+
+.yp-btn-primary {
+
+    background: #8a1f1f;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 rgba(29, 26, 24, 0.18);
+}
+
+
+.yp-btn-primary:hover {
+
+    background: #5a1f1a;
+}
+
+
+.yp-btn-secondary {
+
+    background: #ffffff;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    color: #8a1f1f;
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 rgba(29, 26, 24, 0.1);
+}
+
+
+.yp-btn-secondary:hover {
+
+    background: #f7f2ec;
+    border-color: #1d1a18;
+
+    color: #8a1f1f;
+}
+
+
+/* =====================================================
+   门禁卡（第二轮补：原先用 window.prompt() 取凭据，
+   页面里没有任何提示，输错只弹一个原生 alert）
+   -----------------------------------------------------
+   与页面同一套纸面印刷语言：直角、墨线、暗红强调。
+   只做页面内的互动演出，不构成任何真实访问控制。
+===================================================== */
+
+.tender-gate {
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 800;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    overflow-y: auto;
+}
+
+
+.tender-gate-bg {
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(26, 24, 22, 0.72);
+}
+
+
+.tender-gate-card {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 26px 24px 22px;
+
+    background: #fffdfa;
+    border: 1px solid #1d1a18;
+    border-radius: 2px;
+
+    box-shadow: 6px 6px 0 rgba(29, 26, 24, 0.22);
+
+    text-align: center;
+}
+
+
+.tender-gate-close {
+
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+    width: 30px;
+    height: 30px;
+
+    background: transparent;
+    border: none;
+
+    font-size: 20px;
+    line-height: 1;
+    color: #6b625a;
+
+    cursor: pointer;
+}
+
+
+.tender-gate-icon {
+
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+
+.tender-gate-card h3 {
+
+    font-size: 18px;
+    letter-spacing: 3px;
+
+    color: #1d1a18;
+}
+
+
+.tender-gate-sub {
+
+    margin-top: 6px;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #8a1f1f;
+}
+
+
+.tender-gate-desc {
+
+    margin: 14px 0 18px;
+
+    font-size: 12.5px;
+    line-height: 1.9;
+
+    color: #5a5450;
+}
+
+
+.tender-gate-form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    text-align: left;
+}
+
+
+.tender-gate-form label {
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    color: #6b625a;
+}
+
+
+.tender-gate-form input {
+
+    width: 100%;
+
+    padding: 10px 12px;
+    margin-bottom: 8px;
+
+    background: #fbf8f4;
+    border: 1px solid #cfc7bd;
+    border-radius: 2px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    color: #1d1a18;
+}
+
+
+.tender-gate-form input:focus {
+
+    outline: none;
+
+    border-color: #8a1f1f;
+    background: #ffffff;
+}
+
+
+.tender-gate-error {
+
+    min-height: 18px;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    color: #a32020;
+}
+
+
+.tender-gate-submit {
+
+    width: 100%;
+
+    padding: 11px 16px;
+
+    background: #8a1f1f;
+    border: 1px solid #5a1f1a;
+    border-radius: 2px;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    color: #fffdfa;
+
+    cursor: pointer;
+}
+
+
+.tender-gate-submit:hover {
+
+    background: #5a1f1a;
+}
+
+
+.tender-gate-links {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 16px;
+
+    font-size: 11.5px;
+
+    color: #6b625a;
+}
+
+
+.tender-gate-links a {
+
+    color: #8a1f1f;
+
+    text-decoration: none;
+    border-bottom: 1px solid rgba(138, 31, 31, 0.35);
+}
+
+
+.tender-gate-links a:hover {
+
+    border-bottom-color: #8a1f1f;
+}
+
+
+@media (max-width: 420px) {
+
+    .tender-gate {
+
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .tender-gate-card {
+
+        padding: 22px 16px 18px;
+
+        box-shadow: 4px 4px 0 rgba(29, 26, 24, 0.22);
+    }
+
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>会员中心 · 玉兰阁</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/yulan-member-center.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="member-center-page">
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="mc-header">
+
+    <div class="mc-brand">
+        <svg class="mc-logo-img" viewBox="0 0 212 42" role="img" aria-label="玉兰阁 YULAN PAVILION" focusable="false">
+    <rect x="0.75" y="5.25" width="31.5" height="31.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.85"/>
+    <text x="16.5" y="27.5" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="19" fill="currentColor">兰</text>
+    <text x="41" y="20" font-family="'Noto Serif SC', serif" font-size="15.5" letter-spacing="3" fill="currentColor">玉兰阁</text>
+    <text x="41" y="33" font-family="'Courier Prime', monospace" font-size="8" letter-spacing="1.7" fill="currentColor" opacity="0.68">YULAN PAVILION</text>
+</svg>
+    </div>
+
+    <div class="mc-header-right">
+
+        <a href="yulan-index.html" class="mc-back-link">← 返回官网</a>
+
+        <div class="mc-user-mini">
+            <span class="mc-user-avatar">梦</span>
+            <span class="mc-user-name">梦琪</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     会员信息横幅
+===================================================== -->
+
+<section class="mc-banner">
+
+    <div class="mc-banner-left">
+
+        <div class="mc-avatar-large">梦</div>
+
+        <div class="mc-banner-info">
+
+            <h1>陈梦琪</h1>
+
+            <p class="mc-member-id">
+                会员编号：YL-2025-017
+            </p>
+
+            <p class="mc-member-since">
+                加入时间：2025.07 · 新生计划
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="mc-banner-right">
+
+        <div class="mc-status-badge paused">
+            ● 暂停活动中
+        </div>
+
+        <p class="mc-last-login" data-evidence="mc-last-login"
+            data-evidence-title="玉兰阁会员中心 · 状态栏"
+            data-evidence-date="2026.02.16 23:52">
+            上次登录：2026.02.16 23:52
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     主布局
+===================================================== -->
+
+<main class="mc-main">
+
+
+    <!-- =====================================================
+         侧边导航
+    ====================================================== -->
+
+    <aside class="mc-sidebar">
+
+        <a href="#messages" class="mc-nav-item active">
+            ✉ 私信
+            <span class="nav-badge">3</span>
+        </a>
+
+        <a href="#reports" class="mc-nav-item">
+            📊 我的报告
+        </a>
+
+        <a href="#notifications" class="mc-nav-item">
+            🔔 系统通知
+            <span class="nav-badge red-badge">1</span>
+        </a>
+
+        <a href="#settings" class="mc-nav-item">
+            ⚙ 设置
+        </a>
+
+    </aside>
+
+
+    <!-- =====================================================
+         主内容区
+    ====================================================== -->
+
+    <section class="mc-content">
+
+
+        <!-- ==================== 私信 ==================== -->
+
+        <div class="mc-section" id="messages">
+
+            <div class="mc-section-title">
+                <h2>私信</h2>
+                <p>MESSAGES</p>
+            </div>
+
+
+            <!-- 会话列表 -->
+            <div class="conversation-list">
+
+                <!-- 会话1 · 新生计划顾问·周 -->
+                <div class="conversation-item active" data-conv="conv1" onclick="showConversation('conv1', this)">
+
+                    <div class="convo-avatar">周</div>
+
+                    <div class="convo-info">
+                        <strong>新生计划顾问·周</strong>
+                        <p>有些事，是该告诉你了。</p>
+                    </div>
+
+                    <span class="convo-time">02.16</span>
+
+                </div>
+
+
+                <!-- 会话2 · 系统消息 -->
+                <div class="conversation-item" data-conv="conv2" onclick="showConversation('conv2', this)">
+
+                    <div class="convo-avatar system-avatar">系</div>
+
+                    <div class="convo-info">
+                        <strong>系统消息</strong>
+                        <p>您的会员状态已更新。</p>
+                    </div>
+
+                    <span class="convo-time">02.17</span>
+
+                </div>
+
+
+                <!-- 会话3 · 训练中心 -->
+                <div class="conversation-item" data-conv="conv3" onclick="showConversation('conv3', this)">
+
+                    <div class="convo-avatar">训</div>
+
+                    <div class="convo-info">
+                        <strong>训练中心通知</strong>
+                        <p>第二周期安排确认。</p>
+                    </div>
+
+                    <span class="convo-time">02.15</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- 聊天窗口 -->
+            <div class="chat-window" id="chatWindow">
+
+                <!-- 会话1内容 -->
+                <div class="chat-conversation" id="conv1">
+
+                    <div class="chat-window-header">
+                        <strong>新生计划顾问·周</strong>
+                        <span>最近对话 · 2026.02.16</span>
+                    </div>
+
+                    <div class="chat-messages">
+
+                        <div class="chat-date-sep">2026.02.10 23:14</div>
+
+                        <div class="chat-bubble from-user">
+                            <p>顾问姐姐，我最近总是睡不着。训练完之后心跳好快，有点怕。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>刚开始都这样，身体还在适应。多喝点温水，别想太多。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>可是每次醒过来都刚好是02:17。好奇怪，像有人叫我一样。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>你就是压力太大了。明天来训练中心，我给你安排个放松护理。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>好，谢谢顾问姐姐。</p>
+                        </div>
+
+
+                        <div class="chat-date-sep">2026.02.14 21:30</div>
+
+                        <div class="chat-bubble from-user">
+                            <p>顾问姐姐，我有个问题想问你。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>怎么了？</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>就是……为什么训练完之后，手臂上总是有针孔啊？</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>那是营养针。帮你恢复身体的，很多人都打。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>可是抽血不应该在训练室吧？而且每次都是同一个地方。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>梦琪，你不需要担心这些。我们不会做任何伤害你的事。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>你现在最该想的，是下一次公开舞台。那是你最重要的机会。</p>
+                        </div>
+
+
+                        <div class="chat-date-sep" data-evidence="mc-chat-last"
+                            data-evidence-title="玉兰阁会员中心 · 顾问对话"
+                            data-evidence-date="2026.02.16 23:58">2026.02.16 23:58</div>
+
+                        <div class="chat-bubble from-user">
+                            <p>顾问姐姐，我有点怕明天。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>怕什么？你准备得很好了。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>明天之后，我是不是就要开始那个……第二周期了？</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>你从哪里听来的这个词？</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>我……我不小心看到训练中心的电脑了。上面有我的档案。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>写着"第二周期启动准备"。那是什么？</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>明天演出结束之后，我们坐下来好好聊一次。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>有些事，是该告诉你了。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>……好。明天见。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>晚安，顾问姐姐。</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 会话2内容 -->
+                <div class="chat-conversation" id="conv2" style="display:none;">
+
+                    <div class="chat-window-header">
+                        <strong>系统消息</strong>
+                        <span>自动通知</span>
+                    </div>
+
+                    <div class="chat-messages">
+
+                        <div class="system-notice-big">
+
+                            <div class="system-notice-icon">🔔</div>
+
+                            <h3>会员状态更新</h3>
+
+                            <p>
+                                您的会员状态已变更为
+                                <strong>"暂停活动"</strong>。
+                            </p>
+
+                            <p>
+                                如果您有任何疑问，
+                                请联系档案管理中心。
+                            </p>
+
+                            <small>
+                                2026.02.17 00:00 · 系统自动发送
+                            </small>
+
+                        </div>
+
+                        <div class="system-notice-big secondary-notice">
+
+                            <div class="system-notice-icon">📋</div>
+
+                            <h3>演出取消通知</h3>
+
+                            <p>
+                                因个人健康原因，
+                                您于2026年2月17日的演出已被取消。
+                            </p>
+
+                            <p>
+                                后续安排将另行通知。
+                            </p>
+
+                            <small>
+                                2026.02.17 00:05 · 系统自动发送
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 会话3内容 -->
+                <div class="chat-conversation" id="conv3" style="display:none;">
+
+                    <div class="chat-window-header">
+                        <strong>训练中心通知</strong>
+                        <span>2026.02.15</span>
+                    </div>
+
+                    <div class="chat-messages">
+
+                        <div class="chat-date-sep">2026.02.15 10:30</div>
+
+                        <div class="chat-bubble from-other">
+                            <p>梦琪你好，你的第二周期已经确认了。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>好的。第二周期会持续多久啊？</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>具体时长看你的身体状态，不着急。</p>
+                        </div>
+
+                        <div class="chat-bubble from-user">
+                            <p>那第二周期结束之后呢？我会变成什么样？</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>你会变得更好。这就是新生计划的意义。</p>
+                        </div>
+
+                        <div class="chat-bubble from-other">
+                            <p>公开演出加油。结束之后顾问会单独找你。</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== 我的报告 ==================== -->
+
+        <div class="mc-section" id="reports">
+
+            <div class="mc-section-title">
+                <h2>我的报告</h2>
+                <p>MY REPORTS</p>
+            </div>
+
+            <div class="report-grid">
+
+                <div class="report-card">
+                    <div class="report-label">凤凰指数</div>
+                    <div class="report-value">98%</div>
+                    <p class="report-note">更新于：2026.02.16</p>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-label">训练阶段</div>
+                    <div class="report-value">第三阶段 · 完成</div>
+                    <p class="report-note">更新于：2026.02.16</p>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-label">身体指标</div>
+                    <div class="report-value">稳定</div>
+                    <p class="report-note">更新于：2026.02.16</p>
+                </div>
+
+                <div class="report-card locked-report">
+                    <div class="report-label">第二周期报告</div>
+                    <div class="report-value">—</div>
+                    <p class="report-note red-note">需要顾问权限</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== 系统通知 ==================== -->
+
+        <div class="mc-section" id="notifications">
+
+            <div class="mc-section-title">
+                <h2>系统通知</h2>
+                <p>NOTIFICATIONS</p>
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+                    <div class="notification-icon">🔔</div>
+                    <div class="notification-body">
+                        <strong>会员状态已更新</strong>
+                        <p>您的状态已变更为"暂停活动"。</p>
+                        <small>2026.02.17 00:00</small>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">📋</div>
+                    <div class="notification-body">
+                        <strong>演出取消</strong>
+                        <p>2026年2月17日演出已取消。</p>
+                        <small>2026.02.17 00:05</small>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">📌</div>
+                    <div class="notification-body">
+                        <strong>第二周期确认</strong>
+                        <p>请在公开演出后等待顾问通知。</p>
+                        <small>2026.02.15 10:30</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== 设置 ==================== -->
+
+        <div class="mc-section" id="settings">
+
+            <div class="mc-section-title">
+                <h2>设置</h2>
+                <p>SETTINGS</p>
+            </div>
+
+            <div class="settings-box">
+
+                <p class="settings-disabled">
+                    您的账号已被管理员限制部分功能。
+                </p>
+
+                <p class="settings-disabled">
+                    如需修改会员信息，请联系档案管理中心。
+                </p>
+
+                <div class="settings-locked">
+                    🔒 此账号无法进行更改。
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="mc-footer">
+
+    <p>© 2026 Yulan Pavilion · 会员中心</p>
+
+    <small>LYL-2.0.17</small>
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   会话切换
+===================================================== */
+
+function showConversation(convId, item) {
+
+    /* 隐藏所有会话 */
+    const conversations =
+        document.querySelectorAll(".chat-conversation");
+
+    conversations.forEach(function (conv) {
+        conv.style.display = "none";
+    });
+
+    /* 显示目标会话 */
+    const target = document.getElementById(convId);
+
+    if (target) {
+        target.style.display = "block";
+    }
+
+    /* 高亮选中的会话 */
+    const items =
+        document.querySelectorAll(".conversation-item");
+
+    items.forEach(function (element) {
+        element.classList.remove("active");
+    });
+
+    /* 用显式传入的列表项，不依赖全局 event */
+    if (item) {
+
+        item.classList.add("active");
+
+    } else {
+
+        const fallback = document.querySelector(
+            '.conversation-item[data-conv="' + convId + '"]'
+        );
+
+        if (fallback) {
+            fallback.classList.add("active");
+        }
+
+    }
+
+}
+</script>
+
+
+<script src="js/evidence.js"></script>
+
+</body>
+
+</html>

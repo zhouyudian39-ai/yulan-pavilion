@@ -1,0 +1,1598 @@
+/* =====================================================
+   周岚的 LUMI 主页
+   微博风格
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f2f2f5;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #222;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.zl-page {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   顶部导航
+================================ */
+
+.lumi-topbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e8e8ed;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.back-link {
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.topbar-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.topbar-right {
+    display: flex;
+    gap: 15px;
+}
+
+
+.topbar-icon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #555;
+}
+
+
+/* ===============================
+   个人资料卡片
+================================ */
+
+.profile-card {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+
+.profile-cover {
+    width: 100%;
+    height: 160px;
+    background: #e8e4f0;
+}
+
+
+.profile-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.profile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 25px;
+    gap: 15px;
+}
+
+
+.profile-avatar-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e8e4f0;
+    border: 3px solid #fff;
+    margin-top: -35px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+.profile-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.profile-actions {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+
+.btn-follow,
+.btn-message {
+    padding: 5px 18px;
+    font-size: 13px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.15s;
+}
+
+
+.btn-follow {
+    background: #4a6da7;
+    color: #fff;
+    border: none;
+}
+
+
+.btn-follow:hover {
+    background: #3a5a8c;
+}
+
+
+.btn-message {
+    background: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+
+.btn-message:hover {
+    background: #f8f8f8;
+    border-color: #4a6da7;
+    color: #4a6da7;
+}
+
+
+/* ===============================
+   昵称和简介
+================================ */
+
+.profile-info {
+    padding: 8px 25px 15px;
+}
+
+
+.profile-name {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.verified {
+    width: 17px;
+    height: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #4a6da7;
+    color: #fff;
+    font-size: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+.profile-username {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+}
+
+
+.profile-bio {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #555;
+}
+
+
+.profile-desc {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #333;
+}
+
+
+.profile-location {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+
+/* ===============================
+   数据栏
+================================ */
+
+.profile-stats {
+    display: flex;
+    border-top: 1px solid #f2f2f5;
+    border-bottom: 1px solid #f2f2f5;
+}
+
+
+.profile-stats .stat {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #555;
+    transition: 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+.profile-stats .stat:hover {
+    background: #fafafa;
+}
+
+
+.profile-stats strong {
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+}
+
+
+.profile-stats span {
+    font-size: 11px;
+    color: #999;
+}
+
+
+/* ===============================
+   内容标签栏
+================================ */
+
+.content-tabs {
+    max-width: 920px;
+    margin: 10px auto 0;
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 8px;
+    display: flex;
+    overflow-x: auto;
+}
+
+
+.content-tabs .tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: 0.15s;
+}
+
+
+.content-tabs .tab:hover {
+    color: #222;
+}
+
+
+.content-tabs .tab.active {
+    color: #4a6da7;
+    font-weight: 700;
+    border-bottom-color: #4a6da7;
+}
+
+
+/* ===============================
+   主内容区
+================================ */
+
+.content-main {
+    max-width: 920px;
+    margin: 12px auto 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+
+/* ===============================
+   左侧栏
+================================ */
+
+.sidebar-left {
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.side-section {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+
+.side-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+
+.side-header h3 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.side-header a {
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+}
+
+
+.side-header a:hover {
+    color: #4a6da7;
+}
+
+
+/* 相册预览：2026-10-10 由 4 格减为 3 格（photo4「生活照」与 photo3「日常照」语义重复、
+   且是唯一没有独立图注的一格，见 _tools/remaining-assets.md §3.4），改为单行 3 列不留空格。 */
+.album-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+
+.album-thumb {
+    aspect-ratio: 1 / 1;
+    background: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.album-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+
+.album-thumb:hover img {
+    transform: scale(1.05);
+}
+
+
+/* 私密相册入口 */
+.private-album-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #fafaf8;
+    border: 1px solid #f0e0d8;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.15s;
+}
+
+
+.private-album-entry:hover {
+    background: #fdf8f5;
+    border-color: #c8b8a8;
+}
+
+
+.private-album-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+
+.private-album-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+.private-album-info strong {
+    font-size: 12px;
+    color: #333;
+}
+
+
+.private-album-info small {
+    font-size: 10px;
+    color: #999;
+}
+
+
+.private-album-arrow {
+    font-size: 12px;
+    color: #ccc;
+    transition: 0.15s;
+}
+
+
+.private-album-entry:hover .private-album-arrow {
+    color: #4a6da7;
+    transform: translateX(2px);
+}
+
+
+/* 关注列表 */
+.follow-list,
+.visitor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.follow-item,
+.visitor-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.follow-item img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e8e4f0;
+}
+
+
+.visitor-item img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+}
+
+
+.follow-item span,
+.visitor-item span {
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* ===============================
+   动态流
+================================ */
+
+.feed {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.feed-item {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 8px;
+    padding: 15px 18px;
+}
+
+
+.feed-item.last-post {
+    border-color: #d0c8e0;
+    background: #fdfaf7;
+}
+
+
+.feed-content p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+
+.feed-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+.feed-meta {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #aaa;
+    text-align: right;
+}
+
+
+.feed-end {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+
+/* ===============================
+   页脚
+================================ */
+
+.player-footer {
+    max-width: 920px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+
+.player-footer p {
+    font-size: 11px;
+    color: #bbb;
+    margin: 3px 0;
+}
+
+
+/* ===============================
+   私密相册密码弹窗
+================================ */
+
+.private-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.private-modal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+
+.private-modal-card {
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    max-width: 92%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    text-align: center;
+    animation: modalIn 0.25s ease;
+}
+
+
+@keyframes modalIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.private-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #bbb;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.private-modal-close:hover {
+    color: #555;
+}
+
+
+.private-modal-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+
+.private-modal-card h3 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+.private-modal-sub {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+
+.private-modal-card input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+
+.private-modal-card input:focus {
+    border-color: #4a6da7;
+    box-shadow: 0 0 0 2px rgba(74,109,167,0.1);
+}
+
+
+.private-modal-error {
+    min-height: 18px;
+    font-size: 12px;
+    color: #d03a3a;
+    margin: 8px 0;
+}
+
+
+.private-modal-btn {
+    width: 100%;
+    padding: 10px 0;
+    background: #4a6da7;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 2px;
+    transition: 0.15s;
+}
+
+
+.private-modal-btn:hover {
+    background: #3a5a8c;
+}
+
+
+/* ===============================
+   私密相册内容弹窗
+================================ */
+
+.private-content-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.private-content-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+
+.private-content-card {
+    position: relative;
+    z-index: 2;
+    width: 500px;
+    max-width: 92%;
+    max-height: 80vh;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    animation: modalIn 0.25s ease;
+}
+
+
+.private-content-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #bbb;
+    cursor: pointer;
+    padding: 0;
+    z-index: 3;
+}
+
+
+.private-content-close:hover {
+    color: #555;
+}
+
+
+.private-content-header {
+    padding: 15px 20px;
+    background: #fdf8f5;
+    border-bottom: 1px solid #f0e0d8;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #5a1f1a;
+    flex-shrink: 0;
+}
+
+
+.private-content-body {
+    padding: 15px;
+    overflow-y: auto;
+    flex: 1;
+    background: #fafaf8;
+}
+
+
+/* ===============================
+   调查笔记卡片
+================================ */
+
+.zl-note {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+}
+
+
+.zl-note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+
+.zl-note-date {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+
+.zl-note-status {
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 1px;
+}
+
+
+.zl-status-red {
+    color: #b85a4a;
+    font-weight: 700;
+}
+
+
+.zl-note-body p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+
+.zl-note-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+.zl-note-body strong {
+    color: #8a1f1f;
+    font-weight: 700;
+}
+
+
+.zl-note-final {
+    border-color: #e0c8b8;
+    background: #fdfaf7;
+}
+
+
+/* ===============================
+   响应式
+================================ */
+
+@media (max-width: 750px) {
+
+    .content-main {
+        flex-direction: column;
+    }
+
+    .sidebar-left {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .side-section {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .profile-cover {
+        height: 120px;
+    }
+
+    .profile-avatar-wrap {
+        width: 65px;
+        height: 65px;
+        margin-top: -25px;
+    }
+
+    .btn-follow,
+    .btn-message {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    .profile-name {
+        font-size: 18px;
+    }
+
+    .private-content-card {
+        width: 95%;
+    }
+
+}
+
+/* ===============================
+   私密相册密码提示
+================================ */
+
+.private-modal-hint {
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+
+/* ===============================
+   文字 / 图案头像
+   （原为每个用户一张独立头像图。这些头像没有独立信息价值，
+     而且同一用户在不同页面用的是不同图片。
+     改为按用户名字稳定生成的图案头像：同一用户永远同一配色与图案。）
+================================ */
+
+.text-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+    line-height: 1;
+
+    user-select: none;
+}
+
+
+.follow-item .text-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+}
+
+
+.visitor-item .text-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+}
+
+
+/* 8 组固定配色，按用户名取模分配 */
+
+.ta-1 { background: #e8ded2; color: #8a6a4a; }
+.ta-2 { background: #dde4ea; color: #4a6a86; }
+.ta-3 { background: #e6e0ee; color: #6a5a86; }
+.ta-4 { background: #dfe8de; color: #4f7a52; }
+.ta-5 { background: #f0e2e0; color: #9a5a52; }
+.ta-6 { background: #ece5d6; color: #8a7a4a; }
+.ta-7 { background: #e0e8e6; color: #4a7a72; }
+.ta-8 { background: #e9e2e8; color: #7a5a72; }
+
+
+/* 私密相册入口的已解锁状态 */
+
+.private-album-entry.is-unlocked .private-album-icon {
+    opacity: 1;
+}
+
+
+/* 弹窗键盘焦点 */
+
+.private-modal-close:focus-visible,
+.private-modal-btn:focus-visible,
+.private-modal input:focus-visible,
+.private-content-close:focus-visible {
+    outline: 2px solid #b85a4a;
+    outline-offset: 2px;
+}
+
+/* Y2K-ZHOULAN-PROFILE */
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造 · 第二轮）
+   周岚的主页 · LUMI 平台上的记者页
+   -----------------------------------------------------
+   身份：一名调查记者在平台上留下的工作页 ——
+         印刷灰纸、墨线、等宽小字、暗红标识。
+   克制：没有粉丝站的粉色、没有贴纸；
+         装饰只用来区分「平台外壳 / 本人信息 / 调查内容」。
+===================================================== */
+
+:root {
+
+    --zl-paper: #fdfdfc;
+    --zl-grey: #f2f2ef;
+    --zl-ink: #1c1a19;
+    --zl-soft: #4a4643;
+
+    --zl-red: #8a1f1f;
+    --zl-blue-ink: #2c3e56;
+
+    --zl-mono: "Courier Prime", "Courier New", monospace;
+
+    --zl-line: 1px solid rgba(28, 26, 25, 0.85);
+    --zl-line-soft: 1px solid rgba(28, 26, 25, 0.2);
+
+    --zl-shadow: 4px 5px 0 rgba(28, 26, 25, 0.1);
+}
+
+
+/* ---------- 底：印刷灰纸 ---------- */
+
+body {
+
+    background-color: var(--zl-grey);
+
+    background-image:
+        linear-gradient(to right, rgba(28, 26, 25, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(28, 26, 25, 0.035) 1px, transparent 1px);
+
+    background-size: 28px 28px;
+
+    color: var(--zl-ink);
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+
+
+.zl-page {
+    background: var(--zl-paper);
+}
+
+
+/* ---------- 顶栏 ---------- */
+
+.lumi-topbar {
+
+    background: var(--zl-paper);
+    border-bottom: 2px solid var(--zl-ink);
+
+    box-shadow: 0 3px 0 rgba(28, 26, 25, 0.08);
+}
+
+
+.topbar-title {
+    letter-spacing: 3px;
+}
+
+
+.back-link {
+    color: var(--zl-ink);
+}
+
+
+.topbar-icon {
+
+    font-size: 13px;
+
+    font-family: var(--zl-mono);
+
+    color: #8b8681;
+}
+
+
+/* ---------- 资料卡 ---------- */
+
+.profile-card {
+
+    border: var(--zl-line);
+    border-radius: 2px;
+
+    box-shadow: var(--zl-shadow);
+}
+
+
+.profile-cover {
+
+    background-color: #e9e9e4;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(28, 26, 25, 0.05) 0 8px,
+        transparent 8px 16px
+    );
+
+    border-bottom: var(--zl-line-soft);
+}
+
+
+.profile-cover img {
+    display: block;
+}
+
+
+.profile-avatar-wrap {
+
+    border: 3px solid var(--zl-paper);
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 1px var(--zl-ink);
+}
+
+
+.profile-avatar-wrap img {
+    display: block;
+}
+
+
+.profile-name {
+    letter-spacing: 2px;
+}
+
+
+.verified {
+
+    width: 16px;
+    height: 16px;
+
+    background: var(--zl-blue-ink);
+    border-radius: 2px;
+}
+
+
+.profile-username {
+
+    font-family: var(--zl-mono);
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #8b8681;
+}
+
+
+.profile-bio {
+
+    display: inline-block;
+
+    padding: 2px 8px;
+
+    background: #fbf1ec;
+    border: 1px solid rgba(138, 31, 31, 0.35);
+    border-radius: 2px;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    color: var(--zl-red);
+}
+
+
+.profile-desc {
+    color: var(--zl-soft);
+    line-height: 1.9;
+}
+
+
+.profile-location {
+
+    font-family: var(--zl-mono);
+    font-size: 11px;
+
+    color: #8b8681;
+}
+
+/* ---------- 数据栏 ---------- */
+
+.profile-stats {
+
+    border-top: var(--zl-line-soft);
+    border-bottom: var(--zl-line-soft);
+}
+
+
+.profile-stats .stat:hover {
+    background: #f6f6f3;
+}
+
+
+.profile-stats strong {
+
+    font-family: "Noto Serif SC", serif;
+    font-size: 19px;
+
+    color: var(--zl-ink);
+}
+
+
+.profile-stats span {
+
+    font-family: var(--zl-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+
+    color: #8b8681;
+}
+
+
+/* ---------- 内容标签栏 ---------- */
+
+.content-tabs {
+
+    background: var(--zl-paper);
+    border: var(--zl-line);
+    border-radius: 2px;
+
+    box-shadow: 3px 4px 0 rgba(28, 26, 25, 0.07);
+}
+
+
+.content-tabs .tab {
+
+    color: #575350;
+    letter-spacing: 2px;
+}
+
+
+.content-tabs .tab:hover {
+
+    color: var(--zl-ink);
+    background: #f6f6f3;
+}
+
+
+.content-tabs .tab.active {
+
+    color: var(--zl-red);
+
+    border-bottom-color: var(--zl-red);
+}
+
+
+/* ---------- 侧栏 ---------- */
+
+.side-section {
+
+    background: var(--zl-paper);
+    border: var(--zl-line);
+    border-radius: 2px;
+
+    box-shadow: 3px 4px 0 rgba(28, 26, 25, 0.06);
+}
+
+
+.side-header {
+    padding-bottom: 8px;
+    border-bottom: var(--zl-line-soft);
+}
+
+
+.side-header h3 {
+    letter-spacing: 2px;
+}
+
+
+.side-header span {
+    font-family: var(--zl-mono);
+}
+
+
+/* 私密相册入口：一只上锁的抽屉 */
+.private-album-entry {
+
+    background: #fbfaf7;
+    border: 1px dashed rgba(28, 26, 25, 0.45);
+    border-radius: 2px;
+}
+
+
+.private-album-entry:hover .private-album-arrow {
+    color: var(--zl-red);
+}
+
+
+/* 相册缩略图：由容器定比例 */
+.album-thumb {
+
+    background-color: #ececE7;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(28, 26, 25, 0.06) 0 7px,
+        transparent 7px 14px
+    );
+}
+
+
+.album-thumb img {
+    display: block;
+}
+
+
+/* 关注 / 访客：人名走正文，平台外壳走等宽 */
+.follow-item span,
+.visitor-item span {
+    color: var(--zl-soft);
+}
+
+
+/* ---------- 动态流 ---------- */
+
+.feed-item {
+
+    background: var(--zl-paper);
+    border: var(--zl-line);
+    border-radius: 2px;
+
+    box-shadow: 3px 4px 0 rgba(28, 26, 25, 0.06);
+}
+
+
+/* 最后一条公开动态：左侧加一道红条（调查内容） */
+.feed-item.last-post {
+
+    background: #fdfaf7;
+    border-color: rgba(28, 26, 25, 0.85);
+    border-left: 3px solid var(--zl-red);
+}
+
+
+.feed-content p {
+
+    font-size: 14px;
+    line-height: 2;
+
+    color: #2e2b29;
+}
+
+
+.feed-meta {
+
+    margin-top: 12px;
+    padding-top: 8px;
+
+    border-top: var(--zl-line-soft);
+
+    font-family: var(--zl-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: #8b8681;
+}
+
+
+.feed-end {
+
+    font-family: var(--zl-mono);
+    letter-spacing: 2px;
+
+    color: #a8a29d;
+}
+
+
+.player-footer p {
+
+    font-family: var(--zl-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #a8a29d;
+}
+
+/* ---------- 弹层：私密相册 ---------- */
+
+.private-modal-bg {
+    background: rgba(20, 18, 17, 0.62);
+}
+
+
+.private-modal-card {
+
+    background: var(--zl-paper);
+    border: var(--zl-line);
+    border-radius: 2px;
+
+    box-shadow: 8px 10px 0 rgba(20, 18, 17, 0.35);
+}
+
+
+.private-modal-card h3 {
+
+    font-size: 15px;
+    letter-spacing: 3px;
+
+    color: var(--zl-ink);
+}
+
+
+.private-modal-icon {
+    filter: grayscale(1);
+}
+
+
+.private-modal-sub {
+
+    font-size: 12px;
+
+    color: var(--zl-soft);
+}
+
+
+.private-modal-error {
+
+    font-family: var(--zl-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+}
+
+
+.private-modal-hint {
+
+    font-family: var(--zl-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: #8b8681;
+}
+
+
+.private-modal input {
+
+    border: var(--zl-line);
+    border-radius: 2px;
+}
+
+
+.private-modal input:focus {
+    border-color: var(--zl-red);
+    box-shadow: 0 0 0 2px rgba(138, 31, 31, 0.12);
+}
+
+
+.private-modal-btn {
+
+    background: var(--zl-ink);
+    color: #fff;
+
+    border: 1px solid var(--zl-ink);
+    border-radius: 2px;
+
+    letter-spacing: 3px;
+}
+
+
+.private-modal-btn:hover {
+    background: #35302b;
+}
+
+
+.private-content-card {
+
+    background: var(--zl-paper);
+    border: var(--zl-line);
+    border-radius: 2px;
+
+    box-shadow: 8px 10px 0 rgba(20, 18, 17, 0.35);
+}
+
+
+.private-content-header {
+
+    background: #fdfaf7;
+    border-bottom: var(--zl-line-soft);
+
+    letter-spacing: 3px;
+}
+
+
+.private-content-body {
+    background: var(--zl-paper);
+}
+
+
+/* ---------- 相册里的调查笔记（内容层，最像「人写的」一块） ---------- */
+
+.zl-note {
+
+    background: #fdfaf7;
+    border: 1px solid rgba(28, 26, 25, 0.3);
+    border-radius: 2px;
+}
+
+
+.zl-note-header {
+
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(28, 26, 25, 0.18);
+}
+
+
+.zl-note-date,
+.zl-note-status {
+
+    font-family: var(--zl-mono);
+    font-size: 9.5px;
+    letter-spacing: 1px;
+}
+
+
+.zl-note-body p {
+
+    font-size: 13px;
+    line-height: 2;
+
+    color: #2e2b29;
+}
+
+
+.zl-note-body strong {
+    color: var(--zl-red);
+}
+
+
+.zl-note-final {
+
+    background: #fbf1ec;
+    border-color: rgba(138, 31, 31, 0.4);
+}
+
+
+/* ---------- 键盘焦点 ---------- */
+
+.lumi-topbar a:focus-visible,
+.content-tabs .tab:focus-visible,
+.feed-item a:focus-visible,
+.private-album-entry:focus-visible {
+
+    outline: 2px solid var(--zl-red);
+    outline-offset: 2px;
+}
+
+
+/* ---------- 返回入口（跨站统一） ---------- */
+
+.gp-back-nav a:focus-visible {
+    outline: 2px solid var(--zl-red);
+    outline-offset: 2px;
+}
+
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 750px) {
+
+    .profile-bio {
+        font-size: 11px;
+    }
+
+    .feed-meta {
+        font-size: 9.5px;
+    }
+
+}
+
+
+/* ---------- 缺图时的 alt 文字 ----------
+   zhou-lan.css 的占位底纹在容器上，图片是 inline 显示的；
+   把图片改成块级并隐藏 alt 文字，缺图时只留底纹。 */
+
+.profile-cover img,
+.profile-avatar-wrap img,
+.album-thumb img {
+
+    display: block;
+    color: transparent;
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

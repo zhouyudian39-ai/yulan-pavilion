@@ -1,0 +1,517 @@
+/* =====================================================
+   凤凰指数评估系统
+   PHOENIX INDEX
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Serif SC", serif;
+    background: #0c0a09;
+    color: #cfc9c2;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ph-page {
+    width: 100%;
+    max-width: 760px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #100d0c;
+}
+
+
+/* ===============================
+   顶部
+================================ */
+
+.ph-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 16px 20px;
+
+    background: #0c0a09;
+    border-bottom: 1px solid #2a2320;
+}
+
+.ph-logo-img {
+    height: 34px;
+    width: auto;
+    display: block;
+    color: #e8dcc8;
+}
+
+.ph-header-status {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #8a7a5c;
+    text-align: right;
+    line-height: 1.8;
+}
+
+.ph-header-status .ph-red {
+    color: #b3402f;
+}
+
+
+/* ===============================
+   Hero
+================================ */
+
+.ph-hero {
+    padding: 46px 24px 34px;
+    text-align: center;
+    border-bottom: 1px solid #2a2320;
+
+    background:
+        radial-gradient(ellipse at 50% 0%, #1c1512 0%, #100d0c 70%);
+}
+
+.ph-hero-label {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #8a7a5c;
+    margin-bottom: 16px;
+}
+
+.ph-hero h1 {
+    font-size: 32px;
+    letter-spacing: 10px;
+    color: #e8dcc8;
+    margin-bottom: 14px;
+    text-indent: 10px;
+}
+
+.ph-hero-desc {
+    font-size: 13px;
+    line-height: 2;
+    color: #9c9186;
+}
+
+
+/* ===============================
+   系统状态
+================================ */
+
+.ph-status {
+    margin: 26px 20px 0;
+    padding: 18px 20px;
+
+    background: #16110f;
+    border: 1px solid #2f2724;
+    border-left: 2px solid #b3402f;
+}
+
+.ph-status-title {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #b3402f;
+    margin-bottom: 10px;
+}
+
+.ph-status-text {
+    font-size: 13px;
+    line-height: 2;
+    color: #a99e92;
+}
+
+
+/* ===============================
+   信息面板
+================================ */
+
+.ph-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    padding: 20px;
+}
+
+.ph-panel {
+    padding: 18px;
+
+    background: #16110f;
+    border: 1px solid #2a2320;
+}
+
+.ph-panel-title {
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8a7a5c;
+    margin-bottom: 12px;
+}
+
+.ph-panel p {
+    font-size: 12.5px;
+    line-height: 2;
+    color: #a99e92;
+}
+
+
+/* ===============================
+   引用
+================================ */
+
+.ph-quote {
+    margin: 0 20px 20px;
+    padding: 18px 20px;
+
+    background: #16110f;
+    border: 1px dashed #3a312c;
+
+    font-size: 12.5px;
+    line-height: 2;
+    color: #a99e92;
+}
+
+.ph-quote strong {
+    color: #d8cbb8;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   返回
+================================ */
+
+.ph-return {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+
+    padding: 22px 20px 34px;
+
+    border-top: 1px solid #2a2320;
+}
+
+.ph-return a {
+    font-size: 12px;
+    color: #8a7a5c;
+    text-decoration: none;
+}
+
+.ph-return a:hover,
+.ph-return a:focus-visible {
+    color: #e8dcc8;
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   焦点
+================================ */
+
+.ph-return a:focus-visible {
+    outline: 2px solid #b3402f;
+    outline-offset: 3px;
+}
+
+
+/* ===============================
+   窄屏
+================================ */
+
+@media (max-width: 620px) {
+
+    .ph-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ph-header-status {
+        text-align: left;
+    }
+
+    .ph-hero {
+        padding: 34px 18px 26px;
+    }
+
+    .ph-hero h1 {
+        font-size: 24px;
+        letter-spacing: 7px;
+        text-indent: 7px;
+    }
+
+    .ph-panels {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .ph-status,
+    .ph-quote {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+}
+
+/* Y2K-PHOENIX */
+/* =====================================================
+   Y2K 美术层（第一阶段美术改造 · 第二轮）
+   凤凰指数评估系统
+   -----------------------------------------------------
+   身份：与城市论坛 / 地下档案同一套冷硬档案语言 ——
+         近黑底、扫描线、等宽编号、细线框；
+         红色只用于「受限 / 内部」这一类状态。
+   说明：页面内容与文案不动，这里只统一介质与层级，
+         不因为页面叫「凤凰」就去加命理或装饰图形。
+===================================================== */
+
+:root {
+
+    --ph-fg: #d9d5cd;
+    --ph-fg-soft: #9a948b;
+    --ph-fg-faint: #6d6862;
+
+    --ph-bg: #0d0c0b;
+    --ph-panel: #161513;
+    --ph-panel-2: #1c1b18;
+
+    --ph-red: #b3402f;
+
+    --ph-mono: "Courier Prime", "Courier New", monospace;
+    --ph-serif: "Noto Serif SC", "Songti SC", serif;
+
+    --ph-line: 1px solid rgba(217, 213, 205, 0.22);
+    --ph-line-strong: 1px solid rgba(217, 213, 205, 0.4);
+}
+
+
+/* ---------- 底：近黑 + 扫描线 ---------- */
+
+body {
+
+    background-color: var(--ph-bg);
+
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(217, 213, 205, 0.035) 0 1px,
+        transparent 1px 3px
+    );
+
+    color: var(--ph-fg);
+    font-family: var(--ph-serif);
+}
+
+
+.ph-page {
+
+    background: #100f0e;
+
+    border-left: var(--ph-line);
+    border-right: var(--ph-line);
+}
+
+
+/* ---------- 顶栏 ---------- */
+
+.ph-header {
+
+    background: #131211;
+    border-bottom: var(--ph-line-strong);
+}
+
+
+.ph-logo-img {
+    color: #e8e2d6;
+}
+
+
+.ph-header-status {
+
+    font-family: var(--ph-mono);
+    font-size: 9.5px;
+    letter-spacing: 2px;
+
+    color: var(--ph-fg-faint);
+}
+
+
+.ph-header-status .ph-red {
+
+    color: var(--ph-red);
+    letter-spacing: 2px;
+}
+
+
+/* ---------- Hero ---------- */
+
+.ph-hero {
+
+    background:
+        radial-gradient(ellipse at 50% 0%, #1b1715 0%, #100f0e 72%);
+    border-bottom: var(--ph-line);
+}
+
+
+.ph-hero-label {
+
+    font-family: var(--ph-mono);
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    color: var(--ph-fg-faint);
+}
+
+
+.ph-hero h1 {
+
+    color: #e8e2d6;
+    letter-spacing: 12px;
+}
+
+
+.ph-hero-desc {
+
+    font-size: 13px;
+    line-height: 2.1;
+
+    color: var(--ph-fg-soft);
+}
+
+
+/* ---------- 系统状态：红边告示 ---------- */
+
+.ph-status {
+
+    background: var(--ph-panel);
+    border: var(--ph-line);
+    border-left: 2px solid var(--ph-red);
+}
+
+
+.ph-status-title {
+
+    font-family: var(--ph-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: var(--ph-red);
+}
+
+
+.ph-status-text {
+
+    font-size: 13px;
+    line-height: 2.1;
+
+    color: var(--ph-fg-soft);
+}
+
+
+/* ---------- 信息面板 ---------- */
+
+.ph-panel {
+
+    background: var(--ph-panel);
+    border: var(--ph-line);
+}
+
+
+.ph-panel-title {
+
+    font-family: var(--ph-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--ph-fg-faint);
+}
+
+
+.ph-panel p {
+
+    font-size: 12.5px;
+    line-height: 2.1;
+
+    color: var(--ph-fg-soft);
+}
+
+
+/* ---------- 引用 ---------- */
+
+.ph-quote {
+
+    background: var(--ph-panel-2);
+    border: 1px dashed rgba(217, 213, 205, 0.28);
+
+    color: var(--ph-fg-soft);
+}
+
+
+.ph-quote strong {
+
+    color: #e8e2d6;
+    font-weight: 600;
+}
+
+
+/* ---------- 返回 ---------- */
+
+.ph-return {
+    border-top: var(--ph-line);
+}
+
+
+.ph-return a {
+
+    font-family: var(--ph-mono);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+
+    color: var(--ph-fg-faint);
+}
+
+
+.ph-return a:hover,
+.ph-return a:focus-visible {
+
+    color: #e8e2d6;
+    text-decoration: underline;
+}
+
+
+.ph-return a:focus-visible {
+
+    outline: 2px solid var(--ph-red);
+    outline-offset: 3px;
+}
+
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 620px) {
+
+    .ph-hero h1 {
+
+        font-size: 23px;
+        letter-spacing: 8px;
+        text-indent: 8px;
+    }
+
+    .ph-page {
+
+        border-left: none;
+        border-right: none;
+    }
+
+}
+
+/* ---------- 装饰性锚点（无 href）：不可点击、不响应悬停 ---------- */
+a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+}

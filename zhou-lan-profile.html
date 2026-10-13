@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>周岚 · LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/zhou-lan.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<div class="zl-page">
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="lumi-topbar">
+
+    <div class="topbar-left">
+        <a href="browser-login.html" class="back-link">←</a>
+        <span class="topbar-title">周岚的主页</span>
+    </div>
+
+    <div class="topbar-right">
+        <span class="topbar-icon">🔍</span>
+        <span class="topbar-icon">⚙</span>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     个人资料区
+===================================================== -->
+
+<section class="profile-card">
+
+    <div class="profile-cover">
+        <img src="images/zhoulan/cover.jpg" alt="周岚背景图">
+    </div>
+
+    <div class="profile-top">
+
+        <div class="profile-avatar-wrap">
+            <img src="images/zhoulan/avatar.jpg" alt="周岚头像" loading="lazy" decoding="async">
+        </div>
+
+        <div class="profile-actions">
+            <button class="btn-follow">+ 关注</button>
+            <button class="btn-message">✉ 私信</button>
+        </div>
+
+    </div>
+
+    <div class="profile-info">
+
+        <h1 class="profile-name">
+            周岚
+            <span class="verified">✓</span>
+        </h1>
+
+        <p class="profile-username">
+            @zhou_lan
+        </p>
+
+        <p class="profile-bio">
+            城市周刊调查记者 · 资深猎头
+        </p>
+
+        <p class="profile-desc">
+            前猎头顾问，现从事调查报道。
+            <br>
+            关注美容行业与女性安全。
+        </p>
+
+        <p class="profile-location">
+            📍 香港
+        </p>
+
+    </div>
+
+    <div class="profile-stats">
+
+        <a class="stat">
+            <strong>23</strong>
+            <span>关注</span>
+        </a>
+
+        <a class="stat">
+            <strong>189</strong>
+            <span>粉丝</span>
+        </a>
+
+        <a class="stat">
+            <strong>47</strong>
+            <span>帖子</span>
+        </a>
+
+        <a class="stat">
+            <strong>812</strong>
+            <span>获赞</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     内容标签栏
+===================================================== -->
+
+<nav class="content-tabs">
+
+    <a class="tab active">帖子</a>
+    <a class="tab">相册</a>
+    <a class="tab">粉丝留言</a>
+    <a class="tab">关于她</a>
+
+</nav>
+
+
+<!-- =====================================================
+     主内容区
+===================================================== -->
+
+<main class="content-main">
+
+
+    <!-- ====================== 左侧 ====================== -->
+
+    <aside class="sidebar-left">
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>相册</h3>
+                <a>查看全部 →</a>
+            </div>
+
+            <div class="album-preview">
+
+                <div class="album-thumb">
+                    <img src="images/zhoulan/photo1.jpg" alt="工作照" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/zhoulan/photo2.jpg" alt="采访照" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/zhoulan/photo3.jpg" alt="日常照" loading="lazy" decoding="async">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 🔒 私密相册入口 -->
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>相册</h3>
+            </div>
+
+            <a href="#" class="private-album-entry" id="privateAlbumEntry" onclick="openPrivateAlbum(event)">
+
+                <span class="private-album-icon" id="privateAlbumIcon">🔒</span>
+
+                <span class="private-album-info">
+                    <strong>私密相册</strong>
+                    <small id="privateAlbumNote">仅自己可见</small>
+                </span>
+
+                <span class="private-album-arrow">→</span>
+
+            </a>
+
+        </div>
+
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>她关注的</h3>
+                <a>更多 →</a>
+            </div>
+
+            <div class="follow-list">
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="城市周刊官方">&#9679;</div>
+                    <span>城市周刊官方</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="香港记者协会">&#9679;</div>
+                    <span>香港记者协会</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-5" role="img" aria-label="女性安全组织">&#9670;</div>
+                    <span>女性安全组织</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>最近访客</h3>
+            </div>
+
+            <div class="visitor-list">
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="匿名用户">&#9679;</div>
+                    <span>匿名用户</span>
+                </div>
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="匿名用户">&#9679;</div>
+                    <span>匿名用户</span>
+                </div>
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="匿名用户">&#9679;</div>
+                    <span>匿名用户</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ====================== 右侧动态流 ====================== -->
+
+    <section class="feed">
+
+
+        <!-- =====================================================
+             动态1：职业日常
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    又完成一篇稿子。
+                </p>
+
+                <p>
+                    做调查记者几年了，还是不习惯和受访者说“再见”。
+                    因为你不知道下一次还能不能联系上他们。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.02.15 22:10 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             动态2：猎头经历
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    以前做猎头的时候，面试过很多年轻女孩。
+                    她们递过来的简历上写着“形象好，气质佳”。
+                </p>
+
+                <p>
+                    现在做记者，还是会面对很多不同的女孩。不知道以后我们还会不会见面。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.02.13 19:42 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             动态3：暗示性的普通动态
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    最近在整理旧资料，有很多旧照片，也有很多熟人和旧人。
+                </p>
+
+                <p>
+                    好像总是想起过去的事，但那也是我想不断逃离的东西。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.02.10 23:17 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             动态4：深夜工作
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    这个点还在改稿。
+                </p>
+
+                <p>
+                    点了一杯热茶，现在已经变成凉的了，又浪费。
+                    我还堆着三个人的采访记录没有整理。
+                </p>
+
+                <p>
+                    其中一个已经联系不上了，希望不是我想的那个样子。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.02.16 02:17 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             动态5：最后一条
+        ====================================================== -->
+
+        <div class="feed-item last-post">
+
+            <div class="feed-content">
+
+                <p>
+                    明天要去见一个人。
+                </p>
+
+                <p>
+                    有点紧张。希望一切顺利。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.02.16 23:50 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             底部
+        ====================================================== -->
+
+        <div class="feed-end">
+            已经是最后一条动态了
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="player-footer">
+
+    <p>LUMI 个人主页 · 周岚</p>
+    <p data-evidence="zhoulan-last-login"
+        data-evidence-title="LUMI · 周岚主页 · 页脚"
+        data-evidence-date="2026.02.17 02:17">最后登录：2026.02.17 02:17</p>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     私密相册密码弹窗
+===================================================== -->
+
+<div class="private-modal" id="privateModal">
+
+    <div class="private-modal-bg" onclick="closePrivateModal()"></div>
+
+    <div class="private-modal-card">
+
+        <button class="private-modal-close" onclick="closePrivateModal()">×</button>
+
+        <div class="private-modal-icon">🔒</div>
+
+        <h3>私密相册</h3>
+
+<p class="private-modal-sub">请输入密码以查看此相册</p>
+
+<p class="private-modal-hint">
+    密码同登录密码
+</p>
+
+<input
+    type="password"
+    id="privatePassword"
+    placeholder="密码"
+    autocomplete="off">
+
+        <p class="private-modal-error" id="privateError"></p>
+
+        <button class="private-modal-btn" onclick="unlockPrivateAlbum()">
+            确认
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     私密相册内容弹窗
+===================================================== -->
+
+<div class="private-content-modal" id="privateContentModal">
+
+    <div class="private-content-bg" onclick="closePrivateContent()"></div>
+
+    <div class="private-content-card">
+
+        <button class="private-content-close" onclick="closePrivateContent()">×</button>
+
+        <div class="private-content-header">
+            🔒 私密相册 · 调查笔记
+        </div>
+
+        <div class="private-content-body">
+
+
+           <!-- 笔记1：同行的劝告 -->
+<div class="zl-note">
+
+    <div class="zl-note-header">
+        <span class="zl-note-date">2026.02.14 23:20</span>
+        <span class="zl-note-status">未归档</span>
+    </div>
+
+    <div class="zl-note-body">
+
+        <p>
+            最近联系上一个以前一起做猎头的同行，
+            没想到她还在那个圈子里，听说工资翻了好几倍。
+        </p>
+
+        <p>
+            她问我好，也关心了一下最近在查什么。
+            但我没有明说。
+        </p>
+
+        <p>
+            她叫我别查了，反正也查不出来，查出来也不会有任何改变。
+        </p>
+
+      
+
+        <p>
+        听起来她和还在这个行业里的人
+            <strong>知道的东西比我多得多。</strong>
+            也许下一步要去问问看她们？
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- 笔记2：第二周期 -->
+<div class="zl-note">
+
+    <div class="zl-note-header">
+        <span class="zl-note-date">2026.02.15 18:45</span>
+        <span class="zl-note-status">未归档</span>
+    </div>
+
+    <div class="zl-note-body">
+
+        <p>
+            根据多方拼凑，新生计划的女孩们
+            在<strong>第二阶段</strong>会被单独带走。
+        </p>
+
+        <p>
+            以我的权限，能确认的只有一件事：
+            那个阶段涉及<strong>采血</strong>检查。
+        </p>
+
+        <p>
+            至于采血之后发生了什么，我没有资格知道。
+        </p>
+
+        <p>
+            我曾经试图问过陈博士和林玉兰。
+            得到的回答是"等你权限够了，自然就知道了。"
+            我工作多年，依旧没有最高权限。
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- 笔记3：林玉兰的不老 -->
+<div class="zl-note">
+
+    <div class="zl-note-header">
+        <span class="zl-note-date">2026.02.16 22:02</span>
+        <span class="zl-note-status">未归档</span>
+    </div>
+
+    <div class="zl-note-body">
+
+        <p>
+            认识林玉兰这么多年，她从来没有变过。
+        </p>
+
+        <p>
+            说话的声音，还有她的脸。
+            从十年前到现在，一模一样。
+        </p>
+
+        <p>
+            大家不知一次调侃她，不保养也能保持这么好的状态，简直是不老女神。
+        </p>
+
+        <div class="zl-note-quote">
+            "我是千年老妖精呀，
+            专门吃童男童女的。"她这样说。
+        </div>
+
+        <p>
+            所有人都笑了。
+            现在想想，也许那是她最诚实的时刻。
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- 笔记4（最后一条，关键线索） -->
+<div class="zl-note zl-note-final">
+
+    <div class="zl-note-header">
+        <span class="zl-note-date">2026.02.16 23:41</span>
+        <span class="zl-note-status zl-status-red">最后一条</span>
+    </div>
+
+    <div class="zl-note-body">
+
+        <p>
+            下一次往这个相册里增加内容会是什么时候呢？
+        </p>
+
+        <p>
+            把我不知道的、我无法查到的，交给以后的我。
+        </p>
+
+        <p>
+            - 林玉兰的内部系统账号：
+            <strong>LYL-1969</strong>
+        </p>
+
+        <p>
+            - 密码不是生日，其实大家也不知道她确切的生日。
+        </p>
+
+        <p>
+            - 17号，他们总说每月的这一天就会重生。什么不好的事情都会清零的。
+        </p>
+
+        <p>
+            - 系统会有一批
+            <strong>"完成"</strong>记录在这天录入。
+        </p>
+
+        <p>
+            也许可以试试那个日期？
+        </p>
+
+        <p class="zl-note-hint">
+            ※ 生日和那个日期……也许可以解开什么。
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="js/game-progress.js"></script>
+
+<script>
+
+/* =====================================================
+   私密相册逻辑
+===================================================== */
+
+function openPrivateAlbum(event) {
+
+    event.preventDefault();
+
+    /* 本机已解锁过：不再重复要求密码 */
+    if (isProgressUnlocked(GAME_FLAGS.zhoulanAlbum)) {
+        document.getElementById("privateContentModal").style.display = "flex";
+        return;
+    }
+
+    document.getElementById("privateModal").style.display = "flex";
+
+    const passwordInput = document.getElementById("privatePassword");
+
+    if (passwordInput) {
+        passwordInput.focus();
+    }
+
+}
+
+
+function closePrivateModal() {
+
+    document.getElementById("privateModal").style.display = "none";
+    document.getElementById("privateError").textContent = "";
+    document.getElementById("privatePassword").value = "";
+
+}
+
+
+function unlockPrivateAlbum() {
+
+    const password =
+        document.getElementById("privatePassword").value.trim();
+
+    const error =
+        document.getElementById("privateError");
+
+    if (password === "") {
+        error.textContent = "请输入密码。";
+        return;
+    }
+
+    if (password === "0217") {
+
+        closePrivateModal();
+
+        /* 记录进度：刷新或下次打开时免密 */
+        unlockProgress(GAME_FLAGS.zhoulanAlbum);
+
+        applyZhoulanAlbumProgress();
+
+        setTimeout(function () {
+            document.getElementById("privateContentModal").style.display = "flex";
+        }, 300);
+
+    } else {
+
+        error.textContent = "密码不正确。";
+
+    }
+
+}
+
+
+function closePrivateContent() {
+
+    document.getElementById("privateContentModal").style.display = "none";
+
+}
+
+
+/* =====================================================
+   已解锁状态显示
+===================================================== */
+
+function applyZhoulanAlbumProgress() {
+
+    if (!isProgressUnlocked(GAME_FLAGS.zhoulanAlbum)) {
+        return;
+    }
+
+    const icon = document.getElementById("privateAlbumIcon");
+    const note = document.getElementById("privateAlbumNote");
+
+    if (icon) {
+        icon.textContent = "🔓";
+    }
+
+    if (note) {
+        note.textContent = "已解锁 · 本机已保存";
+    }
+
+}
+
+
+/* =====================================================
+   回车确认 / Esc 关闭
+===================================================== */
+
+document.getElementById("privatePassword").addEventListener(
+    "keydown",
+    function (event) {
+        if (event.key === "Enter") {
+            unlockPrivateAlbum();
+        }
+    }
+);
+
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Escape") {
+        return;
+    }
+
+    const passwordModal = document.getElementById("privateModal");
+    const contentModal = document.getElementById("privateContentModal");
+
+    if (passwordModal && passwordModal.style.display === "flex") {
+        closePrivateModal();
+        return;
+    }
+
+    if (contentModal && contentModal.style.display === "flex") {
+        closePrivateContent();
+    }
+
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    applyZhoulanAlbumProgress();
+});
+
+</script>
+
+
+<script src="js/evidence.js"></script>
+
+<script src="js/img-fallback.js"></script>
+
+</body>
+
+</html>

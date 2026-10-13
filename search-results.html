@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>搜索结果 · LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/lumi-results.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     顶部搜索栏
+===================================================== -->
+
+<header class="search-header">
+
+    <div class="search-header-logo">LUMI</div>
+
+    <div class="search-header-box">
+
+        <input
+            type="text"
+            id="headerSearchInput"
+            placeholder="搜索 LUMI，或输入网址"
+            autocomplete="off">
+
+        <button class="header-search-btn" onclick="doHeaderSearch()">
+            🔍
+        </button>
+
+    </div>
+
+    <div class="search-header-right">
+        <a href="browser-home.html" class="header-my-link">我的</a>
+        <a href="mengqi-social.html" class="header-avatar-link">
+            <div class="header-avatar">梦</div>
+        </a>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     返回入口（跨站统一，避免迷路）
+===================================================== -->
+
+<nav class="results-back-nav" aria-label="站点导航">
+
+    <a href="index.html">← 十七的搜索首页</a>
+    <a href="player-home.html">十七的主页</a>
+    <a href="forum.html">新生女孩论坛</a>
+    <a href="city-weekly.html">城市周刊</a>
+
+</nav>
+
+
+<!-- =====================================================
+     搜索结果列表
+===================================================== -->
+
+<main class="results-main">
+
+
+    <div class="results-count" id="resultsCount">
+        正在搜索...
+    </div>
+
+
+    <div class="results-list" id="resultsList">
+
+        <!-- 结果动态生成 -->
+
+    </div>
+
+
+    <!-- 相关搜索 -->
+    <div class="related-searches" id="relatedSearches">
+
+        <span>相关搜索：</span>
+
+        <!-- 动态生成 -->
+
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="search-footer">
+
+    <div class="search-footer-links">
+        <a>帮助</a>
+        <a>隐私</a>
+        <a>条款</a>
+        <a>设置</a>
+    </div>
+
+    <p>LUMI · 星迹搜索</p>
+
+</footer>
+
+
+<script src="js/game-progress.js"></script>
+
+<script>
+
+/* =====================================================
+   搜索数据库
+===================================================== */
+
+const resultDatabase = [
+
+
+    /* ========== 玉兰阁 ========== */
+
+    {
+        keywords: ["玉兰阁", "官网", "yulan"],
+        results: [
+            {
+                title: "玉兰阁官网 · 东方美学与生命科学",
+                url: "yulan-index.html",
+                showUrl: "yulanpavilion.hk",
+                desc: "新生计划2026年度招募中。了解核心项目、艺人档案与会员服务。"
+            },
+            {
+                title: "关于我们 · 玉兰阁",
+                url: "yulan-about.html",
+                showUrl: "yulanpavilion.hk/about",
+                desc: "创始人林玉兰、管理团队与发展历程。"
+            },
+            {
+                title: "演出公告 · 玉兰阁",
+                url: "yulan-schedule.html",
+                showUrl: "yulanpavilion.hk/schedule",
+                desc: "公开行程与内部通知。"
+            }
+        ],
+        related: ["玉兰阁 新生计划", "玉兰阁 艺人", "玉兰阁 地址", "玉兰阁 招标"]
+    },
+
+
+    {
+        keywords: ["新生计划", "训练内容", "培训", "培养"],
+        results: [
+            {
+                title: "新生计划 NEW STAR PROJECT · 玉兰阁",
+                url: "yulan-newstar.html",
+                showUrl: "yulanpavilion.hk/newstar",
+                desc: "了解培训阶段、招募要求与报名方式。"
+            },
+            {
+                title: "新生计划公开演出记录",
+                url: "yulan-schedule.html",
+                showUrl: "yulanpavilion.hk/schedule",
+                desc: "查看新生计划成员的公开行程。"
+            }
+        ],
+        related: ["新生计划 第二周期", "新生计划 报名", "新生计划 艺人"]
+    },
+
+
+    {
+        keywords: ["陈梦琪", "梦琪", "017"],
+        results: [
+            {
+                title: "陈梦琪 Mengqi · 玉兰阁艺人档案",
+                url: "yulan-member-mengqi.html",
+                showUrl: "yulanpavilion.hk/artists/mengqi",
+                desc: "新生计划成员。暂停活动中。"
+            },
+            {
+                title: "陈梦琪 Mengqi · LUMI 主页",
+                url: "mengqi-social.html",
+                showUrl: "lumi.com/mengqi_2006",
+                desc: "小偶像练习生。最后动态：2026年2月16日。"
+            },
+            {
+                title: "陈梦琪失踪后 · 城市周刊",
+                url: "mengqi-missing.html",
+                showUrl: "cityweekly.hk/news/missing",
+                desc: "最后一条动态是“明天我们准时见面哦”。"
+            }
+        ],
+        related: ["陈梦琪 最后公演", "陈梦琪 失踪", "陈梦琪 学校"]
+    },
+
+
+    {
+        keywords: ["林玉兰", "董事长", "创始人"],
+        results: [
+            {
+                title: "林玉兰 · 创始人履历 · 玉兰阁",
+                url: "linyulan.html",
+                showUrl: "yulanpavilion.hk/about/founder",
+                desc: "职业履历、历年影像与近期项目。"
+            },
+            {
+                title: "关于玉兰阁 · 创始人介绍",
+                url: "yulan-about.html",
+                showUrl: "yulanpavilion.hk/about",
+                desc: "管理团队与发展历程。"
+            }
+        ],
+        related: ["林玉兰 年龄", "林玉兰 年轻", "林玉兰 管理计划"]
+    },
+
+
+    {
+        keywords: ["管理计划", "年龄管理", "抗衰", "年轻"],
+        results: [
+            {
+                title: "管理计划 · 玉兰阁核心项目",
+                url: "yulan-newstar.html",
+                showUrl: "yulanpavilion.hk/management",
+                desc: "帮助会员管理身体状态与形象。详情请到店咨询。"
+            },
+            {
+                title: "血液研究机构宣布“突破性进展” · 城市周刊",
+                url: "blood-breakthrough.html",
+                showUrl: "cityweekly.hk/medical/breakthrough",
+                desc: "从年轻女性血液中提取特定成分，或对延缓衰老有积极作用。"
+            }
+        ],
+        related: ["血液整容 安全吗", "抗衰老 真相", "年轻 血液"]
+    },
+
+
+    {
+        keywords: ["血液整容", "抽血", "血液美容"],
+        results: [
+            {
+                title: "血液整容？危险的新趋势 · 城市周刊",
+                url: "blood-plastic-surgery.html",
+                showUrl: "cityweekly.hk/medical/blood",
+                desc: "年轻女性为变美尝试血液疗法，专家警告存在严重健康风险。"
+            }
+        ],
+        related: ["血液整容 安全吗", "抽血 美容", "血液 风险"]
+    },
+
+
+    {
+        keywords: ["血液研究", "血液", "伦理"],
+        results: [
+            {
+                title: "血液研究因伦理问题被叫停 · 城市周刊",
+                url: "blood-research-suspended.html",
+                showUrl: "cityweekly.hk/medical/suspended",
+                desc: "项目负责人陈博士此后未再公开露面。"
+            },
+            {
+                title: "血液研究机构宣布“突破性进展” · 城市周刊",
+                url: "blood-breakthrough.html",
+                showUrl: "cityweekly.hk/medical/breakthrough",
+                desc: "从年轻女性血液中提取特定成分。"
+            }
+        ],
+        related: ["血液研究 伦理", "陈博士", "抽血"]
+    },
+
+
+    {
+        keywords: ["陈维", "陈博士"],
+        results: [
+            {
+                title: "血液研究因伦理问题被叫停 · 城市周刊",
+                url: "blood-research-suspended.html",
+                showUrl: "cityweekly.hk/medical/suspended",
+                desc: "项目负责人陈博士此后未再公开露面。"
+            },
+            {
+                title: "血液研究机构宣布“突破性进展” · 城市周刊",
+                url: "blood-breakthrough.html",
+                showUrl: "cityweekly.hk/medical/breakthrough",
+                desc: "项目负责人陈博士表示：“我们正在接近一个重要的答案。”"
+            }
+        ],
+        related: ["陈博士 去向", "陈博士 玉兰阁", "血液 研究"]
+    },
+
+
+    {
+        keywords: ["演出", "公演", "舞台", "演唱会"],
+        results: [
+            {
+                title: "演出公告 · 玉兰阁",
+                url: "yulan-schedule.html",
+                showUrl: "yulanpavilion.hk/schedule",
+                desc: "公开行程与内部通知。"
+            }
+        ],
+        related: ["陈梦琪 最后公演", "新生计划 演出", "公演 取消"]
+    },
+
+
+    {
+        keywords: ["艺人档案", "艺人", "明星"],
+        results: [
+            {
+                title: "艺人档案 · 玉兰阁",
+                url: "yulan-artists.html",
+                showUrl: "yulanpavilion.hk/artists",
+                desc: "查看新生计划培养的艺人名单。"
+            },
+            {
+                title: "陈梦琪 Mengqi · 玉兰阁艺人档案",
+                url: "yulan-member-mengqi.html",
+                showUrl: "yulanpavilion.hk/artists/mengqi",
+                desc: "新生计划成员。暂停活动中。"
+            }
+        ],
+        related: ["新生计划 艺人", "玉兰阁 艺人", "陈梦琪 档案"]
+    },
+
+
+    {
+        keywords: ["招标", "扩建", "工程", "地下空间"],
+        results: [
+            {
+                title: "玉兰阁空间扩建工程 · 招标公示",
+                url: "yulan-tender.html",
+                showUrl: "yulanpavilion.hk/tender",
+                desc: "现有建筑内部改造 · 地下功能空间建设。"
+            }
+        ],
+        related: ["地下空间", "B3", "玉兰阁 扩建"]
+    },
+
+
+    {
+        keywords: ["凤凰", "凤凰指数", "命格", "phoenix"],
+        results: [
+            {
+                title: "凤凰指数评估系统",
+                url: "#",
+                showUrl: "yulanpavilion.hk/phoenix",
+                desc: "东方命理与现代美学的综合评估。仅对会员开放。",
+                special: "phoenix-glitch"
+            }
+        ],
+        related: ["凤凰指数 测试", "命格 评估", "金凤堂"]
+    },
+
+
+    {
+        keywords: ["B3", "地下", "underground"],
+        results: [
+            {
+                title: "B3 · 内部研究区域",
+                url: "underground.html",
+                showUrl: "yulanpavilion.hk/internal/b3",
+                desc: "需要 FOUNDER 权限。",
+                special: "locked"
+            },
+            {
+                title: "香港美容机构地下空间传闻 · 都市传说论坛",
+                url: "urban-forum.html",
+                showUrl: "urbanlegend.hk/underground",
+                desc: "一则来自都市传说论坛的旧帖。"
+            }
+        ],
+        related: ["B3 玉兰阁", "地下 美容", "香港 地下"]
+    },
+
+
+    {
+        keywords: ["紫霞", "紫霞美容"],
+        results: [
+            {
+                title: "紫霞美容 · 合作机构",
+                url: "yulan-index.html",
+                showUrl: "yulanpavilion.hk/partners/zixia",
+                desc: "玉兰阁合作机构。提供基础护理与会员推荐服务。"
+            }
+        ],
+        related: ["紫霞美容 地址", "紫霞 护理"]
+    },
+
+
+    {
+        keywords: ["金凤堂"],
+        results: [
+            {
+                title: "金凤堂 · 战略合作伙伴",
+                url: "yulan-index.html",
+                showUrl: "yulanpavilion.hk/partners/phoenixhall",
+                desc: "负责凤凰指数评估系统的运行。"
+            }
+        ],
+        related: ["凤凰指数", "金凤堂 测试", "命格"]
+    },
+
+
+    {
+        keywords: ["第二周期", "二周期"],
+        results: [
+            {
+                title: "新生计划培训阶段 · 玉兰阁",
+                url: "yulan-newstar.html",
+                showUrl: "yulanpavilion.hk/newstar/stages",
+                desc: "了解第一周期、第二周期与第三周期的培训内容。"
+            }
+        ],
+        related: ["第二周期 是什么", "训练 周期", "新生计划 阶段"]
+    },
+
+
+    {
+        keywords: ["会员协议", "协议", "合同"],
+        results: [
+            {
+                title: "会员协议摘要",
+                url: "yulan-contact.html",
+                showUrl: "yulanpavilion.hk/agreement",
+                desc: "第7条：会员须配合全部训练安排。第17条：不得公开训练内容。第21条：违反协议将被取消资格。"
+            }
+        ],
+        related: ["会员协议 第17条", "玉兰阁 合同"]
+    },
+
+
+    /* ========== 论坛 ========== */
+
+    {
+        keywords: ["新生女孩论坛", "整容论坛", "女孩论坛"],
+        results: [
+            {
+                title: "新生女孩论坛 · 美丽新生活",
+                url: "forum.html",
+                showUrl: "newfacegirls.hk",
+                desc: "分享你的变美故事，找到属于你的方向。"
+            },
+            {
+                title: "【求助】我是不是不够好看 · 新生女孩论坛",
+                url: "forum.html",
+                showUrl: "newfacegirls.hk/thread/017",
+                desc: "作者：梦琪。2025年6月28日。"
+            }
+        ],
+        related: ["新生女孩论坛 登录", "整容论坛 香港"]
+    },
+
+
+    {
+        keywords: ["都市传说", "都市论坛", "灵异"],
+        results: [
+            {
+                title: "香港都市传说论坛",
+                url: "urban-forum.html",
+                showUrl: "urbanlegend.hk",
+                desc: "民俗 / 灵异 / 未解事件讨论区。"
+            }
+        ],
+        related: ["都市传说 美容", "香港 怪谈", "地下 传闻"]
+    },
+
+
+    /* ========== 新闻 ========== */
+
+    {
+        keywords: ["城市周刊", "新闻", "报道", "调查"],
+        results: [
+            {
+                title: "城市周刊 CITY WEEKLY",
+                url: "city-weekly.html",
+                showUrl: "cityweekly.hk",
+                desc: "香港 · 城市 · 社会 · 调查。"
+            }
+        ],
+        related: ["城市周刊 梦琪", "城市周刊 周岚", "城市周刊 血液"]
+    },
+
+
+    {
+        keywords: ["周岚", "记者", "调查记者", "zhou"],
+        results: [
+            {
+                title: "周岚 · LUMI 个人主页",
+                url: "zhou-lan-profile.html",
+                showUrl: "lumi.com/zhou_lan",
+                desc: "城市周刊调查记者 · 资深猎头。最后登录：2026.02.17 02:17"
+            },
+            {
+                title: "调查记者周岚失踪 · 城市周刊",
+                url: "city-weekly.html",
+                showUrl: "cityweekly.hk/reporter/lan",
+                desc: "本刊调查记者周岚在追踪梦琪案期间失联。"
+            }
+        ],
+        related: ["周岚 失踪", "周岚 调查", "周岚 玉兰阁"]
+    },
+
+
+    {
+        keywords: ["失踪", "消失", "找不到"],
+        results: [
+            {
+                title: "陈梦琪失踪后 · 城市周刊",
+                url: "mengqi-missing.html",
+                showUrl: "cityweekly.hk/news/missing",
+                desc: "陈梦琪，19岁。2026年2月17日后再未公开露面。"
+            },
+            {
+                title: "本刊调查记者周岚失踪 · 城市周刊",
+                url: "city-weekly.html",
+                showUrl: "cityweekly.hk/reporter/lan",
+                desc: "在追踪梦琪案期间失联。"
+            }
+        ],
+        related: ["陈梦琪 失踪", "周岚 失踪", "香港 失踪"]
+    },
+
+
+    {
+        keywords: ["撞脸", "一样的人", "长得像", "模板", "千人一面"],
+        results: [
+            {
+                title: "街头多名少女面容相似引热议 · 城市周刊",
+                url: "city-weekly.html",
+                showUrl: "cityweekly.hk/news/face",
+                desc: "医生：像同一模板。整容模板化趋势引发担忧。"
+            }
+        ],
+        related: ["撞脸 香港", "整容 模板"]
+    },
+
+
+    {
+        keywords: ["流感", "学校", "中学"],
+        results: [
+            {
+                title: "本地中学爆发不明流感 · 城市周刊",
+                url: "school-flu.html",
+                showUrl: "cityweekly.hk/news/flu",
+                desc: "多名女生长期请假无法返校。该校为陈梦琪母校。"
+            }
+        ],
+        related: ["陈梦琪 学校", "流感 女生"]
+    },
+
+
+    {
+        keywords: ["警员", "警察", "调查停滞", "进展"],
+        results: [
+            {
+                title: "梦琪失踪案调查进展缓慢 · 城市周刊",
+                url: "investigation-stalled.html",
+                showUrl: "cityweekly.hk/news/stalled",
+                desc: "原负责警员因伤住院，案件已更换负责人。"
+            }
+        ],
+        related: ["梦琪 调查", "警方 回应"]
+    },
+
+
+    /* ========== 个人相关 ========== */
+
+    {
+        keywords: ["星星耳钉", "耳钉"],
+        results: [
+            {
+                title: "星星耳钉 · 香港购买攻略",
+                url: "#",
+                showUrl: "shopping.hk/star-earrings",
+                desc: "小众饰品店推荐。均价 HKD 50-150。"
+            }
+        ],
+        related: ["星星耳钉 哪买", "耳钉 香港"]
+    },
+
+
+    {
+        keywords: ["睡不着", "失眠", "睡眠"],
+        results: [
+            {
+                title: "凌晨总是醒？可能是压力过大",
+                url: "#",
+                showUrl: "health.hk/sleep",
+                desc: "医生建议：规律作息，避免咖啡因，必要时就医。"
+            }
+        ],
+        related: ["失眠 02:17", "凌晨 醒来"]
+    },
+
+
+    {
+        keywords: ["天使灵数", "天使数字", "17"],
+        results: [
+            {
+                title: "天使数字 17 的含义",
+                url: "#",
+                showUrl: "mystic.hk/angel-number-17",
+                desc: "17 意味着新的开始。你最近是否在凌晨 02:17 醒来？"
+            }
+        ],
+        related: ["天使数字 17", "02:17 意思", "灵数"]
+    },
+
+
+    {
+        keywords: ["整容", "削骨", "手术", "恢复期"],
+        results: [
+            {
+                title: "全脸削骨手术恢复期指南 · 新生女孩论坛",
+                url: "forum.html",
+                showUrl: "newfacegirls.hk/surgery",
+                desc: "术后恢复需要 3-6 个月。姐妹们分享经验。"
+            },
+            {
+                title: "血液整容？危险的新趋势 · 城市周刊",
+                url: "blood-plastic-surgery.html",
+                showUrl: "cityweekly.hk/medical/blood",
+                desc: "年轻女性为变美尝试血液疗法。"
+            }
+        ],
+        related: ["整容 恢复期", "削骨 多少钱", "整容 风险"]
+    },
+
+
+    {
+        keywords: ["摩斯", "摩斯密码", "morse"],
+        results: [
+            {
+                title: "摩斯密码对照表",
+                url: "#",
+                showUrl: "lumi.com/tools/morse",
+                desc: "GIRLS = --. .. .-. .-.. ... / B3 = -... ...-- / 0217 = ----- ..--- .---- --..."
+            }
+        ],
+        related: ["摩斯密码 翻译", "摩斯 代码"]
+    },
+
+
+    {
+        keywords: ["密码"],
+        results: [
+            {
+                title: "密码管理提示",
+                url: "#",
+                showUrl: "lumi.com/security",
+                desc: "重要的事，不要忘记那天。"
+            }
+        ],
+        related: ["密码 忘记", "LUMI 密码"]
+    },
+
+
+    /* ========== 商业词 ========== */
+
+    {
+        keywords: ["价格", "费用", "多少钱", "收费"],
+        results: [
+            {
+                title: "玉兰阁项目价格说明",
+                url: "yulan-contact.html",
+                showUrl: "yulanpavilion.hk/pricing",
+                desc: "每位会员的情况不同，具体方案请到店咨询顾问。"
+            }
+        ],
+        related: ["玉兰阁 价格", "新生计划 费用"]
+    },
+
+
+    {
+        keywords: ["优惠", "折扣", "活动"],
+        results: [
+            {
+                title: "当前优惠活动 · 玉兰阁",
+                url: "yulan-index.html",
+                showUrl: "yulanpavilion.hk/promo",
+                desc: "新生计划报名成员可获赠免费面部分析一次。优惠码：YL-AGE-57"
+            }
+        ],
+        related: ["玉兰阁 优惠", "新生计划 折扣"]
+    },
+
+
+    {
+        keywords: ["地址", "门店", "在哪", "位置"],
+        results: [
+            {
+                title: "玉兰阁门店位置",
+                url: "yulan-contact.html",
+                showUrl: "yulanpavilion.hk/location",
+                desc: "香港九龙区玉兰道1号。营业时间 09:00-18:00。"
+            }
+        ],
+        related: ["玉兰阁 在哪", "玉兰阁 地址"]
+    },
+
+
+    {
+        keywords: ["招聘", "工作", "兼职"],
+        results: [
+            {
+                title: "加入玉兰阁",
+                url: "yulan-contact.html",
+                showUrl: "yulanpavilion.hk/careers",
+                desc: "长期招募形象顾问与培训助理。"
+            }
+        ],
+        related: ["玉兰阁 招聘", "美容 工作"]
+    },
+
+
+    {
+        keywords: ["保养", "护肤", "皮肤", "美容", "护理"],
+        results: [
+            {
+                title: "美容护理服务 · 玉兰阁",
+                url: "yulan-index.html",
+                showUrl: "yulanpavilion.hk/beauty",
+                desc: "基础护理、深层清洁、形象设计等多种服务。"
+            }
+        ],
+        related: ["皮肤 管理", "美容 护理"]
+    },
+
+
+    {
+        keywords: ["电话", "联系", "客服"],
+        results: [
+            {
+                title: "联系我们 · 玉兰阁",
+                url: "yulan-contact.html",
+                showUrl: "yulanpavilion.hk/contact",
+                desc: "门店地址、客服热线及各部门联系方式。"
+            }
+        ],
+        related: ["玉兰阁 电话", "玉兰阁 邮箱"]
+    }
+
+];
+
+
+/* =====================================================
+   搜索逻辑
+===================================================== */
+
+function getKeywordFromURL() {
+
+    const params = new URLSearchParams(window.location.search);
+    return params.get("q") || "";
+
+}
+
+
+function doSearch() {
+
+    const keyword =
+        document.getElementById("headerSearchInput").value.trim();
+
+    if (keyword === "") {
+        return;
+    }
+
+    window.location.href =
+        "search-results.html?q=" + encodeURIComponent(keyword);
+
+}
+
+
+function doHeaderSearch() {
+    doSearch();
+}
+
+
+/* =====================================================
+   查询分词与相关度评分
+   —— 原实现按 resultDatabase 顺序做 first-match-wins，
+      组合关键词（如「玉兰阁 招标」「陈梦琪 学校」）
+      永远只能命中排在最前面的区块。
+      这里改为：对每个区块独立评分，全部命中区块一起返回。
+===================================================== */
+
+function normalizeSearchText(value) {
+
+    return String(value === undefined || value === null ? "" : value)
+        .toLowerCase()
+        .replace(/[\s\u3000]+/g, " ")
+        .trim();
+
+}
+
+
+/* 把查询拆成词元：整串优先，同时保留按空格拆开的每个词 */
+
+function buildQueryTokens(keyword) {
+
+    const normalized = normalizeSearchText(keyword);
+
+    if (normalized === "") {
+        return [];
+    }
+
+    const tokens = [];
+
+    normalized.split(" ").forEach(function (part) {
+        if (part !== "" && tokens.indexOf(part) === -1) {
+            tokens.push(part);
+        }
+    });
+
+    return tokens;
+
+}
+
+
+/* 单个区块的得分
+   - 完全等于关键词        100
+   - 以关键词开头          70 + 关键词长度
+   - 包含关键词            50 + 关键词长度
+   - 越靠后的限定词权重越高（后一个词通常是在收窄范围），
+     所以「玉兰阁 招标」会优先给出「招标公示」，
+     「陈梦琪 学校」会优先给出与学校相关的报道。 */
+
+function scoreResultBlock(block, tokens) {
+
+    let total = 0;
+    let hits = 0;
+    let longest = 0;
+
+    tokens.forEach(function (token, tokenIndex) {
+
+        let best = 0;
+        let bestKeyword = "";
+
+        block.keywords.forEach(function (keyword) {
+
+            const k = normalizeSearchText(keyword);
+
+            if (k === "") {
+                return;
+            }
+
+            let quality = 0;
+
+            if (token === k) {
+                quality = 100;
+            } else if (token.indexOf(k) === 0) {
+                quality = 70 + k.length;
+            } else if (token.indexOf(k) !== -1) {
+                quality = 50 + k.length;
+            }
+
+            if (quality > best) {
+                best = quality;
+                bestKeyword = k;
+            }
+
+        });
+
+        if (best > 0) {
+
+            total += best * (1 + tokenIndex * 0.5);
+            hits += 1;
+
+            if (bestKeyword.length > longest) {
+                longest = bestKeyword.length;
+            }
+
+        }
+
+    });
+
+    return {
+        total: total,
+        hits: hits,
+        longest: longest
+    };
+
+}
+
+
+function displayResults() {
+
+    const keyword = getKeywordFromURL();
+
+    if (keyword === "") {
+
+        document.getElementById("resultsCount").textContent =
+            "请输入搜索内容";
+
+        document.getElementById("resultsList").innerHTML = "";
+
+        document.getElementById("relatedSearches").style.display = "none";
+
+        return;
+
+    }
+
+
+    document.getElementById("headerSearchInput").value = keyword;
+
+
+    /* 特殊关键词处理 */
+
+    if (keyword.includes("0217") || keyword === "02:17") {
+
+        document.body.classList.add("glitch-body");
+
+        setTimeout(function () {
+            document.body.classList.remove("glitch-body");
+        }, 500);
+
+        document.getElementById("resultsCount").textContent =
+            "搜索「" + keyword + "」· 无结果";
+
+        document.getElementById("resultsList").innerHTML = `
+            <div class="search-result-item">
+                <p class="no-results">未找到与「${keyword}」相关的公开资料。</p>
+                <p class="no-results-sub">该关键词可能涉及内部信息。</p>
+            </div>
+        `;
+
+        document.getElementById("relatedSearches").style.display = "none";
+
+        return;
+
+    }
+
+
+    if (keyword.includes("LYL") || keyword.includes("林玉兰账号")) {
+
+        document.getElementById("resultsCount").textContent =
+            "搜索「" + keyword + "」· 1条结果";
+
+        document.getElementById("resultsList").innerHTML = `
+            <div class="search-result-item locked-result">
+                <div class="result-url">yulanpavilion.hk/internal/lyl</div>
+                <span class="result-title no-link">访问受限</span>
+                <p class="result-desc">该账号需要 FOUNDER 权限。</p>
+                <p class="result-locked-note">🔒 已锁定</p>
+            </div>
+        `;
+
+        document.getElementById("relatedSearches").style.display = "none";
+
+        return;
+
+    }
+
+
+    /* =================================================
+       匹配结果
+       —— 收集所有命中的区块，而不是只取第一个
+       （原实现 first-match-wins：
+        「玉兰阁 招标」只会命中「玉兰阁」区块，「招标公示」永远搜不到）
+    ================================================= */
+
+    const tokens = buildQueryTokens(keyword);
+
+    const matchedBlocks = [];
+
+    resultDatabase.forEach(function (item, index) {
+
+        const score = scoreResultBlock(item, tokens);
+
+        if (score.total > 0) {
+            score.order = index;
+            matchedBlocks.push({ block: item, score: score, order: index });
+        }
+
+    });
+
+
+    /* 相关度排序：总分 → 命中词元数 → 最长关键词 → 原始顺序 */
+
+    matchedBlocks.sort(function (a, b) {
+
+        if (b.score.total !== a.score.total) {
+            return b.score.total - a.score.total;
+        }
+
+        if (b.score.hits !== a.score.hits) {
+            return b.score.hits - a.score.hits;
+        }
+
+        if (b.score.longest !== a.score.longest) {
+            return b.score.longest - a.score.longest;
+        }
+
+        return a.order - b.order;
+
+    });
+
+
+    if (matchedBlocks.length === 0) {
+
+        document.getElementById("resultsCount").textContent =
+            "未找到与「" + keyword + "」相关的结果。";
+
+        document.getElementById("resultsList").innerHTML = `
+            <div class="no-results">
+                <p>请尝试其他关键词。</p>
+            </div>
+        `;
+
+        document.getElementById("relatedSearches").style.display = "none";
+
+        return;
+
+    }
+
+
+    /* =================================================
+       合并所有区块的结果（同一标题 + 链接只保留一次）
+    ================================================= */
+
+    const mergedResults = [];
+    const seenResultKeys = {};
+
+    matchedBlocks.forEach(function (entry) {
+
+        entry.block.results.forEach(function (result) {
+
+            const resultKey = result.title + "|" + (result.url || "");
+
+            if (seenResultKeys[resultKey]) {
+                return;
+            }
+
+            seenResultKeys[resultKey] = true;
+            mergedResults.push(result);
+
+        });
+
+    });
+
+
+    document.getElementById("resultsCount").textContent =
+        "找到约 " + mergedResults.length + " 条结果";
+
+
+    let resultsHTML = "";
+
+    mergedResults.forEach(function (result) {
+
+        if (result.special === "phoenix-glitch") {
+
+            resultsHTML += `
+                <div class="search-result-item">
+                    <div class="result-url">${result.showUrl}</div>
+                    <span class="result-title no-link">凤█</span>
+                    <p class="result-desc">正在访问…</p>
+                </div>
+            `;
+
+            /* 延迟跳转 */
+            setTimeout(function () {
+                window.location.href = "phoenix.html";
+            }, 1500);
+
+            return;
+
+        }
+
+        if (result.special === "locked") {
+
+            /* 已解锁：直接作为普通结果呈现
+               （"founder_access" 与 js/game-progress.js 中
+                 GAME_FLAGS.founderAccess 的值一致，这里用字面量
+                 以免依赖脚本加载顺序） */
+            if (typeof isProgressUnlocked === "function" &&
+                isProgressUnlocked("founder_access")) {
+
+                resultsHTML += `
+                    <div class="search-result-item">
+                        <div class="result-url">${result.showUrl}</div>
+                        <a href="${result.url}" class="result-title">${result.title}</a>
+                        <p class="result-desc">${result.desc}</p>
+                        <p class="result-locked-note result-unlocked-note">🔓 权限已验证</p>
+                    </div>
+                `;
+
+                return;
+
+            }
+
+            /* 未解锁：仍然可点击，由目标页面给出访问提示与线索方向 */
+            resultsHTML += `
+                <div class="search-result-item locked-result">
+                    <div class="result-url">${result.showUrl}</div>
+                    <a href="${result.url}" class="result-title locked-title">${result.title}</a>
+                    <p class="result-desc">${result.desc}</p>
+                    <p class="result-locked-note">🔒 需要 FOUNDER 权限 · 点击验证身份</p>
+                </div>
+            `;
+
+            return;
+
+        }
+
+        resultsHTML += `
+            <div class="search-result-item">
+
+                <div class="result-url">
+                    ${result.showUrl}
+                </div>
+
+                ${result.url !== "#" ?
+                    `<a href="${result.url}" class="result-title">${result.title}</a>` :
+                    `<span class="result-title no-link">${result.title}</span>`
+                }
+
+                <p class="result-desc">${result.desc}</p>
+
+            </div>
+        `;
+
+    });
+
+    document.getElementById("resultsList").innerHTML = resultsHTML;
+
+
+    /* =================================================
+       相关搜索：合并所有命中区块的建议并去重
+    ================================================= */
+
+    const relatedList = [];
+    const seenRelated = {};
+
+    matchedBlocks.forEach(function (entry) {
+
+        (entry.block.related || []).forEach(function (rel) {
+
+            if (seenRelated[rel]) {
+                return;
+            }
+
+            seenRelated[rel] = true;
+            relatedList.push(rel);
+
+        });
+
+    });
+
+
+    if (relatedList.length > 0) {
+
+        let relatedHTML = "<span>相关搜索：</span>";
+
+        relatedList.slice(0, 10).forEach(function (rel) {
+
+            relatedHTML += `
+                <a href="search-results.html?q=${encodeURIComponent(rel)}">
+                    ${rel}
+                </a>
+            `;
+
+        });
+
+        document.getElementById("relatedSearches").innerHTML = relatedHTML;
+        document.getElementById("relatedSearches").style.display = "flex";
+
+    } else {
+
+        document.getElementById("relatedSearches").style.display = "none";
+
+    }
+
+}
+
+
+document.getElementById("headerSearchInput").addEventListener(
+    "keydown",
+    function (event) {
+        if (event.key === "Enter") {
+            doSearch();
+        }
+    }
+);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    displayResults();
+});
+
+</script>
+
+
+</body>
+
+</html>

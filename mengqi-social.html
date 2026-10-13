@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>陈梦琪 Mengqi · LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@900&family=Archivo+Black&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/y2k.css">
+
+<link rel="stylesheet" href="css/mengqi.css">
+
+<link rel="stylesheet" href="css/game-progress.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="lumi-topbar">
+
+    <div class="topbar-left">
+        <a href="index.html" class="back-link">←</a>
+        <span class="topbar-title">陈梦琪的主页</span>
+    </div>
+
+    <div class="topbar-right">
+        <span class="topbar-icon">🔍</span>
+        <span class="topbar-icon">⚙</span>
+    </div>
+
+</header>
+
+<!-- =====================================================
+     返回入口（跨站统一，避免迷路）
+===================================================== -->
+
+<nav class="gp-back-nav cross-nav" aria-label="站点导航">
+
+    <a href="index.html">← 返回搜索</a>
+    <a href="player-home.html">十七的主页</a>
+    <a href="browser-home.html">LUMI 首页</a>
+    <a href="forum.html">新生女孩论坛</a>
+    <a href="city-weekly.html">城市周刊</a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     个人资料区
+===================================================== -->
+
+<section class="profile-card">
+
+    <div class="profile-cover">
+        <img src="images/mengqi/cover.png" alt="梦琪背景图">
+        <span class="profile-cover-mark" aria-hidden="true">MENGQI</span>
+    </div>
+
+    <div class="profile-top">
+
+        <div class="profile-avatar-wrap">
+            <img src="images/mengqi/avatar.png" alt="梦琪头像" loading="lazy" decoding="async">
+        </div>
+
+        <div class="profile-actions">
+            <button class="btn-follow">+ 关注</button>
+            <button class="btn-message" onclick="openMessageModal()">✉ 私信</button>
+        </div>
+
+    </div>
+
+    <div class="profile-info">
+
+        <h1 class="profile-name">
+            陈梦琪 Mengqi
+            <span class="verified">✓</span>
+        </h1>
+
+        <p class="profile-username">
+            @mengqi_2006
+        </p>
+
+        <p class="profile-bio">
+            LUMI 认证艺人 · 玉兰阁新生计划成员
+        </p>
+
+        <p class="profile-desc">
+            偶像练习生。
+            <br>
+            喜欢唱歌、拍照。
+            
+        </p>
+
+        <p class="profile-location">
+            📍 香港
+        </p>
+
+    </div>
+
+    <div class="profile-stats">
+
+        <a class="stat">
+            <strong>12</strong>
+            <span>关注</span>
+        </a>
+
+        <a class="stat">
+            <strong>2,847</strong>
+            <span>粉丝</span>
+        </a>
+
+        <a class="stat">
+            <strong>36</strong>
+            <span>帖子</span>
+        </a>
+
+        <a class="stat">
+            <strong>1.8万</strong>
+            <span>获赞</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     内容标签栏
+===================================================== -->
+
+<nav class="content-tabs">
+
+    <a class="tab active">帖子</a>
+    <a class="tab">相册</a>
+    <a class="tab">粉丝留言</a>
+    <a class="tab">关于她</a>
+
+</nav>
+
+
+<!-- =====================================================
+     主内容区
+===================================================== -->
+
+<main class="content-main">
+
+
+    <!-- ====================== 左侧 ====================== -->
+
+    <aside class="sidebar-left">
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>相册</h3>
+                <a>查看全部 →</a>
+            </div>
+
+            <div class="album-preview">
+
+                <div class="album-thumb">
+                    <img src="images/mengqi/photo1.jpg" alt="舞台照" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/mengqi/photo2.jpg" alt="日常照" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/mengqi/photo3.jpg" alt="自拍" loading="lazy" decoding="async">
+                </div>
+
+                <div class="album-thumb">
+                    <img src="images/mengqi/photo4.jpg" alt="路透" loading="lazy" decoding="async">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>她关注的</h3>
+                <a>更多 →</a>
+            </div>
+
+            <div class="follow-list">
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-3" role="img" aria-label="玉兰阁官方">&#9679;</div>
+                    <span>玉兰阁官方</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-7" role="img" aria-label="新生计划">&#9661;</div>
+                    <span>新生计划</span>
+                </div>
+
+                <div class="follow-item">
+                    <div class="text-avatar ta-6" role="img" aria-label="偶像应援站">&#10035;</div>
+                    <span>偶像应援站</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-section">
+
+            <div class="side-header">
+                <h3>最近访客</h3>
+            </div>
+
+            <div class="visitor-list">
+
+                <div class="visitor-item">
+                    <img src="images/player/avatar.jpg" alt="访客1" loading="lazy" decoding="async">
+                    <span>十七</span>
+                </div>
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-6" role="img" aria-label="等待一颗星">&#10035;</div>
+                    <span>等待一颗星</span>
+                </div>
+
+                <div class="visitor-item">
+                    <div class="text-avatar ta-4" role="img" aria-label="梦琪今天回来了吗">&#9632;</div>
+                    <span>梦琪今天回来了吗</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ====================== 右侧动态流 ====================== -->
+
+    <section class="feed">
+
+
+        <!-- =====================================================
+             置顶 · 自我介绍
+        ====================================================== -->
+
+        <div class="feed-item pinned">
+
+            <div class="feed-label">📌 置顶</div>
+
+            <div class="feed-content">
+
+                <p>
+                    大家好，我是梦琪。
+                </p>
+
+                <p>
+                    我是玉兰阁新生计划的新人偶像。
+                
+                </p>
+
+                <p>
+                  昨天是我第一次站上舞台，虽然非常紧张，但是还是收获了大家的掌声。
+                </p>
+
+                <p>
+                    以后我会继续加油，给大家带来更多好作品。
+                </p>
+
+                <p>
+                    谢谢所有人的支持！
+                </p>
+
+                <div class="feed-images single-image">
+                    <img src="images/mengqi/stage-first.jpg" alt="初舞台照片" loading="lazy" decoding="async">
+                </div>
+
+            </div>
+
+            <div class="feed-meta">
+                置顶 · 2025.12.18 01:07 发布
+            </div>
+
+            <div class="post-actions">
+                <button class="action-btn">
+                    <span class="action-icon">💬</span>
+                    评论 <span class="action-count">47</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon">👍</span>
+                    赞 <span class="action-count">2847</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon">↗</span>
+                    分享
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             最后一条动态 · 明天也要加油
+        ====================================================== -->
+
+        <div class="feed-item last-post">
+
+            <div class="feed-content">
+
+                <p>
+                    明天我也会加油的！
+                </p>
+
+                <p>
+                    明天的舞台我会唱这次专辑的新歌。
+                    我有点紧张，但也很期待。
+                </p>
+
+                <p>
+                    大家晚安，明天我们准时见面哦。
+                </p>
+
+                <p>
+                    🌙
+                </p>
+
+            </div>
+
+            <div class="feed-meta" data-evidence="social-last-post"
+                data-evidence-title="LUMI · 陈梦琪主页 · 最后一条动态"
+                data-evidence-date="2026.02.16 23:58">
+                2026.02.16 23:58 · 来自 LUMI
+            </div>
+
+            <div class="post-actions">
+                <button class="action-btn" onclick="toggleMengqiComments()">
+                    <span class="action-icon">💬</span>
+                    评论 <span class="action-count">127</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon">👍</span>
+                    赞 <span class="action-count">3021</span>
+                </button>
+                <button class="action-btn">
+                    <span class="action-icon">↗</span>
+                    分享
+                </button>
+            </div>
+
+            <!-- 粉丝留言 -->
+            <div class="comment-area weibo-comments" id="mengqiComments" style="display:block;">
+                <div class="comment-list">
+
+                    <div class="comment-item">
+                        <img src="images/player/avatar.jpg" alt="十七" class="comment-avatar">
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七
+                                <span class="comment-time">2026.02.17 00:17</span>
+                            </div>
+                            <p>
+                                梦琪明天见！我会在一排一座支持你的！
+                               
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-6" role="img" aria-label="等待一颗星">&#10035;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                等待一颗星
+                                <span class="comment-time">2026.02.17 00:41</span>
+                            </div>
+                            <p>
+                                晚安！明天见！
+                                我准备了好大的灯牌，你一定要看到哦。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-4" role="img" aria-label="梦琪今天回来了吗">&#9632;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                梦琪今天回来了吗
+                                <span class="comment-time">2026.02.17 07:02</span>
+                            </div>
+                            <p>
+                                
+                                晚上见。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-3" role="img" aria-label="不知道取什么名字">&#9679;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                不知道取什么名字
+                                <span class="comment-time">2026.02.17 18:30</span>
+                            </div>
+                            <p>
+                                我已经到现场啦！
+                                好开心~
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-5" role="img" aria-label="别留我一个人">&#9670;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                别留我一个人
+                                <span class="comment-time">2026.02.18 00:02</span>
+                            </div>
+                            <p>
+                                你今天唱得好好呀宝宝！
+                                唯一的遗憾是今天谢幕没有你…身体早日康复哦。
+                               
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <img src="images/player/avatar.jpg" alt="十七" class="comment-avatar">
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七
+                                <span class="comment-time">2026.02.18 01:00</span>
+                            </div>
+                            <p>
+                              宝宝今天也表现得超级好~~
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-7" role="img" aria-label="月亮不营业">&#9661;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                月亮不营业
+                                <span class="comment-time">2026.02.19 03:17</span>
+                            </div>
+                            <p>
+                                两天了。我需要新鲜的自拍回回血~
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-3" role="img" aria-label="梦琪的梦">&#9679;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                梦琪的梦
+                                <span class="comment-time">2026.03.01 02:17</span>
+                            </div>
+                            <p>
+                                今天是第三十天，还是没有你的消息。我们想你！
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar text-avatar ta-4" role="img" aria-label="等你回来">&#9632;</div>
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                等你回来
+                                <span class="comment-time">2026.04.01 23:58</span>
+                            </div>
+                            <p>
+                                
+                                梦琪，大家都没有忘记你。
+                                你也不要忘记我们。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <img src="images/player/avatar.jpg" alt="十七" class="comment-avatar">
+                        <div class="comment-body">
+                            <div class="comment-user">
+                                十七
+                                <span class="comment-time">2026.04.05 14:17</span>
+                            </div>
+                            <p>
+                                第48天，
+                                我还在。
+                                我会找到你的。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+       
+
+
+        <!-- =====================================================
+             动态 · 耳钉
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    今天杂志采访有一个问题是我为什么喜欢星星耳钉，其实没有什么特别的原因。
+                </p>
+
+                
+
+                <p>
+                    星星很小，但很远也能看到。
+                    我也想做那样的人。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2025.12.20 19:07 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             动态 · 关于消失前几天的最后一条日常
+        ====================================================== -->
+
+        <div class="feed-item">
+
+            <div class="feed-content">
+
+                <p>
+                    最近训练量变多了。
+                </p>
+
+                <p>
+                    顾问说我在进步。
+                    但我也好累。
+                </p>
+
+                <p>
+                    不过想到大家会看到我，就不累了。
+                </p>
+
+            </div>
+
+            <div class="feed-meta">
+                2026.02.10 21:37 · 来自 LUMI
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             底部
+        ====================================================== -->
+
+        <div class="feed-end">
+            已经是最后一条动态了 
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="player-footer">
+
+    <p>LUMI 个人主页 · 陈梦琪 Mengqi</p>
+    <p data-evidence="social-last-login"
+        data-evidence-title="LUMI · 陈梦琪主页 · 页脚"
+        data-evidence-date="2026.02.16 23:58">最后登录：2026.02.16 23:58</p>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     私信弹窗
+===================================================== -->
+
+<div class="message-modal" id="messageModal">
+
+    <div class="message-bg" onclick="closeMessageModal()"></div>
+
+    <div class="message-card">
+
+        <button class="message-close" onclick="closeMessageModal()">×</button>
+
+        <div class="message-header">
+            <span>✉ 私信</span>
+            <small>MESSAGES</small>
+        </div>
+
+        <div class="message-list">
+
+
+            <!-- 私信1：十七（粉丝应援） -->
+            <div class="message-item" onclick="openChat('chat1')">
+
+                <div class="message-avatar">十</div>
+
+                <div class="message-info">
+                    <strong>十七</strong>
+                    <p>梦琪明天见！我会在一排一座支持你的！</p>
+                </div>
+
+                <span class="message-time">02.16</span>
+
+            </div>
+
+
+            <!-- 私信2：等待一颗星（粉丝） -->
+            <div class="message-item" onclick="openChat('chat2')">
+
+                <div class="message-avatar">星</div>
+
+                <div class="message-info">
+                    <strong>等待一颗星</strong>
+                    <p>宝宝你这张照片太可爱了！</p>
+                </div>
+
+                <span class="message-time">02.15</span>
+
+            </div>
+
+
+            <!-- 私信3：玉兰阁官方（公司通知） -->
+            <div class="message-item" onclick="openChat('chat3')">
+
+                <div class="message-avatar official-avatar">玉</div>
+
+                <div class="message-info">
+                    <strong>玉兰阁官方</strong>
+                    <p>演出安排确认通知</p>
+                </div>
+
+                <span class="message-time">02.15</span>
+
+            </div>
+
+
+            <!-- 私信4：品牌合作（商务） -->
+            <div class="message-item" onclick="openChat('chat4')">
+
+                <div class="message-avatar brand-avatar">合</div>
+
+                <div class="message-info">
+                    <strong>某饰品品牌合作</strong>
+                    <p>梦琪你好，关于合作方案...</p>
+                </div>
+
+                <span class="message-time">02.14</span>
+
+            </div>
+
+
+            <!-- 私信5：朋友/同学 -->
+            <div class="message-item" onclick="openChat('chat5')">
+
+                <div class="message-avatar friend-avatar">友</div>
+
+                <div class="message-info">
+                    <strong>小美（同学）</strong>
+                    <p>你现在好忙哦，都约不到你</p>
+                </div>
+
+                <span class="message-time">02.13</span>
+
+            </div>
+
+
+            <!-- 私信6：异常1 -->
+            <div class="message-item weird-message" onclick="openChat('chat6')">
+
+                <div class="message-avatar warning-avatar">?</div>
+
+                <div class="message-info">
+                    <strong>匿名用户</strong>
+                    <p>我昨天在旺角看到你了。但是...</p>
+                </div>
+
+                <span class="message-time">02.12</span>
+
+            </div>
+
+
+            <!-- 私信7：异常2 -->
+            <div class="message-item weird-message" onclick="openChat('chat7')">
+
+                <div class="message-avatar warning-avatar">?</div>
+
+                <div class="message-info">
+                    <strong>匿名用户</strong>
+                    <p>他们说你会变得更好。他们骗你。</p>
+                </div>
+
+                <span class="message-time">02.10</span>
+
+            </div>
+
+
+            <!-- 私信8：已删除 -->
+            <div class="message-item deleted-message-item">
+
+                <div class="message-avatar deleted-avatar">—</div>
+
+                <div class="message-info">
+                    <strong>已删除用户</strong>
+                    <p>此消息已被删除。</p>
+                </div>
+
+                <span class="message-time">02.09</span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     聊天内容弹窗
+===================================================== -->
+
+<div class="chat-modal" id="chatModal">
+
+    <div class="chat-modal-bg" onclick="closeChat()"></div>
+
+    <div class="chat-modal-card">
+
+        <button class="chat-modal-close" onclick="closeChat()">×</button>
+
+        <div class="chat-modal-header" id="chatModalHeader">
+            <strong>私信</strong>
+        </div>
+
+        <div class="chat-modal-body" id="chatModalBody">
+
+            <!-- 对话动态填入 -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   评论切换
+===================================================== */
+
+function toggleMengqiComments() {
+
+    const commentArea =
+        document.getElementById("mengqiComments");
+
+    if (
+        commentArea.style.display === "none" ||
+        commentArea.style.display === ""
+    ) {
+        commentArea.style.display = "block";
+    } else {
+        commentArea.style.display = "none";
+    }
+
+}
+
+
+/* =====================================================
+   私信弹窗
+===================================================== */
+
+function openMessageModal() {
+    document.getElementById("messageModal").style.display = "flex";
+}
+
+function closeMessageModal() {
+    document.getElementById("messageModal").style.display = "none";
+}
+
+
+/* =====================================================
+   聊天内容
+===================================================== */
+
+const chatData = {
+
+    /* 十七：粉丝应援 */
+    chat1: {
+        user: "十七",
+        messages: [
+            { from: "other", text: "梦琪明天见！我会在一排一座支持你的！" },
+            { from: "user", text: "哇！谢谢你！明天我会加油的！" },
+            { from: "other", text: "早点休息，明天见！" },
+            { from: "user", text: "晚安！" }
+        ]
+    },
+
+    /* 等待一颗星：粉丝 */
+    chat2: {
+        user: "等待一颗星",
+        messages: [
+            { from: "other", text: "宝宝你这张照片太可爱了！" },
+            { from: "user", text: "嘿嘿谢谢！是造型师帮我拍的" },
+            { from: "other", text: "可以拿来做壁纸吗？" },
+            { from: "user", text: "当然可以呀！" },
+            { from: "other", text: "好耶！谢谢宝宝！" }
+        ]
+    },
+
+    /* 玉兰阁官方：公司通知 */
+    chat3: {
+        user: "玉兰阁官方",
+        messages: [
+            { from: "other", text: "梦琪你好，2月17日的演出已确认。" },
+            { from: "other", text: "请于当天下午2点到训练中心集合。" },
+            { from: "user", text: "好的，我会准时到。" },
+            { from: "other", text: "演出结束后，请留在后台，顾问会单独找你。" },
+            { from: "user", text: "好的，是有什么事吗？" },
+            { from: "other", text: "有一些后续安排需要面谈。不用紧张。" }
+        ]
+    },
+
+    /* 品牌合作：商务 */
+    chat4: {
+        user: "某饰品品牌合作",
+        messages: [
+            { from: "other", text: "梦琪你好，我们是一个小众饰品品牌。" },
+            { from: "other", text: "注意到你的星星耳钉很受欢迎。" },
+            { from: "other", text: "想邀请你进行合作推广，详情如下..." },
+            { from: "user", text: "谢谢邀请！请问具体是什么形式？" },
+            { from: "other", text: "发几张佩戴我们产品的照片+一条动态即可。" },
+            { from: "user", text: "好的，我考虑一下再回复您。" }
+        ]
+    },
+
+    /* 小美：朋友 */
+    chat5: {
+        user: "小美（同学）",
+        messages: [
+            { from: "other", text: "你现在好忙哦，都约不到你" },
+            { from: "user", text: "最近训练太多了，等忙完这阵子请你吃饭！" },
+            { from: "other", text: "说话算话哦。你最近还好吗？" },
+            { from: "user", text: "还好，就是有点累" },
+            { from: "other", text: "我看你发的最新的动态，感觉你脸色不太好" },
+            { from: "user", text: "可能没睡好。没事的" },
+            { from: "other", text: "要多休息啊。有事记得和我说" }
+        ]
+    },
+
+    /* 匿名用户：撞脸怪谈 */
+    chat6: {
+        user: "匿名用户",
+        messages: [
+            { from: "other", text: "我昨天在旺角看到你了。" },
+
+            { from: "other", text: "但是她说她不叫梦琪。" },
+            { from: "user", text: "你是谁？" },
+            { from: "other", text: "不重要。你要小心。" },
+            { from: "other", text: "你没有看到你身后的人。" }
+        ]
+    },
+
+    /* 匿名用户：第二周期警告 */
+    chat7: {
+        user: "匿名用户",
+        messages: [
+     
+            { from: "other", text: "他们骗你。" },
+            { from: "user", text: "你是谁？" },
+            { from: "other", text: "别告诉他们我联系过你。" }
+        ]
+    }
+
+};
+
+
+/* =====================================================
+   打开聊天
+===================================================== */
+
+function openChat(chatId) {
+
+    closeMessageModal();
+
+    const chat = chatData[chatId];
+
+    if (!chat) return;
+
+    const header = document.getElementById("chatModalHeader");
+    const body = document.getElementById("chatModalBody");
+
+    header.innerHTML = `
+        <strong>${chat.user}</strong>
+    `;
+
+    let messagesHTML = "";
+
+    chat.messages.forEach(function (msg) {
+
+        const msgClass = msg.from === "user" ? "msg-from-mengqi" : "msg-from-other";
+
+        messagesHTML += `
+            <div class="chat-message ${msgClass}">
+                <p>${msg.text}</p>
+            </div>
+        `;
+
+    });
+
+    body.innerHTML = messagesHTML;
+
+    document.getElementById("chatModal").style.display = "flex";
+
+    body.scrollTop = body.scrollHeight;
+
+}
+
+
+/* =====================================================
+   关闭聊天
+===================================================== */
+
+function closeChat() {
+    document.getElementById("chatModal").style.display = "none";
+}
+
+</script>
+
+
+<script src="js/evidence.js"></script>
+
+<script src="js/img-fallback.js"></script>
+
+</body>
+
+</html>

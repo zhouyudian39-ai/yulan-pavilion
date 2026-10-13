@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LUMI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/index.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     顶部导航
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="topbar-left">
+        <a class="top-link">新闻</a>
+        <a class="top-link">图片</a>
+        <a class="top-link">视频</a>
+        <a class="top-link">地图</a>
+    </div>
+
+    <div class="topbar-right">
+        <a href="player-home.html" class="my-link">我的</a>
+        <a href="player-home.html" class="avatar-link">
+            <div class="avatar">十</div>
+        </a>
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     主页视图（默认显示）
+===================================================== -->
+
+<main class="search-main" id="homeView">
+
+
+    <!-- Logo -->
+
+    <div class="logo">
+        LUMI
+        <span>星迹</span>
+    </div>
+
+
+    <!-- 开篇入口（新增：Y2K 桌面原型；原有搜索入口不受影响） -->
+
+    <p class="intro-entry" id="introEntry">
+
+        <span class="intro-entry-mark" aria-hidden="true">▶</span>
+
+        <a href="desktop.html" id="introEntryLink">从「整理桌面」开始</a>
+
+        <span class="intro-entry-note" id="introEntryNote">十七の桌面 · 本机</span>
+
+    </p>
+
+
+    <!-- 搜索框 -->
+
+    <div class="search-wrap">
+
+        <div class="search-box">
+
+            <svg
+                class="search-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+            </svg>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="搜索 LUMI，或输入网址"
+                autocomplete="off">
+
+            <button class="clear-btn" id="clearBtn">×</button>
+
+        </div>
+
+        <!-- 下拉区域 -->
+
+        <div class="suggest" id="suggestBox">
+
+            <div class="suggest-label">最近搜索</div>
+
+            <div class="suggest-item" data-keyword="梦琪">
+                <span class="suggest-time">🕒</span>
+                <span>梦琪</span>
+            </div>
+
+            <div class="suggest-item" data-keyword="陈梦琪">
+                <span class="suggest-time">🕒</span>
+                <span>陈梦琪</span>
+            </div>
+
+            <div class="suggest-item" data-keyword="梦琪 2026 路透">
+                <span class="suggest-time">🕒</span>
+                <span>梦琪 2026 路透</span>
+            </div>
+
+            <div class="suggest-item" data-keyword="陈梦琪 舞台直拍">
+                <span class="suggest-time">🕒</span>
+                <span>陈梦琪 舞台直拍</span>
+            </div>
+
+            <div class="suggest-divider"></div>
+
+            <div class="suggest-label hot-label">🔥 热搜</div>
+
+            <div class="suggest-item hot-item" data-keyword="香港街头多名少女撞脸">
+                <span class="hot-rank rank-1">1</span>
+                <span>香港街头多名少女撞脸 医生：像同一模板</span>
+            </div>
+
+            <div class="suggest-item hot-item" data-keyword="整容模板化 撞脸率激增">
+                <span class="hot-rank rank-2">2</span>
+                <span>整容模板化失控 撞脸率激增</span>
+            </div>
+
+            <div class="suggest-item hot-item" data-keyword="陈梦琪失踪案最新进展">
+                <span class="hot-rank rank-3">3</span>
+                <span>陈梦琪失踪案最新进展 警方回应</span>
+            </div>
+
+            <div class="suggest-item hot-item" data-keyword="千人一面 整容内幕">
+                <span class="hot-rank">4</span>
+                <span>千人一面 整容诊所不愿说的秘密</span>
+            </div>
+
+            <div class="suggest-item hot-item" data-keyword="消失的小偶像">
+                <span class="hot-rank">5</span>
+                <span>消失的小偶像 粉丝苦等48日</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 搜索按钮 -->
+
+    <div class="search-buttons">
+        <button class="btn-primary" onclick="doSearch()">搜索</button>
+        <button class="btn-secondary">手气不错</button>
+    </div>
+
+
+    <!-- 文字链接 -->
+
+    <p class="hint-text">
+        搜索记录只存在本机，最多保留 30 天。
+        <a>管理记录</a>
+    </p>
+
+</main>
+
+
+<!-- =====================================================
+     搜索结果视图（默认隐藏）
+===================================================== -->
+
+<main class="search-results" id="resultsView" style="display:none;">
+
+    <!-- 结果页顶部搜索栏 -->
+
+    <div class="results-top">
+
+        <div class="results-logo">LUMI</div>
+
+        <div class="results-search-box">
+
+            <input
+                type="text"
+                id="resultsSearchInput"
+                autocomplete="off"
+                value="梦琪">
+
+            <button class="results-clear" id="resultsClearBtn">×</button>
+
+        </div>
+
+        <button class="results-search-btn" onclick="doSearch()">搜索</button>
+
+    </div>
+
+
+    <!-- 结果统计 -->
+
+    <div class="results-count">
+        找到约 1,240,000 条结果 · 用时 0.17 秒
+    </div>
+
+
+    <!-- 第一条结果：梦琪的LUMI主页 -->
+
+    <div class="result-item primary-result">
+
+        <div class="result-url">
+            lumi.com / mengqi_2006
+        </div>
+
+        <a href="mengqi-social.html" class="result-title">
+            陈梦琪 Mengqi · LUMI 主页
+        </a>
+
+        <p class="result-desc">
+            偶像练习生。玉兰阁新生计划成员。
+            最后动态：2026年2月16日。
+        </p>
+
+        <div class="result-links">
+            <span>帖子</span>
+            <span>相册</span>
+            <span>粉丝留言</span>
+        </div>
+
+    </div>
+
+
+    <!-- 第二条结果：超话 -->
+
+    <div class="result-item">
+
+        <div class="result-url">
+            lumi.com / topic / 陈梦琪
+        </div>
+
+        <a href="mengqi-social.html" class="result-title">
+            陈梦琪超话 
+        </a>
+
+        <p class="result-desc">
+            粉丝签到
+        </p>
+
+    </div>
+
+
+    <!-- 第三条结果：新闻 -->
+
+    <div class="result-item">
+
+        <div class="result-url">
+            city-weekly.hk / archive / 2026
+        </div>
+
+        <a href="mengqi-missing.html" class="result-title">
+            小偶像失踪案：经纪公司首次回应
+        </a>
+
+        <p class="result-desc">
+            城市周刊报道 2026年3月
+        </p>
+
+    </div>
+
+
+    <!-- 第四条结果：舞台视频 -->
+
+    <div class="result-item">
+
+        <div class="result-url">
+            lumi.com / video / first-stage
+        </div>
+
+        <a href="player-home.html" class="result-title">
+            【舞台直拍】梦琪初舞台 十分钟的恋爱 4K完整版
+        </a>
+
+        <p class="result-desc">
+            2025年12月17日西九龙小型公演
+        </p>
+
+    </div>
+
+
+    <!-- 下拉相关搜索 -->
+
+    <div class="related-searches">
+        <span>相关搜索：</span>
+        <a>梦琪 为什么消失</a>
+        <a>陈梦琪 最后一场</a>
+        <a>梦琪 整容</a>
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-links">
+        <a>帮助</a>
+        <a>隐私</a>
+        <a>条款</a>
+        <a>设置</a>
+    </div>
+
+    <p>LUMI · 星迹搜索</p>
+
+</footer>
+
+
+<script src="js/game-progress.js"></script>
+
+
+<script>
+
+/* =====================================================
+   开篇入口：看过「整理桌面」之后，入口文案自动切换
+   （只读 localStorage 里的进度，不改动搜索逻辑）
+===================================================== */
+
+(function () {
+
+    var link = document.getElementById("introEntryLink");
+    var note = document.getElementById("introEntryNote");
+
+    if (!link) {
+        return;
+    }
+
+    try {
+
+        if (typeof isProgressUnlocked === "function" &&
+            typeof GAME_FLAGS === "object" &&
+            isProgressUnlocked(GAME_FLAGS.desktopIntroSeen) === true) {
+
+            link.textContent = "再看一次十七の桌面";
+
+            if (note) {
+                note.textContent = "看过了 · 也可以直接搜";
+            }
+
+        }
+
+    } catch (e) {
+        /* 进度读取失败时保持默认文案即可 */
+    }
+
+})();
+
+</script>
+
+
+<script>
+
+/* ========== 元素 ========== */
+
+const searchInput = document.getElementById("searchInput");
+const suggestBox = document.getElementById("suggestBox");
+const clearBtn = document.getElementById("clearBtn");
+const homeView = document.getElementById("homeView");
+const resultsView = document.getElementById("resultsView");
+const resultsSearchInput = document.getElementById("resultsSearchInput");
+const resultsClearBtn = document.getElementById("resultsClearBtn");
+
+
+/* ========== 初始状态 ========== */
+
+clearBtn.style.display = "none";
+suggestBox.style.display = "none";
+
+
+/* ========== 点击搜索框显示下拉 ========== */
+
+searchInput.addEventListener("click", function () {
+    suggestBox.style.display = "block";
+});
+
+
+/* ========== 点击空白关闭下拉 ========== */
+
+document.addEventListener("click", function (event) {
+    if (!event.target.closest(".search-wrap")) {
+        suggestBox.style.display = "none";
+    }
+});
+
+
+/* ========== 点击下拉记录填入搜索框 ========== */
+
+document.querySelectorAll(".suggest-item").forEach(function (item) {
+    item.addEventListener("click", function () {
+        searchInput.value = item.getAttribute("data-keyword");
+        clearBtn.style.display = "block";
+        suggestBox.style.display = "none";
+        searchInput.focus();
+    });
+});
+
+
+/* ========== 清除按钮 ========== */
+
+clearBtn.addEventListener("click", function () {
+    searchInput.value = "";
+    searchInput.placeholder = "搜索 LUMI，或输入网址";
+    clearBtn.style.display = "none";
+    searchInput.focus();
+    suggestBox.style.display = "block";
+});
+
+
+/* ========== 输入时显示清除按钮 ========== */
+
+searchInput.addEventListener("input", function () {
+    if (searchInput.value.length > 0) {
+        clearBtn.style.display = "block";
+    } else {
+        clearBtn.style.display = "none";
+    }
+});
+
+
+/* ========== 结果页清除按钮 ========== */
+
+resultsClearBtn.addEventListener("click", function () {
+    resultsSearchInput.value = "";
+    resultsSearchInput.focus();
+});
+
+
+/* ========== 执行搜索 ========== */
+
+function doSearch() {
+
+    const keyword = (
+        searchInput.value.trim() ||
+        resultsSearchInput.value.trim()
+    );
+
+    if (keyword === "") {
+        searchInput.placeholder = "请输入搜索内容";
+        searchInput.focus();
+        suggestBox.style.display = "none";
+        return;
+    }
+
+    /* 只有搜索梦琪相关内容才显示这一屏浅层结果；
+       其他关键词交给真正的搜索结果页（与 LUMI 首页/梦琪账号同一条路），
+       不再用 alert 把玩家堵在首页。 */
+    if (
+        keyword.includes("梦琪") ||
+        keyword.includes("陈梦琪") ||
+        keyword.includes("mengqi") ||
+        keyword.includes("Mengqi")
+    ) {
+
+        resultsSearchInput.value = keyword;
+        homeView.style.display = "none";
+        resultsView.style.display = "block";
+        window.scrollTo(0, 0);
+
+    } else {
+
+        window.location.href =
+            "search-results.html?q=" + encodeURIComponent(keyword);
+
+    }
+
+}
+
+
+/* ========== 回车搜索 ========== */
+
+searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        doSearch();
+    }
+});
+
+resultsSearchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        doSearch();
+    }
+});
+
+</script>
+
+
+</body>
+
+</html>
